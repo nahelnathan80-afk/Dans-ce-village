@@ -181,11 +181,12 @@ export const flourTexture = (text: string) =>
 		g.lineCap = 'round';
 		g.strokeStyle = 'rgba(255,255,255,0.97)';
 		g.beginPath();
-		g.moveTo(W * 0.22, H * 0.74);
-		g.lineTo(W * 0.78, H * 0.74);
-		g.moveTo(W * 0.62, H * 0.62);
-		g.lineTo(W * 0.8, H * 0.74);
-		g.lineTo(W * 0.62, H * 0.86);
+		// flèche vers la gauche (vers la boulangerie)
+		g.moveTo(W * 0.8, H * 0.74);
+		g.lineTo(W * 0.2, H * 0.74);
+		g.moveTo(W * 0.38, H * 0.6);
+		g.lineTo(W * 0.18, H * 0.74);
+		g.lineTo(W * 0.38, H * 0.88);
 		g.stroke();
 		const r = rng(5);
 		for (let i = 0; i < 400; i++) {

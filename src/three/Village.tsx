@@ -24,7 +24,7 @@ const Box: React.FC<{s: V3; p?: V3; r?: V3; c: string; map?: THREE.Texture; emis
 	const material = useMemo(
 		() =>
 			map || emissive
-				? new THREE.MeshStandardMaterial({color: c, map, roughness: 0.8, emissive: emissive ?? '#000', emissiveIntensity: e})
+				? new THREE.MeshStandardMaterial({color: c, roughness: 0.8, emissive: emissive ?? '#000', emissiveIntensity: e, ...(map ? {map} : {})})
 				: M(c),
 		[c, map, emissive, e],
 	);
@@ -142,7 +142,7 @@ export const Chalet: React.FC<{
 	);
 };
 
-const Sapin: React.FC<{p: V3; s?: number}> = ({p, s = 1}) => (
+export const Sapin: React.FC<{p: V3; s?: number}> = ({p, s = 1}) => (
 	<group position={p} scale={s}>
 		<mesh position={[0, 0.6, 0]} material={M('#6b4226')} castShadow>
 			<cylinderGeometry args={[0.22, 0.28, 1.2, 6]} />
@@ -317,19 +317,19 @@ export const Church: React.FC<{bellSwing?: number; night?: boolean}> = ({bellSwi
 		<group position={[0, 10.3, 0]}>
 			{/* étage des cloches : 4 piliers */}
 			{[[-1.5, -1.5], [1.5, -1.5], [-1.5, 1.5], [1.5, 1.5]].map(([x, z], i) => (
-				<Box key={i} s={[0.4, 2.6, 0.4]} p={[x, 1.3, z]} c="#ebe2d0" />
+				<Box key={i} s={[0.4, 3.8, 0.4]} p={[x, 1.9, z]} c="#ebe2d0" />
 			))}
 			<Box s={[3.6, 0.4, 3.6]} p={[0, 0.05, 0]} c="#d8cdb6" />
-			<Box s={[3.7, 0.4, 3.7]} p={[0, 2.7, 0]} c="#cfc3ab" />
-			<group position={[0, 2.3, 0]}>
+			<Box s={[3.7, 0.4, 3.7]} p={[0, 3.9, 0]} c="#cfc3ab" />
+			<group position={[0, 3.5, 0]}>
 				<Bell swing={bellSwing} scale={1.5} />
 			</group>
 		</group>
-		<mesh position={[0, 15.6, 0]} rotation={[0, Math.PI / 4, 0]} material={M('#4b5d78')} castShadow>
+		<mesh position={[0, 16.8, 0]} rotation={[0, Math.PI / 4, 0]} material={M('#4b5d78')} castShadow>
 			<coneGeometry args={[2.7, 5, 4]} />
 		</mesh>
-		<Box s={[0.12, 1.2, 0.12]} p={[0, 18.6, 0]} c="#e3b23c" />
-		<Box s={[0.6, 0.12, 0.12]} p={[0, 18.7, 0]} c="#e3b23c" />
+		<Box s={[0.12, 1.2, 0.12]} p={[0, 19.8, 0]} c="#e3b23c" />
+		<Box s={[0.6, 0.12, 0.12]} p={[0, 19.9, 0]} c="#e3b23c" />
 		{/* horloge */}
 		<group position={[0, 8.3, 1.72]}>
 			<mesh rotation={[Math.PI / 2, 0, 0]} material={M('#ffffff')}>
@@ -342,7 +342,7 @@ export const Church: React.FC<{bellSwing?: number; night?: boolean}> = ({bellSwi
 	</group>
 );
 
-const Mountains: React.FC<{snow?: string; tint?: string}> = ({snow = '#ffffff', tint = '#7d8fb3'}) => {
+export const Mountains: React.FC<{snow?: string; tint?: string}> = ({snow = '#ffffff', tint = '#7d8fb3'}) => {
 	const peaks: [number, number, number, number][] = [
 		// x, z, rayon, hauteur
 		[-70, -110, 38, 62], [-25, -125, 42, 78], [25, -115, 36, 66], [70, -120, 44, 72], [0, -150, 50, 95],

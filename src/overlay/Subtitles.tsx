@@ -83,6 +83,7 @@ export const Subtitles: React.FC<{tl: Timeline; maxWords?: number; top?: number;
 							textShadow: '0 8px 0 rgba(0,0,0,0.85)',
 							transform: `scale(${active ? 1.16 - 0.16 * (1 - pop) + 0.12 * (1 - pop) : 1}) rotate(${active ? -2 : 0}deg)`,
 							display: 'inline-block',
+							margin: active ? '0 16px' : 0,
 							fontStyle: echo ? 'italic' : 'normal',
 							textTransform: 'uppercase',
 						}}
