@@ -1,0 +1,112 @@
+import React, {useLayoutEffect} from 'react';
+import {ThreeCanvas} from '@remotion/three';
+import {useThree} from '@react-three/fiber';
+import {useCurrentFrame, useVideoConfig} from 'remotion';
+import * as THREE from 'three';
+import {skyTexture} from './textures';
+
+export type Vec3 = [number, number, number];
+
+export type CameraShot = {
+	pos: Vec3;
+	target: Vec3;
+	fov?: number;
+	roll?: number;
+	/** intensité de tremblement (0 = aucun) */
+	shake?: number;
+};
+
+const CameraRig: React.FC<CameraShot> = ({pos, target, fov = 40, roll = 0, shake = 0}) => {
+	const {camera} = useThree();
+	const frame = useCurrentFrame();
+	useLayoutEffect(() => {
+		const cam = camera as THREE.PerspectiveCamera;
+		const sx = shake ? (Math.sin(frame * 2.1) + Math.sin(frame * 3.7)) * 0.5 * shake : 0;
+		const sy = shake ? (Math.cos(frame * 2.7) + Math.sin(frame * 1.3)) * 0.5 * shake : 0;
+		cam.position.set(pos[0] + sx, pos[1] + sy, pos[2]);
+		cam.up.set(Math.sin(roll), Math.cos(roll), 0);
+		cam.lookAt(target[0] + sx * 0.5, target[1] + sy * 0.5, target[2]);
+		cam.fov = fov;
+		cam.near = 0.1;
+		cam.far = 600;
+		cam.updateProjectionMatrix();
+	});
+	return null;
+};
+
+export type Ambiance = 'day' | 'night' | 'interior' | 'sunset';
+
+const AMB: Record<Ambiance, {top: string; bottom: string; fog: string; hemi: [string, string, number]; sun: [string, number]; amb: number}> = {
+	day: {top: '#2f8cff', bottom: '#bfe6ff', fog: '#cfe9ff', hemi: ['#e4f2ff', '#b7c9a0', 1.15], sun: ['#fff1d6', 2.4], amb: 0.35},
+	sunset: {top: '#5b6cff', bottom: '#ffc58a', fog: '#ffd9b0', hemi: ['#ffe3c2', '#7a9c5f', 1.0], sun: ['#ffc27a', 2.2], amb: 0.35},
+	night: {top: '#1a1446', bottom: '#6a3fa0', fog: '#3a2a6a', hemi: ['#8b7bff', '#1d2450', 0.7], sun: ['#a9b8ff', 0.8], amb: 0.25},
+	interior: {top: '#f3c98b', bottom: '#f3c98b', fog: '#f3c98b', hemi: ['#ffe9c7', '#8a5a3a', 1.1], sun: ['#ffd6a0', 1.6], amb: 0.45},
+};
+
+const Environment: React.FC<{ambiance: Ambiance; fogNear: number; fogFar: number}> = ({ambiance, fogNear, fogFar}) => {
+	const {scene} = useThree();
+	const a = AMB[ambiance];
+	useLayoutEffect(() => {
+		scene.background = skyTexture(a.top, a.bottom);
+		scene.fog = new THREE.Fog(a.fog, fogNear, fogFar);
+	}, [scene, a, fogNear, fogFar]);
+	return (
+		<>
+			<hemisphereLight args={[a.hemi[0], a.hemi[1], a.hemi[2]]} />
+			<ambientLight intensity={a.amb} />
+			<directionalLight
+				position={[18, 30, 14]}
+				intensity={a.sun[1]}
+				color={a.sun[0]}
+				castShadow
+				shadow-mapSize-width={2048}
+				shadow-mapSize-height={2048}
+				shadow-camera-left={-32}
+				shadow-camera-right={32}
+				shadow-camera-top={32}
+				shadow-camera-bottom={-32}
+				shadow-camera-far={90}
+				shadow-bias={-0.0004}
+				shadow-normalBias={0.03}
+			/>
+		</>
+	);
+};
+
+/** Une scène 3D plein écran : ciel, lumière, brouillard, caméra. */
+export const Stage: React.FC<{
+	camera: CameraShot;
+	ambiance?: Ambiance;
+	fogNear?: number;
+	fogFar?: number;
+	children: React.ReactNode;
+}> = ({camera, ambiance = 'day', fogNear = 45, fogFar = 260, children}) => {
+	const {width, height} = useVideoConfig();
+	return (
+		<ThreeCanvas
+			width={width}
+			height={height}
+			shadows={{type: THREE.PCFSoftShadowMap}}
+			gl={{antialias: true, preserveDrawingBuffer: true, toneMapping: THREE.NeutralToneMapping, toneMappingExposure: 1.08}}
+			dpr={1}
+			camera={{fov: camera.fov ?? 40, position: camera.pos}}
+		>
+			<Environment ambiance={ambiance} fogNear={fogNear} fogFar={fogFar} />
+			<CameraRig {...camera} />
+			{children}
+		</ThreeCanvas>
+	);
+};
+
+/** Interpolation de caméra entre deux cadrages (travellings). */
+export const lerpShot = (a: CameraShot, b: CameraShot, t: number): CameraShot => {
+	const l = (x: number, y: number) => x + (y - x) * t;
+	const lv = (x: Vec3, y: Vec3): Vec3 => [l(x[0], y[0]), l(x[1], y[1]), l(x[2], y[2])];
+	return {
+		pos: lv(a.pos, b.pos),
+		target: lv(a.target, b.target),
+		fov: l(a.fov ?? 40, b.fov ?? 40),
+		roll: l(a.roll ?? 0, b.roll ?? 0),
+		shake: l(a.shake ?? 0, b.shake ?? 0),
+	};
+};

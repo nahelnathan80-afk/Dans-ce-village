@@ -1,0 +1,28 @@
+{
+  "name": "dans-ce-village",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Série TikTok « Dans ce village » — vidéos 100 % en code (Remotion + Three.js)",
+  "scripts": {
+    "studio": "remotion studio",
+    "voice": "python3 tools/tts.py",
+    "audio": "python3 tools/sfx.py",
+    "still": "remotion still",
+    "preview": "remotion render Ep01 rendu/preview.mp4 --scale=0.5 --crf=30",
+    "render": "remotion render Ep01 rendu/ep01-un-euro-le-mot.mp4 --codec=h264 --crf=18"
+  },
+  "dependencies": {
+    "@react-three/fiber": "^9.8.2",
+    "@remotion/cli": "4.0.547",
+    "@remotion/three": "4.0.547",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "4.0.547",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.3",
+    "@types/three": "^0.187.0",
+    "typescript": "^5.9.3"
+  }
+}
