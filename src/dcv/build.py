@@ -218,6 +218,12 @@ def main(argv=None):
         print(f"Terminé en {fmt(time.time() - T0)}")
         return
 
+    # ménage : anciens rendus de ces plans (autres empreintes) supprimés du cache
+    keep = {c.parent.name for c in clips}
+    for d in (ep_cache / a.mode).glob("plan*_*"):
+        if d.is_dir() and d.name not in keep:
+            shutil.rmtree(d, ignore_errors=True)
+
     # 5. sous-titres
     ass = ep_cache / a.mode / f"{a.nom}.ass"
     subtitles.build_ass(entries, ass)

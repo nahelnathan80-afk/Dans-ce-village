@@ -1,0 +1,62 @@
+// =============================================================================
+//  EXEMPLE COMMENTÉ — copie ce dossier pour créer un nouvel épisode.
+//  Les lignes qui commencent par // sont des commentaires (ignorés).
+//  Positions [x, y] en mètres : x = gauche/droite, y = profondeur (0 = devant).
+//  On peut aussi donner un nom d'ancre du décor à la place : "devant_miroir", "pres_table"…
+// =============================================================================
+{
+  "titre": "Mon épisode",
+  // personnages principaux (fichiers personnages/<nom>.json) : leur étiquette de nom
+  // (LÉO, SAM…) s'affiche automatiquement la 1re fois qu'ils apparaissent.
+  "casting": ["leo", "sam"],
+  // voix ElevenLabs utilisée si un MP3 manque (si la clé API est configurée)
+  "voix_off": { "elevenlabs_voice_id": "ctilxqiD5xHFsAqEwjvS" },
+
+  "plans": [
+    {
+      "id": "plan01",                 // → voix/plan01.mp3
+      "decor": "rue",                 // rue | cuisine | salle_classe | chambre_ado | chambre_cartons | college_autel
+      "mood": "soleil_matin",         // ambiance : soleil_matin, matin_interieur, matin_froid, matin_frais,
+                                      // matinee_fraiche, classe_froide, crepuscule_bleu, soir_inquietant, soir_violet
+      "personnages": [
+        {
+          "qui": "leo",               // personnages/leo.json (ou personnages/figurants/…)
+          "position": [0, 1.5],
+          "action": "marcher",        // marcher, passer, attendre, parler, s_asseoir, assis, se_lever,
+                                      // regarder, sursauter, frissonner, serrer, toucher, poser
+          "vers": [2, 1.5],           // pour marcher / passer
+          "expression": "joyeux",     // neutre, joyeux, triste, peur (bouche en vague), choque, pleure (larmes),
+                                      // interrogatif (bulle « ? »), pensif (bulle « … »), vide
+          "compteur": "71 ANS",       // texte au-dessus de la tête
+          "compteur_style": "normal", // normal | rouge | rouge_glitch | orange | cache
+          // options : "regarde": "camera"|"sam"|"loin"|ancre, "cible": "sam" (regarder/toucher/serrer),
+          //   "orientation": 0..360 ou nom, "debut_action": "40%", "objet": "banc"|"pupitre"|"lit",
+          //   "puis": { "action": "marcher", "vers": "devant_miroir" }, "etiquette": true|false,
+          //   "opacite": 0.6, "effets": [ { "type": "transparence", "de": 0, "a": 0.45 } ]
+        }
+      ],
+      "foule": { "nombre": 10, "zone": "trottoirs", "action": "mixte", "compteurs": "aleatoire" },
+      "textes_decor": [
+        { "type": "affiche", "emplacement": "mur_fond_droite", "texte": "AVIS\nDE RECHERCHE" }
+      ],
+      // sous-plans caméra : preset + durée RELATIVE. S'il en manque, le programme en ajoute
+      // pour changer de cadrage toutes les 1,5 à 2 s.
+      "cadrages": [
+        { "camera": "plan_large", "cible": "rue", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "leo", "duree": 1 }
+      ],
+      "voix": { "texte": "Dans cette ville, rien n'est *normal*.", "fichier": "voix/plan01.mp3" },
+      "bulles": [ { "qui": "leo", "texte": "Salut !", "debut": "40%", "fin": "90%" } ],
+      "musique": "normal"             // normal | baisse | coupe
+    },
+    {
+      "id": "plan02", "decor": "chambre_ado", "mood": "crepuscule_bleu",
+      "duree": 3,                      // plan SANS voix : durée fixe en secondes
+      "personnages": [ { "qui": "sam", "position": "devant_miroir", "orientation": "miroir", "expression": "pensif" } ],
+      "cadrages": [ { "camera": "par_dessus_epaule", "cible": "sam>miroir", "duree": 1 } ],
+      "voix": null,
+      "musique": "baisse",
+      "fin": { "noir": 1.0 }           // dernier plan : secondes de noir à la fin
+    }
+  ]
+}

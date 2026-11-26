@@ -97,9 +97,19 @@ def mix(specs, total, musique_path, out_wav, plans):
     fade_out = np.clip((total - t) / 1.5, 0, 1)
     out = voice * 0.95 + music * level * duck * fade_in * fade_out
     write_wav(out_wav, out[:int(total * SR)])
-    # contrôle « jamais de silence total » (hors plan « coupe » voulu)
-    rms = np.sqrt(np.convolve(out[:int(total * SR)] ** 2, np.ones(SR // 2) / (SR // 2), mode="valid"))
-    return float(rms.min()), music * level * duck
+    # contrôle « jamais de silence total » : niveau de la MUSIQUE seule, hors plans
+    # « coupe » (silence voulu) et hors noir final
+    bed = np.abs(music * level * duck * fade_in * fade_out)
+    mask = np.ones(N, bool)
+    for s, p in zip(specs, plans):
+        if p["musique"] == "coupe":
+            mask[int(s["debut"] * SR):int((s["debut"] + s["duree"] + REPRISE * 0.3) * SR)] = False
+    end = specs[-1]["debut"] + specs[-1]["duree"] - 1.5
+    mask[int(end * SR):] = False
+    mask[:int(0.5 * SR)] = False
+    win = SR // 2
+    rms = np.sqrt(np.convolve(bed ** 2, np.ones(win) / win, mode="same"))
+    return float(rms[mask].min()) if mask.any() else 0.0, music * level * duck
 
 
 def loudnorm(in_wav, out_m4a, target=-14.0):
@@ -113,6 +123,15 @@ def loudnorm(in_wav, out_m4a, target=-14.0):
           f"measured_LRA={js['input_lra']}:measured_thresh={js['input_thresh']}:offset={js['target_offset']}:linear=true")
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", str(in_wav), "-af", af, "-ar", "48000",
                     "-c:a", "aac", "-b:a", "192k", str(out_m4a)], check=True)
+    # le mode linéaire peut rester un peu sous la cible (crêtes de la voix) :
+    # on corrige le gain puis on limite les crêtes à -1,5 dBTP
+    got = measure_lufs(out_m4a)
+    if abs(got - target) > 0.4:
+        tmp = Path(out_m4a).with_suffix(".tmp.m4a")
+        subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", str(out_m4a), "-af",
+                        f"volume={target - got:.2f}dB,alimiter=limit=0.84:level=false", "-ar", "48000",
+                        "-c:a", "aac", "-b:a", "192k", str(tmp)], check=True)
+        tmp.replace(out_m4a)
     return js
 
 
