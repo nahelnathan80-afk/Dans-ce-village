@@ -66,7 +66,7 @@ export const Subtitles: React.FC<{tl: Timeline; maxWords?: number; top?: number;
 				const said = t >= w.start - 0.03;
 				const wf = Math.round((t - w.start) * fps);
 				const pop = active ? spring({frame: wf + 1, fps, config: {damping: 9, stiffness: 380, mass: 0.4}}) : 1;
-				const inWorld = w.paid; // mot prononcé dans le village → payant
+				const inWorld = w.paid || (w.who !== 'vo' && w.who !== 'echo'); // mot prononcé dans le village
 				const echo = w.who === 'echo';
 				const size = inWorld ? 128 : 104;
 				return (

@@ -209,3 +209,22 @@ export const CallToAction: React.FC<{question: string[]; hint: string}> = ({ques
 		</>
 	);
 };
+
+/** Bandeau « FLASH INFO » façon chaîne d'info. */
+export const BreakingNews: React.FC<{title: string; ticker: string}> = ({title, ticker}) => {
+	const f = useCurrentFrame();
+	const {fps} = useVideoConfig();
+	const s = spring({frame: f, fps, config: {damping: 14, stiffness: 200}});
+	const x = interpolate(s, [0, 1], [-1100, 0]);
+	return (
+		<div style={{position: 'absolute', top: 360, left: 0, width: 1080 - 150, transform: `translateX(${x}px)`}}>
+			<div style={{display: 'inline-block', background: '#e11d2e', color: '#fff', fontFamily: FONT, fontSize: 70, padding: '10px 34px', marginLeft: 40, borderRadius: '14px 14px 0 0', opacity: f % 16 < 11 ? 1 : 0.75}}>
+				● FLASH INFO
+			</div>
+			<div style={{background: '#fff', border: '7px solid #e11d2e', margin: '0 0 0 40px', padding: '18px 30px', ...txt(66, '#1b1b1b', 0), textShadow: 'none', textAlign: 'left'}}>{title}</div>
+			<div style={{background: '#1b1b1b', margin: '0 0 0 40px', padding: '10px 0', overflow: 'hidden', whiteSpace: 'nowrap'}}>
+				<span style={{display: 'inline-block', transform: `translateX(${700 - f * 9}px)`, ...txt(44, '#ffe14d', 0), textShadow: 'none'}}>{ticker}</span>
+			</div>
+		</div>
+	);
+};

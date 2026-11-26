@@ -14,6 +14,8 @@ export type CharacterLook = {
 	hatColor?: string;
 	apron?: string;
 	sash?: boolean; // écharpe tricolore du maire
+	chain?: boolean; // grosse chaîne dorée
+	stripes?: string; // rayures (pyjama)
 	hoodie?: boolean;
 	face?: Partial<FaceStyle>;
 	scale?: number;
@@ -45,6 +47,8 @@ export type CharacterProps = {
 	/** squash & stretch vertical (1 = neutre) */
 	squash?: number;
 	bob?: number;
+	/** assis (sur une chaise / un fauteuil) */
+	sit?: boolean;
 	position?: [number, number, number];
 	rotation?: [number, number, number];
 	children?: React.ReactNode; // accessoire tenu en main droite
@@ -84,6 +88,7 @@ export const Character: React.FC<CharacterProps> = ({
 	walkAmp = 1,
 	squash = 1,
 	bob = 0,
+	sit = false,
 	position = [0, 0, 0],
 	rotation = [0, 0, 0],
 	children,
@@ -105,6 +110,10 @@ export const Character: React.FC<CharacterProps> = ({
 	let legL = pose.legL ?? 0;
 	let legR = pose.legR ?? 0;
 	let walkBob = 0;
+	if (sit) {
+		legL = pose.legL ?? -1.45;
+		legR = pose.legR ?? -1.45;
+	}
 	if (walk !== undefined) {
 		const s = Math.sin(walk) * 0.7 * walkAmp;
 		legL += s;
@@ -119,7 +128,7 @@ export const Character: React.FC<CharacterProps> = ({
 
 	return (
 		<group position={position} rotation={rotation} scale={[sc * sx, sc * squash, sc * sx]}>
-			<group position={[0, walkBob + bob, 0]} rotation={[pose.lean ?? 0, pose.twist ?? 0, 0]}>
+			<group position={[0, walkBob + bob + (sit ? -0.4 : 0), 0]} rotation={[pose.lean ?? 0, pose.twist ?? 0, 0]}>
 				{/* Jambes (pivot à la hanche) */}
 				{([[-0.24, legL], [0.24, legR]] as const).map(([x, r], i) => (
 					<group key={i} position={[x, 0.9, 0]} rotation={[r, 0, 0]}>
@@ -136,6 +145,13 @@ export const Character: React.FC<CharacterProps> = ({
 						<Box size={[0.2, 0.1, 0.06]} position={[0, 1.55, 0.33]} color="#e8d9c0" />
 					</>
 				)}
+				{look.chain && (
+					<mesh position={[0, 1.62, 0.3]} rotation={[0.2, 0, 0]} material={M('#f5c518')}>
+						<torusGeometry args={[0.3, 0.05, 8, 20, Math.PI]} />
+					</mesh>
+				)}
+				{look.stripes &&
+					[1.15, 1.45, 1.75].map((y) => <Box key={y} size={[1.0, 0.1, 0.58]} position={[0, y, 0]} color={look.stripes!} />)}
 				{look.sash && (
 					<group position={[0, 1.42, 0]} rotation={[0, 0, -0.75]}>
 						<Box size={[0.2, 1.38, 0.6]} position={[-0.16, 0, 0]} color="#1f4fd8" />

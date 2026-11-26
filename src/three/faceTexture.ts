@@ -18,6 +18,10 @@ export type FaceStyle = {
 	skin: string;
 	freckles?: boolean;
 	mustache?: string; // couleur
+	mustacheTilt?: number; // radians (fausse moustache de travers)
+	glasses?: string; // lunettes rondes (couleur de monture)
+	sunglasses?: boolean;
+	wrinkles?: boolean;
 	lashes?: boolean;
 	blush?: boolean;
 	browColor?: string;
@@ -184,11 +188,52 @@ export const getFaceTexture = (
 
 	// Moustache
 	if (style.mustache) {
+		g.save();
+		g.translate(128, 178);
+		g.rotate(style.mustacheTilt ?? 0);
 		g.fillStyle = style.mustache;
 		g.beginPath();
-		g.ellipse(104, 178, 30, 13, -0.25, 0, Math.PI * 2);
-		g.ellipse(152, 178, 30, 13, 0.25, 0, Math.PI * 2);
+		g.ellipse(-24, 0, 30, 13, -0.25, 0, Math.PI * 2);
+		g.ellipse(24, 0, 30, 13, 0.25, 0, Math.PI * 2);
 		g.fill();
+		g.restore();
+	}
+	if (style.wrinkles) {
+		g.strokeStyle = 'rgba(120,70,50,0.45)';
+		g.lineWidth = 4;
+		for (const x of [40, 216]) {
+			g.beginPath();
+			g.arc(x, 112, 14, -0.6, 0.6);
+			g.stroke();
+		}
+		g.beginPath();
+		g.moveTo(96, 52);
+		g.lineTo(160, 52);
+		g.stroke();
+	}
+	if (style.glasses) {
+		g.strokeStyle = style.glasses;
+		g.lineWidth = 8;
+		for (const ex of [84, 172]) {
+			g.beginPath();
+			g.arc(ex, 112, 40, 0, Math.PI * 2);
+			g.stroke();
+		}
+		g.beginPath();
+		g.moveTo(124, 108);
+		g.lineTo(132, 108);
+		g.stroke();
+	}
+	if (style.sunglasses) {
+		g.fillStyle = '#111';
+		g.beginPath();
+		g.roundRect(42, 84, 82, 56, 18);
+		g.roundRect(132, 84, 82, 56, 18);
+		g.fill();
+		g.fillRect(118, 96, 20, 10);
+		g.fillStyle = 'rgba(255,255,255,0.35)';
+		g.fillRect(56, 94, 22, 8);
+		g.fillRect(146, 94, 22, 8);
 	}
 
 	// Bouche

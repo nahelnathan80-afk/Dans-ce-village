@@ -472,11 +472,13 @@ export type VillageProps = {
 	night?: boolean;
 	bellSwing?: number;
 	hideBakery?: boolean;
+	/** remplace la mairie + l'estrade par un autre bâtiment (ex. magasin de jouets) */
+	replaceMairie?: React.ReactNode;
 	children?: React.ReactNode;
 };
 
 /** Le décor complet du village (réutilisable dans tous les épisodes). */
-export const Village: React.FC<VillageProps> = ({night = false, bellSwing = 0, hideBakery = false, children}) => {
+export const Village: React.FC<VillageProps> = ({night = false, bellSwing = 0, hideBakery = false, replaceMairie, children}) => {
 	const grass = useMemo(() => grassTexture(60), []);
 	const cobble = useMemo(() => cobbleTexture(7), []);
 	return (
@@ -492,8 +494,12 @@ export const Village: React.FC<VillageProps> = ({night = false, bellSwing = 0, h
 			<Fountain />
 			<Square />
 			{!hideBakery && <Bakery night={night} />}
-			<Mairie night={night} />
-			<Estrade />
+			{replaceMairie ?? (
+				<>
+					<Mairie night={night} />
+					<Estrade />
+				</>
+			)}
 			<Church bellSwing={bellSwing} night={night} />
 			{CHALETS.map((c, i) => (
 				<Chalet key={i} position={c.p} rotY={c.r} w={c.w} d={c.d} h={c.h} wall={c.wall} roof={c.roof} shutter={c.sh} night={night} />

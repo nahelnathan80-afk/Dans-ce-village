@@ -25,7 +25,30 @@ export const CAST = {
 		skin: '#ffd9bf', shirt: '#ffd23f', pants: '#c2410c', hair: '#5b2a10', hairStyle: 'long',
 		face: {lashes: true},
 	},
+	gisele: {
+		skin: '#ffd9c4', shirt: '#e5989b', pants: '#6d597a', hair: '#e8e8e8', hairStyle: 'bun',
+		face: {glasses: '#6b4f3a', wrinkles: true, lashes: true, browColor: '#bdbdbd'}, scale: 0.92,
+	},
+	jeanRevente: {
+		skin: '#e9b48e', shirt: '#6a4c93', pants: '#3c2a5c', hair: '#1f1f1f', hairStyle: 'short', hat: 'cap', hatColor: '#111111',
+		chain: true, shoes: '#ffffff', face: {sunglasses: true, mustache: '#1f1f1f'},
+	},
+	vendeuse: {
+		skin: '#f3c7a5', shirt: '#2a9d8f', pants: '#264653', hair: '#3d2314', hairStyle: 'long', apron: '#ffd166', face: {lashes: true},
+	},
+	mairePyjama: {
+		skin: '#f3c09a', shirt: '#a9d6ff', stripes: '#5a8fd6', pants: '#a9d6ff', hair: '#b9b9b9', hairStyle: 'bald', hat: 'beret', hatColor: '#5a8fd6',
+		sash: true, face: {mustache: '#9a9a9a', browColor: '#8c8c8c'}, scale: 1.08, shoes: '#7a4b2a',
+	},
 } satisfies Record<string, CharacterLook>;
+
+/** Les « cousins » de Jean-Revente : tous pareils, fausse moustache de travers. */
+export const cousin = (i: number): CharacterLook => ({
+	skin: ['#e9b48e', '#d9a07a', '#f0bf96', '#c98b62'][i % 4],
+	shirt: '#6a4c93', pants: '#3c2a5c', hair: '#1f1f1f', hairStyle: 'short', hat: 'cap', hatColor: '#111111', shoes: '#ffffff',
+	face: {mustache: '#1f1f1f', mustacheTilt: (((i * 37) % 11) - 5) * 0.09},
+	scale: 0.95 + ((i * 13) % 9) / 100,
+});
 
 const SHIRTS = ['#e63946', '#2a9d8f', '#f4a261', '#8ecae6', '#9b5de5', '#00bbf9', '#f15bb5', '#43aa8b', '#ffbe0b'];
 const SKINS = ['#ffd2b3', '#f0bf96', '#d9a07a', '#a8714e', '#ffe0c7', '#c98b62'];
