@@ -22,6 +22,7 @@ from PIL import Image, ImageDraw
 
 from . import config
 from . import moods as MO
+from . import fx, hud
 from .textures import font
 
 SUB_TOP = 0.54        # bande réservée aux sous-titres : 54 % → 72 %
@@ -49,9 +50,12 @@ def _pop(t, t0, t1, dur=0.18):
     return max(0.0, min(s, b))
 
 
+HUD_BAS = [0.0]      # bas de la pastille du haut (fraction de H), 0 si pas de pastille
+
+
 def _clamp_box(x0, y0, w, h, W, H, avoid_subs=True):
     xmin, xmax = config.SAFE_LEFT * W, config.SAFE_RIGHT * W
-    ymin = config.SAFE_TOP * H
+    ymin = max(config.SAFE_TOP, HUD_BAS[0]) * H
     ymax = (SUB_TOP * H) if avoid_subs else config.SAFE_BOTTOM * H
     x0 = min(max(x0, xmin), xmax - w)
     y0 = min(max(y0, ymin), ymax - h)
@@ -100,6 +104,7 @@ def draw_bubble(d, k, head, text, s, thought=False, head_px=120, cpt_y=None):
     hx, hy = head
     xmin, xmax = config.SAFE_LEFT * W, config.SAFE_RIGHT * W
     off = head_px * 0.45 + 16 * k
+    above = False
     room_r, room_l = xmax - (hx + off), (hx - off) - xmin
     if max(room_r, room_l) >= bw * 0.8:
         if room_r >= room_l:
@@ -112,6 +117,7 @@ def draw_bubble(d, k, head, text, s, thought=False, head_px=120, cpt_y=None):
         # décalée vers le côté le plus libre (le visage reste visible)
         bx = hx - bw / 2 + (0.25 if room_r >= room_l else -0.25) * bw
         by = hy - head_px * 0.5 - bh
+        above = True
     bx, by = _clamp_box(bx, by, bw, bh, W, H)
     a = int(255 * s)
     cx, cy = bx + bw / 2, by + bh / 2
@@ -123,6 +129,8 @@ def draw_bubble(d, k, head, text, s, thought=False, head_px=120, cpt_y=None):
     # pointe vers la bouche (ou le bord de la tête)
     tipx = hx + (-1 if cx < hx else 1) * head_px * 0.3
     tipy = hy + head_px * 0.1
+    if above:                       # bulle au-dessus : la pointe touche le haut de la tête
+        tipx, tipy = hx + (cx - hx) * 0.3, hy - head_px * 0.42
     tipy = min(tipy, H * SUB_TOP)
     if thought:
         for i, r in enumerate((15, 10, 6)):
@@ -157,10 +165,18 @@ def compose(img, f, meta, spec, W, H):
     """Ajoute étiquettes, pensées et bulles sur l'image f (déjà étalonnée)."""
     k = W / 1080
     t = (f - 1) / config.FPS
+    HUD_BAS[0] = 0.19 if spec.get("hud") else 0.0
     fr = meta["frames"][f - 1] if f - 1 < len(meta["frames"]) else {}
+    if spec.get("meteo") == "pluie":
+        img = fx.pluie(img, t, seed=spec.get("index", 0))
     layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(layer)
     drew = False
+    # dormeurs : « Z z z » au-dessus de la tête
+    for n, pz in fr.items():
+        if pz.get("zzz") and pz["z"] > 0 and 0 < pz["top"][0] < 1 and 0 < pz["top"][1] < 1:
+            fx.zzz(d, k, pz["top"][0] * W + 20 * k, pz["top"][1] * H, t, seed=len(n))
+            drew = True
 
     def pos(qui, key):
         p = fr.get(qui)
@@ -201,11 +217,18 @@ def compose(img, f, meta, spec, W, H):
         c = pos(b["qui"], "cpt")
         draw_bubble(d, k, p, b["texte"], s, head_px=head_px(b["qui"]), cpt_y=c[1] if c else None)
         drew = True
-    if not drew:
-        return img
-    out = img.convert("RGBA")
-    out.alpha_composite(layer)
-    return out.convert("RGB")
+    out = img
+    if drew:
+        out = img.convert("RGBA")
+        out.alpha_composite(layer)
+    if spec.get("hud"):
+        out = hud.draw(out, spec["hud"], t, spec["duree"])
+    out = out.convert("RGB")
+    if spec.get("transition") == "flash":
+        out = fx.flash(out, t)
+    elif spec.get("transition") == "rembobinage":
+        out = fx.rembobinage(out, t)
+    return out
 
 
 def load_frame(frames_dir, f, W, H, mood):

@@ -1,0 +1,7 @@
+// Tonton Kado la nuit : pyjama rayé et bonnet de nuit (sans ses lunettes).
+{ "nom": "Tonton Kado", "etiquette": "TONTON KADO", "gabarit": "adulte", "taille": 1.80,
+  "couleurs": { "peau": "#e0ac85", "cheveux": "#2b1b12", "haut": "#8ecae6", "motif_couleur": "#ffffff",
+                "bas": "#8ecae6", "chaussures": "#5c4033", "yeux": "#3a2a1a" },
+  "motif_haut": "rayures",
+  "coiffure": "courte", "haut": "tshirt",
+  "accessoires": [ { "type": "bonnet_nuit", "couleur": "#5b6cff" } ] }

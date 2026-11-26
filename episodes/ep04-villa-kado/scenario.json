@@ -23,7 +23,8 @@
         { "camera": "zoom_brusque", "cible": "portail", "duree": 1 },            // [NOUVEAU] preset
         { "camera": "plan_large", "cible": "villa", "duree": 1 }
       ],
-      "voix": { "texte": "Dans cette ville, un influenceur laisse *tout le monde* dormir chez lui." },
+      // version courte (≈ 2,8 s) pour que le flash-forward arrive avant 3 s
+      "voix": { "texte": "Dans cette ville, un influenceur héberge *tout le monde*." },
       "musique": "normal"
     },
     {
@@ -39,7 +40,7 @@
       "invites": 1000, "invites_style": "flash",
       "cadrages": [
         { "camera": "par_dessus_epaule", "cible": "tonton_kado_pyjama>porte", "duree": 1 },
-        { "camera": "gros_plan_visage", "cible": "tonton_kado_pyjama", "duree": 1 }
+        { "camera": "gros_plan_visage", "cible": "tonton_kado_pyjama", "duree": 1 }   // vu depuis l'intérieur (façade invisible)
       ],
       "voix": { "texte": "Et une nuit, c'est lui qui a frappé chez *moi*." },
       "bulles": [ { "qui": "tonton_kado_pyjama", "texte": "Tu aurais pas une petite place ?", "debut": "35%", "fin": "100%" } ],
@@ -86,7 +87,7 @@
     {
       "id": "plan06", "decor": "chambre_amis", "mood": "apres_midi_soleil",
       // *INDICE 1* : la chambre d'amis vide et son vieux canapé
-      "personnages": [ { "qui": "yanis", "position": "porte_chambre", "action": "attendre", "regarde": "canape", "expression": "neutre" } ],
+      "personnages": [ { "qui": "yanis", "position": [1.1, 1.9], "orientation": -20, "action": "attendre", "regarde": "canape", "expression": "neutre" } ],
       "invites": 5,
       "cadrages": [
         { "camera": "plan_large", "cible": "piece", "duree": 1 },
@@ -128,7 +129,8 @@
     {
       "id": "plan09", "decor": "villa_exterieur", "mood": "coucher_soleil_orange",
       // RELANCE (zoom brusque + compteur qui saute à 300) ≈ 32 s
-      "foule": { "nombre": 16, "zone": "allee", "action": "passer", "type": "colonie", "compteurs": "aucun" },   // [NOUVEAU] type colonie (casquettes)
+      "foule": { "nombre": 16, "zone": "allee", "action": "passer", "type": "colonie", "compteurs": "aucun" },
+      "villa": { "remplissage": 0.35 },   // [NOUVEAU] type colonie (casquettes)
       "personnages": [
         { "qui": "mariee", "position": [3.5, 2.2], "action": "marcher", "vers": [0.5, 3.5], "expression": "joyeux", "etiquette": false, "debut_action": "45%" },
         { "qui": "marie", "position": [4.1, 2.3], "action": "marcher", "vers": [1.1, 3.6], "expression": "joyeux", "etiquette": false, "debut_action": "45%" }
@@ -147,15 +149,16 @@
       "id": "plan10", "decor": "villa_interieur", "mood": "nuit_festive",
       "foule": { "nombre": 10, "zone": "partout", "action": "dormir", "compteurs": "aucun", "zzz": true },
       "personnages": [
-        { "qui": "dormeur_lustre", "position": "lustre", "action": "dormir", "pose": "suspendu", "expression": "dort", "etiquette": false },
-        { "qui": "dormeur_baignoire", "position": "baignoire", "action": "dormir", "pose": "allonge", "expression": "dort", "etiquette": false }
+        { "qui": "dormeur_lustre", "position": "lustre", "orientation": 90, "action": "dormir", "pose": "suspendu", "expression": "dort", "etiquette": false },
+        { "qui": "dormeur_baignoire", "position": "baignoire", "orientation": 90, "action": "dormir", "pose": "allonge", "expression": "dort", "etiquette": false },
+        { "qui": "boubou", "position": "palmier_dodo", "orientation": 90, "action": "dormir", "pose": "suspendu", "expression": "dort" }   // running gag : Boubou dort partout
       ],
       "invites": { "de": 300, "a": 480 },
       "cadrages": [
-        { "camera": "contre_plongee", "cible": "lustre", "duree": 1 },
+        { "camera": "gros_plan_objet", "cible": "lustre", "duree": 1 },
         { "camera": "plongee", "cible": "baignoire", "duree": 1 },
         { "camera": "plan_large", "cible": "piece", "duree": 1 },
-        { "camera": "panoramique", "cible": "palmier_dodo", "duree": 1 }
+        { "camera": "gros_plan_objet", "cible": "palmier_dodo", "duree": 1 }
       ],
       "voix": { "texte": "Ça dormait partout. Sur le lustre. Dans la baignoire. Sur les palmiers." },
       "musique": "normal"
@@ -164,12 +167,13 @@
       "id": "plan11", "decor": "villa_interieur", "mood": "nuit_festive",
       // *INDICE 2* : il sourit encore, mais il n'a plus de lit
       "personnages": [
-        { "qui": "tonton_kado", "position": "porte_chambre_kado", "action": "pousser", "cible": "porte_chambre_kado", "expression": "fatigue" }   // [NOUVEAU] action + expression
+        // il se tient dans l'encadrement de SA chambre, pleine de dormeurs : plus de place pour lui
+        { "qui": "tonton_kado", "position": [2.5, 5.25], "orientation": 0, "action": "attendre", "expression": "fatigue" }
       ],
       "foule": { "nombre": 6, "zone": "chambre_kado", "action": "dormir", "compteurs": "aucun", "zzz": true },
       "invites": { "de": 480, "a": 620 },
       "cadrages": [
-        { "camera": "par_dessus_epaule", "cible": "tonton_kado>chambre_kado", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "tonton_kado", "duree": 1 },
         { "camera": "gros_plan_visage", "cible": "tonton_kado", "duree": 1.2 }
       ],
       "voix": { "texte": "Tonton Kado souriait toujours. Mais il n'avait plus de *lit*." },
@@ -192,7 +196,7 @@
       "id": "plan13", "decor": "villa_exterieur", "mood": "nuit_festive", "duree_min": 3.0,
       // RELANCE (explosion du compteur + 1 s de silence total) ≈ 62 s
       "villa": { "remplissage": 1.0, "matelas": 12 },
-      "invites": 1000, "invites_effet": "explose",                                   // [NOUVEAU] chiffres qui débordent de la pastille
+      "invites": 1000, "invites_effet": "explose", "transition": "flash",                                   // [NOUVEAU] chiffres qui débordent de la pastille
       "voix_delai": 1.0,                                                             // [NOUVEAU] 1 s de silence avant la voix
       "cadrages": [
         { "camera": "gros_plan_objet", "cible": "compteur_haut", "duree": 1 },
@@ -244,7 +248,7 @@
       "accessoires": { "canape_fait": true },
       "invites": 1, "invites_style": "doux",
       "cadrages": [
-        { "camera": "par_dessus_epaule", "cible": "tonton_kado_pyjama>canape", "duree": 1 },
+        { "camera": "plan_large", "cible": "piece", "duree": 1 },
         { "camera": "gros_plan_visage", "cible": "maman_yanis", "duree": 1 },
         { "camera": "gros_plan_visage", "cible": "tonton_kado_pyjama", "duree": 1.2 }
       ],
@@ -255,14 +259,14 @@
       "id": "plan17", "decor": "chambre_amis", "mood": "petit_matin_doux", "duree_min": 4.0,
       // CHUTE (6 mots)
       "personnages": [
-        { "qui": "tonton_kado_pyjama", "position": "canape", "action": "dormir", "pose": "allonge", "expression": "dort", "etiquette": false },
+        { "qui": "tonton_kado_pyjama", "position": "canape", "orientation": 90, "action": "dormir", "pose": "allonge", "expression": "dort", "etiquette": false },
         { "qui": "yanis", "position": "porte_chambre", "action": "regarder", "cible": "tonton_kado_pyjama", "expression": "joyeux" }
       ],
       "accessoires": { "canape_fait": true },
       "invites": 1, "invites_style": "doux",
       "cadrages": [
         { "camera": "plan_large", "cible": "piece", "duree": 1 },
-        { "camera": "par_dessus_epaule", "cible": "yanis>tonton_kado_pyjama", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "yanis", "duree": 1 },
         { "camera": "zoom_lent_avant", "cible": "tonton_kado_pyjama", "duree": 1.2 }
       ],
       "voix": { "texte": "Maintenant, c'est chez moi qu'il dort." },

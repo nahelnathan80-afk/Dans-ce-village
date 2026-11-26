@@ -36,6 +36,9 @@ from .faces import draw_face
 from .actions import shash
 
 
+INTERIEURS = {"chambre_ado", "chambre_cartons", "cuisine", "salle_classe", "villa_interieur", "chambre_amis"}
+
+
 def log(*a):
     print("   [blender]", *a, flush=True)
 
@@ -80,6 +83,24 @@ def setup_render(scene, job):
     except TypeError:
         pass
     vs.exposure = 0.0   # ajusté par l'ambiance (moods.apply)
+
+
+def _carried_object(rig, objet, name):
+    """Objets tenus/portés : trottinette sous les pieds, canapé sur le dos."""
+    if objet == "trottinette":
+        e = S.empty(f"{name}_trott", (0, 0, 0), rig.root)
+        S.box(f"{name}_planche", (0.16, 0.7, 0.05), (0, 0.05, 0.06), "#ff3d7f", parent=e, origin="bottom", bevel=0.01)
+        S.box(f"{name}_guidon_tige", (0.04, 0.04, 0.95), (0, -0.28, 0.08), "#c0c0c8", parent=e, origin="bottom", bevel=0)
+        S.box(f"{name}_guidon", (0.45, 0.04, 0.04), (0, -0.28, 1.02), "#222222", parent=e, origin="bottom", bevel=0.01)
+        for yy in (-0.28, 0.36):
+            S.cylinder(f"{name}_roue", 0.06, 0.05, (0, yy, 0.0), "#222222", parent=e, verts=12).rotation_euler = (0, 1.5708, 0)
+    elif objet == "canape_dos":
+        e = S.empty(f"{name}_canape", (0, rig.td / 2 + 0.25, rig.torso + 0.25), rig.hips)
+        e.rotation_euler = (-0.35, 0, 0)
+        S.box(f"{name}_can_assise", (1.6, 0.7, 0.35), (0, 0, 0), "#8e6c4a", parent=e, origin="bottom", bevel=0.05)
+        S.box(f"{name}_can_dos", (1.6, 0.2, 0.55), (0, 0.3, 0.3), "#7a5a3c", parent=e, origin="bottom", bevel=0.05)
+        for sx in (-0.75, 0.75):
+            S.box(f"{name}_can_acc", (0.18, 0.7, 0.45), (sx, 0, 0.2), "#7a5a3c", parent=e, origin="bottom", bevel=0.05)
 
 
 def _near_segment(p, a, b, r):
@@ -151,12 +172,24 @@ class Shot:
 
         ctx = {"tex_dir": self.tex, "textes_decor": self.plan.get("textes_decor", []),
                "accessoires": self.plan.get("accessoires"), "lampes": self.mood.get("lamps", 0.0),
-               "ciel_fenetre": self.mood.get("window"), "fenetre_emit": 1.4}
+               "ciel_fenetre": self.mood.get("window"), "fenetre_emit": 1.4,
+               "villa": self.plan.get("villa"), "nuit": self.mood.get("lamps", 0) > 2,
+               "guirlandes": self.mood.get("guirlandes", False)}
         autel = self.plan.get("autel")
         if autel:
             ctx["photo_mat"] = self._photo_material(autel)
         self.world = SETS.build(self.plan["decor"], ctx)
         MO.apply(sc, self.mood)
+        if self.plan["decor"] in INTERIEURS and not self.mood.get("interior"):
+            # ambiance d'extérieur utilisée dans un intérieur : on ajoute un plafonnier
+            import bpy as _b
+            ld = _b.data.lights.new("plafonnier_auto", "AREA")
+            ld.energy, ld.size, ld.use_shadow = 70, 5.0, False
+            sc.view_settings.exposure -= 0.25
+            ld.color = self.mood["fill"]
+            lo = _b.data.objects.new("plafonnier_auto", ld)
+            sc.collection.objects.link(lo)
+            lo.location = (0, 2.8, 3.0)
 
         # --- acteurs : principaux + foule
         mains = self.plan["personnages"]
@@ -232,11 +265,11 @@ class Shot:
         # dimensions provisoires (pour l'Actor) — identiques à characters.build
         gab = CH.GABARITS.get(d.get("gabarit", "adulte"), CH.GABARITS["adulte"])
         Hh = float(d.get("taille", gab[0]))
-        dims = {"H": Hh, "leg": (Hh - gab[1]) * 0.5, "hs": gab[1], "torso": (Hh - gab[1]) * 0.5}
+        dims = {"H": Hh, "leg": (Hh - gab[1]) * 0.5, "hs": gab[1], "torso": (Hh - gab[1]) * 0.5, "td": gab[3]}
         actor = A.Actor(spec, d, dims, self.world, self.duree)
         self.actors[name] = actor
         crowd = spec.get("_foule", False)
-        extras = {a["type"]: a.get("couleur", True) for a in d.get("accessoires", []) if a.get("type") in ("lunettes", "moustache", "taches")}
+        extras = {a["type"]: a.get("couleur", True) for a in d.get("accessoires", []) if a.get("type") in ("lunettes", "moustache", "taches", "lunettes_soleil")}
         if crowd:
             p = self.tex / f"face_{name}.png"
             draw_face(spec.get("expression", "neutre"), d.get("couleurs", {}), {}, extras).save(p)
@@ -261,6 +294,7 @@ class Shot:
                 m.use_transparency_overlap = False
                 _ghostify(m)
         self.rigs[name] = rig
+        _carried_object(rig, spec.get("objet"), name)
         actor.dims.update(H=rig.H, leg=rig.leg, hs=rig.hs, torso=rig.torso)
         return actor
 
@@ -382,15 +416,15 @@ class Shot:
             fi = lambda t: P[min(len(P) - 1, int(t * self.fps))]
 
             def head(t, rig=rig):
-                p = fi(t)
-                return (p["x"], p["y"], rig.leg + p["dz"] + rig.torso + 0.02 + rig.hs / 2)
+                return A.head_world(fi(t), rig)
 
             def body(t, rig=rig):
-                p = fi(t)
-                return (p["x"], p["y"], rig.leg * 0.9 + p["dz"] + rig.torso * 0.3)
+                return A.body_world(fi(t), rig)
+            if abs(P[0].get("root_pitch", 0.0)) > 0.5:     # allongé : vu de dessus, visage vers le ciel
+                return C.Subject("objet", head, head, lambda t: "haut", 0.9)
             return C.Subject("perso", head, body, lambda t: fi(t)["yaw"], 1.0)
         a = self.world.anchor(cible)
-        if cible in ("rue", "piece", "foule") or a is None:
+        if cible in ("rue", "piece", "foule", "compteur_haut") or a is None:
             if a is None:
                 log(f"cible « {cible} » inconnue → vue d'ensemble")
             ov = self.world.overview
@@ -420,6 +454,10 @@ class Shot:
                 pair = self._subject(b)
             else:
                 subj = self._subject(cible)
+            if seg.get("angle"):
+                yaw0, ang = subj.yaw, math.radians(seg["angle"])
+                subj = C.Subject(subj.kind, subj.head, subj.body,
+                                 (lambda t, y0=yaw0, a=ang: y0(t) if y0(t) == "haut" else y0(t) + a), subj.size)
             loc, tgt, lens, shift = C.preset(seg["camera"], subj, u, t, self.world, pair)
             act = [(p[f - 1]["x"], p[f - 1]["y"], self.rigs[n].H) for n, p in self.poses.items()
                    if not n.startswith("reflet:") and n != cible and not cible.startswith(n + ">")]
@@ -480,6 +518,10 @@ class Shot:
                 j = random.Random(f * 31 + len(n)).random()
                 rig.counter.location.x = (j - 0.5) * 0.03 if (f // 4) % 5 == 0 else 0.0
         loc, tgt, lens, shift = self.cam_track[f - 1]
+        if self.world.facade_y is not None:
+            vis = loc[1] < self.world.facade_y
+            for ob in self.world.facade:
+                ob.visible_camera = vis
         self.cam.location = loc
         self.cam.rotation_euler = S.look_at_euler(loc, tgt)
         self.cam.data.lens = lens
@@ -493,7 +535,8 @@ class Shot:
             sc.frame_set(f)
             fr = {}
             for n, rig in self.rigs.items():
-                if self.actors[n].spec.get("_foule") or n.startswith("reflet:"):
+                sp = self.actors[n].spec
+                if (sp.get("_foule") and not sp.get("_zzz")) or n.startswith("reflet:"):
                     continue
                 hw = rig.head.matrix_world.translation      # centre de la tête
                 top = Vector((hw.x, hw.y, hw.z + rig.hs / 2 + 0.08))
@@ -505,6 +548,7 @@ class Shot:
                 bot = world_to_camera_view(sc, self.cam, Vector((hw.x, hw.y, hw.z)))
                 fr[n] = {"top": [pv[0].x, 1 - pv[0].y], "cpt": [pv[1].x, 1 - pv[1].y],
                          "tete": [pv[2].x, 1 - pv[2].y], "z": pv[0].z, "dos": self.hidden_counter[f - 1] == n,
+                         "zzz": bool(sp.get("_zzz") or sp.get("expression") == "dort"),
                          "taille": abs(pv[0].y - bot.y)}
             meta["frames"].append(fr)
         Path(self.job["work_dir"], "meta.json").write_text(json.dumps(meta))

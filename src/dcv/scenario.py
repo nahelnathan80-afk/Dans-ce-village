@@ -12,12 +12,14 @@ from . import config
 PRESETS_CAMERA = [
     "plan_large", "travelling_suivi", "gros_plan_visage", "gros_plan_objet",
     "contre_plongee", "plongee", "zoom_lent_avant", "panoramique",
-    "orbite_lente", "par_dessus_epaule",
+    "orbite_lente", "par_dessus_epaule", "zoom_brusque",
 ]
-DECORS = ["rue", "cuisine", "salle_classe", "chambre_ado", "chambre_cartons", "college_autel"]
+DECORS = ["rue", "cuisine", "salle_classe", "chambre_ado", "chambre_cartons", "college_autel",
+          "villa_exterieur", "villa_interieur", "maison_yanis", "chambre_amis"]
 ACTIONS = ["marcher", "attendre", "parler", "s_asseoir", "assis", "se_lever", "regarder",
+           "dormir", "filmer", "frapper", "rouler", "pousser",
            "sursauter", "frissonner", "passer", "serrer", "toucher", "poser"]
-EXPRESSIONS = ["neutre", "joyeux", "triste", "peur", "choque", "pleure",
+EXPRESSIONS = ["neutre", "joyeux", "triste", "peur", "choque", "pleure", "dort", "fatigue",
                "interrogatif", "pensif", "vide"]
 MUSIQUE = ["normal", "baisse", "coupe"]
 
@@ -92,6 +94,10 @@ def load_episode(nom: str) -> dict:
         if pid in ids:
             errors.append(f"{pid} : id en double")
         ids.add(pid)
+        if p.get("type") == "carte_question":
+            p.setdefault("personnages", []); p.setdefault("cadrages", []); p.setdefault("bulles", [])
+            p.setdefault("textes_decor", []); p.setdefault("musique", "normal"); p.setdefault("mood", "petit_matin_doux")
+            continue
         if p.get("decor") not in DECORS:
             errors.append(f"{pid} : décor « {p.get('decor')} » inconnu ({', '.join(DECORS)})")
         p.setdefault("mood", "soleil_matin")

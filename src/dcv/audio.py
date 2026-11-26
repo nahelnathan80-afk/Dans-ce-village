@@ -63,7 +63,7 @@ def mix(specs, total, musique_path, out_wav, plans):
     for s in specs:
         if s["voix_mp3"]:
             v = decode(s["voix_mp3"])
-            i0 = int((s["debut"] + config.VOIX_DEBUT) * SR)
+            i0 = int((s["debut"] + s.get("voix_debut", config.VOIX_DEBUT)) * SR)
             v = v[:max(0, N - i0)]
             voice[i0:i0 + len(v)] += v
     # musique en boucle

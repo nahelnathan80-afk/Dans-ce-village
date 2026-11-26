@@ -62,6 +62,26 @@ def preset(name, subj: Subject, u, t, world, pair=None):
     k = subj.kind
     flat = subj.yaw(t) == "haut"
     sz = subj.size
+    if name == "zoom_brusque":
+        # zoom « coup de poing » : très large → serré en 0,22 s, puis micro-poussée
+        tt = u * 2.0                       # u est relatif au cadrage (≈ 1,5-2 s)
+        a = min(1.0, tt / 0.22)
+        e = 1 - (1 - a) ** 3
+        if k == "decor":
+            (cl, tg, lens) = world.overview
+            s = 0.15 + 0.45 * e + 0.05 * u
+            return (cl[0] + (tg[0] - cl[0]) * s, cl[1] + (tg[1] - cl[1]) * s, cl[2] + (tg[2] - cl[2]) * s * 0.6), tg, lens, -0.03
+        if k == "perso":
+            d = _rot(f, 10 * D2R)
+            dist = 4.2 - 2.1 * e - 0.15 * u
+            tg = (H[0], H[1], H[2] - 0.08)
+            return _add(tg, d, dist, 0.03), tg, 40, 0.0
+        if flat:
+            z = (1.0 * sz + 0.3) * (1.9 - 0.9 * e - 0.05 * u)
+            return (H[0] + 0.02, H[1] - (0.4 * sz + 0.1), H[2] + z), H, 36, 0.0
+        d = _rot(f, 6 * D2R)
+        dist = (4.0 - 2.2 * e - 0.1 * u) * sz + 0.5
+        return _add(H, d, dist, 0.05), H, 40, -0.04
     if name == "par_dessus_epaule":
         if pair is not None:
             T = pair.head(t)

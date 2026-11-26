@@ -1,0 +1,8 @@
+// Tonton Kado : influenceur au grand cœur. Lunettes de soleil dorées, chemise à fleurs,
+// grand sourire, téléphone toujours à la main.
+{ "nom": "Tonton Kado", "etiquette": "TONTON KADO", "gabarit": "adulte", "taille": 1.80,
+  "couleurs": { "peau": "#e0ac85", "cheveux": "#2b1b12", "haut": "#1fb5a8", "bas": "#f4e9d8",
+                "chaussures": "#ffffff", "yeux": "#3a2a1a" },
+  "motif_haut": "fleurs",
+  "coiffure": "courte", "haut": "chemise",
+  "accessoires": [ { "type": "lunettes_soleil", "couleur": "#e0b23a" }, { "type": "telephone" } ] }

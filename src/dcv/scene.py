@@ -24,6 +24,7 @@ def hex_rgb(c):
 def reset_caches():
     _mesh_cache.clear()
     _mat_cache.clear()
+    _pattern_cache.clear() if "_pattern_cache" in globals() else None
 
 
 def material(color, rough=0.6, emit=0.0, name=None, unique=False, metal=0.0):
@@ -184,3 +185,62 @@ def look_at_euler(loc, target, roll=0.0):
         m = q.to_matrix().to_4x4() @ Matrix.Rotation(roll, 4, "Z")
         e = m.to_euler()
     return e
+
+
+_pattern_cache = {}
+
+
+def pattern_material(motif, base, accent=None, unique=False):
+    """Tissu à motif (fleurs, rayures, pois) projeté en « boîte » : pas besoin d'UV."""
+    key = (motif, str(base), str(accent))
+    if not unique and key in _pattern_cache:
+        return _pattern_cache[key]
+    import tempfile
+    from PIL import Image, ImageDraw
+    import random as _r
+    W = 256
+    rgb = lambda c: tuple(int(c.lstrip("#")[i:i + 2], 16) for i in (0, 2, 4))
+    im = Image.new("RGB", (W, W), rgb(base))
+    d = ImageDraw.Draw(im)
+    rng = _r.Random(3)
+    if motif == "fleurs":
+        cols = [rgb(accent)] if accent else [(255, 214, 10), (255, 255, 255), (255, 90, 120), (120, 220, 255)]
+        for _ in range(14):
+            x, y = rng.randint(0, W), rng.randint(0, W)
+            c = rng.choice(cols)
+            for a in range(5):
+                import math as _m
+                px, py = x + 16 * _m.cos(a * 1.256), y + 16 * _m.sin(a * 1.256)
+                d.ellipse([px - 11, py - 11, px + 11, py + 11], fill=c)
+            d.ellipse([x - 8, y - 8, x + 8, y + 8], fill=(255, 170, 0))
+        for _ in range(10):
+            x, y = rng.randint(0, W), rng.randint(0, W)
+            d.ellipse([x - 12, y - 5, x + 12, y + 5], fill=(40, 160, 90))
+    elif motif == "rayures":
+        for k in range(0, W, 42):
+            d.rectangle([0, k, W, k + 16], fill=rgb(accent or "#ffffff"))
+    elif motif == "pois":
+        for yy in range(0, W, 48):
+            for xx in range(0, W, 48):
+                d.ellipse([xx + 14, yy + 14, xx + 30, yy + 30], fill=rgb(accent or "#ffffff"))
+    path = Path(tempfile.gettempdir()) / f"dcv_motif_{motif}_{str(base).strip('#')}_{str(accent).strip('#')}.png"
+    im.save(path)
+    m = bpy.data.materials.new(f"MOTIF_{motif}")
+    m.use_nodes = True
+    nt = m.node_tree
+    b = nt.nodes["Principled BSDF"]
+    tc = nt.nodes.new("ShaderNodeTexCoord")
+    mp = nt.nodes.new("ShaderNodeMapping")
+    mp.inputs["Scale"].default_value = (2.2, 2.2, 2.2)
+    tex = nt.nodes.new("ShaderNodeTexImage")
+    tex.image = bpy.data.images.load(str(path), check_existing=True)
+    tex.projection = "BOX"
+    tex.projection_blend = 0.25
+    nt.links.new(tc.outputs["Object"], mp.inputs["Vector"])
+    nt.links.new(mp.outputs["Vector"], tex.inputs["Vector"])
+    nt.links.new(tex.outputs["Color"], b.inputs["Base Color"])
+    b.inputs["Roughness"].default_value = 0.7
+    m.diffuse_color = (*hex_rgb(base), 1)
+    if not unique:
+        _pattern_cache[key] = m
+    return m

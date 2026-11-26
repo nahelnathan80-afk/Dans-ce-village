@@ -1,0 +1,6 @@
+// Yanis, 11 ans, narrateur. Sweat bleu, toujours son sac à dos.
+{ "nom": "Yanis", "etiquette": "YANIS", "gabarit": "enfant", "taille": 1.30,
+  "couleurs": { "peau": "#c98e63", "cheveux": "#1d140f", "haut": "#2f80ed", "bas": "#3d405b",
+                "chaussures": "#ffffff", "yeux": "#2b1a10" },
+  "coiffure": "bouclee", "haut": "sweat",
+  "accessoires": [ { "type": "sac", "couleur": "#ff9f1c" } ] }

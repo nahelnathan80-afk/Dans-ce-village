@@ -148,6 +148,48 @@ def panneau_image(texte, bg=(30, 80, 170, 255), fg=(255, 255, 255, 255)):
     return im
 
 
+def portail_image(texte):
+    """Enseigne dorée de portail : fond doré dégradé, texte noir, liseré."""
+    w, h = 1400, 560
+    im = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    for y in range(h):
+        k = y / h
+        c = (int(255 - 40 * k), int(210 - 60 * k), int(70 - 30 * k), 255)
+        d.line([0, y, w, y], fill=c)
+    d.rounded_rectangle([10, 10, w - 10, h - 10], radius=60, outline=(120, 80, 10, 255), width=22)
+    d.rounded_rectangle([44, 44, w - 44, h - 44], radius=40, outline=(255, 245, 190, 255), width=8)
+    lines = texte.split("\n")
+    if len(lines) >= 2:
+        draw_center(d, (90, 70, w - 90, h * 0.58), lines[0], (40, 25, 5, 255), start=220)
+        draw_center(d, (140, h * 0.6, w - 140, h - 80), "\n".join(lines[1:]), (150, 20, 30, 255), start=120)
+    else:
+        draw_center(d, (90, 70, w - 90, h - 70), texte, (40, 25, 5, 255), start=200)
+    return im
+
+
+def pancarte_image(texte):
+    """Pancarte en bois peinte (règles, annonces)."""
+    w, h = 1200, 700
+    im = Image.new("RGBA", (w, h), (196, 140, 80, 255))
+    d = ImageDraw.Draw(im)
+    for k in range(0, h, 140):
+        d.line([0, k, w, k], fill=(150, 100, 55, 255), width=8)
+    d.rectangle([0, 0, w - 1, h - 1], outline=(110, 70, 35, 255), width=30)
+    draw_center(d, (80, 80, w - 80, h - 80), texte, (255, 255, 255, 255), start=200, stroke=10, stroke_fill=(80, 40, 20, 255))
+    return im
+
+
+def horloge_image(texte):
+    """Réveil numérique (« 3:00 ») rouge sur fond noir."""
+    w, h = 800, 400
+    im = Image.new("RGBA", (w, h), (20, 20, 24, 255))
+    d = ImageDraw.Draw(im)
+    d.rounded_rectangle([8, 8, w - 8, h - 8], radius=50, outline=(80, 80, 90, 255), width=14)
+    draw_center(d, (60, 50, w - 60, h - 50), texte, (255, 50, 50, 255), start=260)
+    return im
+
+
 def carton_image(texte):
     w, h = 512, 512
     im = Image.new("RGBA", (w, h), (196, 150, 98, 255))

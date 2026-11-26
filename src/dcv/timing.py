@@ -60,7 +60,8 @@ def plan_cadrages(plan: dict, d: float) -> list:
     segs, t = [], 0.0
     for c in cads:
         L = d * float(c.get("duree", 1)) / tot
-        segs.append({"camera": c["camera"], "cible": c["cible"], "t0": t, "t1": t + L, "auto": c.get("auto", False)})
+        segs.append({"camera": c["camera"], "cible": c["cible"], "t0": t, "t1": t + L, "auto": c.get("auto", False),
+                     **({"angle": c["angle"]} if c.get("angle") else {})})
         t += L
     # un cadrage > 2 s est coupé en deux (2e moitié : autre preset, même cible)
     changed = True
@@ -88,15 +89,20 @@ def build_timeline(sc: dict, voix: dict) -> list:
     deja_presente = set()
     t = 0.0
     specs = []
+    hud_cfg = sc.get("compteur_haut")       # pastille fixe en haut (ex. « INVITÉS : N »)
+    hud_val = None
     for i, plan in enumerate(sc["plans"]):
         mp3, dmp3, origine = voix[plan["id"]]
+        delai = float(plan.get("voix_delai", 0.0))     # silence voulu avant la voix
+        voix_debut = config.VOIX_DEBUT + delai
         if dmp3:
-            d = config.VOIX_DEBUT + dmp3 + pad
+            d = voix_debut + dmp3 + pad
         else:
             d = float(plan.get("duree", 3.0))
         d = max(d, float(plan.get("duree_min", 0)))
         d = round(d * config.FPS) / config.FPS
-        cads = plan_cadrages(plan, d)
+        carte = plan.get("type") == "carte_question"
+        cads = [] if carte else plan_cadrages(plan, d)
         bulles = []
         for b in plan.get("bulles", []):
             t0 = parse_time(b.get("debut"), d, 0.0)
@@ -110,15 +116,32 @@ def build_timeline(sc: dict, voix: dict) -> list:
                 nom = p["_def"].get("etiquette", p["_def"].get("nom", q)).upper()
                 etiquettes.append({"qui": q, "texte": nom, "t0": 0.15, "t1": min(d, 2.4)})
                 deja_presente.add(q)
-            if p["expression"] in ("interrogatif", "pensif"):
+            if p["expression"] in ("interrogatif", "pensif") and not carte:
                 pensees.append({"qui": q, "texte": "?" if p["expression"] == "interrogatif" else "…",
                                 "t0": 0.3 * d, "t1": d})
+        # pastille du haut : valeur de départ → d'arrivée sur la durée du plan
+        hud = None
+        if hud_cfg and not carte:
+            v = plan.get("invites", hud_val if hud_val is not None else 0)
+            if isinstance(v, dict):
+                de, a = float(v.get("de", hud_val or 0)), float(v.get("a", hud_val or 0))
+                courbe = v.get("courbe", "lineaire")
+            else:
+                de = a = float(v)
+                courbe = "fixe"
+            hud = {"label": hud_cfg.get("label", ""), "de": de, "a": a, "courbe": courbe,
+                   "style": plan.get("invites_style", "normal"), "effet": plan.get("invites_effet"),
+                   "zoom": [(c["t0"], c["t1"]) for c in cads if c["cible"] == "compteur_haut"]}
+            hud_val = a
         fin = plan.get("fin") or {}
         specs.append({
             "index": i, "id": plan["id"], "debut": round(t, 3), "duree": d,
             "noir": float(fin.get("noir", 0)), "voix_mp3": str(mp3) if mp3 else None,
             "voix_duree": dmp3, "voix_origine": origine,
             "cadrages": cads, "bulles": bulles, "etiquettes": etiquettes, "pensees": pensees,
+            "voix_debut": voix_debut, "hud": hud, "transition": plan.get("transition"),
+            "meteo": plan.get("meteo"), "carte": plan.get("carte") if carte else None,
+            "fond": plan.get("fond"),
         })
         t += d
     return specs

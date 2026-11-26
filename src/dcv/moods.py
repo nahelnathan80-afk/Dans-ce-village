@@ -39,6 +39,25 @@ MOODS = {
     "soir_violet": dict(sky=(0.34, 0.26, 0.62), sky_e=1.0, sun=(0.95, 0.68, 0.9), sun_e=2.6, elev=14, azim=-40,
                         fill=(0.5, 0.8, 1.0), fill_e=220, lamps=6.0, window="#6a4fc0",
                         grade=(0.97, 0.95, 1.07), sat=1.04),
+    # --- épisode 04 « Villa Kado » (réutilisables) ---
+    "apres_midi_soleil": dict(sky=(0.36, 0.66, 1.0), sky_e=1.15, sun=(1.0, 0.92, 0.75), sun_e=4.6, elev=45, azim=-30,
+                              fill=(0.75, 0.88, 1.0), fill_e=160, lamps=0.0, window="#bfe6ff",
+                              grade=(1.05, 1.0, 0.94), sat=1.15),
+    "coucher_soleil_orange": dict(sky=(0.98, 0.6, 0.42), sky_e=0.9, sun=(1.0, 0.68, 0.42), sun_e=3.0, elev=13, azim=-55,
+                                  fill=(0.55, 0.65, 1.0), fill_e=170, lamps=1.0, window="#ffb36b",
+                                  grade=(1.03, 0.99, 0.95), sat=1.1, expo=-0.3),
+    "nuit_festive": dict(sky=(0.08, 0.1, 0.3), sky_e=1.0, sun=(0.62, 0.68, 1.0), sun_e=1.7, elev=35, azim=-20,
+                         fill=(0.9, 0.6, 1.0), fill_e=200, lamps=6.0, window="#ffd59e", guirlandes=True,
+                         grade=(1.0, 0.97, 1.05), sat=1.15, expo=-0.35),
+    "nuit_pluie": dict(sky=(0.14, 0.2, 0.36), sky_e=1.0, sun=(0.6, 0.7, 1.0), sun_e=1.6, elev=40, azim=-15,
+                       fill=(0.6, 0.75, 1.0), fill_e=300, lamps=6.0, window="#ffd59e",
+                       grade=(0.94, 0.98, 1.1), sat=1.05, expo=0.0),
+    "nuit_douce": dict(sky=(0.16, 0.18, 0.38), sky_e=0.9, sun=(1.0, 0.8, 0.6), sun_e=2.2, elev=30, azim=-20,
+                       fill=(1.0, 0.8, 0.6), fill_e=300, lamps=3.0, window="#26315f", interior=True,
+                       grade=(1.06, 0.99, 0.95), sat=1.08, expo=-0.2),
+    "petit_matin_doux": dict(sky=(0.85, 0.75, 0.95), sky_e=1.0, sun=(1.0, 0.85, 0.72), sun_e=3.2, elev=18, azim=-35,
+                             fill=(1.0, 0.88, 0.85), fill_e=280, lamps=0.0, window="#ffd9c2", interior=True,
+                             grade=(1.05, 1.0, 0.97), sat=1.08),
 }
 
 

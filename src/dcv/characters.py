@@ -67,6 +67,11 @@ def build(defn: dict, name: str, face_mat, counter_mat=None, cam=None, unique_ma
 
     skin = M(c.get("peau", "#f2c9a0"))
     top = M(c.get("haut", "#4d8fd6"))
+    if defn.get("motif_haut"):          # chemise à fleurs, pyjama rayé…
+        top = S.pattern_material(defn["motif_haut"], c.get("haut", "#4d8fd6"), c.get("motif_couleur"),
+                                 unique=unique_mats)
+        if unique_mats:
+            r.materials.append(top)
     bottom = M(c.get("bas", "#34435e"))
     shoes = M(c.get("chaussures", "#2a2a2a"))
     hair = M(c.get("cheveux", "#4a3020"), 0.8)
@@ -132,6 +137,22 @@ def build(defn: dict, name: str, face_mat, counter_mat=None, cam=None, unique_ma
             S.box(f"{name}_echarpe2", (0.11, 0.05, torso * 0.45), (tw * 0.2, -td / 2 - 0.03, torso * 0.45), mat=m, parent=r.hips, origin="bottom", bevel=0.02, coll=coll)
         elif t == "sac":
             S.box(f"{name}_sac", (tw * 0.75, 0.16, torso * 0.7), (0, td / 2 + 0.08, torso * 0.2), mat=M(col), parent=r.hips, origin="bottom", bevel=0.03, coll=coll)
+        elif t == "tablier":
+            S.box(f"{name}_tablier", (tw * 0.8, 0.02, torso * 0.75 + leg * 0.35), (0, -td / 2 - 0.012, -leg * 0.35),
+                  mat=M(col), parent=r.hips, origin="bottom", bevel=0.005, coll=coll)
+            S.box(f"{name}_tablier_poche", (tw * 0.4, 0.022, 0.12), (0, -td / 2 - 0.016, 0.02),
+                  color="#ffffff", parent=r.hips, origin="bottom", bevel=0.005, coll=coll)
+        elif t == "telephone":
+            S.box(f"{name}_tel", (0.09, 0.02, 0.17), (0, -aw * 0.6, -arm - 0.06), color="#1b1b25",
+                  parent=r.arms[1], origin="bottom", bevel=0.01, coll=coll)
+            S.box(f"{name}_ecran", (0.075, 0.005, 0.14), (0, -aw * 0.6 - 0.012, -arm - 0.045),
+                  mat=S.material("#7fd8ff", 0.2, emit=1.5), parent=r.arms[1], origin="bottom", bevel=0, coll=coll)
+        elif t == "voile":
+            S.box(f"{name}_voile", (hs * 1.1, 0.06, hs * 0.95 + torso * 0.7), (0, hs * 0.56, 0.02 + hs * 0.95 - (hs * 0.95 + torso * 0.7)),
+                  mat=S.material("#ffffff", 0.4, emit=0.15), parent=r.neck, origin="bottom", bevel=0.02, coll=coll)
+        elif t == "noeud_pap":
+            S.box(f"{name}_noeud", (0.14, 0.03, 0.06), (0, -td / 2 - 0.01, torso - 0.08), color=col,
+                  parent=r.hips, origin="bottom", bevel=0.01, coll=coll)
         elif t == "canne":
             S.box(f"{name}_canne", (0.035, 0.035, H * 0.55), (0, -0.05, -H * 0.55 + 0.05), color="#6b4423", parent=r.arms[1], origin="bottom", bevel=0, coll=coll)
 
@@ -152,6 +173,19 @@ def _hair(r, defn, hair, M, coll):
     st = defn.get("coiffure", "courte")
     acc = {a.get("type"): a for a in defn.get("accessoires", [])}
     z0 = 0.02
+    if "casquette" in acc:
+        m = M(acc["casquette"].get("couleur", "#ff8800"))
+        S.box(f"{n}_casquette", (hs * 1.06, hs * 1.06, hs * 0.24), (0, 0, z0 + hs * 0.86), mat=m, parent=r.neck, origin="bottom", bevel=0.04, coll=coll)
+        S.box(f"{n}_visiere", (hs * 0.9, hs * 0.4, 0.04), (0, -hs * 0.66, z0 + hs * 0.86), mat=m, parent=r.neck, origin="bottom", bevel=0.01, coll=coll)
+        return
+    if "bonnet_nuit" in acc:
+        col = acc["bonnet_nuit"].get("couleur", "#6c8cff")
+        m = M(col)
+        S.box(f"{n}_bnuit", (hs * 1.08, hs * 1.08, hs * 0.3), (0, 0, z0 + hs * 0.8), mat=m, parent=r.neck, origin="bottom", bevel=0.05, coll=coll)
+        S.box(f"{n}_bnuit2", (hs * 0.6, hs * 0.6, hs * 0.3), (hs * 0.15, 0.05, z0 + hs * 1.05), mat=m, parent=r.neck, origin="bottom", rot=(0, 0.5, 0), bevel=0.05, coll=coll)
+        S.box(f"{n}_bnuit3", (hs * 0.3, hs * 0.3, hs * 0.35), (hs * 0.42, 0.05, z0 + hs * 1.12), mat=m, parent=r.neck, origin="bottom", rot=(0, 1.1, 0), bevel=0.04, coll=coll)
+        S.box(f"{n}_bnuit_pompon", (hs * 0.2, hs * 0.2, hs * 0.2), (hs * 0.72, 0.05, z0 + hs * 1.12), color="#ffffff", parent=r.neck, origin="bottom", bevel=0.05, coll=coll)
+        return
     if "bonnet" in acc:
         m = M(acc["bonnet"].get("couleur", "#d62828"))
         S.box(f"{n}_bonnet", (hs * 1.08, hs * 1.08, hs * 0.36), (0, 0, z0 + hs * 0.74), mat=m, parent=r.neck, origin="bottom", bevel=0.05, coll=coll)
@@ -188,8 +222,8 @@ def _hair(r, defn, hair, M, coll):
 
 def apply_pose(r: Rig, p: dict):
     """Applique une pose calculée par actions.py."""
-    r.root.location = (p["x"], p["y"], 0)
-    r.root.rotation_euler = (0, 0, p["yaw"])
+    r.root.location = (p["x"], p["y"], p.get("root_z", 0.0))
+    r.root.rotation_euler = (p.get("root_pitch", 0.0), p.get("root_roll", 0.0), p["yaw"])
     r.hips.location = (0, p.get("dy_hips", 0.0), r.leg + p.get("dz", 0.0))
     r.hips.rotation_euler = (p.get("lean", 0.0), p.get("roll", 0.0), p.get("twist", 0.0))
     r.neck.rotation_euler = (-p.get("head_pitch", 0.0), p.get("head_roll", 0.0), p.get("head_yaw", 0.0))

@@ -1,0 +1,5 @@
+// Boubou : dort partout, ronfle.
+{ "nom": "Boubou", "etiquette": "BOUBOU", "gabarit": "adulte", "taille": 1.85,
+  "couleurs": { "peau": "#8d5a3b", "cheveux": "#1a1a1a", "haut": "#f9844a", "bas": "#577590",
+                "chaussures": "#222222", "yeux": "#2b1a10" },
+  "coiffure": "chauve", "haut": "sweat", "accessoires": [] }

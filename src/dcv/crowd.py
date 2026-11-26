@@ -18,7 +18,16 @@ DUREES = ["23 ANS", "8 MOIS", "56 ANS", "2 JOURS", "61 ANS", "14 ANS", "37 ANS",
 EXPRS = ["neutre", "neutre", "joyeux", "neutre", "vide"]
 
 
-def random_def(rng, gab):
+def random_def(rng, gab, typ="mixte"):
+    d = _random_def(rng, gab)
+    if typ == "colonie":        # tenue de colo : casquette orange + t-shirt identique + sac
+        d["couleurs"]["haut"] = "#ff8c1a"
+        d["haut"] = "tshirt"
+        d["accessoires"] = [{"type": "casquette", "couleur": "#ff8c1a"}, {"type": "sac", "couleur": "#2a9d8f"}]
+    return d
+
+
+def _random_def(rng, gab):
     return {
         "nom": "figurant", "gabarit": gab,
         "taille": {"enfant": 1.30, "ado": 1.5, "adulte": 1.72, "age": 1.68}[gab] + rng.uniform(-0.06, 0.08),
@@ -50,12 +59,25 @@ def generate(foule, world, mains, duree, seed=0):
     main_xy = set(placed)
     for i in range(n):
         gab = rng.choice({"eleves": ["enfant", "ado", "ado"], "adultes": ["adulte", "adulte", "age"],
-                          "mixte": ["adulte", "adulte", "ado", "enfant", "age"]}[typ])
-        d = random_def(rng, gab)
+                          "colonie": ["enfant", "enfant", "ado"],
+                          "mixte": ["adulte", "adulte", "ado", "enfant", "age"]}.get(typ, ["adulte", "ado", "enfant"]))
+        d = random_def(rng, gab, typ)
         spec = {"qui": f"figurant{i:02d}", "_def": d, "_foule": True, "etiquette": False,
                 "expression": rng.choice(EXPRS)}
         if foule.get("compteurs", "aleatoire") != "aucun":
             spec["compteur"] = rng.choice(DUREES)
+        if foule.get("zzz"):
+            spec["_zzz"] = True
+        if action == "dormir":
+            for _ in range(60):
+                x, y = rng.uniform(rect[0], rect[1]), rng.uniform(rect[2], rect[3])
+                if all(math.hypot(x - px, y - py) > 0.8 for px, py in placed):
+                    break
+            placed.append((x, y))
+            spec.update(action="dormir", position=[x, y], orientation=rng.choice([75, 95, -80, -100, 85]),
+                        expression="dort", pose="allonge")
+            specs.append(spec)
+            continue
         if action == "assis" or zone == "pupitres":
             spec["action"] = "assis"
             spec["objet"] = "pupitre" if world.name == "salle_classe" else None

@@ -1,0 +1,3 @@
+{ "nom": "Dormeur de la baignoire", "etiquette": "", "gabarit": "adulte", "taille": 1.72,
+  "couleurs": { "peau": "#c68a5e", "cheveux": "#2b1b12", "haut": "#ffafcc", "bas": "#3d405b", "chaussures": "#222222" },
+  "coiffure": "courte", "haut": "tshirt", "accessoires": [ { "type": "bonnet_nuit", "couleur": "#ffb703" } ] }

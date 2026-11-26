@@ -62,8 +62,12 @@ def draw_face(expression: str, couleurs: dict, etat: dict | None = None, extras:
 
     # --- yeux ---
     for side, x in enumerate(ex):
-        if blink:
-            d.arc([x - rw, ey - 40, x + rw, ey + 70], 200, 340, fill=ink, width=22)
+        if blink or e == "dort":
+            # yeux fermés (dort : arcs vers le bas, paisibles)
+            if e == "dort":
+                d.arc([x - rw * 0.8, ey - 60, x + rw * 0.8, ey + 40], 20, 160, fill=ink, width=22)
+            else:
+                d.arc([x - rw, ey - 40, x + rw, ey + 70], 200, 340, fill=ink, width=22)
             continue
         if e == "joyeux" and not etat.get("bouche"):
             # yeux rieurs en arc
@@ -77,7 +81,7 @@ def draw_face(expression: str, couleurs: dict, etat: dict | None = None, extras:
         if e != "vide":   # reflets brillants
             d.ellipse([px - pr * 0.75, py - pr * 0.95, px - pr * 0.05, py - pr * 0.25], fill=(255, 255, 255, 255))
             d.ellipse([px + pr * 0.25, py + pr * 0.25, px + pr * 0.6, py + pr * 0.6], fill=(255, 255, 255, 230))
-        if e == "pensif":  # paupière mi-close
+        if e in ("pensif", "fatigue"):  # paupière mi-close
             d.rectangle([x - rw - 8, ey - rh - 8, x + rw + 8, ey - rh * 0.25], fill=_hex(couleurs.get("peau", "#f2c9a0")))
             d.line([x - rw, ey - rh * 0.25, x + rw, ey - rh * 0.25], fill=ink, width=16)
 
@@ -118,6 +122,10 @@ def draw_face(expression: str, couleurs: dict, etat: dict | None = None, extras:
         d.line([mx - 70, my + 15, mx + 70, my - 10], fill=ink, width=18)
     elif e == "pensif":
         d.ellipse([mx + 10, my - 18, mx + 60, my + 22], fill=ink)
+    elif e == "dort":
+        d.ellipse([mx - 26, my - 20, mx + 26, my + 26], fill=(120, 30, 45, 255), outline=ink, width=10)
+    elif e == "fatigue":     # sourit encore… mais épuisé
+        d.arc([mx - 90, my - 50, mx + 90, my + 40], 25, 155, fill=ink, width=16)
     elif e == "vide":
         d.line([mx - 60, my, mx + 60, my], fill=ink, width=14)
     else:  # neutre
@@ -134,6 +142,10 @@ def draw_face(expression: str, couleurs: dict, etat: dict | None = None, extras:
     elif e in ("peur", "choque"):
         _drop(d, 900, 260 + (t * 40) % 60, 34, (120, 190, 255, 220))   # goutte de sueur
 
+    if e == "fatigue":       # cernes
+        for x in ex:
+            d.arc([x - rw * 0.8, ey + 60, x + rw * 0.8, ey + 150], 20, 160, fill=(150, 110, 160, 200), width=12)
+
     # --- accessoires du visage ---
     if extras.get("taches"):            # taches de rousseur
         for x in ex:
@@ -148,5 +160,13 @@ def draw_face(expression: str, couleurs: dict, etat: dict | None = None, extras:
             d.rounded_rectangle([x - rw - 28, ey - rh * 0.85, x + rw + 28, ey + rh * 0.95], radius=50,
                                 outline=(30, 30, 40, 255), width=20)
         d.line([ex[0] + rw + 28, ey - 20, ex[1] - rw - 28, ey - 20], fill=(30, 30, 40, 255), width=20)
+
+    if extras.get("lunettes_soleil"):   # lunettes de soleil (dorées par défaut)
+        col = _hex(extras["lunettes_soleil"] if isinstance(extras["lunettes_soleil"], str) else "#e0b23a")
+        for x in ex:
+            d.rounded_rectangle([x - rw - 34, ey - rh * 0.75, x + rw + 34, ey + rh * 0.85], radius=60,
+                                fill=(25, 22, 35, 255), outline=col, width=24)
+            d.line([x - rw * 0.6, ey - rh * 0.4, x - rw * 0.1, ey - rh * 0.55], fill=(120, 120, 150, 255), width=14)
+        d.line([ex[0] + rw + 34, ey - 30, ex[1] - rw - 34, ey - 30], fill=col, width=24)
 
     return im.resize((OUT, OUT), Image.LANCZOS)

@@ -1,0 +1,6 @@
+// Mamie Turbo : arrive en trottinette.
+{ "nom": "Mamie Turbo", "etiquette": "MAMIE TURBO", "gabarit": "age", "taille": 1.58,
+  "couleurs": { "peau": "#f1c27d", "cheveux": "#e6e6e6", "haut": "#ff4d6d", "bas": "#6d597a",
+                "chaussures": "#ffffff", "yeux": "#3a4a5a", "joues": "#ff6f91" },
+  "coiffure": "bouclee", "haut": "gilet",
+  "accessoires": [ { "type": "lunettes" } ] }

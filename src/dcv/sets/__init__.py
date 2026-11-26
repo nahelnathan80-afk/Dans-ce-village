@@ -24,6 +24,10 @@ class World:
         self.text_slots = {}
         self.mirror = None          # {"y": plan du miroir, "x": centre, "w": largeur}
         self.obstacles = []         # rectangles (xmin,xmax,ymin,ymax) à éviter pour la foule
+        # façade « traversable » : si la caméra passe derrière (y > facade_y), ces objets
+        # deviennent invisibles pour elle (plan « depuis l'intérieur de la maison »)
+        self.facade_y = None
+        self.facade = []
 
     def anchor(self, name):
         a = self.anchors.get(name)

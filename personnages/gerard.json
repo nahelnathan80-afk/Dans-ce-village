@@ -1,0 +1,6 @@
+// Gérard : arrive avec son propre canapé sur le dos.
+{ "nom": "Gérard", "etiquette": "GÉRARD", "gabarit": "adulte", "taille": 1.76,
+  "couleurs": { "peau": "#efc7a4", "cheveux": "#7a4b2a", "haut": "#606c38", "bas": "#283618",
+                "chaussures": "#3b2f2f", "yeux": "#3a2a1a" },
+  "coiffure": "courte", "haut": "chemise",
+  "accessoires": [ { "type": "moustache", "couleur": "#7a4b2a" } ] }

@@ -28,7 +28,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw
 
-from . import align, audio, config, montage, overlay, scenario, subtitles, timing, tts
+from . import align, audio, config, endcard, montage, overlay, scenario, subtitles, timing, tts
 from . import moods as MO
 
 SRC = Path(__file__).resolve().parent
@@ -71,6 +71,8 @@ def plan_hashes(plan, spec, mode_name, n_frames):
         render_part["photo"] = _file_hash(config.PERSONNAGES / f"{autel.get('photo', 'leo')}.json")
     rh = hashlib.sha256(json.dumps(render_part, sort_keys=True, default=str).encode()).hexdigest()[:16]
     over = {"r": rh, "b": spec["bulles"], "e": spec["etiquettes"], "p": spec["pensees"],
+            "h": spec.get("hud"), "tr": spec.get("transition"), "fk": spec.get("fond_key"), "m": spec.get("meteo"), "c": spec.get("carte"),
+            "fx": _code_hash(["fx.py", "hud.py", "endcard.py"]),
             "code": _code_hash(OVERLAY_CODE), "mood": MO.get(plan["mood"])}
     oh = hashlib.sha256(json.dumps(over, sort_keys=True, default=str).encode()).hexdigest()[:16]
     return rh, oh
@@ -166,22 +168,41 @@ def main(argv=None):
         if s["voix_mp3"]:
             mots, methode = align.align(Path(s["voix_mp3"]), p["voix"]["texte"], p["id"], a.nom, s["voix_duree"])
             s["align"] = methode
-            entries.append((s["debut"] + config.VOIX_DEBUT, mots, s["debut"] + s["duree"]))
+            entries.append((s["debut"] + s.get("voix_debut", config.VOIX_DEBUT), mots, s["debut"] + s["duree"]))
 
     # 4. rendu des plans
     only = set(x for x in a.plans.split(",") if x)
-    clips, rapport = [], []
+    clips, rapport, works = [], [], {}
     for i, (p, s) in enumerate(zip(sc["plans"], specs)):
         last = i == len(specs) - 1
         n_frames = round(s["duree"] * config.FPS) + (0 if last else fade_frames)
+        if s.get("carte"):     # la carte dépend de l'image de fond (plan précédent)
+            s["fond_key"] = str(works.get(s.get("fond") or sc["plans"][i - 1]["id"]))
         rh, oh = plan_hashes(p, s, a.mode, n_frames)
         work = ep_cache / a.mode / f"{p['id']}_{rh}"
         frames = work / "frames"
         clip = work / f"clip_{oh}.mp4"
         clips.append(clip)
+        works[p["id"]] = work
         if only and p["id"] not in only:
             continue
         t_plan = time.time()
+        if s.get("carte") and a.controle:
+            continue
+        if s.get("carte"):
+            # carte-question : pas de rendu 3D, fond = dernière image du plan « fond »
+            if not clip.exists():
+                work.mkdir(parents=True, exist_ok=True)
+                fid = s.get("fond") or sc["plans"][i - 1]["id"]
+                fdir = works.get(fid)
+                last_png = sorted((fdir / "frames").glob("f_*.png"))[-1] if fdir and (fdir / "frames").exists() else None
+                fp = next(pp for pp in sc["plans"] if pp["id"] == fid)
+                bg = overlay.load_frame(fdir / "frames", int(last_png.stem[2:]), *mode["out"], MO.get(fp["mood"]))[1] \
+                    if last_png else Image.new("RGB", mode["out"], (40, 40, 70))
+                endcard.make_clip(bg, s["carte"], n_frames, mode, clip)
+            rapport.append((p["id"], s["duree"], 0, "carte", time.time() - t_plan, 0))
+            print(f"  {p['id']} : carte-question — {fmt(time.time() - t_plan)}")
+            continue
         job = {"plan": p, "spec": s, "fps": config.FPS, "n_frames": n_frames, "mode": mode,
                "work_dir": str(work), "frames_dir": str(frames)}
         work.mkdir(parents=True, exist_ok=True)

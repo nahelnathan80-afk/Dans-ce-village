@@ -80,17 +80,35 @@ class Actor:
                 self.seat = self.world.nearest_seat(cur, s.get("objet"))
                 if self.seat:
                     cur = (self.seat["x"], self.seat["y"])
+        # dormir : hauteur du support (ancre du décor : canapé, lustre, baignoire, frigo…)
+        self.support_z = float(s.get("hauteur", 0.0))
+        if isinstance(s.get("position"), str) and self.world.anchor(s["position"]):
+            an = self.world.anchor(s["position"])
+            self.support_z = float(s.get("hauteur", an[2]))
+            self.support_yaw = an[3] if isinstance(an[3], (int, float)) else 0.0
+        else:
+            self.support_yaw = 0.0
+        if first == "dormir" and s.get("pose", "allonge") in ("assis", "recroqueville"):
+            self.seat = {"x": cur[0], "y": cur[1], "h": max(0.2, self.support_z), "yaw": self.support_yaw, "type": "dodo"}
+        elif first == "dormir":
+            # allongé : la position donnée est le MILIEU du corps → on recule les pieds
+            o = s.get("orientation")
+            yw = o * D2R if isinstance(o, (int, float)) else self.support_yaw
+            half = self.dims["H"] / 2
+            cur = (cur[0] + math.sin(yw) * half, cur[1] - math.cos(yw) * half)
         self.start = cur
         for k, a in enumerate(chain):
             act = a["action"]
             seg = {"action": act, "t0": t, "spec": a, "from": cur}
-            if act in ("marcher", "passer"):
+            if act in ("marcher", "passer", "rouler"):
                 to = self.resolve(a.get("vers"))
                 if to is None:
                     yaw = self._orientation_static(a, cur)
                     to = (cur[0] + 4 * math.sin(yaw), cur[1] - 4 * math.cos(yaw))
                 dist = math.hypot(to[0] - cur[0], to[1] - cur[1])
-                dur = max(0.4, dist / self.speed)
+                spd = self.speed * (2.0 if act == "rouler" else 1.0) * (0.7 if a.get("objet") == "canape_dos" else 1.0)
+                dur = max(0.4, dist / spd)
+                seg["speed"] = spd
                 if act == "passer" and k == 0 and "vers" in a:
                     dur = max(dur, self.duree - t)    # traverse tout le plan
                     seg["speed"] = dist / dur
@@ -131,7 +149,7 @@ class Actor:
         if isinstance(o, (int, float)):
             return o * D2R
         tgt = o if isinstance(o, str) and o != "camera" else None
-        if tgt is None and a["action"] in ("regarder", "toucher", "serrer"):
+        if tgt is None and a["action"] in ("regarder", "toucher", "serrer", "pousser", "frapper"):
             tgt = a.get("cible")
         if tgt:
             if others and tgt in others:
@@ -158,7 +176,7 @@ class Actor:
         seg, lt = self._segment(t)
         if seg is None:
             return self.start
-        if seg["action"] in ("marcher", "passer"):
+        if seg["action"] in ("marcher", "passer", "rouler"):
             dur = seg["t1"] - seg["t0"]
             u = min(1.0, lt / dur) if dur > 0 else 1.0
             a, b = seg["from"], seg["to"]
@@ -187,7 +205,20 @@ class Actor:
         yaw = self._orientation_static(a, (x, y), others, t)
         sit = 1.0 if (self.seat and act in ("assis", "frissonner", "attendre", "parler", "regarder")) else 0.0
 
-        if act in ("marcher", "passer") and seg and lt < (seg["t1"] - seg["t0"]):
+        moving = act in ("marcher", "passer", "rouler") and seg
+        if moving and lt >= (seg["t1"] - seg["t0"]) and a.get("orientation") is None:
+            fx, fy = seg["to"][0] - seg["from"][0], seg["to"][1] - seg["from"][1]
+            if abs(fx) + abs(fy) > 1e-3:
+                yaw = math.atan2(fx, -fy)        # arrivé : garde la direction de la marche
+        if act == "rouler" and seg and lt < (seg["t1"] - seg["t0"]):
+            fx, fy = seg["to"][0] - seg["from"][0], seg["to"][1] - seg["from"][1]
+            yaw = math.atan2(fx, -fy)
+            p["legs"] = [0.12, -0.05]           # un pied sur la trottinette
+            p["arms"] = [[1.0, 0.0, 0.35], [1.0, 0.0, 0.35]]   # mains sur le guidon
+            p["lean"] = 0.12
+            p["dz"] = 0.12 + 0.01 * math.sin(ph * 9)            # monté sur la planche
+            p["head_pitch"] = 0.05
+        elif act in ("marcher", "passer") and seg and lt < (seg["t1"] - seg["t0"]):
             fx, fy = seg["to"][0] - seg["from"][0], seg["to"][1] - seg["from"][1]
             yaw = math.atan2(fx, -fy)
             spd = seg.get("speed", self.speed)
@@ -198,6 +229,43 @@ class Actor:
             p["arms"][1][0] = 0.45 * s
             p["dz"] = 0.03 * abs(math.cos(lt * w))
             p["lean"] = 0.06
+        elif act == "dormir":
+            pose = a.get("pose", "allonge")
+            br = 0.5 + 0.5 * math.sin(ph * 1.6)      # respiration lente
+            if pose in ("assis", "recroqueville"):
+                sit = 1.0
+                p["lean"] = 0.35 if pose == "recroqueville" else 0.1
+                p["arms"] = [[0.9, 0.0, 0.7], [0.9, 0.0, 0.7]] if pose == "recroqueville" else [[0.3, 0.1, 0.2], [0.3, 0.1, 0.2]]
+                p["head_pitch"] = -0.35
+                p["head_roll"] = 0.25 + 0.04 * br
+            else:
+                # allongé sur le dos (le corps part des pieds vers la tête)
+                p["root_pitch"] = -math.pi / 2
+                p["root_z"] = self.support_z + d.get("td", 0.28) / 2 + 0.02
+                p["dz"] = 0.006 * br
+                p["head_roll"] = 0.35
+                if pose == "suspendu":     # bras et jambes qui pendent dans le vide
+                    p["arms"] = [[-1.3, 0.2, 0.0], [-1.2, 0.2, 0.0]]
+                    p["legs"] = [-0.9, -0.7]
+                else:
+                    p["arms"] = [[0.1, 0.25, 0.0], [0.1, 0.25, 0.0]]
+                yaw = a.get("orientation", self.support_yaw * 180 / math.pi) * D2R if isinstance(a.get("orientation"), (int, float)) else self.support_yaw
+        elif act == "filmer":
+            # téléphone tenu devant soi (main droite), petit balancement d'influenceur
+            p["arms"][1] = [1.45 + 0.05 * math.sin(ph * 2.0), -0.15, 0.35]
+            p["arms"][0] = [0.35 + 0.2 * math.sin(ph * 2.7), 0.25, 0.0]
+            p["head_pitch"] = 0.05 * math.sin(ph * 3.3)
+            p["head_roll"] = 0.06 * math.sin(ph * 1.9)
+            p["bouche"] = 1.0
+        elif act == "frapper":
+            k = (lt * 2.5) % 1.0
+            knock = 0.18 * math.sin(k * math.pi * 6) if k < 0.5 else 0.0
+            p["arms"][1] = [1.55 + knock, 0.0, 0.1]
+            p["lean"] = 0.05
+        elif act == "pousser":
+            sh = 0.08 * math.sin(ph * 6)
+            p["arms"] = [[1.45 + sh, 0.0, 0.15], [1.45 - sh, 0.0, 0.15]]
+            p["lean"] = 0.25
         elif act == "se_lever":
             sit = 1 - smooth(lt / 0.9)
             p["lean"] = 0.35 * math.sin(math.pi * min(1, lt / 0.9))
@@ -242,6 +310,11 @@ class Actor:
             p["arms"] = [[0.9 + 0.4 * c, 0.0, 0.3], [0.9 + 0.4 * c, 0.0, 0.3]]
             p["lean"] = 0.12 + 0.12 * c
             p["head_pitch"] = -0.35
+        # porter un canapé sur le dos : bras levés derrière la tête
+        if a.get("objet") == "canape_dos" and act in ("marcher", "attendre", "passer"):
+            p["arms"] = [[2.7, 0.1, 0.0], [2.7, 0.1, 0.0]]
+            p["lean"] = 0.28
+            p["head_pitch"] = 0.15
         # après un sursaut : on reste figé, bras mi-levés, qui tremblent
         if seg and act == "sursauter" and lt > 0.9:
             tr = 0.03 * math.sin(lt * 40)
@@ -263,7 +336,7 @@ class Actor:
         look = a.get("regarde")
         if look is None and act in ("regarder", "toucher", "serrer"):
             look = a.get("cible")
-        if act == "passer":
+        if act in ("passer", "dormir"):
             look = None
         if look:
             if look == "camera":
@@ -287,3 +360,21 @@ class Actor:
                         p["head_pitch"] += math.atan2(az - d["H"] * 0.9, dist) * 0.8
         p["sit"] = sit
         return p
+
+
+def head_world(p, rig):
+    """Position (x, y, z) du centre de la tête pour une pose (debout, assis ou allongé)."""
+    up = rig.leg + rig.torso + 0.02 + rig.hs / 2
+    if abs(p.get("root_pitch", 0.0)) > 0.5:
+        yaw = p["yaw"]
+        L = up + p.get("dz", 0.0)
+        return (p["x"] - math.sin(yaw) * L, p["y"] + math.cos(yaw) * L, p.get("root_z", 0.0))
+    return (p["x"], p["y"], rig.leg + p.get("dz", 0.0) + rig.torso + 0.02 + rig.hs / 2)
+
+
+def body_world(p, rig):
+    if abs(p.get("root_pitch", 0.0)) > 0.5:
+        yaw = p["yaw"]
+        L = rig.leg
+        return (p["x"] - math.sin(yaw) * L, p["y"] + math.cos(yaw) * L, p.get("root_z", 0.0))
+    return (p["x"], p["y"], rig.leg * 0.9 + p.get("dz", 0.0) + rig.torso * 0.3)

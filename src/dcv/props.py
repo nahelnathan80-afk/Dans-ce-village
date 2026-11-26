@@ -16,12 +16,13 @@ PI = math.pi
 def text_panel(ctx, name, kind, texte, loc, w, rot=(PI / 2, 0, 0), emit=0.25):
     """Crée un panneau de texte. kind : affiche | journal | tableau | panneau | carton."""
     make = {"affiche": T.affiche_image, "journal": T.journal_image, "tableau": T.tableau_image,
-            "panneau": T.panneau_image, "carton": T.carton_image}[kind]
+            "panneau": T.panneau_image, "carton": T.carton_image, "portail": T.portail_image,
+            "pancarte": T.pancarte_image, "horloge": T.horloge_image}[kind]
     im = make(texte)
     p = Path(ctx["tex_dir"]) / f"{name}.png"
     im.save(p)
     h = w * im.size[1] / im.size[0]
-    m = S.image_material(p, emit=emit, alpha=False, name=f"TXT_{name}")
+    m = S.image_material(p, emit=emit, alpha=(kind == "portail"), name=f"TXT_{name}")
     return S.plane(name, w, h, loc, m, rot=rot), h
 
 
@@ -112,3 +113,83 @@ def room(name, w=7.0, d=5.0, h=3.0, wall="#f3e3c3", floor="#c48b5a", side_wall=N
     for sx in (-1, 1):
         S.box(f"{name}_mur_{sx}", (0.2, d + 0.2, h), (sx * (w / 2 + 0.1), d / 2, 0), side_wall or wall, origin="bottom", bevel=0)
     S.box(f"{name}_plafond", (w + 0.4, d + 0.2, 0.1), (0, d / 2, h), "#fbf6ee", origin="bottom", bevel=0)
+
+
+# --------------------------------------------------------------------------
+# Éléments « villa » (ép. 04) — réutilisables
+# --------------------------------------------------------------------------
+def palm(name, x, y, s=1.0, lean=0.15, pot=False):
+    """Palmier cubique : tronc en tronçons inclinés + palmes en étoile."""
+    z = 0.0
+    if pot:
+        S.box(f"{name}_pot", (0.7 * s, 0.7 * s, 0.6 * s), (x, y, 0), "#d9822b", origin="bottom", bevel=0.04)
+        z = 0.6 * s
+    px = x
+    for k in range(6):
+        S.box(f"{name}_tronc{k}", (0.26 * s, 0.26 * s, 0.5 * s), (px, y, z), "#a87545" if k % 2 else "#8c5f36",
+              origin="bottom", bevel=0.02, rot=(0, lean, 0))
+        px += 0.5 * s * math.sin(lean)
+        z += 0.48 * s
+    for a in range(7):
+        ang = a * 2 * math.pi / 7
+        leaf = S.box(f"{name}_palme{a}", (1.5 * s, 0.32 * s, 0.07 * s),
+                     (px + 0.65 * s * math.cos(ang), y + 0.65 * s * math.sin(ang), z - 0.15 * s), "#3fae49" if a % 2 else "#2f9640",
+                     origin="bottom", bevel=0.02, rot=(0, 0.35, ang))
+    return (px, y, z)
+
+
+def mattress_stack(name, x, y, n, w=1.9, d=1.0):
+    cols = ["#ff8fab", "#8ecae6", "#ffd166", "#b9fbc0", "#cdb4db", "#ffffff"]
+    z = 0.0
+    for k in range(int(n)):
+        S.box(f"{name}_mat{k}", (w + 0.06 * ((k * 7) % 3), d, 0.24), (x + 0.04 * ((k * 5) % 3 - 1), y, z), cols[k % len(cols)],
+              origin="bottom", bevel=0.06, rot=(0, 0, 0.04 * ((k * 3) % 3 - 1)))
+        S.box(f"{name}_bande{k}", (w * 1.01, d * 1.01, 0.05), (x, y, z + 0.09), "#ffffff", origin="bottom", bevel=0.0)
+        z += 0.24
+    return z
+
+
+def window_heads(name, x, y_face, z, w, rng, skin=("#f6d1b0", "#c68a5e", "#8d5a3b", "#e8b48f"),
+                 hair=("#2b1b12", "#a0522d", "#e0c070", "#1a1a1a")):
+    """Têtes cubiques serrées dans une fenêtre, qui dépassent vers l'avant (-Y)."""
+    n = max(2, int(w / 0.4))
+    for i in range(n):
+        hx = x - w / 2 + (i + 0.5) * w / n + rng.uniform(-0.05, 0.05)
+        hz = z + rng.uniform(-0.05, 0.15)
+        S.box(f"{name}_tete{i}", (0.34, 0.34, 0.34), (hx, y_face - 0.12, hz), rng.choice(skin), origin="bottom", bevel=0.03)
+        S.box(f"{name}_chev{i}", (0.36, 0.36, 0.08), (hx, y_face - 0.12, hz + 0.32), rng.choice(hair), origin="bottom", bevel=0.02)
+        S.box(f"{name}_yeux{i}", (0.2, 0.01, 0.06), (hx, y_face - 0.295, hz + 0.18), "#1b1b1b", origin="bottom", bevel=0)
+        if rng.random() < 0.4:       # un bras qui dépasse
+            S.box(f"{name}_bras{i}", (0.1, 0.5, 0.1), (hx + 0.2, y_face - 0.35, hz + 0.05), rng.choice(skin), origin="bottom",
+                  bevel=0.02, rot=(0.6, 0, 0))
+
+
+def garland(name, p0, p1, n=16, sag=0.4):
+    """Guirlande lumineuse entre deux points (petits cubes émissifs colorés)."""
+    cols = ["#ff4d6d", "#ffd23f", "#4cc9f0", "#80ff72", "#c77dff"]
+    for i in range(n + 1):
+        u = i / n
+        x = p0[0] + (p1[0] - p0[0]) * u
+        y = p0[1] + (p1[1] - p0[1]) * u
+        z = p0[2] + (p1[2] - p0[2]) * u - sag * math.sin(math.pi * u)
+        c = cols[i % len(cols)]
+        S.box(f"{name}_ampoule{i}", (0.09, 0.09, 0.12), (x, y, z), mat=S.material(c, 0.3, emit=8.0), origin="bottom", bevel=0.02)
+
+
+def old_sofa(name, x, y, made=False, yaw=0.0):
+    """Vieux canapé (vert délavé, coussin rapiécé) ; made=True : couverture + oreiller."""
+    e = S.empty(name, (x, y, 0))
+    e.rotation_euler = (0, 0, yaw)
+    base = "#7d8f5a"
+    S.box(f"{name}_assise", (2.0, 0.85, 0.42), (0, 0, 0.0), base, parent=e, origin="bottom", bevel=0.06)
+    S.box(f"{name}_dos", (2.0, 0.25, 0.55), (0, 0.32, 0.42), "#6c7d4c", parent=e, origin="bottom", bevel=0.06)
+    for sx in (-1.0, 1.0):
+        S.box(f"{name}_acc", (0.22, 0.85, 0.6), (sx, 0, 0.0), "#6c7d4c", parent=e, origin="bottom", bevel=0.06)
+    S.box(f"{name}_coussin1", (0.85, 0.7, 0.14), (-0.45, -0.05, 0.42), "#8fa36a", parent=e, origin="bottom", bevel=0.05)
+    S.box(f"{name}_coussin2", (0.85, 0.7, 0.14), (0.45, -0.05, 0.42), "#8fa36a", parent=e, origin="bottom", bevel=0.05)
+    S.box(f"{name}_rustine", (0.22, 0.02, 0.18), (0.55, -0.41, 0.15), "#d4a373", parent=e, origin="bottom", bevel=0.0)
+    if made:
+        S.box(f"{name}_couverture", (1.65, 0.78, 0.07), (0.1, -0.05, 0.56), "#f28482", parent=e, origin="bottom", bevel=0.04)
+        S.box(f"{name}_carreaux", (1.66, 0.79, 0.02), (0.1, -0.05, 0.6), "#f7ede2", parent=e, origin="bottom", bevel=0.0)
+        S.box(f"{name}_oreiller", (0.5, 0.5, 0.16), (-0.75, -0.05, 0.56), "#ffffff", parent=e, origin="bottom", bevel=0.07)
+    return e

@@ -1,0 +1,6 @@
+// La maman de Yanis : tablier, très organisée.
+{ "nom": "Maman de Yanis", "etiquette": "MAMAN", "gabarit": "adulte", "taille": 1.68,
+  "couleurs": { "peau": "#c98e63", "cheveux": "#1d140f", "haut": "#9b5de5", "bas": "#3d405b",
+                "chaussures": "#5c4033", "yeux": "#2b1a10" },
+  "coiffure": "queue", "haut": "tshirt",
+  "accessoires": [ { "type": "tablier", "couleur": "#ffd166" } ] }
