@@ -396,7 +396,7 @@ export const SHOTS: ShotDef[] = [
 		id: 'ouverture',
 		from: tl.f('ouv-1', -0.1),
 		render: (c) => (
-			<Stage camera={{pos: [2.2, 2.9, -7.0 + ramp(c.f, 0, c.d) * 0.6], target: shopFace(2.0), fov: 46}}>
+			<Stage camera={{pos: [1.5, 6.2 - ramp(c.f, 0, c.d) * 0.8, -9.5], target: shopFace(2.0), fov: 46}}>
 				{village()}
 				<Queue frame={c.g} mode="day" />
 				<GiseleSeat frame={c.g} emotion="determined" />
@@ -529,12 +529,12 @@ export const SHOTS: ShotDef[] = [
 		render: (c) => {
 			const lean = ramp(c.f, 0, 15);
 			return (
-				<Stage camera={{pos: [-5.6, 3.2, 3.6], target: [-1.6, 2.1, 1.3], fov: 48}} ambiance="interior">
+				<Stage camera={{pos: [-0.2, 3.1, 6.6], target: [-1.8, 2.0, 2.4], fov: 48}} ambiance="interior">
 					<ShopInterior coffret={false}>
 						<GiseleSeat frame={c.g} at={[-0.6, 0, 2.2]} rot={2.3} emotion="neutral" props={false}>
 							<Coffret position={[0.4, -0.1, 0.4]} scale={0.45} glow={0.8} />
 						</GiseleSeat>
-						<Character look={CAST.jeanRevente} position={[-2.6, 0, 0.4]} rotation={[0, 0.8, 0]} emotion="smug" pose={{lean: lean * 0.25, armR: [-1.5, -0.1]}}>
+						<Character look={CAST.jeanRevente} position={[-3.0, 0, 2.6]} rotation={[0, 1.2, 0]} emotion="smug" pose={{lean: lean * 0.25, armR: [-1.5, -0.1]}}>
 							<mesh position={[0, -0.05, 0.12]}>
 								<boxGeometry args={[0.55, 0.12, 0.3]} />
 								<meshStandardMaterial color="#5cb85c" />
