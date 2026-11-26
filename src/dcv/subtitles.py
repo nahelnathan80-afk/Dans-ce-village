@@ -13,9 +13,9 @@ from PIL import ImageDraw, Image
 from . import config
 from .textures import font
 
-FS = 92            # taille de base (pour 1080×1920)
+FS = 118           # taille de base (pour 1080×1920)
 X, Y = 500, 1210   # position (centre) ; 1210 / 1920 = 63 %
-MAXW = 820         # largeur max (px) : de 90 à 910 → hors colonne de droite
+MAXW = 760         # largeur max (px) : de 120 à 880 → hors colonne de droite TikTok
 
 
 def _is_short(w):
@@ -61,7 +61,7 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Mot,{config.FONT_NAME},{FS},&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,1,0,1,9,4,5,40,40,40,1
+Style: Mot,{config.FONT_NAME},{FS},&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,1,0,1,11,5,5,40,40,40,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
