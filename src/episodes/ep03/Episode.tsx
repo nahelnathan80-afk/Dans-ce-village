@@ -35,6 +35,10 @@ const sfxList = (): Sfx[] => {
 	add(F('plan05', -0.1), 'whoosh', 0.5);
 	add(Wt('plan06', 'revenu', 0.1), 'impact', 0.55);
 	add(F('plan07', 0.2), 'piano-cue', 0.6); // indice 1
+	add(Wt('plan07b', 'jamais'), 'impact', 0.35);
+	add(Wt('plan10b', 'Presque'), 'impact', 0.6);
+	add(Wt('plan13b', 'répondu', 0.3), 'gasp', 0.25);
+	add(F('plan17b', 0.1), 'piano-cue', 0.4);
 	for (const w of ['Noé', 'Lila', 'Odette', 'Pistache']) add(Wt('plan08', w), 'pop', 0.6);
 	add(Wt('plan09', 'douze'), 'impact', 1.0);
 	add(F('plan10', -0.1), 'whoosh', 0.5);
@@ -66,6 +70,7 @@ const Music: React.FC = () => {
 		[Wt('plan06', 'revenu', -0.05), Wt('plan06', 'revenu', 0.5)],
 		[Wt('plan09', 'douze', -0.6), Wt('plan09', 'douze', 0.5)],
 		[Wt('plan12', 'arrêtées'), Wt('plan12', 'arrêtées', 0.8)],
+		[Wt('plan10b', 'Presque', -0.05), Wt('plan10b', 'Presque', 0.7)],
 	];
 	const pianoFrom = F('plan17', -0.2);
 	return (

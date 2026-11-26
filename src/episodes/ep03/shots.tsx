@@ -310,6 +310,17 @@ export const SHOTS: ShotDef[] = [
 			</Stage>
 		),
 	},
+	{
+		id: 'p07b-mamie',
+		from: F('plan07b', -0.1),
+		render: (c) => (
+			<Stage camera={closeUp([-4.2, 0, -0.6], 0.9, 3.4, {scale: 0.92, side: 0.3})} ambiance="golden">
+				{town({billboard: ['TIRAGE', 'DU JOUR']})}
+				<Character look={L.odette} position={[-4.2, 0, -0.6]} rotation={[0, 0.9 + ramp(c.f, 0, c.d) * 0.6, 0]} emotion="sad" blink={blinkAt(c.f, 4)} eyes={[0.6, 0.3]}
+					pose={{armR: [-0.6, -0.1], armL: [-0.6, 0.1], headNod: 0.15}} />
+			</Stage>
+		),
+	},
 
 	// P08 — la famille devant le n°12 (pastilles de nom)
 	{
@@ -402,6 +413,24 @@ export const SHOTS: ShotDef[] = [
 			</Stage>
 		),
 	},
+	{
+		id: 'p10b-presque',
+		from: F('plan10b', -0.1),
+		render: (c) => {
+			const look = c.g >= Wt('plan10b', 'Presque', -0.3);
+			return (
+				<Stage camera={{pos: [-1.2, 2.6, -1.0], target: [6.2, 2.6, -3.4], fov: 48}} ambiance="golden">
+					{town({billboard: ['TIRAGE', 'DU JOUR']})}
+					{Array.from({length: 6}).map((_, i) => (
+						<CardboardBox key={i} position={[2.4 + (i % 3) * 0.75, Math.floor(i / 3) * 0.5, -1.4]} s={[0.7, 0.5, 0.5]} />
+					))}
+					<Character look={L.noe} position={[3.2, 0, -2.6]} rotation={[0, look ? Math.PI / 2 : -Math.PI / 2, 0]} emotion={look ? 'surprised' : 'happy'} blink={blinkAt(c.f)} />
+					<Character look={L.lila} position={[2.6, 0, -3.4]} rotation={[0, -Math.PI / 2, 0]} emotion="happy" />
+					<Cat position={[2.4, 0, -2.2]} rotation={[0, -1.2, 0]} fur={CAT.fur} stripes={CAT.stripes} tail={c.f / 6} />
+				</Stage>
+			);
+		},
+	},
 
 	// P11 — sauf mamie, dans son fauteuil, entourée d'horloges
 	{
@@ -476,6 +505,16 @@ export const SHOTS: ShotDef[] = [
 				</Stage>
 			);
 		},
+	},
+	{
+		id: 'p13b-crie',
+		from: F('plan13b', -0.1),
+		render: (c) => (
+			<Stage camera={{pos: [1.2, 2.2, -1.8], target: [6.5, 2.6, -3.2], fov: 46, shake: 0.01}} ambiance="nightblue" fogNear={30} fogFar={150}>
+				{town({night: true, glow: 0.5 + 0.3 * Math.sin(c.f / 3)})}
+				<Character look={L.noe} position={[3.4, 0, -3.0]} rotation={[0, Math.PI / 2, 0]} emotion="panic" squash={squashAt(c.f, 4, 0.12)} pose={{armL: [-2.0, -0.55], armR: [-2.0, -0.55]}} />
+			</Stage>
+		),
 	},
 
 	// P14 — il rentre (la seule chose interdite)
@@ -582,6 +621,15 @@ export const SHOTS: ShotDef[] = [
 				</Stage>
 			);
 		},
+	},
+	{
+		id: 'p17b-soleil',
+		from: F('plan17b', -0.1),
+		render: (c) => (
+			<Stage camera={{pos: [-2 + ramp(c.f, 0, c.d) * 3, 2.2, 6], target: [3, 3.2, -10], fov: 50}} ambiance="valley">
+				{valleyScene(c.g)}
+			</Stage>
+		),
 	},
 
 	// P18 — papi Marcel et les quatre chaises (récolte de l'indice 1)
