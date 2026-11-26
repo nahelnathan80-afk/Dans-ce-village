@@ -15,13 +15,15 @@ Branche de travail : `claude/video-generator-dans-cette-ville-2mn6k8`
 | Scénario `episodes/leo_hier/scenario.json` (14 plans) | ✅ validé par toi |
 | 13 voix de Grégory (ElevenLabs) dans `episodes/leo_hier/voix/` | ✅ commitées |
 | 1er aperçu (voix temporaire Piper) | ✅ poussé, puis remplacé |
-| Aperçu avec la voix de Grégory (540×960, 81,8 s) | ⏳ en cours de rendu, poussé automatiquement à la fin |
-| Rendu FINAL 1080×1920 | ⏳ démarre automatiquement après l'aperçu, ≈ 4 h. Le MP4 sera poussé tout seul dans `output/leo_hier/leo_hier.mp4` |
+| Aperçu avec la voix de Grégory (540×960, 81,8 s) | ✅ poussé (checklist OK, -14,2 LUFS) |
+| Rendu FINAL 1080×1920 | ⏳ en cours, plans 1 à 8 finis (reprise après la coupure de 2 h). Le MP4 sera poussé tout seul dans `output/leo_hier/leo_hier.mp4` |
 
 ### Si la session est perdue, comment reprendre
 1. Ouvre une nouvelle session Claude Code sur ce dépôt, sur la branche ci-dessus.
 2. Demande : « Lis JOURNAL.md, puis lance `./scripts/make_episode.sh leo_hier final` ».
    - `setup.sh` réinstalle tout automatiquement (≈ 3 min).
+   - ⚠ Une tâche en arrière-plan est coupée au bout de 2 h : relancer la même commande
+     reprend le rendu là où il s'était arrêté.
    - Si le cache (`cache/`) a été perdu avec l'ancienne session, le final repart de
      zéro (≈ 4 h). S'il existe encore, le rendu reprend où il s'était arrêté.
 3. À la fin, le MP4 est commité et poussé tout seul (il fait moins de 100 Mo).
@@ -115,8 +117,7 @@ Branche de travail : `claude/video-generator-dans-cette-ville-2mn6k8`
 - [x] Le cadrage change au moins toutes les 2 s (cadrage le plus long : 2,00 s).
 - [x] Indices du plan 1 (affiche + Inès « AUJOURD'HUI ») et du plan 6 (3 chaises,
       2 assiettes) bien visibles.
-- [ ] Musique sans silence et -14 LUFS : correction faite et testée à part (-14,4 LUFS),
-      à confirmer dans le rapport du nouvel aperçu (`output/leo_hier/rapport_apercu.txt`).
+- [x] Musique sans silence (minimum -53 dBFS hors coupure voulue) et -14,2 LUFS.
 
 ---
 
@@ -147,3 +148,5 @@ README.md                  format du scénario + guide iPad
 | 15 h 00 – 15 h 20 | 1er aperçu complet (25 min), checklist et push. |
 | 15 h 45 – 16 h 10 | Connecteur ElevenLabs : 13 voix de Grégory (avec des refus « busy » du plan gratuit). |
 | 16 h 11 | Aperçu avec la voix de Grégory lancé, puis enchaînement automatique sur le FINAL. |
+| 16 h 35 | Aperçu poussé : 81,8 s, -14,2 LUFS, toute la checklist est OK. Le FINAL démarre (≈ 3,8 s par image en réalité). |
+| 18 h 32 | Rendu FINAL coupé après 2 h (limite d'une tâche en arrière-plan) : plans 1 à 8 finis, plan 9 à 114/212 images. Relancé aussitôt, il reprend depuis le cache. Fin estimée vers 19 h 55 UTC (20 h 55 heure de Paris). |
