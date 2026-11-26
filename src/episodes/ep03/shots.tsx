@@ -98,19 +98,19 @@ const family = (f: number, o: {lilaEmo?: React.ComponentProps<typeof Character>[
 /** Portail de la maison : mur sombre percé d'une porte, la vallée derrière. */
 const Doorway: React.FC<{open: number}> = ({open}) => (
 	<group position={[0, 0, 2]}>
-		{[[-3.7, 1.25, 6], [3.7, 1.25, 6]].map(([x, , w], i) => (
+		{[[-4.3, 1.25, 6], [4.3, 1.25, 6]].map(([x, , w], i) => (
 			<mesh key={i} position={[x, 3, 0]}>
 				<boxGeometry args={[w, 6, 0.3]} />
 				<meshStandardMaterial color="#2b2440" />
 			</mesh>
 		))}
-		<mesh position={[0, 4.35, 0]}>
-			<boxGeometry args={[1.4, 3.3, 0.3]} />
+		<mesh position={[0, 4.6, 0]}>
+			<boxGeometry args={[2.6, 2.8, 0.3]} />
 			<meshStandardMaterial color="#2b2440" />
 		</mesh>
-		<group position={[-0.7, 0, 0.05]} rotation={[0, open * 1.6, 0]}>
-			<mesh position={[0.7, 1.35, 0]}>
-				<boxGeometry args={[1.4, 2.7, 0.08]} />
+		<group position={[-1.3, 0, 0.05]} rotation={[0, open * 1.6, 0]}>
+			<mesh position={[1.3, 1.6, 0]}>
+				<boxGeometry args={[2.6, 3.2, 0.08]} />
 				<meshStandardMaterial color="#6b3d1f" />
 			</mesh>
 		</group>
@@ -136,7 +136,7 @@ export const SHOTS: ShotDef[] = [
 		from: 0,
 		render: (c) => {
 			const k = ramp(c.f, 0, c.d, (x) => 1 - (1 - x) * (1 - x));
-			const cam = lerpShot({pos: [-0.6, 4.6, 4.5], target: [-4.5, 5.3, -8.5], fov: 50}, {pos: [-2.0, 5.2, 0.2], target: [-4.5, 5.25, -8.5], fov: 44}, k);
+			const cam = lerpShot({pos: [-0.6, 4.2, 4.5], target: [-4.5, 4.0, -8.5], fov: 50}, {pos: [-2.0, 4.6, 0.6], target: [-4.5, 4.1, -8.5], fov: 46}, k);
 			return (
 				<Stage camera={cam} ambiance="nightblue" fogNear={30} fogFar={150}>
 					{town({night: true})}
@@ -203,7 +203,7 @@ export const SHOTS: ShotDef[] = [
 		render: (c) => {
 			const reach = Math.sin(c.f / 6) * 0.15;
 			return (
-				<Stage camera={closeUp(MAIRE, MAIRE_ROT + 0.9, 5.6, {scale: 1.18, side: 0.35, h: -0.2})} ambiance="morning">
+				<Stage camera={closeUp(MAIRE, MAIRE_ROT, 6.2, {scale: 1.18, side: 0.7, h: -0.4, fov: 40})} ambiance="morning">
 					{town({billboard: ['TIRAGE', 'DU JOUR']})}
 					<Character look={L.maire} position={MAIRE} rotation={[0, MAIRE_ROT, 0]} emotion="determined" blink={blinkAt(c.f, 3)} pose={{armR: [-1.75 + reach, -0.25], headNod: 0.15}} />
 				</Stage>
@@ -354,7 +354,7 @@ export const SHOTS: ShotDef[] = [
 				<Stage camera={closeUp(MAIRE, MAIRE_ROT, 5.2, {scale: 1.18, side: 0.55})} ambiance="morning">
 					{town({billboard: ['TIRAGE', 'DU JOUR']})}
 					<Character look={L.maire} position={MAIRE} rotation={[0, MAIRE_ROT, 0]} emotion="surprised" pose={{armR: [-1.6 - up * 1.2, -0.2]}}>
-						<NumberBall n={12} position={[0, -0.12, 0.1]} rotation={[0, Math.PI, 0]} />
+						<NumberBall n={12} position={[0, -0.12, 0.1]} />
 					</Character>
 				</Stage>
 			);
@@ -366,13 +366,13 @@ export const SHOTS: ShotDef[] = [
 		render: (c) => {
 			const k = punch(c.f, 0, 6);
 			return (
-				<Stage camera={{pos: [0, 1.9, 2.0 - k * 0.8], target: [0, 1.6, 0], fov: 32 - k * 10}} ambiance="morning">
+				<Stage camera={{pos: [0, 1.75, 2.6 - k * 0.7], target: [0, 1.35, 0], fov: 34 - k * 10}} ambiance="morning">
 					<mesh position={[0, 0, 0]}>
 						<sphereGeometry args={[30, 16, 12]} />
 						<meshBasicMaterial color="#1b1b2f" side={1} />
 					</mesh>
 					<pointLight position={[1, 3, 3]} intensity={30} distance={10} />
-					<NumberBall n={12} position={[0, 1.6, 0]} rotation={[0, Math.PI + Math.sin(c.f / 10) * 0.2, 0]} scale={2.6} />
+					<NumberBall n={12} position={[0, 1.6, 0]} rotation={[0, Math.sin(c.f / 10) * 0.15, 0]} scale={2.2} />
 				</Stage>
 			);
 		},
@@ -496,9 +496,9 @@ export const SHOTS: ShotDef[] = [
 		id: 'p13-dehors',
 		from: F('plan13', -0.1),
 		render: (c) => (
-			<Stage camera={{pos: [2.2, 3.6, 3.2], target: [5, 1.5, -3.6], fov: 52}} ambiance="nightblue" fogNear={30} fogFar={150}>
-				{town({night: true})}
-				<Character look={L.noe} position={[3.6, 0, -3.4]} rotation={[0, -Math.PI / 2 + 0.4, 0]} emotion="surprised" />
+			<Stage camera={{pos: [5.2, 4.2, 3.2], target: [1.8, 1.2, -4.6], fov: 56}} ambiance="nightblue" fogNear={30} fogFar={150}>
+				{town({night: true, sign: false})}
+				<Character look={L.noe} position={[3.6, 0, -3.4]} rotation={[0, Math.PI / 2 - 0.5, 0]} emotion="surprised" />
 				{Array.from({length: 9}).map((_, i) => (
 					<Character key={i} look={villager(i + 60)} position={[1.0 + (i % 3) * 1.1, 0, -6.4 + Math.floor(i / 3) * 1.4 + (i % 2) * 0.3]} rotation={[0, Math.PI / 2, 0]} emotion="sad" blink={blinkAt(c.f, i)} />
 				))}
@@ -660,11 +660,11 @@ export const SHOTS: ShotDef[] = [
 		render: (c) => {
 			const open = ramp(c.f, 0, 18);
 			return (
-				<Stage camera={{pos: [0.4, 2.3, 7.6], target: [0, 1.8, -6], fov: 46}} ambiance="valley">
+				<Stage camera={{pos: [0.3, 4.0, 10.5], target: [0, 2.2, -6], fov: 44}} ambiance="valley">
 					{valleyScene(c.g)}
 					<Doorway open={open} />
-					<Character look={L.noe} position={[-0.45, 0, 3.2]} rotation={[0, Math.PI, 0]} emotion="surprised" />
-					<Character look={L.lila} position={[0.8, 0, 3.4]} rotation={[0, Math.PI, 0]} emotion="happy" />
+					<Character look={L.noe} position={[-0.5, 0, 2.5]} rotation={[0, Math.PI, 0]} emotion="surprised" />
+					<Character look={L.lila} position={[0.8, 0, 2.6]} rotation={[0, Math.PI, 0]} emotion="happy" />
 				</Stage>
 			);
 		},

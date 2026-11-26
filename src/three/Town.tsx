@@ -63,7 +63,8 @@ export const RoadSign: React.FC<{lines: string[]; position?: V3; rotY?: number; 
 };
 
 // ——— Tirage au sort ———
-const ballTex = (n: number, color: string) => textTexture(String(n), {bg: color, fg: '#1b1b1b', w: 256, h: 128, size: 100});
+// le numéro est écrit deux fois : il se voit de face (+z) et de dos (−z)
+const ballTex = (n: number, color: string) => textTexture(`${n}        ${n}`, {bg: color, fg: '#1b1b1b', w: 512, h: 128, size: 92});
 const BALL_COLORS = ['#ffd23f', '#ff6b6b', '#4ecdc4', '#ffffff', '#a78bfa', '#7bd389'];
 
 export const NumberBall: React.FC<{n: number; position?: V3; rotation?: V3; scale?: number}> = ({n, position, rotation, scale = 1}) => {
