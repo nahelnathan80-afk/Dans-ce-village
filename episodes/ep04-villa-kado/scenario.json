@@ -1,0 +1,281 @@
+// Épisode 04 — « Villa Kado » — comédie absurde, chute feel-good.
+// Même moteur que leo_hier. Nouveautés marquées [NOUVEAU] (éléments réutilisables).
+// Positions [x, y] en mètres (x gauche/droite, y profondeur) ou nom d'ancre du décor.
+{
+  "titre": "Villa Kado",
+  "casting": ["yanis", "tonton_kado", "maman_yanis", "boubou", "mamie_turbo", "gerard"],
+  "voix_off": { "elevenlabs_voice_id": "ctilxqiD5xHFsAqEwjvS" },
+  "pause_apres_voix": 0.6,                       // rythme plus nerveux que leo_hier (comédie)
+
+  // [NOUVEAU] pastille fixe en haut de l'écran, visible tout l'épisode (sauf carte-question)
+  "compteur_haut": { "label": "INVITÉS" },
+
+  "plans": [
+    {
+      "id": "plan01", "decor": "villa_exterieur", "mood": "apres_midi_soleil", "duree_min": 3.6,
+      // 0-1 s : la règle est MONTRÉE d'emblée (portail ENTRÉE LIBRE + pastille INVITÉS : 1)
+      "personnages": [
+        { "qui": "tonton_kado", "position": "devant_portail", "action": "filmer", "expression": "joyeux", "etiquette": false }
+      ],
+      "textes_decor": [ { "type": "portail", "emplacement": "portail", "texte": "VILLA KADO\nENTRÉE LIBRE" } ],
+      "invites": 1,
+      "cadrages": [
+        { "camera": "zoom_brusque", "cible": "portail", "duree": 1 },            // [NOUVEAU] preset
+        { "camera": "plan_large", "cible": "villa", "duree": 1 }
+      ],
+      "voix": { "texte": "Dans cette ville, un influenceur laisse *tout le monde* dormir chez lui." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan02", "decor": "maison_yanis", "mood": "nuit_pluie", "duree_min": 3.2,
+      // FLASH-FORWARD (boucle ouverte) : le moment le plus fort de la fin
+      "transition": "flash",                                                        // [NOUVEAU] flash blanc
+      "meteo": "pluie",                                                             // [NOUVEAU]
+      "personnages": [
+        { "qui": "tonton_kado_pyjama", "position": "devant_porte", "orientation": 180, "action": "frapper",
+          "expression": "triste", "etiquette": false }                              // [NOUVEAU] action frapper
+      ],
+      "textes_decor": [ { "type": "horloge", "emplacement": "fenetre", "texte": "3:00" } ],
+      "invites": 1000, "invites_style": "flash",
+      "cadrages": [
+        { "camera": "par_dessus_epaule", "cible": "tonton_kado_pyjama>porte", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "tonton_kado_pyjama", "duree": 1 }
+      ],
+      "voix": { "texte": "Et une nuit, c'est lui qui a frappé chez *moi*." },
+      "bulles": [ { "qui": "tonton_kado_pyjama", "texte": "Tu aurais pas une petite place ?", "debut": "35%", "fin": "100%" } ],
+      "musique": "baisse"
+    },
+    {
+      "id": "plan03", "decor": "villa_exterieur", "mood": "apres_midi_soleil", "duree_min": 1.6,
+      "transition": "rembobinage",                                                  // [NOUVEAU] effet VHS « rewind »
+      "personnages": [ { "qui": "tonton_kado", "position": "devant_portail", "action": "filmer", "expression": "joyeux", "etiquette": false } ],
+      "invites": 1,
+      "cadrages": [ { "camera": "plan_large", "cible": "villa", "duree": 1 } ],
+      "voix": { "texte": "Revenons au début." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan04", "decor": "villa_exterieur", "mood": "apres_midi_soleil",
+      "personnages": [
+        { "qui": "tonton_kado", "position": "bord_piscine", "action": "filmer", "regarde": "camera", "expression": "joyeux" }
+      ],
+      "invites": 1,
+      "cadrages": [
+        { "camera": "contre_plongee", "cible": "tonton_kado", "duree": 1 },
+        { "camera": "orbite_lente", "cible": "tonton_kado", "duree": 1 },
+        { "camera": "plan_large", "cible": "villa", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "tonton_kado", "duree": 1 }
+      ],
+      "voix": { "texte": "*Tonton Kado*. Il a la plus grande villa de la ville. Et le plus grand cœur." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan05", "decor": "villa_exterieur", "mood": "apres_midi_soleil",
+      "personnages": [ { "qui": "tonton_kado", "position": "devant_portail", "action": "parler", "expression": "joyeux" } ],
+      "foule": { "nombre": 4, "zone": "allee", "action": "passer", "compteurs": "aucun" },
+      "textes_decor": [ { "type": "panneau", "emplacement": "panneau_regle", "texte": "ICI, TOUT LE MONDE\nDORT GRATUIT" } ],
+      "invites": { "de": 1, "a": 5 },
+      "cadrages": [
+        { "camera": "gros_plan_objet", "cible": "panneau_regle", "duree": 1 },
+        { "camera": "travelling_suivi", "cible": "foule", "duree": 1 },
+        { "camera": "plan_large", "cible": "villa", "duree": 1 }
+      ],
+      "voix": { "texte": "Sa règle : tu viens, tu dors. Pas de question." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan06", "decor": "chambre_amis", "mood": "apres_midi_soleil",
+      // *INDICE 1* : la chambre d'amis vide et son vieux canapé
+      "personnages": [ { "qui": "yanis", "position": "porte_chambre", "action": "attendre", "regarde": "canape", "expression": "neutre" } ],
+      "invites": 5,
+      "cadrages": [
+        { "camera": "plan_large", "cible": "piece", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "yanis", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "canape", "duree": 1.2 }
+      ],
+      "voix": { "texte": "Moi, c'est *Yanis*. J'habite en face. Chez nous, la chambre d'amis est toujours vide." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan07", "decor": "villa_interieur", "mood": "coucher_soleil_orange",
+      // RELANCE (gag visuel) ≈ 20 s
+      "personnages": [ { "qui": "boubou", "position": "dans_frigo", "action": "dormir", "pose": "recroqueville", "expression": "dort" } ],  // [NOUVEAU] action + expression
+      "invites": { "de": 5, "a": 12 },
+      "cadrages": [
+        { "camera": "plan_large", "cible": "cuisine", "duree": 1 },
+        { "camera": "zoom_brusque", "cible": "frigo", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "boubou", "duree": 1 }
+      ],
+      "voix": { "texte": "Le premier soir, Boubou a dormi dans le *frigo*." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan08", "decor": "villa_exterieur", "mood": "apres_midi_soleil",
+      "personnages": [
+        { "qui": "mamie_turbo", "position": [-5, 1.5], "action": "rouler", "vers": "devant_portail", "objet": "trottinette", "expression": "joyeux" },  // [NOUVEAU] action rouler
+        { "qui": "gerard", "position": [5, 1.8], "action": "marcher", "vers": [1.2, 2.0], "objet": "canape_dos", "expression": "neutre", "debut_action": "40%" }
+      ],
+      "invites": { "de": 12, "a": 40 },
+      "cadrages": [
+        { "camera": "travelling_suivi", "cible": "mamie_turbo", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "mamie_turbo", "duree": 1 },
+        { "camera": "travelling_suivi", "cible": "gerard", "duree": 1 },
+        { "camera": "contre_plongee", "cible": "gerard", "duree": 1 }
+      ],
+      "voix": { "texte": "Le lendemain, Mamie Turbo. Puis Gérard, avec son propre canapé." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan09", "decor": "villa_exterieur", "mood": "coucher_soleil_orange",
+      // RELANCE (zoom brusque + compteur qui saute à 300) ≈ 32 s
+      "foule": { "nombre": 16, "zone": "allee", "action": "passer", "type": "colonie", "compteurs": "aucun" },   // [NOUVEAU] type colonie (casquettes)
+      "personnages": [
+        { "qui": "mariee", "position": [3.5, 2.2], "action": "marcher", "vers": [0.5, 3.5], "expression": "joyeux", "etiquette": false, "debut_action": "45%" },
+        { "qui": "marie", "position": [4.1, 2.3], "action": "marcher", "vers": [1.1, 3.6], "expression": "joyeux", "etiquette": false, "debut_action": "45%" }
+      ],
+      "invites": { "de": 40, "a": 300, "courbe": "saut" },
+      "cadrages": [
+        { "camera": "plan_large", "cible": "villa", "duree": 1 },
+        { "camera": "travelling_suivi", "cible": "foule", "duree": 1 },
+        { "camera": "zoom_brusque", "cible": "mariee", "duree": 1 },
+        { "camera": "gros_plan_objet", "cible": "compteur_haut", "duree": 0.8 }   // [NOUVEAU] cible : la pastille grossit
+      ],
+      "voix": { "texte": "Et puis une colonie de vacances. Et un *mariage*. Avec la mariée." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan10", "decor": "villa_interieur", "mood": "nuit_festive",
+      "foule": { "nombre": 10, "zone": "partout", "action": "dormir", "compteurs": "aucun", "zzz": true },
+      "personnages": [
+        { "qui": "dormeur_lustre", "position": "lustre", "action": "dormir", "pose": "suspendu", "expression": "dort", "etiquette": false },
+        { "qui": "dormeur_baignoire", "position": "baignoire", "action": "dormir", "pose": "allonge", "expression": "dort", "etiquette": false }
+      ],
+      "invites": { "de": 300, "a": 480 },
+      "cadrages": [
+        { "camera": "contre_plongee", "cible": "lustre", "duree": 1 },
+        { "camera": "plongee", "cible": "baignoire", "duree": 1 },
+        { "camera": "plan_large", "cible": "piece", "duree": 1 },
+        { "camera": "panoramique", "cible": "palmier_dodo", "duree": 1 }
+      ],
+      "voix": { "texte": "Ça dormait partout. Sur le lustre. Dans la baignoire. Sur les palmiers." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan11", "decor": "villa_interieur", "mood": "nuit_festive",
+      // *INDICE 2* : il sourit encore, mais il n'a plus de lit
+      "personnages": [
+        { "qui": "tonton_kado", "position": "porte_chambre_kado", "action": "pousser", "cible": "porte_chambre_kado", "expression": "fatigue" }   // [NOUVEAU] action + expression
+      ],
+      "foule": { "nombre": 6, "zone": "chambre_kado", "action": "dormir", "compteurs": "aucun", "zzz": true },
+      "invites": { "de": 480, "a": 620 },
+      "cadrages": [
+        { "camera": "par_dessus_epaule", "cible": "tonton_kado>chambre_kado", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "tonton_kado", "duree": 1.2 }
+      ],
+      "voix": { "texte": "Tonton Kado souriait toujours. Mais il n'avait plus de *lit*." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan12", "decor": "villa_exterieur", "mood": "nuit_festive",
+      "villa": { "remplissage": 1.0, "matelas": 12 },                              // [NOUVEAU] têtes aux fenêtres + matelas empilés
+      "foule": { "nombre": 14, "zone": "devant_villa", "action": "attendre", "compteurs": "aucun" },
+      "invites": { "de": 620, "a": 999, "courbe": "emballe" },
+      "cadrages": [
+        { "camera": "plan_large", "cible": "villa", "duree": 1 },
+        { "camera": "contre_plongee", "cible": "matelas", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "porte_villa", "duree": 1 }
+      ],
+      "voix": { "texte": "Un soir, la villa était tellement pleine… que la porte ne fermait plus." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan13", "decor": "villa_exterieur", "mood": "nuit_festive", "duree_min": 3.0,
+      // RELANCE (explosion du compteur + 1 s de silence total) ≈ 62 s
+      "villa": { "remplissage": 1.0, "matelas": 12 },
+      "invites": 1000, "invites_effet": "explose",                                   // [NOUVEAU] chiffres qui débordent de la pastille
+      "voix_delai": 1.0,                                                             // [NOUVEAU] 1 s de silence avant la voix
+      "cadrages": [
+        { "camera": "gros_plan_objet", "cible": "compteur_haut", "duree": 1 },
+        { "camera": "zoom_brusque", "cible": "villa", "duree": 1 }
+      ],
+      "voix": { "texte": "Mille *invités*." },
+      "musique": "coupe"
+    },
+    {
+      "id": "plan14", "decor": "villa_exterieur", "mood": "nuit_pluie", "meteo": "pluie",
+      "personnages": [
+        { "qui": "tonton_kado_pyjama", "position": "devant_portail", "action": "sursauter", "expression": "choque", "etiquette": false }
+      ],
+      "villa": { "remplissage": 1.0, "matelas": 12 },
+      "foule": { "nombre": 8, "zone": "portail", "action": "attendre", "compteurs": "aucun" },
+      "invites": 1000, "invites_style": "deborde",
+      "cadrages": [
+        { "camera": "plan_large", "cible": "villa", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "tonton_kado_pyjama", "duree": 1 },
+        { "camera": "plongee", "cible": "tonton_kado_pyjama", "duree": 1 }
+      ],
+      "voix": { "texte": "Et le seul qui n'avait plus de place… c'était lui." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan15", "decor": "maison_yanis", "mood": "nuit_pluie", "meteo": "pluie",
+      // RÉSOLUTION de la boucle ouverte du plan 2 (même cadrage, même bulle)
+      "personnages": [
+        { "qui": "tonton_kado_pyjama", "position": [-3, 1.5], "action": "marcher", "vers": "devant_porte", "puis": { "action": "frapper" }, "expression": "triste", "etiquette": false }
+      ],
+      "invites": 1000, "invites_style": "deborde",
+      "cadrages": [
+        { "camera": "travelling_suivi", "cible": "tonton_kado_pyjama", "duree": 1 },
+        { "camera": "par_dessus_epaule", "cible": "tonton_kado_pyjama>porte", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "tonton_kado_pyjama", "duree": 1 }
+      ],
+      "voix": { "texte": "Il a traversé la rue. Et il a frappé chez nous." },
+      "bulles": [ { "qui": "tonton_kado_pyjama", "texte": "Tu aurais pas une petite place ?", "debut": "60%", "fin": "100%" } ],
+      "musique": "baisse"
+    },
+    {
+      "id": "plan16", "decor": "chambre_amis", "mood": "nuit_douce",
+      // RÉCOLTE INDICE 1 (le canapé) + INDICE 2 (enfin un lit) — la pastille retombe à 1 : chez Yanis, un seul invité
+      "personnages": [
+        { "qui": "maman_yanis", "position": "pres_canape", "action": "poser", "objet": "couverture", "expression": "joyeux" },
+        { "qui": "tonton_kado_pyjama", "position": "porte_chambre", "action": "regarder", "cible": "canape", "expression": "pleure", "etiquette": false },
+        { "qui": "yanis", "position": [1.6, 1.2], "action": "attendre", "regarde": "tonton_kado_pyjama", "expression": "joyeux" }
+      ],
+      "accessoires": { "canape_fait": true },
+      "invites": 1, "invites_style": "doux",
+      "cadrages": [
+        { "camera": "par_dessus_epaule", "cible": "tonton_kado_pyjama>canape", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "maman_yanis", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "tonton_kado_pyjama", "duree": 1.2 }
+      ],
+      "voix": { "texte": "Maman a souri. La chambre d'amis attendait *quelqu'un*." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan17", "decor": "chambre_amis", "mood": "petit_matin_doux", "duree_min": 4.0,
+      // CHUTE (6 mots)
+      "personnages": [
+        { "qui": "tonton_kado_pyjama", "position": "canape", "action": "dormir", "pose": "allonge", "expression": "dort", "etiquette": false },
+        { "qui": "yanis", "position": "porte_chambre", "action": "regarder", "cible": "tonton_kado_pyjama", "expression": "joyeux" }
+      ],
+      "accessoires": { "canape_fait": true },
+      "invites": 1, "invites_style": "doux",
+      "cadrages": [
+        { "camera": "plan_large", "cible": "piece", "duree": 1 },
+        { "camera": "par_dessus_epaule", "cible": "yanis>tonton_kado_pyjama", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "tonton_kado_pyjama", "duree": 1.2 }
+      ],
+      "voix": { "texte": "Maintenant, c'est chez moi qu'il dort." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan18", "type": "carte_question", "duree": 3.5,                      // [NOUVEAU] carte-question finale
+      "decor": "chambre_amis", "mood": "petit_matin_doux",
+      "fond": "plan17",                                                              // dernière image floutée en fond
+      "carte": { "question": "ET TOI, TU DORMIRAIS OÙ DANS LA VILLA ?", "appel": "RÉPONDS EN COMMENTAIRE" },
+      "voix": null,
+      "musique": "normal",
+      "fin": { "noir": 0.5 }
+    }
+  ]
+}
