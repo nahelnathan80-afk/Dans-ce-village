@@ -83,13 +83,15 @@ def build_timeline(sc: dict, voix: dict) -> list:
     Renvoie une liste de « specs » de plan avec durées, début, cadrages,
     bulles, étiquettes de nom et pensées (« ? », « … »)."""
     casting = set(sc.get("casting", []))
+    # respiration après chaque réplique (réglable par épisode : "pause_apres_voix")
+    pad = float(sc.get("pause_apres_voix", config.PAD_VOIX))
     deja_presente = set()
     t = 0.0
     specs = []
     for i, plan in enumerate(sc["plans"]):
         mp3, dmp3, origine = voix[plan["id"]]
         if dmp3:
-            d = config.VOIX_DEBUT + dmp3 + config.PAD_VOIX
+            d = config.VOIX_DEBUT + dmp3 + pad
         else:
             d = float(plan.get("duree", 3.0))
         d = max(d, float(plan.get("duree_min", 0)))

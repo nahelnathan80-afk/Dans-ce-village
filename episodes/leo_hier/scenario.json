@@ -7,10 +7,12 @@
   // Voix off : si un MP3 manque dans voix/, il est généré avec ElevenLabs (voix « Grégory - dynamic »)
   // quand la clé API est configurée, sinon avec une voix temporaire locale (Piper).
   "voix_off": { "elevenlabs_voice_id": "ctilxqiD5xHFsAqEwjvS" },
+  // respiration après chaque réplique (en secondes) : règle la durée totale de l'épisode
+  "pause_apres_voix": 1.1,
 
   "plans": [
     {
-      "id": "plan01", "decor": "rue", "mood": "soleil_matin",
+      "id": "plan01", "decor": "rue", "mood": "soleil_matin", "duree_min": 4.6,
       "personnages": [
         // Léo n'apparaît pas encore. Inès, au fond, fixe la caméra (indice discret, sans étiquette).
         { "qui": "ines", "position": [3.2, 7.5], "action": "attendre", "regarde": "camera", "expression": "neutre", "compteur": "AUJOURD'HUI", "compteur_style": "orange", "etiquette": false }
@@ -74,7 +76,7 @@
       "musique": "normal"
     },
     {
-      "id": "plan05", "decor": "chambre_ado", "mood": "matin_froid", "duree_min": 4.5,
+      "id": "plan05", "decor": "chambre_ado", "mood": "matin_froid", "duree_min": 5.5,
       "personnages": [
         { "qui": "leo", "position": "devant_miroir", "orientation": "miroir", "action": "sursauter", "expression": "peur", "compteur": "HIER", "compteur_style": "rouge_glitch", "compteur_reflet": true, "etiquette": false }   // compteur visible seulement dans le reflet
       ],
@@ -87,7 +89,7 @@
       "musique": "baisse"
     },
     {
-      "id": "plan06", "decor": "cuisine", "mood": "matin_frais",
+      "id": "plan06", "decor": "cuisine", "mood": "matin_frais", "duree_min": 5.2,
       "personnages": [
         { "qui": "maman", "position": "pres_table", "action": "poser", "objet": "assiettes", "regarde": "table", "expression": "neutre", "compteur": "64 ANS" },
         { "qui": "leo",   "position": [-1.6, 1.2], "action": "regarder", "cible": "maman", "expression": "interrogatif", "compteur": "HIER", "compteur_style": "rouge_glitch" }
@@ -136,7 +138,7 @@
       "musique": "normal"
     },
     {
-      "id": "plan09", "decor": "salle_classe", "mood": "classe_froide", "duree_min": 6,
+      "id": "plan09", "decor": "salle_classe", "mood": "classe_froide", "duree_min": 6.8,
       "personnages": [
         { "qui": "sam", "position": [-0.38, 0.65], "action": "frissonner", "debut_action": "45%", "objet": "pupitre", "expression": "pensif", "compteur": "77 ANS" },
         { "qui": "leo", "position": [0.08, 0.2], "action": "toucher", "cible": "sam", "expression": "triste", "compteur": "HIER", "compteur_style": "rouge_glitch" }
@@ -152,7 +154,7 @@
       "musique": "baisse"
     },
     {
-      "id": "plan10", "decor": "chambre_cartons", "mood": "crepuscule_bleu", "duree_min": 4,
+      "id": "plan10", "decor": "chambre_cartons", "mood": "crepuscule_bleu", "duree_min": 5.5,
       "personnages": [
         { "qui": "leo", "position": [0, 0.35], "orientation": 180, "action": "sursauter", "expression": "choque", "compteur": "HIER", "compteur_style": "rouge_glitch" }
       ],
@@ -165,7 +167,7 @@
       "musique": "normal"
     },
     {
-      "id": "plan11", "decor": "chambre_cartons", "mood": "crepuscule_bleu", "duree_min": 3.5,
+      "id": "plan11", "decor": "chambre_cartons", "mood": "crepuscule_bleu", "duree_min": 5,
       "personnages": [],
       "textes_decor": [ { "type": "journal", "emplacement": "sol", "texte": "ACCIDENT HIER SOIR\nRUE DES LILAS" } ],
       "cadrages": [
@@ -176,7 +178,7 @@
       "musique": "baisse"
     },
     {
-      "id": "plan12", "decor": "college_autel", "mood": "soir_inquietant", "duree": 4,   // pas de voix : durée fixe
+      "id": "plan12", "decor": "college_autel", "mood": "soir_inquietant", "duree": 5,   // pas de voix : durée fixe
       "personnages": [],
       "foule": { "nombre": 8, "zone": "passage", "action": "passer", "compteurs": "aleatoire" },
       "autel": { "photo": "leo", "fleurs": true, "bougies": 5 },
@@ -188,7 +190,7 @@
       "musique": "normal"
     },
     {
-      "id": "plan13", "decor": "college_autel", "mood": "soir_inquietant", "duree_min": 7,
+      "id": "plan13", "decor": "college_autel", "mood": "soir_inquietant", "duree_min": 8,
       "personnages": [
         { "qui": "leo", "position": [1.3, 3.4], "orientation": -20, "action": "attendre", "regarde": "photo", "expression": "pleure", "compteur": "HIER", "compteur_style": "rouge_glitch",
           "effets": [ { "type": "transparence", "de": 0, "a": 0.45 } ] }
@@ -205,7 +207,7 @@
       "musique": "coupe"
     },
     {
-      "id": "plan14", "decor": "rue", "mood": "soir_violet", "duree_min": 6,
+      "id": "plan14", "decor": "rue", "mood": "soir_violet", "duree_min": 7.5,
       "personnages": [
         { "qui": "leo",  "position": [0, 1.5], "action": "regarder", "cible": "ines", "expression": "interrogatif", "compteur": "HIER", "compteur_style": "rouge_glitch", "opacite": 0.6 },
         { "qui": "ines", "position": [0.3, 5.5], "action": "regarder", "cible": "leo", "expression": "neutre", "compteur": "AUJOURD'HUI", "compteur_style": "orange", "etiquette": true }
