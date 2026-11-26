@@ -46,7 +46,11 @@ if [ "$PUSH" = 1 ] && [ -f "$OUT" ]; then
   fi
   git add "$OUT" "output/$NOM/rapport_$MODE.txt" "episodes/$NOM" 2>/dev/null || true
   if ! git diff --cached --quiet; then
-    git commit -q -m "Vidéo $NOM ($MODE)"
+    MSG="Vidéo $NOM ($MODE)"
+    [ -n "${DCV_COMMIT_TRAILER:-}" ] && MSG="$MSG
+
+$DCV_COMMIT_TRAILER"
+    git commit -q -m "$MSG"
     BR=$(git rev-parse --abbrev-ref HEAD)
     for i in 1 2 3 4; do
       git push -q -u origin "$BR" && break
