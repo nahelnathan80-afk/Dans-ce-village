@@ -1,0 +1,222 @@
+// Épisode « Léo – Hier » — série Dans cette ville
+// Format JSON avec commentaires « // » autorisés (ils sont ignorés à la lecture).
+// Positions [x, y] en mètres dans le décor : x = gauche/droite, y = profondeur (0 = devant).
+{
+  "titre": "Léo – Hier",
+  "casting": ["leo", "maman", "sam", "monsieur_paul", "prof", "ines"],   // → personnages/<nom>.json
+
+  "plans": [
+    {
+      "id": "plan01", "decor": "rue", "mood": "soleil_matin",
+      "personnages": [
+        // Léo n'apparaît pas encore. Inès, au fond, fixe la caméra (indice discret, sans étiquette).
+        { "qui": "ines", "position": [3.2, 7.5], "action": "attendre", "regarde": "camera", "expression": "neutre", "compteur": "AUJOURD'HUI", "compteur_style": "orange", "etiquette": false }
+      ],
+      "foule": { "nombre": 12, "zone": "trottoirs", "compteurs": "aleatoire" },
+      "textes_decor": [
+        { "type": "affiche", "emplacement": "mur_fond_droite", "texte": "PRUDENCE :\nACCIDENT\nRUE DES LILAS" }
+      ],
+      "cadrages": [
+        { "camera": "plan_large", "cible": "rue", "duree": 1.2 },
+        { "camera": "travelling_suivi", "cible": "foule", "duree": 1 },
+        { "camera": "panoramique", "cible": "ines", "duree": 1 }       // indice : affiche + Inès dans le même champ
+      ],
+      "voix": { "texte": "Dans cette ville, tout le monde connaît la date de sa *mort*.", "fichier": "voix/plan01.mp3" },
+      "musique": "normal"
+    },
+    {
+      "id": "plan02", "decor": "rue", "mood": "soleil_matin",
+      "personnages": [
+        { "qui": "monsieur_paul", "position": [-2.5, 3], "action": "assis", "objet": "banc", "expression": "joyeux", "compteur": "41 ANS" },
+        { "qui": "papa_figurant", "position": [2.5, 3], "action": "serrer", "cible": "famille", "expression": "triste", "compteur": "3 HEURES" },
+        { "qui": "maman_figurante", "position": [3.1, 3.2], "action": "serrer", "cible": "papa_figurant", "expression": "neutre", "compteur": "52 ANS" },
+        { "qui": "enfant_figurant", "position": [2.8, 2.6], "action": "serrer", "cible": "papa_figurant", "expression": "neutre", "compteur": "80 ANS" }
+      ],
+      "foule": { "nombre": 6, "zone": "fond", "compteurs": "aleatoire" },
+      "cadrages": [
+        { "camera": "plan_large", "cible": "rue", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "monsieur_paul", "duree": 1.2 },
+        { "camera": "zoom_lent_avant", "cible": "papa_figurant", "duree": 1.5 },
+        { "camera": "gros_plan_objet", "cible": "compteur:papa_figurant", "duree": 1 }
+      ],
+      "voix": { "texte": "Un compteur au-dessus de chaque tête. Monsieur Paul ? Quarante et un ans. Ce papa-là… trois heures.", "fichier": "voix/plan02.mp3" },
+      "musique": "normal"
+    },
+    {
+      "id": "plan03", "decor": "rue", "mood": "soleil_matin",
+      "personnages": [
+        { "qui": "passant", "position": [0, 2], "action": "attendre", "expression": "neutre", "compteur": "12 ANS 4 MOIS" }
+      ],
+      "foule": { "nombre": 8, "zone": "trottoirs", "compteurs": "aleatoire" },
+      "cadrages": [
+        { "camera": "gros_plan_objet", "cible": "compteur:passant", "duree": 1 },
+        { "camera": "contre_plongee", "cible": "passant", "duree": 1 },
+        { "camera": "orbite_lente", "cible": "compteur:passant", "duree": 1 }
+      ],
+      "voix": { "texte": "Et une règle que tout le monde connaît. Le compteur ne se trompe *jamais*.", "fichier": "voix/plan03.mp3" },
+      "musique": "normal"
+    },
+    {
+      "id": "plan04", "decor": "chambre_ado", "mood": "matin_interieur",
+      "personnages": [
+        { "qui": "leo", "position": [-1.2, 2.5], "action": "se_lever", "puis": { "action": "marcher", "vers": [0.6, 1.2] }, "expression": "neutre", "compteur": "HIER", "compteur_style": "cache" }
+      ],
+      "cadrages": [
+        { "camera": "plan_large", "cible": "piece", "duree": 1 },
+        { "camera": "travelling_suivi", "cible": "leo", "duree": 1 },
+        { "camera": "par_dessus_epaule", "cible": "leo>miroir", "duree": 1 }
+      ],
+      "voix": { "texte": "Moi, c'est *Léo*. J'ai douze ans. Ce matin-là, je me suis levé comme d'habitude.", "fichier": "voix/plan04.mp3" },
+      "musique": "normal"
+    },
+    {
+      "id": "plan05", "decor": "chambre_ado", "mood": "matin_froid", "duree_min": 4.5,
+      "personnages": [
+        { "qui": "leo", "position": [0.6, 1.2], "orientation": "miroir", "action": "sursauter", "expression": "peur", "compteur": "HIER", "compteur_style": "rouge_glitch", "etiquette": false }
+      ],
+      "cadrages": [
+        { "camera": "par_dessus_epaule", "cible": "leo>miroir", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "reflet:leo", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "compteur:reflet:leo", "duree": 1.2 }
+      ],
+      "voix": { "texte": "Sauf que mon compteur affichait… *hier*.", "fichier": "voix/plan05.mp3" },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan06", "decor": "cuisine", "mood": "matin_frais",
+      "personnages": [
+        { "qui": "maman", "position": [0.8, 2.6], "action": "poser", "objet": "assiettes", "regarde": "table", "expression": "neutre", "compteur": "64 ANS" },
+        { "qui": "leo",   "position": [-1.6, 1.2], "action": "regarder", "cible": "maman", "expression": "interrogatif", "compteur": "HIER", "compteur_style": "rouge_glitch" }
+      ],
+      "accessoires": { "chaises": 3, "assiettes": 2 },                  // indice : 3 chaises, 2 assiettes
+      "cadrages": [
+        { "camera": "plongee", "cible": "table", "duree": 1.2 },
+        { "camera": "par_dessus_epaule", "cible": "leo>maman", "duree": 1 },
+        { "camera": "gros_plan_objet", "cible": "table", "duree": 1 }
+      ],
+      "voix": { "texte": "Je me suis dit : c'est un bug. Maman a mis la table. Deux *assiettes*.", "fichier": "voix/plan06.mp3" },
+      "musique": "normal"
+    },
+    {
+      "id": "plan07", "decor": "rue", "mood": "matinee_fraiche",
+      "personnages": [
+        { "qui": "leo", "position": [-0.5, 1.8], "action": "parler", "regarde": "monsieur_paul", "expression": "joyeux", "compteur": "HIER", "compteur_style": "rouge_glitch" },
+        { "qui": "monsieur_paul", "position": [-2.5, 3], "action": "assis", "objet": "banc", "regarde": "loin", "expression": "neutre", "compteur": "41 ANS" },
+        { "qui": "passante", "position": [4, 1.6], "action": "passer", "vers": [-4, 1.7], "expression": "neutre", "compteur": "33 ANS" }
+      ],
+      "foule": { "nombre": 6, "zone": "fond", "compteurs": "aleatoire" },
+      "cadrages": [
+        { "camera": "plan_large", "cible": "leo", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "monsieur_paul", "duree": 1 },
+        { "camera": "travelling_suivi", "cible": "passante", "duree": 1.2 }
+      ],
+      "voix": { "texte": "Dehors, j'ai dit bonjour à Monsieur Paul. Rien. Une dame m'a presque foncé dedans.", "fichier": "voix/plan07.mp3" },
+      "bulles": [ { "qui": "leo", "texte": "Bonjour !", "debut": "5%", "fin": "35%" } ],
+      "musique": "normal"
+    },
+    {
+      "id": "plan08", "decor": "salle_classe", "mood": "classe_froide",
+      "personnages": [
+        { "qui": "prof", "position": [0, 4.2], "action": "parler", "regarde": "classe", "expression": "neutre", "compteur": "58 ANS" },
+        { "qui": "leo",  "position": [1.2, 1.5], "action": "assis", "objet": "pupitre", "expression": "triste", "compteur": "HIER", "compteur_style": "rouge_glitch" }
+      ],
+      "foule": { "nombre": 7, "zone": "pupitres", "action": "assis", "compteurs": "aleatoire" },
+      "textes_decor": [ { "type": "tableau", "emplacement": "tableau", "texte": "APPEL – 6e B" } ],
+      "cadrages": [
+        { "camera": "plan_large", "cible": "piece", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "prof", "duree": 1 },
+        { "camera": "plongee", "cible": "leo", "duree": 1 }
+      ],
+      "voix": { "texte": "Au collège, le prof a fait l'appel. Il a sauté mon *nom*.", "fichier": "voix/plan08.mp3" },
+      "bulles": [ { "qui": "prof", "texte": "Lina… Malik… Nora…", "debut": "20%", "fin": "70%" } ],
+      "musique": "normal"
+    },
+    {
+      "id": "plan09", "decor": "salle_classe", "mood": "classe_froide", "duree_min": 6,
+      "personnages": [
+        { "qui": "sam", "position": [-0.4, 1.5], "action": "frissonner", "debut_action": "45%", "objet": "pupitre", "expression": "pensif", "compteur": "77 ANS" },
+        { "qui": "leo", "position": [0.4, 1.1], "action": "toucher", "cible": "sam", "expression": "triste", "compteur": "HIER", "compteur_style": "rouge_glitch" }
+      ],
+      "foule": { "nombre": 5, "zone": "pupitres", "action": "assis", "compteurs": "aleatoire" },
+      "cadrages": [
+        { "camera": "par_dessus_epaule", "cible": "leo>sam", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "sam", "duree": 1 },
+        { "camera": "orbite_lente", "cible": "sam", "duree": 1.5 }
+      ],
+      "voix": { "texte": "Alors j'ai touché l'épaule de *Sam*, mon meilleur pote. Il a frissonné.", "fichier": "voix/plan09.mp3" },
+      "bulles": [ { "qui": "sam", "texte": "J'ai l'impression d'avoir oublié un truc important…", "debut": "55%", "fin": "100%" } ],
+      "musique": "baisse"
+    },
+    {
+      "id": "plan10", "decor": "chambre_cartons", "mood": "crepuscule_bleu", "duree_min": 4,
+      "personnages": [
+        { "qui": "leo", "position": [0, 0.6], "action": "sursauter", "expression": "choque", "compteur": "HIER", "compteur_style": "rouge_glitch" }
+      ],
+      "cadrages": [
+        { "camera": "par_dessus_epaule", "cible": "leo>piece", "duree": 1 },
+        { "camera": "plan_large", "cible": "piece", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "leo", "duree": 1 }
+      ],
+      "voix": { "texte": "J'ai couru à la maison. Ma chambre ? Des *cartons*.", "fichier": "voix/plan10.mp3" },
+      "musique": "normal"
+    },
+    {
+      "id": "plan11", "decor": "chambre_cartons", "mood": "crepuscule_bleu", "duree_min": 3.5,
+      "personnages": [],
+      "textes_decor": [ { "type": "journal", "emplacement": "sol", "texte": "ACCIDENT HIER SOIR\nRUE DES LILAS" } ],
+      "cadrages": [
+        { "camera": "plongee", "cible": "journal", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "journal", "duree": 1.3 }
+      ],
+      "voix": { "texte": "Par terre, il restait un journal.", "fichier": "voix/plan11.mp3" },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan12", "decor": "college_autel", "mood": "soir_inquietant", "duree": 4,   // pas de voix : durée fixe
+      "personnages": [],
+      "foule": { "nombre": 8, "zone": "passage", "action": "passer", "compteurs": "aleatoire" },
+      "autel": { "photo": "leo", "fleurs": true, "bougies": 5 },
+      "cadrages": [
+        { "camera": "plan_large", "cible": "autel", "duree": 1 },
+        { "camera": "gros_plan_objet", "cible": "photo", "duree": 1 }
+      ],
+      "voix": null,
+      "musique": "normal"
+    },
+    {
+      "id": "plan13", "decor": "college_autel", "mood": "soir_inquietant", "duree_min": 7,
+      "personnages": [
+        { "qui": "leo", "position": [0.8, 1.2], "action": "attendre", "regarde": "photo", "expression": "pleure", "compteur": "HIER", "compteur_style": "rouge_glitch",
+          "effets": [ { "type": "transparence", "de": 0, "a": 0.45 } ] }
+      ],
+      "foule": { "nombre": 6, "zone": "passage", "action": "passer", "compteurs": "aleatoire" },
+      "autel": { "photo": "leo", "fleurs": true, "bougies": 5, "effets": [ { "type": "photo_efface", "de": 0, "a": 0.85 } ] },
+      "cadrages": [
+        { "camera": "gros_plan_objet", "cible": "photo", "duree": 1.2 },
+        { "camera": "gros_plan_visage", "cible": "leo", "duree": 1 },
+        { "camera": "plan_large", "cible": "autel", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "leo", "duree": 1.3 }
+      ],
+      "voix": { "texte": "Je suis mort *hier*. Et ici, quand ton compteur tombe à zéro… tout le monde t'oublie.", "fichier": "voix/plan13.mp3" },
+      "musique": "coupe"
+    },
+    {
+      "id": "plan14", "decor": "rue", "mood": "soir_violet", "duree_min": 6,
+      "personnages": [
+        { "qui": "leo",  "position": [0, 1.5], "action": "regarder", "cible": "ines", "expression": "interrogatif", "compteur": "HIER", "compteur_style": "rouge_glitch", "opacite": 0.6 },
+        { "qui": "ines", "position": [0.3, 5.5], "action": "regarder", "cible": "leo", "expression": "neutre", "compteur": "AUJOURD'HUI", "compteur_style": "orange", "etiquette": true }
+      ],
+      "foule": { "nombre": 14, "zone": "autour:ines", "action": "passer", "compteurs": "aleatoire" },
+      "cadrages": [
+        { "camera": "par_dessus_epaule", "cible": "leo>ines", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "ines", "duree": 1.3 },
+        { "camera": "gros_plan_objet", "cible": "compteur:ines", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "ines", "duree": 1.2 }
+      ],
+      "voix": { "texte": "Mais au milieu de la foule, quelqu'un me *regardait*.", "fichier": "voix/plan14.mp3" },
+      "bulles": [ { "qui": "ines", "texte": "Toi aussi, tu les vois ?", "debut": "65%", "fin": "100%" } ],
+      "musique": "normal",                 // après une « coupe », la musique reprend en fondu automatiquement
+      "fin": { "noir": 1.2 }
+    }
+  ]
+}
