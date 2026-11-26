@@ -1,0 +1,8 @@
+// Sam, le meilleur pote de Léo. Signe distinctif : bonnet rouge.
+{
+  "nom": "Sam", "etiquette": "SAM", "gabarit": "enfant", "taille": 1.38,
+  "couleurs": { "peau": "#a86b45", "cheveux": "#1d140f", "haut": "#2a9d8f", "bas": "#264653",
+                "chaussures": "#e63946", "yeux": "#2b1a10" },
+  "coiffure": "courte", "haut": "sweat",
+  "accessoires": [ { "type": "bonnet", "couleur": "#e01e37" } ]
+}

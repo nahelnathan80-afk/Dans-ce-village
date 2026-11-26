@@ -1,0 +1,8 @@
+// Monsieur Paul, le voisin âgé (compteur : 41 ANS).
+{
+  "nom": "Monsieur Paul", "etiquette": "M. PAUL", "gabarit": "age", "taille": 1.68,
+  "couleurs": { "peau": "#efc7a4", "cheveux": "#e6e6e6", "haut": "#9c6644", "bas": "#5e548e",
+                "chaussures": "#3b2f2f", "yeux": "#3a4a5a", "gilet": "#6f4e37" },
+  "coiffure": "chauve", "haut": "gilet",
+  "accessoires": [ { "type": "lunettes" }, { "type": "moustache", "couleur": "#f0f0f0" }, { "type": "canne" } ]
+}

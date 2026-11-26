@@ -1,0 +1,3 @@
+{ "nom": "Passant", "etiquette": "", "gabarit": "adulte", "taille": 1.76,
+  "couleurs": { "peau": "#f1c27d", "cheveux": "#2b1b12", "haut": "#457b9d", "bas": "#3d405b", "chaussures": "#222222" },
+  "coiffure": "courte", "haut": "tshirt", "accessoires": [ { "type": "sac", "couleur": "#f4a261" } ] }

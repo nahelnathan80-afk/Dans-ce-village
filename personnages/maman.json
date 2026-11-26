@@ -1,0 +1,7 @@
+// Maman de Léo.
+{
+  "nom": "Maman", "etiquette": "MAMAN", "gabarit": "adulte", "taille": 1.70,
+  "couleurs": { "peau": "#f4cba5", "cheveux": "#4a2a17", "haut": "#e76f51", "bas": "#3d405b",
+                "chaussures": "#5c4033", "yeux": "#4a2e1a" },
+  "coiffure": "queue", "haut": "chemise", "accessoires": []
+}

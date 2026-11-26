@@ -1,0 +1,3 @@
+{ "nom": "Un enfant", "etiquette": "", "gabarit": "enfant", "taille": 1.15,
+  "couleurs": { "peau": "#d4a373", "cheveux": "#3b2a1e", "haut": "#ffd166", "bas": "#118ab2", "chaussures": "#ef476f" },
+  "coiffure": "bouclee", "haut": "tshirt", "accessoires": [] }

@@ -1,0 +1,8 @@
+// Le prof principal.
+{
+  "nom": "Le prof", "etiquette": "LE PROF", "gabarit": "adulte", "taille": 1.82,
+  "couleurs": { "peau": "#e0ac85", "cheveux": "#3b2a1e", "haut": "#cde7f0", "bas": "#2b2d42",
+                "chaussures": "#3b2f2f", "yeux": "#3a2a1a" },
+  "coiffure": "courte", "haut": "chemise",
+  "accessoires": [ { "type": "lunettes" }, { "type": "cravate" } ]
+}

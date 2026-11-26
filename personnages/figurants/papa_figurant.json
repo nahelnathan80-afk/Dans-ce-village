@@ -1,0 +1,3 @@
+{ "nom": "Un papa", "etiquette": "", "gabarit": "adulte", "taille": 1.80,
+  "couleurs": { "peau": "#d4a373", "cheveux": "#3b2a1e", "haut": "#90be6d", "bas": "#344e41", "chaussures": "#5c4033" },
+  "coiffure": "courte", "haut": "chemise", "accessoires": [] }

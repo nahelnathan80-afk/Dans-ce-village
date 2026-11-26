@@ -1,0 +1,10 @@
+# Rendus intermédiaires et cache (jamais commités)
+cache/
+output/**
+!output/*/
+!output/*/*.mp4
+output/*/*_plans/
+# Modèles téléchargés par scripts/setup.sh
+.models/
+__pycache__/
+*.pyc

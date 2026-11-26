@@ -1,0 +1,8 @@
+// Inès, une fille de la foule. Signe distinctif : écharpe violette.
+{
+  "nom": "Inès", "etiquette": "INÈS", "gabarit": "enfant", "taille": 1.40,
+  "couleurs": { "peau": "#c98e63", "cheveux": "#1f130c", "haut": "#3d5a80", "bas": "#22223b",
+                "chaussures": "#f2f2f2", "yeux": "#2b1a10" },
+  "coiffure": "longue", "haut": "tshirt",
+  "accessoires": [ { "type": "echarpe", "couleur": "#8e44ad" } ]
+}
