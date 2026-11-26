@@ -266,7 +266,7 @@ export const SHOTS: ShotDef[] = [
 	},
 	{
 		id: 'p06-passant',
-		from: Wt('plan06', 'jamais', -0.25),
+		from: Wt('plan06', 'Personne', -0.1),
 		render: (c) => (
 			<Stage camera={closeUp([3.4, 0, -6.6], -Math.PI / 2 - 0.6, 4.0, {side: 0.2})} ambiance="morning">
 				{town({billboard: ['TIRAGE', 'DU JOUR']})}
@@ -431,6 +431,19 @@ export const SHOTS: ShotDef[] = [
 			);
 		},
 	},
+	{
+		id: 'p10b-noe',
+		from: Wt('plan10b', 'Presque', -0.25),
+		render: (c) => {
+			const k = punch(c.f, 6, 6);
+			return (
+				<Stage camera={closeUp([3.2, 0, -2.6], Math.PI / 2, 3.4 - k * 0.8, {scale: 0.82, side: -0.6, fov: 38 - k * 6})} ambiance="golden">
+					{town({billboard: ['TIRAGE', 'DU JOUR']})}
+					<Character look={L.noe} position={[3.2, 0, -2.6]} rotation={[0, Math.PI / 2, 0]} emotion="surprised" blink={false} />
+				</Stage>
+			);
+		},
+	},
 
 	// P11 — sauf mamie, dans son fauteuil, entourée d'horloges
 	{
@@ -494,7 +507,7 @@ export const SHOTS: ShotDef[] = [
 	},
 	{
 		id: 'p13-compte',
-		from: Wt('plan13', 'compté', -0.15),
+		from: Wt('plan13', 'manquait', -0.15),
 		render: (c) => {
 			const pts = Math.floor(c.f / 9) % 3;
 			return (
@@ -507,12 +520,34 @@ export const SHOTS: ShotDef[] = [
 		},
 	},
 	{
+		id: 'p13-lila',
+		from: Wt('plan13', 'Lila', -0.2),
+		render: (c) => {
+			const k = punch(c.f, 4, 6);
+			return (
+				<Stage camera={closeUp([3.6, 0, -3.4], -Math.PI / 2 + 0.4, 2.8 - k * 0.7, {scale: 0.82, side: 0.25, fov: 36 - k * 8, shake: 0.02})} ambiance="nightblue" fogNear={30} fogFar={150}>
+					{town({night: true})}
+					<Character look={L.noe} position={[3.6, 0, -3.4]} rotation={[0, -Math.PI / 2 + 0.4, 0]} emotion="panic" blink={false} />
+				</Stage>
+			);
+		},
+	},
+	{
 		id: 'p13b-crie',
 		from: F('plan13b', -0.1),
 		render: (c) => (
 			<Stage camera={{pos: [1.2, 2.2, -1.8], target: [6.5, 2.6, -3.2], fov: 46, shake: 0.01}} ambiance="nightblue" fogNear={30} fogFar={150}>
 				{town({night: true, glow: 0.5 + 0.3 * Math.sin(c.f / 3)})}
 				<Character look={L.noe} position={[3.4, 0, -3.0]} rotation={[0, Math.PI / 2, 0]} emotion="panic" squash={squashAt(c.f, 4, 0.12)} pose={{armL: [-2.0, -0.55], armR: [-2.0, -0.55]}} />
+			</Stage>
+		),
+	},
+	{
+		id: 'p13b-maison',
+		from: Wt('plan13b', 'Personne', -0.1),
+		render: (c) => (
+			<Stage camera={{pos: [0.5, 3.6, -1.0 - ramp(c.f, 0, c.d) * 0.6], target: [9.0, 3.2, -3], fov: 46}} ambiance="nightblue" fogNear={30} fogFar={150}>
+				{town({night: true, glow: 0.6 + 0.3 * Math.sin(c.f / 2)})}
 			</Stage>
 		),
 	},
@@ -554,6 +589,30 @@ export const SHOTS: ShotDef[] = [
 					</Character>
 					<Suitcase position={[-1.0, 0, -1.0]} rotY={0.2} color="#8b3a3a" />
 					<Character look={L.lila} position={[1.0, 0, -1.0]} rotation={[0, -0.2, 0]} emotion="happy" blink={blinkAt(c.f, 2)} pose={{armL: [0, 2.6]}} />
+				</LivingRoom>
+			</Stage>
+		),
+	},
+	{
+		id: 'p15-valise',
+		from: Wt('plan15', 'valise', -0.25),
+		render: (c) => (
+			<Stage camera={{pos: [-2.4, 1.2, 0.8], target: [-1.0, 0.6, -1.0], fov: 40}} ambiance="interiorNight">
+				<LivingRoom clockTime={() => 12} night suitcase={false}>
+					<Suitcase position={[-1.0, 0, -1.0]} rotY={0.2} color="#8b3a3a" />
+					<Character look={L.odetteCoat} position={[0, 0, -1.2]} emotion="happy" />
+				</LivingRoom>
+			</Stage>
+		),
+	},
+	{
+		id: 'p15-lila',
+		from: Wt('plan15', 'Lila', -0.1),
+		render: (c) => (
+			<Stage camera={closeUp([1.0, 0, -1.0], -0.2, 2.8, {scale: 0.66, side: 0.2})} ambiance="interiorNight">
+				<LivingRoom clockTime={() => 12} night suitcase={false}>
+					<Character look={L.lila} position={[1.0, 0, -1.0]} rotation={[0, -0.2, 0]} emotion="happy" blink={blinkAt(c.f, 2)} pose={{armL: [0, 2.6 + Math.sin(c.f / 4) * 0.3]}} />
+					<Character look={L.odetteCoat} position={[0, 0, -1.2]} emotion="happy" />
 				</LivingRoom>
 			</Stage>
 		),
@@ -627,6 +686,15 @@ export const SHOTS: ShotDef[] = [
 		from: F('plan17b', -0.1),
 		render: (c) => (
 			<Stage camera={{pos: [-2 + ramp(c.f, 0, c.d) * 3, 2.2, 6], target: [3, 3.2, -10], fov: 50}} ambiance="valley">
+				{valleyScene(c.g)}
+			</Stage>
+		),
+	},
+	{
+		id: 'p17b-ciel',
+		from: Wt('plan17b', 'Juste', -0.1),
+		render: (c) => (
+			<Stage camera={{pos: [6, 1.2 + ramp(c.f, 0, c.d) * 1.5, 4], target: [-4, 6, -20], fov: 54}} ambiance="valley">
 				{valleyScene(c.g)}
 			</Stage>
 		),
