@@ -1,28 +1,28 @@
-Épisode leo_hier — mode apercu — 2026-11-26 15:19:32
-Durée : 81.1 s — fichier : output/leo_hier/leo_hier.mp4 (7.0 Mo) — son : -14.8 LUFS
+Épisode leo_hier — mode apercu — 2026-11-26 16:35:15
+Durée : 81.8 s — fichier : output/leo_hier/leo_hier.mp4 (7.2 Mo) — son : -14.2 LUFS
 
 Plan     durée  cadrages  état      temps (dont rendu Blender)
-plan01    4.20s     3      rendu     1 min 25 s (1 min 21 s)
-plan02    8.23s     6      rendu     3 min 24 s (3 min 17 s)
-plan03    5.03s     3      rendu     1 min 31 s (1 min 27 s)
-plan04    7.03s     4      rendu     1 min 48 s (1 min 42 s)
-plan05    4.50s     3      rendu     1 min 19 s (1 min 15 s)
-plan06    7.00s     4      rendu     1 min 52 s (1 min 47 s)
-plan07    7.00s     4      rendu     2 min 05 s (1 min 59 s)
-plan08    4.87s     3      rendu     1 min 26 s (1 min 22 s)
-plan09    6.00s     4      rendu     1 min 43 s (1 min 37 s)
-plan10    5.53s     3      rendu     1 min 31 s (1 min 26 s)
-plan11    3.50s     2      rendu     57 s (53 s)
-plan12    4.00s     2      rendu     1 min 15 s (1 min 11 s)
-plan13    7.00s     5      rendu     2 min 16 s (2 min 10 s)
-plan14    6.00s     4      rendu     1 min 50 s (1 min 45 s)
+plan01    4.60s     3      rendu     1 min 36 s (1 min 32 s)
+plan02    8.40s     6      rendu     2 min 28 s (2 min 21 s)
+plan03    4.57s     3      rendu     1 min 26 s (1 min 22 s)
+plan04    5.33s     3      rendu     1 min 25 s (1 min 20 s)
+plan05    5.50s     4      rendu     1 min 33 s (1 min 28 s)
+plan06    5.20s     3      rendu     1 min 22 s (1 min 18 s)
+plan07    5.00s     3      rendu     1 min 34 s (1 min 30 s)
+plan08    4.17s     3      rendu     1 min 12 s (1 min 09 s)
+plan09    6.80s     5      rendu     1 min 48 s (1 min 42 s)
+plan10    5.50s     3      rendu     1 min 24 s (1 min 20 s)
+plan11    5.00s     3      rendu     1 min 10 s (1 min 06 s)
+plan12    5.00s     3      rendu     1 min 20 s (1 min 16 s)
+plan13    8.00s     6      rendu     2 min 19 s (2 min 13 s)
+plan14    7.50s     5      rendu     2 min 09 s (2 min 03 s)
 
-Temps total : 25 min 05 s
+Temps total : 23 min 59 s
 
 Checklist :
   [OK] 1re phrase commence par « Dans cette ville, »
   [OK] Aucune phrase de plus de 12 mots — max 12 mots : « Dans cette ville, tout le monde connaît la date de sa mort. »
   [OK] Un cadrage change au moins toutes les 2 s — cadrage le plus long : 2.00 s
-  [!!] Jamais de silence total (niveau mini -180 dBFS)
+  [OK] Jamais de silence total (niveau mini -53 dBFS)
   [i] Timing des sous-titres : whisper.cpp
-  [i] Voix : temporaire (cache)
+  [i] Voix : mp3 fourni
