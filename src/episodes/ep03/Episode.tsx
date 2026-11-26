@@ -117,11 +117,13 @@ export const Episode03: React.FC = () => {
 				<At from={Wt('plan08', 'Noé')} to={Wt('plan08', 'Avec', -0.1)}>
 					<NameTag name="NOÉ" x={500} y={430} />
 				</At>
-				<At from={Wt('plan08', 'Avec', -0.1)} to={F('plan09', -0.1)}>
+				<At from={Wt('plan08', 'Pistache', -0.1)} to={F('plan09', -0.1)}>
+					<NameTag name="PISTACHE" x={520} y={560} color="#f28c28" />
+				</At>
+				<At from={Wt('plan08', 'Avec', -0.1)} to={Wt('plan08', 'Pistache', -0.1)}>
 					<NameTag name="NOÉ" x={486} y={650} />
 					<NameTag name="LILA" x={675} y={760} color="#f5b700" delay={Wt('plan08', 'Lila') - Wt('plan08', 'Avec', -0.1)} />
 					<NameTag name="MAMIE ODETTE" x={300} y={540} color="#7b4dff" delay={Wt('plan08', 'Odette') - Wt('plan08', 'Avec', -0.1)} />
-					<NameTag name="PISTACHE" x={820} y={900} color="#f28c28" delay={Wt('plan08', 'Pistache') - Wt('plan08', 'Avec', -0.1)} />
 				</At>
 				<At from={F('plan18', 0.1)} to={Wt('plan18', 'chaises', -0.25)}>
 					<NameTag name="PAPI MARCEL" x={700} y={560} color="#3d6fa8" />

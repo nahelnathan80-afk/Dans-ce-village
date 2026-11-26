@@ -1,5 +1,5 @@
 {
- "duration": 76.63,
+ "duration": 89.13,
  "lines": [
   {
    "id": "plan01",
@@ -15,58 +15,58 @@
     ]
    },
    "text": "Dans cette ville, chaque nuit à minuit, une *maison* disparaît.",
-   "start": 0.15,
-   "end": 3.21,
+   "start": 0.13,
+   "end": 3.67,
    "words": [
     {
      "text": "Dans",
-     "start": 0.15,
-     "end": 0.33
+     "start": 0.13,
+     "end": 0.29
     },
     {
      "text": "cette",
-     "start": 0.33,
-     "end": 0.57
+     "start": 0.29,
+     "end": 0.47
     },
     {
      "text": "ville,",
-     "start": 0.57,
-     "end": 0.85
+     "start": 0.47,
+     "end": 1.11
     },
     {
      "text": "chaque",
-     "start": 1.17,
-     "end": 1.29
+     "start": 1.11,
+     "end": 1.27
     },
     {
      "text": "nuit",
-     "start": 1.29,
-     "end": 1.55
+     "start": 1.27,
+     "end": 1.53
     },
     {
      "text": "à",
-     "start": 1.55,
-     "end": 1.71
+     "start": 1.53,
+     "end": 1.69
     },
     {
      "text": "minuit,",
-     "start": 1.71,
-     "end": 2.05
+     "start": 1.69,
+     "end": 2.35
     },
     {
      "text": "une",
-     "start": 2.21,
-     "end": 2.33
+     "start": 2.35,
+     "end": 2.47
     },
     {
      "text": "*maison*",
-     "start": 2.33,
-     "end": 2.59
+     "start": 2.47,
+     "end": 2.69
     },
     {
      "text": "disparaît.",
-     "start": 2.59,
-     "end": 3.21
+     "start": 2.69,
+     "end": 3.67
     }
    ]
   },
@@ -84,38 +84,38 @@
     ]
    },
    "text": "Et cette nuit-là… c'était la *mienne*.",
-   "start": 3.81,
-   "end": 5.35,
+   "start": 4.35,
+   "end": 6.11,
    "words": [
     {
      "text": "Et",
-     "start": 3.81,
-     "end": 3.924
+     "start": 4.35,
+     "end": 4.41
     },
     {
      "text": "cette",
-     "start": 3.924,
-     "end": 4.209
+     "start": 4.41,
+     "end": 4.59
     },
     {
      "text": "nuit-là…",
-     "start": 4.209,
-     "end": 4.551
+     "start": 4.59,
+     "end": 5.47
     },
     {
      "text": "c'était",
-     "start": 4.551,
-     "end": 4.894
+     "start": 5.47,
+     "end": 5.73
     },
     {
      "text": "la",
-     "start": 4.894,
-     "end": 5.008
+     "start": 5.73,
+     "end": 5.87
     },
     {
      "text": "*mienne*.",
-     "start": 5.008,
-     "end": 5.35
+     "start": 5.87,
+     "end": 6.11
     }
    ]
   },
@@ -133,28 +133,28 @@
     ]
    },
    "text": "Revenons à ce matin.",
-   "start": 6.25,
-   "end": 7.29,
+   "start": 7.11,
+   "end": 7.83,
    "words": [
     {
      "text": "Revenons",
-     "start": 6.25,
-     "end": 6.79
+     "start": 7.11,
+     "end": 7.47
     },
     {
      "text": "à",
-     "start": 6.79,
-     "end": 7.01
+     "start": 7.47,
+     "end": 7.57
     },
     {
      "text": "ce",
-     "start": 7.01,
-     "end": 7.03
+     "start": 7.57,
+     "end": 7.65
     },
     {
      "text": "matin.",
-     "start": 7.03,
-     "end": 7.29
+     "start": 7.65,
+     "end": 7.83
     }
    ]
   },
@@ -172,73 +172,73 @@
     ]
    },
    "text": "Chaque matin, le maire tire un numéro. Toute la ville retient son souffle.",
-   "start": 7.89,
-   "end": 11.33,
+   "start": 8.53,
+   "end": 12.21,
    "words": [
     {
      "text": "Chaque",
-     "start": 7.89,
-     "end": 8.15
+     "start": 8.53,
+     "end": 8.81
     },
     {
      "text": "matin,",
-     "start": 8.15,
-     "end": 8.39
+     "start": 8.81,
+     "end": 9.37
     },
     {
      "text": "le",
-     "start": 8.69,
-     "end": 8.77
+     "start": 9.37,
+     "end": 9.47
     },
     {
      "text": "maire",
-     "start": 8.77,
-     "end": 8.99
+     "start": 9.47,
+     "end": 9.73
     },
     {
      "text": "tire",
-     "start": 8.99,
-     "end": 9.13
+     "start": 9.73,
+     "end": 9.91
     },
     {
      "text": "un",
-     "start": 9.13,
-     "end": 9.31
+     "start": 9.91,
+     "end": 10.07
     },
     {
      "text": "numéro.",
-     "start": 9.31,
-     "end": 9.55
+     "start": 10.07,
+     "end": 10.81
     },
     {
      "text": "Toute",
-     "start": 9.95,
-     "end": 10.15
+     "start": 10.81,
+     "end": 10.99
     },
     {
      "text": "la",
-     "start": 10.15,
-     "end": 10.29
+     "start": 10.99,
+     "end": 11.17
     },
     {
      "text": "ville",
-     "start": 10.29,
-     "end": 10.41
+     "start": 11.17,
+     "end": 11.33
     },
     {
      "text": "retient",
-     "start": 10.41,
-     "end": 10.79
+     "start": 11.33,
+     "end": 11.69
     },
     {
      "text": "son",
-     "start": 10.79,
-     "end": 10.91
+     "start": 11.69,
+     "end": 11.81
     },
     {
      "text": "souffle.",
-     "start": 10.91,
-     "end": 11.33
+     "start": 11.81,
+     "end": 12.21
     }
    ]
   },
@@ -256,58 +256,58 @@
     ]
    },
    "text": "Si c'est le tien, tu as jusqu'à minuit pour partir.",
-   "start": 12.53,
-   "end": 14.31,
+   "start": 13.51,
+   "end": 15.79,
    "words": [
     {
      "text": "Si",
-     "start": 12.53,
-     "end": 12.624
+     "start": 13.51,
+     "end": 13.59
     },
     {
      "text": "c'est",
-     "start": 12.624,
-     "end": 12.811
+     "start": 13.59,
+     "end": 13.75
     },
     {
      "text": "le",
-     "start": 12.811,
-     "end": 12.905
+     "start": 13.75,
+     "end": 13.85
     },
     {
      "text": "tien,",
-     "start": 12.905,
-     "end": 13.092
+     "start": 13.85,
+     "end": 14.49
     },
     {
      "text": "tu",
-     "start": 13.092,
-     "end": 13.186
+     "start": 14.49,
+     "end": 14.55
     },
     {
      "text": "as",
-     "start": 13.186,
-     "end": 13.279
+     "start": 14.53,
+     "end": 14.61
     },
     {
      "text": "jusqu'à",
-     "start": 13.279,
-     "end": 13.561
+     "start": 14.61,
+     "end": 14.91
     },
     {
      "text": "minuit",
-     "start": 13.561,
-     "end": 13.842
+     "start": 14.91,
+     "end": 15.31
     },
     {
      "text": "pour",
-     "start": 13.842,
-     "end": 14.029
+     "start": 15.31,
+     "end": 15.45
     },
     {
      "text": "partir.",
-     "start": 14.029,
-     "end": 14.31
+     "start": 15.45,
+     "end": 15.79
     }
    ]
   },
@@ -331,63 +331,63 @@
     ]
    },
    "text": "Une seule règle : ne jamais rester dedans. Personne n'est jamais *revenu*.",
-   "start": 14.91,
-   "end": 18.29,
+   "start": 16.49,
+   "end": 20.65,
    "words": [
     {
      "text": "Une",
-     "start": 14.91,
-     "end": 15.088
+     "start": 16.49,
+     "end": 16.63
     },
     {
      "text": "seule",
-     "start": 15.088,
-     "end": 15.384
+     "start": 16.63,
+     "end": 16.79
     },
     {
      "text": "règle :",
-     "start": 15.384,
-     "end": 15.681
+     "start": 16.79,
+     "end": 17.39
     },
     {
      "text": "ne",
-     "start": 15.681,
-     "end": 15.799
+     "start": 17.39,
+     "end": 17.57
     },
     {
      "text": "jamais",
-     "start": 15.799,
-     "end": 16.155
+     "start": 17.57,
+     "end": 17.97
     },
     {
      "text": "rester",
-     "start": 16.155,
-     "end": 16.511
+     "start": 17.97,
+     "end": 18.33
     },
     {
      "text": "dedans.",
-     "start": 16.511,
-     "end": 16.867
+     "start": 18.33,
+     "end": 19.41
     },
     {
      "text": "Personne",
-     "start": 16.867,
-     "end": 17.341
+     "start": 19.41,
+     "end": 19.77
     },
     {
      "text": "n'est",
-     "start": 17.341,
-     "end": 17.578
+     "start": 19.77,
+     "end": 19.99
     },
     {
      "text": "jamais",
-     "start": 17.578,
-     "end": 17.934
+     "start": 19.99,
+     "end": 20.21
     },
     {
      "text": "*revenu*.",
-     "start": 17.934,
-     "end": 18.29
+     "start": 20.21,
+     "end": 20.65
     }
    ]
   },
@@ -406,78 +406,78 @@
     ]
    },
    "text": "Le numéro sept a disparu il y a dix ans. C'était celui de *papi*.",
-   "start": 19.29,
-   "end": 22.29,
+   "start": 21.63,
+   "end": 24.73,
    "words": [
     {
      "text": "Le",
-     "start": 19.29,
-     "end": 19.418
+     "start": 21.63,
+     "end": 21.758
     },
     {
      "text": "numéro",
-     "start": 19.418,
-     "end": 19.801
+     "start": 21.758,
+     "end": 21.983
     },
     {
      "text": "sept",
-     "start": 19.801,
-     "end": 20.056
+     "start": 21.983,
+     "end": 22.278
     },
     {
      "text": "a",
-     "start": 20.056,
-     "end": 20.12
+     "start": 22.278,
+     "end": 22.36
     },
     {
      "text": "disparu",
-     "start": 20.12,
-     "end": 20.567
+     "start": 22.36,
+     "end": 23.013
     },
     {
      "text": "il",
-     "start": 20.567,
-     "end": 20.694
+     "start": 23.013,
+     "end": 23.136
     },
     {
      "text": "y",
-     "start": 20.694,
-     "end": 20.758
+     "start": 23.136,
+     "end": 23.196
     },
     {
      "text": "a",
-     "start": 20.758,
-     "end": 20.822
+     "start": 23.182,
+     "end": 23.242
     },
     {
      "text": "dix",
-     "start": 20.822,
-     "end": 21.013
+     "start": 23.228,
+     "end": 23.466
     },
     {
      "text": "ans.",
-     "start": 21.013,
-     "end": 21.205
+     "start": 23.466,
+     "end": 23.674
     },
     {
      "text": "C'était",
-     "start": 21.205,
-     "end": 21.588
+     "start": 23.674,
+     "end": 24.309
     },
     {
      "text": "celui",
-     "start": 21.588,
-     "end": 21.907
+     "start": 24.309,
+     "end": 24.443
     },
     {
      "text": "de",
-     "start": 21.907,
-     "end": 22.035
+     "start": 24.443,
+     "end": 24.53
     },
     {
      "text": "*papi*.",
-     "start": 22.035,
-     "end": 22.29
+     "start": 24.53,
+     "end": 24.73
     }
    ]
   },
@@ -495,28 +495,28 @@
     ]
    },
    "text": "Mamie n'en parle *jamais*.",
-   "start": 22.69,
-   "end": 23.89,
+   "start": 25.23,
+   "end": 25.93,
    "words": [
     {
      "text": "Mamie",
-     "start": 22.69,
-     "end": 23.006
+     "start": 25.23,
+     "end": 25.452
     },
     {
      "text": "n'en",
-     "start": 23.006,
-     "end": 23.195
+     "start": 25.452,
+     "end": 25.523
     },
     {
      "text": "parle",
-     "start": 23.195,
-     "end": 23.511
+     "start": 25.523,
+     "end": 25.679
     },
     {
      "text": "*jamais*.",
-     "start": 23.511,
-     "end": 23.89
+     "start": 25.679,
+     "end": 25.93
     }
    ]
   },
@@ -533,68 +533,68 @@
     ]
    },
    "text": "Moi, c'est *Noé*. J'habite au douze. Avec Lila, mamie Odette et Pistache.",
-   "start": 24.79,
-   "end": 27.81,
+   "start": 26.93,
+   "end": 31.13,
    "words": [
     {
      "text": "Moi,",
-     "start": 24.79,
-     "end": 24.961
+     "start": 26.93,
+     "end": 27.146
     },
     {
      "text": "c'est",
-     "start": 24.961,
-     "end": 25.189
+     "start": 27.146,
+     "end": 27.528
     },
     {
      "text": "*Noé*.",
-     "start": 25.189,
-     "end": 25.36
+     "start": 27.528,
+     "end": 27.774
     },
     {
      "text": "J'habite",
-     "start": 25.36,
-     "end": 25.759
+     "start": 27.774,
+     "end": 28.34
     },
     {
      "text": "au",
-     "start": 25.759,
-     "end": 25.873
+     "start": 28.34,
+     "end": 28.448
     },
     {
      "text": "douze.",
-     "start": 25.873,
-     "end": 26.158
+     "start": 28.448,
+     "end": 28.616
     },
     {
      "text": "Avec",
-     "start": 26.158,
-     "end": 26.385
+     "start": 28.616,
+     "end": 29.168
     },
     {
      "text": "Lila,",
-     "start": 26.385,
-     "end": 26.613
+     "start": 29.168,
+     "end": 29.539
     },
     {
      "text": "mamie",
-     "start": 26.613,
-     "end": 26.898
+     "start": 29.539,
+     "end": 30.088
     },
     {
      "text": "Odette",
-     "start": 26.898,
-     "end": 27.24
+     "start": 30.088,
+     "end": 30.453
     },
     {
      "text": "et",
-     "start": 27.24,
-     "end": 27.354
+     "start": 30.453,
+     "end": 30.679
     },
     {
      "text": "Pistache.",
-     "start": 27.354,
-     "end": 27.81
+     "start": 30.679,
+     "end": 31.13
     }
    ]
   },
@@ -612,53 +612,53 @@
     ]
    },
    "text": "Et ce matin-là, le maire a tiré… le *douze*.",
-   "start": 28.41,
-   "end": 30.69,
+   "start": 31.83,
+   "end": 34.41,
    "words": [
     {
      "text": "Et",
-     "start": 28.41,
-     "end": 28.562
+     "start": 31.83,
+     "end": 31.89
     },
     {
      "text": "ce",
-     "start": 28.562,
-     "end": 28.714
+     "start": 31.87,
+     "end": 32.01
     },
     {
      "text": "matin-là,",
-     "start": 28.714,
-     "end": 29.246
+     "start": 32.01,
+     "end": 32.75
     },
     {
      "text": "le",
-     "start": 29.246,
-     "end": 29.398
+     "start": 32.75,
+     "end": 32.83
     },
     {
      "text": "maire",
-     "start": 29.398,
-     "end": 29.778
+     "start": 32.83,
+     "end": 33.03
     },
     {
      "text": "a",
-     "start": 29.778,
-     "end": 29.854
+     "start": 33.03,
+     "end": 33.15
     },
     {
      "text": "tiré…",
-     "start": 29.854,
-     "end": 30.158
+     "start": 33.15,
+     "end": 33.57
     },
     {
      "text": "le",
-     "start": 30.158,
-     "end": 30.31
+     "start": 33.57,
+     "end": 34.17
     },
     {
      "text": "*douze*.",
-     "start": 30.31,
-     "end": 30.69
+     "start": 34.17,
+     "end": 34.41
     }
    ]
   },
@@ -677,78 +677,78 @@
     ]
    },
    "text": "On a tout mis en cartons. Les jouets, la vaisselle, le panier du chat.",
-   "start": 32.09,
-   "end": 34.77,
+   "start": 35.91,
+   "end": 39.41,
    "words": [
     {
      "text": "On",
-     "start": 32.09,
-     "end": 32.21
+     "start": 35.91,
+     "end": 36.028
     },
     {
      "text": "a",
-     "start": 32.21,
-     "end": 32.31
+     "start": 36.028,
+     "end": 36.143
     },
     {
      "text": "tout",
-     "start": 32.31,
-     "end": 32.39
+     "start": 36.143,
+     "end": 36.363
     },
     {
      "text": "mis",
-     "start": 32.39,
-     "end": 32.49
+     "start": 36.363,
+     "end": 36.52
     },
     {
      "text": "en",
-     "start": 32.49,
-     "end": 32.63
+     "start": 36.52,
+     "end": 36.636
     },
     {
      "text": "cartons.",
-     "start": 32.63,
-     "end": 32.99
+     "start": 36.636,
+     "end": 37.367
     },
     {
      "text": "Les",
-     "start": 33.27,
-     "end": 33.35
+     "start": 37.367,
+     "end": 37.465
     },
     {
      "text": "jouets,",
-     "start": 33.35,
-     "end": 33.59
+     "start": 37.465,
+     "end": 37.998
     },
     {
      "text": "la",
-     "start": 33.65,
-     "end": 33.75
+     "start": 37.998,
+     "end": 38.113
     },
     {
      "text": "vaisselle,",
-     "start": 33.75,
-     "end": 34.15
+     "start": 38.113,
+     "end": 38.778
     },
     {
      "text": "le",
-     "start": 34.23,
-     "end": 34.29
+     "start": 38.778,
+     "end": 38.839
     },
     {
      "text": "panier",
-     "start": 34.29,
-     "end": 34.49
+     "start": 38.839,
+     "end": 39.077
     },
     {
      "text": "du",
-     "start": 34.49,
-     "end": 34.59
+     "start": 39.077,
+     "end": 39.194
     },
     {
      "text": "chat.",
-     "start": 34.59,
-     "end": 34.77
+     "start": 39.194,
+     "end": 39.41
     }
    ]
   },
@@ -766,48 +766,48 @@
     ]
    },
    "text": "Six heures avant minuit, on était prêts. *Presque*.",
-   "start": 35.17,
-   "end": 37.39,
+   "start": 39.91,
+   "end": 42.53,
    "words": [
     {
      "text": "Six",
-     "start": 35.17,
-     "end": 35.39
+     "start": 39.91,
+     "end": 40.144
     },
     {
      "text": "heures",
-     "start": 35.39,
-     "end": 35.55
+     "start": 40.144,
+     "end": 40.323
     },
     {
      "text": "avant",
-     "start": 35.55,
-     "end": 35.71
+     "start": 40.323,
+     "end": 40.46
     },
     {
      "text": "minuit,",
-     "start": 35.71,
-     "end": 36.09
+     "start": 40.46,
+     "end": 40.836
     },
     {
      "text": "on",
-     "start": 36.17,
-     "end": 36.25
+     "start": 40.836,
+     "end": 41.139
     },
     {
      "text": "était",
-     "start": 36.25,
-     "end": 36.43
+     "start": 41.139,
+     "end": 41.305
     },
     {
      "text": "prêts.",
-     "start": 36.43,
-     "end": 36.77
+     "start": 41.305,
+     "end": 42.101
     },
     {
      "text": "*Presque*.",
-     "start": 37.03,
-     "end": 37.39
+     "start": 42.101,
+     "end": 42.53
     }
    ]
   },
@@ -831,53 +831,53 @@
     ]
    },
    "text": "Sauf mamie. Elle n'a pas bougé de son fauteuil.",
-   "start": 38.39,
-   "end": 40.51,
+   "start": 43.63,
+   "end": 45.87,
    "words": [
     {
      "text": "Sauf",
-     "start": 38.39,
-     "end": 38.626
+     "start": 43.63,
+     "end": 43.77
     },
     {
      "text": "mamie.",
-     "start": 38.626,
-     "end": 38.92
+     "start": 43.77,
+     "end": 44.51
     },
     {
      "text": "Elle",
-     "start": 38.92,
-     "end": 39.156
+     "start": 44.51,
+     "end": 44.65
     },
     {
      "text": "n'a",
-     "start": 39.156,
-     "end": 39.273
+     "start": 44.65,
+     "end": 44.79
     },
     {
      "text": "pas",
-     "start": 39.273,
-     "end": 39.45
+     "start": 44.79,
+     "end": 44.99
     },
     {
      "text": "bougé",
-     "start": 39.45,
-     "end": 39.744
+     "start": 44.99,
+     "end": 45.29
     },
     {
      "text": "de",
-     "start": 39.744,
-     "end": 39.862
+     "start": 45.29,
+     "end": 45.35
     },
     {
      "text": "son",
-     "start": 39.862,
-     "end": 40.039
+     "start": 45.35,
+     "end": 45.45
     },
     {
      "text": "fauteuil.",
-     "start": 40.039,
-     "end": 40.51
+     "start": 45.45,
+     "end": 45.87
     }
    ]
   },
@@ -898,48 +898,48 @@
     ]
    },
    "text": "Bizarre. Toutes ses horloges étaient arrêtées sur *minuit*.",
-   "start": 42.11,
-   "end": 44.67,
+   "start": 47.57,
+   "end": 50.29,
    "words": [
     {
      "text": "Bizarre.",
-     "start": 42.11,
-     "end": 42.483
+     "start": 47.57,
+     "end": 48.55
     },
     {
      "text": "Toutes",
-     "start": 42.483,
-     "end": 42.803
+     "start": 48.55,
+     "end": 48.77
     },
     {
      "text": "ses",
-     "start": 42.803,
-     "end": 42.963
+     "start": 48.77,
+     "end": 48.87
     },
     {
      "text": "horloges",
-     "start": 42.963,
-     "end": 43.39
+     "start": 48.87,
+     "end": 49.23
     },
     {
      "text": "étaient",
-     "start": 43.39,
-     "end": 43.763
+     "start": 49.23,
+     "end": 49.37
     },
     {
      "text": "arrêtées",
-     "start": 43.763,
-     "end": 44.19
+     "start": 49.37,
+     "end": 49.79
     },
     {
      "text": "sur",
-     "start": 44.19,
-     "end": 44.35
+     "start": 49.79,
+     "end": 49.95
     },
     {
      "text": "*minuit*.",
-     "start": 44.35,
-     "end": 44.67
+     "start": 49.95,
+     "end": 50.29
     }
    ]
   },
@@ -957,58 +957,58 @@
     ]
    },
    "text": "23 h 55. J'ai compté. Il manquait mamie. Et *Lila*.",
-   "start": 45.87,
-   "end": 48.77,
+   "start": 51.47,
+   "end": 55.61,
    "words": [
     {
      "text": "23",
-     "start": 45.87,
-     "end": 46.036
+     "start": 51.47,
+     "end": 51.932
     },
     {
      "text": "h",
-     "start": 46.036,
-     "end": 46.119
+     "start": 51.932,
+     "end": 51.992
     },
     {
      "text": "55.",
-     "start": 46.119,
-     "end": 46.284
+     "start": 51.957,
+     "end": 52.48
     },
     {
      "text": "J'ai",
-     "start": 46.284,
-     "end": 46.533
+     "start": 52.48,
+     "end": 53.14
     },
     {
      "text": "compté.",
-     "start": 46.533,
-     "end": 47.03
+     "start": 53.14,
+     "end": 53.546
     },
     {
      "text": "Il",
-     "start": 47.03,
-     "end": 47.196
+     "start": 53.546,
+     "end": 54.122
     },
     {
      "text": "manquait",
-     "start": 47.196,
-     "end": 47.859
+     "start": 54.122,
+     "end": 54.472
     },
     {
      "text": "mamie.",
-     "start": 47.859,
-     "end": 48.273
+     "start": 54.472,
+     "end": 54.794
     },
     {
      "text": "Et",
-     "start": 48.273,
-     "end": 48.439
+     "start": 54.794,
+     "end": 55.395
     },
     {
      "text": "*Lila*.",
-     "start": 48.439,
-     "end": 48.77
+     "start": 55.395,
+     "end": 55.61
     }
    ]
   },
@@ -1027,43 +1027,43 @@
     ]
    },
    "text": "J'ai crié leurs noms. Personne n'a *répondu*.",
-   "start": 49.17,
-   "end": 51.13,
+   "start": 56.11,
+   "end": 58.37,
    "words": [
     {
      "text": "J'ai",
-     "start": 49.17,
-     "end": 49.348
+     "start": 56.11,
+     "end": 56.326
     },
     {
      "text": "crié",
-     "start": 49.348,
-     "end": 49.586
+     "start": 56.326,
+     "end": 56.58
     },
     {
      "text": "leurs",
-     "start": 49.586,
-     "end": 49.883
+     "start": 56.58,
+     "end": 56.748
     },
     {
      "text": "noms.",
-     "start": 49.883,
-     "end": 50.12
+     "start": 56.748,
+     "end": 57.432
     },
     {
      "text": "Personne",
-     "start": 50.12,
-     "end": 50.595
+     "start": 57.432,
+     "end": 57.894
     },
     {
      "text": "n'a",
-     "start": 50.595,
-     "end": 50.714
+     "start": 57.894,
+     "end": 57.957
     },
     {
      "text": "*répondu*.",
-     "start": 50.714,
-     "end": 51.13
+     "start": 57.957,
+     "end": 58.37
     }
    ]
   },
@@ -1080,58 +1080,58 @@
     ]
    },
    "text": "Alors j'ai fait la seule chose interdite. Je suis rentré.",
-   "start": 51.93,
-   "end": 54.13,
+   "start": 59.27,
+   "end": 61.95,
    "words": [
     {
      "text": "Alors",
-     "start": 51.93,
-     "end": 52.174
+     "start": 59.27,
+     "end": 59.45
     },
     {
      "text": "j'ai",
-     "start": 52.174,
-     "end": 52.321
+     "start": 59.45,
+     "end": 59.67
     },
     {
      "text": "fait",
-     "start": 52.321,
-     "end": 52.517
+     "start": 59.67,
+     "end": 59.77
     },
     {
      "text": "la",
-     "start": 52.517,
-     "end": 52.614
+     "start": 59.77,
+     "end": 59.89
     },
     {
      "text": "seule",
-     "start": 52.614,
-     "end": 52.859
+     "start": 59.89,
+     "end": 60.11
     },
     {
      "text": "chose",
-     "start": 52.859,
-     "end": 53.103
+     "start": 60.11,
+     "end": 60.33
     },
     {
      "text": "interdite.",
-     "start": 53.103,
-     "end": 53.543
+     "start": 60.33,
+     "end": 61.33
     },
     {
      "text": "Je",
-     "start": 53.543,
-     "end": 53.641
+     "start": 61.33,
+     "end": 61.45
     },
     {
      "text": "suis",
-     "start": 53.641,
-     "end": 53.837
+     "start": 61.45,
+     "end": 61.61
     },
     {
      "text": "rentré.",
-     "start": 53.837,
-     "end": 54.13
+     "start": 61.61,
+     "end": 61.95
     }
    ]
   },
@@ -1156,53 +1156,53 @@
     ]
    },
    "text": "Mamie m'attendait. Avec sa valise. Et Lila, déjà prête.",
-   "start": 55.03,
-   "end": 57.69,
+   "start": 62.95,
+   "end": 66.45,
    "words": [
     {
      "text": "Mamie",
-     "start": 55.03,
-     "end": 55.347
+     "start": 62.95,
+     "end": 63.21
     },
     {
      "text": "m'attendait.",
-     "start": 55.347,
-     "end": 55.98
+     "start": 63.21,
+     "end": 63.99
     },
     {
      "text": "Avec",
-     "start": 55.98,
-     "end": 56.233
+     "start": 63.99,
+     "end": 64.17
     },
     {
      "text": "sa",
-     "start": 56.233,
-     "end": 56.36
+     "start": 64.17,
+     "end": 64.35
     },
     {
      "text": "valise.",
-     "start": 56.36,
-     "end": 56.74
+     "start": 64.35,
+     "end": 65.11
     },
     {
      "text": "Et",
-     "start": 56.74,
-     "end": 56.867
+     "start": 65.11,
+     "end": 65.27
     },
     {
      "text": "Lila,",
-     "start": 56.867,
-     "end": 57.12
+     "start": 65.27,
+     "end": 65.87
     },
     {
      "text": "déjà",
-     "start": 57.12,
-     "end": 57.373
+     "start": 65.87,
+     "end": 66.07
     },
     {
      "text": "prête.",
-     "start": 57.373,
-     "end": 57.69
+     "start": 66.07,
+     "end": 66.45
     }
    ]
   },
@@ -1221,13 +1221,13 @@
     ]
    },
    "text": "*Minuit*.",
-   "start": 59.29,
-   "end": 59.63,
+   "start": 68.15,
+   "end": 68.49,
    "words": [
     {
      "text": "*Minuit*.",
-     "start": 59.29,
-     "end": 59.63
+     "start": 68.15,
+     "end": 68.49
     }
    ]
   },
@@ -1245,48 +1245,48 @@
     ]
    },
    "text": "Les maisons ne disparaissaient pas. Elles partaient… *ailleurs*.",
-   "start": 62.03,
-   "end": 64.31,
+   "start": 70.99,
+   "end": 74.21,
    "words": [
     {
      "text": "Les",
-     "start": 62.03,
-     "end": 62.17
+     "start": 70.99,
+     "end": 71.13
     },
     {
      "text": "maisons",
-     "start": 62.17,
-     "end": 62.45
+     "start": 71.13,
+     "end": 71.41
     },
     {
      "text": "ne",
-     "start": 62.45,
-     "end": 62.59
+     "start": 71.41,
+     "end": 71.53
     },
     {
      "text": "disparaissaient",
-     "start": 62.59,
-     "end": 63.09
+     "start": 71.53,
+     "end": 72.13
     },
     {
      "text": "pas.",
-     "start": 63.09,
-     "end": 63.27
+     "start": 72.13,
+     "end": 72.83
     },
     {
      "text": "Elles",
-     "start": 63.57,
-     "end": 63.71
+     "start": 72.83,
+     "end": 73.01
     },
     {
      "text": "partaient…",
-     "start": 63.71,
-     "end": 64.03
+     "start": 73.01,
+     "end": 73.49
     },
     {
      "text": "*ailleurs*.",
-     "start": 64.05,
-     "end": 64.31
+     "start": 73.49,
+     "end": 74.21
     }
    ]
   },
@@ -1305,65 +1305,65 @@
     ]
    },
    "text": "Ici, il n'y avait pas de minuit. Juste du *soleil*.",
-   "start": 64.71,
-   "end": 67.35,
+   "start": 74.71,
+   "end": 77.57,
    "words": [
     {
      "text": "Ici,",
-     "start": 64.71,
-     "end": 64.93
+     "start": 74.71,
+     "end": 75.33
     },
     {
      "text": "il",
-     "start": 64.93,
-     "end": 65.077
+     "start": 75.33,
+     "end": 75.49
     },
     {
      "text": "n'y",
-     "start": 65.077,
-     "end": 65.223
+     "start": 75.49,
+     "end": 75.61
     },
     {
      "text": "avait",
-     "start": 65.223,
-     "end": 65.59
+     "start": 75.61,
+     "end": 75.67
     },
     {
      "text": "pas",
-     "start": 65.59,
-     "end": 65.81
+     "start": 75.65,
+     "end": 75.87
     },
     {
      "text": "de",
-     "start": 65.81,
-     "end": 65.957
+     "start": 75.87,
+     "end": 76.01
     },
     {
      "text": "minuit.",
-     "start": 65.957,
-     "end": 66.397
+     "start": 76.01,
+     "end": 76.65
     },
     {
      "text": "Juste",
-     "start": 66.397,
-     "end": 66.763
+     "start": 76.65,
+     "end": 76.91
     },
     {
      "text": "du",
-     "start": 66.763,
-     "end": 66.91
+     "start": 76.91,
+     "end": 77.15
     },
     {
      "text": "*soleil*.",
-     "start": 66.91,
-     "end": 67.35
+     "start": 77.15,
+     "end": 77.57
     }
    ]
   },
   {
    "id": "plan18",
    "who": "vo",
-   "pause": 1.8,
+   "pause": 2.4,
    "clock": null,
    "clue": 1,
    "plan": {
@@ -1374,45 +1374,45 @@
     ]
    },
    "text": "Papi nous avait gardé quatre *chaises*.",
-   "start": 68.35,
-   "end": 70.05,
+   "start": 78.67,
+   "end": 79.99,
    "words": [
     {
      "text": "Papi",
-     "start": 68.35,
-     "end": 68.63
+     "start": 78.67,
+     "end": 78.775
     },
     {
      "text": "nous",
-     "start": 68.63,
-     "end": 68.75
+     "start": 78.775,
+     "end": 78.873
     },
     {
      "text": "avait",
-     "start": 68.75,
-     "end": 68.91
+     "start": 78.873,
+     "end": 79.088
     },
     {
      "text": "gardé",
-     "start": 68.91,
-     "end": 69.29
+     "start": 79.088,
+     "end": 79.343
     },
     {
      "text": "quatre",
-     "start": 69.29,
-     "end": 69.49
+     "start": 79.343,
+     "end": 79.589
     },
     {
      "text": "*chaises*.",
-     "start": 69.49,
-     "end": 70.05
+     "start": 79.589,
+     "end": 79.99
     }
    ]
   },
   {
    "id": "plan19",
    "who": "vo",
-   "pause": 3.0,
+   "pause": 4.4,
    "optional": true,
    "clock": null,
    "plan": {
@@ -1424,48 +1424,48 @@
     ]
    },
    "text": "Et toi, tu serais resté dans la maison ?",
-   "start": 71.85,
-   "end": 73.33,
+   "start": 82.49,
+   "end": 84.13,
    "words": [
     {
      "text": "Et",
-     "start": 71.85,
-     "end": 71.97
+     "start": 82.49,
+     "end": 82.65
     },
     {
      "text": "toi,",
-     "start": 71.97,
-     "end": 72.13
+     "start": 82.65,
+     "end": 83.15
     },
     {
      "text": "tu",
-     "start": 72.37,
-     "end": 72.47
+     "start": 83.15,
+     "end": 83.23
     },
     {
      "text": "serais",
-     "start": 72.47,
-     "end": 72.71
+     "start": 83.23,
+     "end": 83.43
     },
     {
      "text": "resté",
-     "start": 72.71,
-     "end": 72.97
+     "start": 83.43,
+     "end": 83.71
     },
     {
      "text": "dans",
-     "start": 72.97,
-     "end": 73.05
+     "start": 83.71,
+     "end": 83.81
     },
     {
      "text": "la",
-     "start": 73.05,
-     "end": 73.15
+     "start": 83.81,
+     "end": 83.91
     },
     {
      "text": "maison ?",
-     "start": 73.15,
-     "end": 73.33
+     "start": 83.91,
+     "end": 84.13
     }
    ]
   }

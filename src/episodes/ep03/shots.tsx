@@ -265,6 +265,18 @@ export const SHOTS: ShotDef[] = [
 		),
 	},
 	{
+		id: 'p06-dedans',
+		from: Wt('plan06', 'dedans', -0.1),
+		render: (c) => {
+			const k = punch(c.f, 3, 6);
+			return (
+				<Stage camera={{pos: [2.6 + k, 2.55, -4.6], target: [5.4, 2.5, -5.6], fov: 36 - k * 8}} ambiance="morning">
+					{town({billboard: ['TIRAGE', 'DU JOUR']})}
+				</Stage>
+			);
+		},
+	},
+	{
 		id: 'p06-passant',
 		from: Wt('plan06', 'Personne', -0.1),
 		render: (c) => (
@@ -338,6 +350,16 @@ export const SHOTS: ShotDef[] = [
 		from: Wt('plan08', 'Avec', -0.1),
 		render: (c) => (
 			<Stage camera={{pos: [-5.6, 2.9, -3.3], target: [5.0, 1.5, -3.3], fov: 48}} ambiance="golden">
+				{town({billboard: ['TIRAGE', 'DU JOUR']})}
+				{family(c.g)}
+			</Stage>
+		),
+	},
+	{
+		id: 'p08-pistache',
+		from: Wt('plan08', 'Pistache', -0.1),
+		render: (c) => (
+			<Stage camera={{pos: [2.4, 1.6, -0.8], target: [4.7, 0.7, -2.2], fov: 42}} ambiance="golden">
 				{town({billboard: ['TIRAGE', 'DU JOUR']})}
 				{family(c.g)}
 			</Stage>

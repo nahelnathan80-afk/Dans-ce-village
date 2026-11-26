@@ -100,6 +100,7 @@ def main():
                 next_start = next((spans[k][0] for k in range(li + 1, len(spans)) if spans[k]), dur)
                 spans[li] = (prev_end + 0.05, max(prev_end + 0.3, next_start - 0.05), [])
                 print(f"   ⚠ {lines[li]['id']} non reconnu → interpolé", flush=True)
+        rel = []  # (réplique, s0, s1, mots en temps relatifs au fichier)
         for li, line in enumerate(lines):
             s0, s1, hj = spans[li]
             toks = tts.display_tokens(line["text"])
@@ -123,13 +124,43 @@ def main():
             for tk, wgt in zip(toks, weights):
                 st = float(np.interp(c / totw, xs, ys))
                 en = float(np.interp((c + wgt) / totw, xs, ys))
-                words.append({"text": tk, "start": round(t + st, 3), "end": round(t + max(en, st + 0.06), 3)})
+                words.append((tk, st, max(en, st + 0.06)))
                 c += wgt
+            rel.append((line, s0, s1, words))
+
+        def place(line, words, offset):
             entry = {k: v for k, v in line.items() if k != "text"}
-            entry.update({"text": line["text"], "start": words[0]["start"], "end": words[-1]["end"], "words": words})
+            ws = [{"text": tk, "start": round(offset + st, 3), "end": round(offset + en, 3)} for tk, st, en in words]
+            entry.update({"text": line["text"], "start": ws[0]["start"], "end": ws[-1]["end"], "words": ws})
             timeline[line["id"]] = entry
-        pieces.append((t, a))
-        t += dur + gap
+
+        if plan.get("split", False):
+            # on redécoupe le fichier réplique par réplique et on applique les pauses du scénario
+            for li, (line, s0, s1, words) in enumerate(rel):
+                prev_end = rel[li - 1][2] if li else 0.0
+                next_start = rel[li + 1][1] if li + 1 < len(rel) else dur
+                c0 = max(prev_end + 0.02, s0 - 0.1)
+                c1 = min(next_start - 0.02, s1 + 0.18)
+                seg = a[int(c0 * SR): int(c1 * SR)].copy()
+                fade = min(len(seg) // 4, int(0.03 * SR))
+                if fade:
+                    seg[:fade] *= np.linspace(0, 1, fade)
+                    seg[-fade:] *= np.linspace(1, 0, fade)
+                place(line, words, t - c0)
+                pieces.append((t, seg))
+                if plan.get("export"):  # un fichier par réplique (planXX.mp3)
+                    ex = ROOT / plan["export"]
+                    ex.mkdir(parents=True, exist_ok=True)
+                    with tempfile.TemporaryDirectory() as td:
+                        w = Path(td) / "s.wav"
+                        sf.write(w, seg, SR)
+                        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(w), "-b:a", "160k", str(ex / f"{line['id']}.mp3")], check=True)
+                t += (s1 - c0) + line.get("pause", 0.3)
+        else:
+            for line, s0, s1, words in rel:
+                place(line, words, t)
+            pieces.append((t, a))
+            t += dur + gap
 
     total = t + 0.6
     mix = np.zeros(int(SR * total) + SR, dtype=np.float32)

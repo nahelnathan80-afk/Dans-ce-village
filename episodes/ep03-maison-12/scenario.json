@@ -445,7 +445,7 @@
       "id": "plan18",
       "who": "vo",
       "text": "Papi nous avait gardé quatre *chaises*.",
-      "pause": 1.8,
+      "pause": 2.4,
       "clock": null,
       "clue": 1,
       "plan": {
@@ -460,7 +460,7 @@
       "id": "plan19",
       "who": "vo",
       "text": "Et toi, tu serais resté dans la maison ?",
-      "pause": 3.0,
+      "pause": 4.4,
       "optional": true,
       "clock": null,
       "plan": {

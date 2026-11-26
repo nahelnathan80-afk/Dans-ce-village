@@ -1,0 +1,44 @@
+{
+ "split": true,
+ "export": "assets/voix/ep03/repliques",
+ "parts": [
+  {
+   "file": "assets/voix/ep03/lotA.mp3",
+   "lines": [
+    "plan01",
+    "plan02",
+    "plan03",
+    "plan04",
+    "plan05",
+    "plan06"
+   ]
+  },
+  {
+   "file": "assets/voix/ep03/lotB.mp3",
+   "lines": [
+    "plan07",
+    "plan07b",
+    "plan08",
+    "plan09",
+    "plan10",
+    "plan10b",
+    "plan11",
+    "plan12"
+   ]
+  },
+  {
+   "file": "assets/voix/ep03/lotC.mp3",
+   "lines": [
+    "plan13",
+    "plan13b",
+    "plan14",
+    "plan15",
+    "plan16",
+    "plan17",
+    "plan17b",
+    "plan18",
+    "plan19"
+   ]
+  }
+ ]
+}
