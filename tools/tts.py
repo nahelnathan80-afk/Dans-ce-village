@@ -123,8 +123,36 @@ def pitch_resample(audio, src_sr, pitch=1.0):
 _cb = {}
 
 
+_UNITS = ["zero", "un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "onze", "douze",
+          "treize", "quatorze", "quinze", "seize"]
+_TENS = {20: "vingt", 30: "trente", 40: "quarante", 50: "cinquante", 60: "soixante"}
+
+
+def _fr_number(n: int) -> str:
+    """Nombre → mots (suffisant pour comparer un texte lu par la voix et la transcription)."""
+    if n < 17:
+        return _UNITS[n]
+    if n < 20:
+        return "dix " + _UNITS[n - 10]
+    if n < 70:
+        t, u = divmod(n, 10)
+        return _TENS[t * 10] + ("" if u == 0 else (" et un" if u == 1 else " " + _UNITS[u]))
+    if n < 80:
+        return "soixante " + _fr_number(n - 60)
+    if n < 100:
+        return "quatre vingt" + ("" if n == 80 else " " + _fr_number(n - 80))
+    if n < 1000:
+        c, r = divmod(n, 100)
+        return ("cent" if c == 1 else _UNITS[c] + " cent") + ("" if r == 0 else " " + _fr_number(r))
+    m, r = divmod(n, 1000)
+    return ("mille" if m == 1 else _fr_number(m) + " mille") + ("" if r == 0 else " " + _fr_number(r))
+
+
 def _norm_words(s: str) -> list[str]:
     import unicodedata
+    s = re.sub(r"(\d)[\s\u00a0](\d{3})", r"\1\2", s)
+    s = re.sub(r"\d+", lambda m: " " + _fr_number(int(m.group())) + " ", s)
+    s = s.replace("-", " ")
     s = unicodedata.normalize("NFD", s.lower())
     s = "".join(c for c in s if unicodedata.category(c) != "Mn")
     return re.findall(r"[a-z0-9]+", s.replace("'", " "))
@@ -163,7 +191,24 @@ def align(audio48: np.ndarray, text: str):
     return [w.word.strip() for w in words], [(w.start, w.end) for w in words], score
 
 
+CACHE = ROOT / "out" / "tts-cache"
+
+
 def synth_chatterbox(text: str, cfg: dict):
+    """Avec cache disque : une réplique déjà générée (même texte + mêmes réglages) n'est pas refaite."""
+    import hashlib
+    key = hashlib.sha1(json.dumps([text, cfg], sort_keys=True, ensure_ascii=False).encode()).hexdigest()[:16]
+    f = CACHE / f"{key}.npz"
+    if f.exists():
+        z = np.load(f)
+        return z["a"], [tuple(x) for x in z["s"]]
+    a, spans = _synth_chatterbox(text, cfg)
+    CACHE.mkdir(parents=True, exist_ok=True)
+    np.savez(f, a=a, s=np.array(spans, dtype=np.float64).reshape(-1, 2))
+    return a, spans
+
+
+def _synth_chatterbox(text: str, cfg: dict):
     import torch
     if "tts" not in _cb:
         from chatterbox.mtl_tts import ChatterboxMultilingualTTS
@@ -171,7 +216,7 @@ def synth_chatterbox(text: str, cfg: dict):
         _cb["tts"] = ChatterboxMultilingualTTS.from_pretrained(device="cpu")
     tts = _cb["tts"]
     best = None
-    for attempt in range(cfg.get("tries", 3)):
+    for attempt in range(cfg.get("tries", 4)):
         torch.manual_seed(cfg.get("seed", 7) + attempt * 101)
         wav = tts.generate(
             speakable(text).replace(" ,", ","),
@@ -190,7 +235,7 @@ def synth_chatterbox(text: str, cfg: dict):
         print(f"     essai {attempt + 1}: fidélité {score:.2f}")
         if best is None or score > best[2]:
             best = (a48, spans, score)
-        if score >= 0.92:
+        if score >= 0.9:
             break
     a48, spans, score = best
     if not spans:
@@ -291,6 +336,8 @@ def main():
             cfg = dict(voices[who])
             if "speed" in line:  # réglage de débit pour une réplique (1 = normal)
                 cfg["lengthScale"] = cfg.get("lengthScale", 1.0) / line["speed"]
+            if "seed" in line:  # autre tirage pour une réplique ratée
+                cfg["seed"] = line["seed"]
             # "say" : texte prononcé différent du texte affiché (prononciation)
             audio, spans = synth_line(line.get("say", line["text"]), cfg)
             clips[line["id"]] = (audio, spans)
