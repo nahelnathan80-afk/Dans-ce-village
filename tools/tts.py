@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
-"""Génère la voix off d'un épisode avec Piper (local, gratuit) + les timestamps par mot.
+"""Génère la voix off d'un épisode + les timestamps par mot.
 
-Usage : python3 tools/tts.py [ep01]
+Deux moteurs, choisis par voix dans script.json ("engine") :
+  - "piper"      : rapide, timestamps exacts issus du modèle (voix plus neutre)
+  - "chatterbox" : Chatterbox Multilingual (MIT), voix expressive clonée depuis un
+                   extrait de référence ; timestamps par alignement whisper.
+
+Usage : python3 tools/tts.py [ep01]        (chatterbox → lancer avec le Python de son venv)
 
 Entrée  : src/episodes/<ep>/script.json
 Sorties : public/<ep>/voice.wav          (48 kHz mono, toutes les répliques mixées)
@@ -20,7 +25,6 @@ from pathlib import Path
 
 import numpy as np
 import soundfile as sf
-from piper import PiperVoice, SynthesisConfig
 
 ROOT = Path(__file__).resolve().parent.parent
 MODELS = ROOT / "tools" / "models"
@@ -30,7 +34,8 @@ LEAD_IN = 0.15  # silence au tout début (s)
 _voices: dict = {}
 
 
-def load_voice(model: str) -> PiperVoice:
+def load_voice(model: str):
+    from piper import PiperVoice
     if model not in _voices:
         _voices[model] = PiperVoice.load(str(MODELS / f"{model}.onnx"), include_alignments=True)
     return _voices[model]
@@ -62,6 +67,9 @@ def speakable(text: str) -> str:
 
 def synth_line(text: str, cfg: dict):
     """Retourne (audio float32 @SR, liste de (début, fin) par mot en secondes)."""
+    if cfg.get("engine") == "chatterbox":
+        return synth_chatterbox(text, cfg)
+    from piper import SynthesisConfig
     voice = load_voice(cfg["model"])
     syn = SynthesisConfig(
         speaker_id=cfg.get("speaker", 0) if voice.config.num_speakers > 1 else None,
@@ -92,8 +100,14 @@ def synth_line(text: str, cfg: dict):
         offset += len(a)
     audio = np.concatenate(audio_parts)
 
-    # Changement de hauteur (voix plus jeune / plus grave) sans changer la durée.
-    pitch = cfg.get("pitch", 1.0)
+    out = pitch_resample(audio, src_sr, cfg.get("pitch", 1.0))
+    ratio = SR / src_sr
+    words = [(s * ratio / SR, e * ratio / SR) for s, e in bounds]
+    return out * cfg.get("gain", 1.0), words
+
+
+def pitch_resample(audio, src_sr, pitch=1.0):
+    """Changement de hauteur (voix plus jeune / plus grave) sans changer la durée, + passage à 48 kHz."""
     with tempfile.TemporaryDirectory() as td:
         i, o = Path(td) / "i.wav", Path(td) / "o.wav"
         sf.write(i, audio, src_sr)
@@ -102,9 +116,117 @@ def synth_line(text: str, cfg: dict):
             ["ffmpeg", "-loglevel", "error", "-y", "-i", str(i), "-af",
              f"{af}aresample={SR}", "-ac", "1", str(o)], check=True)
         out, _ = sf.read(o, dtype="float32")
-    ratio = SR / src_sr
-    words = [(s * ratio / SR, e * ratio / SR) for s, e in bounds]
-    return out * cfg.get("gain", 1.0), words
+    return out
+
+
+# ——— Chatterbox (voix expressive) ———
+_cb = {}
+
+
+def _norm_words(s: str) -> list[str]:
+    import unicodedata
+    s = unicodedata.normalize("NFD", s.lower())
+    s = "".join(c for c in s if unicodedata.category(c) != "Mn")
+    return re.findall(r"[a-z0-9]+", s.replace("'", " "))
+
+
+def _whisper():
+    if "wh" not in _cb:
+        from faster_whisper import WhisperModel
+        _cb["wh"] = WhisperModel("small", device="cpu", compute_type="int8")
+    return _cb["wh"]
+
+
+def align(audio48: np.ndarray, text: str):
+    """Timestamps des mots par whisper. Renvoie (mots reconnus, [(début, fin)], score de fidélité 0..1)."""
+    from scipy.signal import resample_poly
+    a16 = resample_poly(audio48, 1, 3).astype(np.float32)
+    segs, _ = _whisper().transcribe(a16, language="fr", word_timestamps=True, beam_size=3,
+                                    initial_prompt=speakable(text), condition_on_previous_text=False)
+    words = [w for s in segs for w in (s.words or [])]
+    ref = _norm_words(speakable(text))
+    # un mot whisper peut contenir plusieurs « mots normalisés » (ex. l'écho) : on garde l'index du mot source
+    hyp, owner = [], []
+    for i, w in enumerate(words):
+        for n in _norm_words(w.word):
+            hyp.append(n)
+            owner.append(i)
+    import difflib
+    sm = difflib.SequenceMatcher(a=ref, b=hyp, autojunk=False)
+    score = sm.ratio() if ref else 1.0
+    # on ne garde que les mots whisper qui correspondent au texte (élimine les mots « inventés » en fin de phrase)
+    blocks = [bl for bl in sm.get_matching_blocks() if bl.size]
+    if blocks:
+        first = owner[blocks[0].b]
+        last = owner[blocks[-1].b + blocks[-1].size - 1]
+        words = words[first:last + 1]
+    return [w.word.strip() for w in words], [(w.start, w.end) for w in words], score
+
+
+def synth_chatterbox(text: str, cfg: dict):
+    import torch
+    if "tts" not in _cb:
+        from chatterbox.mtl_tts import ChatterboxMultilingualTTS
+        torch.set_num_threads(4)
+        _cb["tts"] = ChatterboxMultilingualTTS.from_pretrained(device="cpu")
+    tts = _cb["tts"]
+    best = None
+    for attempt in range(cfg.get("tries", 3)):
+        torch.manual_seed(cfg.get("seed", 7) + attempt * 101)
+        wav = tts.generate(
+            speakable(text).replace(" ,", ","),
+            language_id="fr",
+            audio_prompt_path=str(ROOT / cfg["ref"]) if cfg.get("ref") else None,
+            exaggeration=cfg.get("exaggeration", 0.6),
+            cfg_weight=cfg.get("cfg", 0.4),
+            temperature=cfg.get("temperature", 0.8),
+        )
+        a = wav.squeeze(0).numpy().astype(np.float32)
+        a48 = pitch_resample(a, tts.sr, cfg.get("pitch", 1.0))
+        speed = cfg.get("tempo", 1.0)
+        if abs(speed - 1) > 1e-3:
+            a48 = tempo(a48, speed)
+        _, spans, score = align(a48, text)
+        print(f"     essai {attempt + 1}: fidélité {score:.2f}")
+        if best is None or score > best[2]:
+            best = (a48, spans, score)
+        if score >= 0.92:
+            break
+    a48, spans, score = best
+    if not spans:
+        return a48 * cfg.get("gain", 1.0), []
+    # on coupe les silences / bruits avant le premier et après le dernier mot
+    s0 = max(0.0, spans[0][0] - 0.06)
+    s1 = min(len(a48) / SR, spans[-1][1] + 0.22)
+    cut = a48[int(s0 * SR): int(s1 * SR)].copy()
+    fade = int(0.04 * SR)
+    cut[-fade:] *= np.linspace(1, 0, fade)
+    spans = [(st - s0, en - s0) for st, en in spans]
+    return cut * cfg.get("gain", 1.0), spans
+
+
+def tempo(audio, speed):
+    with tempfile.TemporaryDirectory() as td:
+        i, o = Path(td) / "i.wav", Path(td) / "o.wav"
+        sf.write(i, audio, SR)
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(i), "-af",
+                        f"rubberband=tempo={speed}", str(o)], check=True)
+        out, _ = sf.read(o, dtype="float32")
+    return out
+
+
+def master(mix: np.ndarray) -> np.ndarray:
+    """Traitement « voix de storytelling » : coupe-bas, présence, compression, -14 LUFS."""
+    with tempfile.TemporaryDirectory() as td:
+        i, o = Path(td) / "i.wav", Path(td) / "o.wav"
+        sf.write(i, mix, SR)
+        chain = ("highpass=f=80,equalizer=f=250:t=q:w=1:g=-2,equalizer=f=3200:t=q:w=1.2:g=3,"
+                 "equalizer=f=9000:t=h:w=2000:g=2,"
+                 "acompressor=threshold=-20dB:ratio=3.5:attack=5:release=120:makeup=4,"
+                 "loudnorm=I=-14:TP=-1.5:LRA=7,aresample=48000")
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(i), "-af", chain, "-ar", str(SR), str(o)], check=True)
+        out, _ = sf.read(o, dtype="float32")
+    return out
 
 
 def map_words(tokens: list[str], spans: list[tuple[float, float]], dur: float):
@@ -182,7 +304,7 @@ def main():
                      for tok, (s, e) in zip(tokens, spans)]
             # fin = fin du dernier mot (on ignore le silence de queue du TTS)
             end = t + (spans[-1][1] if spans else dur)
-            print(f"  {line['id']:<14} {dur:5.2f}s  {line['text']}")
+            print(f"  {line['id']:<14} {dur:5.2f}s  {line['text']}", flush=True)
         entry = {k: v for k, v in line.items() if k not in ("text",)}
         entry.update({"text": line["text"], "start": round(words[0]["start"] if words else t, 3),
                       "end": round(end, 3), "words": words})
@@ -197,6 +319,8 @@ def main():
     mix = mix[: int(SR * total)]
     peak = np.max(np.abs(mix)) or 1
     mix = mix / peak * 0.89
+    if script.get("master", True):
+        mix = master(mix)[: int(SR * total)]
 
     out_dir = ROOT / "public" / ep
     out_dir.mkdir(parents=True, exist_ok=True)
