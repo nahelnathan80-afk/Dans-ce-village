@@ -1,0 +1,10 @@
+{
+  "gap": 0.3,
+  "parts": [
+    {"file": "assets/voix/ep02/segA.mp3", "lines": ["hook-1", "hook-2", "coffret-1", "coffret-2", "coffret-3", "coffret-4", "gisele-1", "gisele-2", "gisele-3", "maire-1", "maire-2", "maire-3", "kevin-1", "kevin-2", "kevin-3", "jr-1", "jr-2", "jr-3", "jr-4", "ouv-1"]},
+    {"file": "assets/voix/ep02/vendeuse.wav", "lines": ["ouv-2"]},
+    {"file": "assets/voix/ep02/segB.mp3", "lines": ["ouv-3", "ruee-1", "ruee-2", "climax-1", "climax-2", "climax-3"]},
+    {"file": "assets/voix/ep02/gisele.wav", "lines": ["merci"]},
+    {"file": "assets/voix/ep02/segC.mp3", "lines": ["climax-4", "climax-5", "chute-1", "chute-2", "chute-3", "cta-1", "cta-2"]}
+  ]
+}

@@ -1,5 +1,5 @@
 {
- "duration": 83.36,
+ "duration": 95.999,
  "lines": [
   {
    "id": "hook-1",
@@ -8,47 +8,47 @@
    "pause": 0.1,
    "text": "Dans mon village, il y a 412 habitants…",
    "start": 0.15,
-   "end": 3.09,
+   "end": 2.43,
    "words": [
     {
      "text": "Dans",
      "start": 0.15,
-     "end": 0.542
+     "end": 0.346
     },
     {
      "text": "mon",
-     "start": 0.542,
-     "end": 0.836
+     "start": 0.346,
+     "end": 0.496
     },
     {
      "text": "village,",
-     "start": 0.836,
-     "end": 1.522
+     "start": 0.496,
+     "end": 1.237
     },
     {
      "text": "il",
-     "start": 1.522,
-     "end": 1.718
+     "start": 1.237,
+     "end": 1.442
     },
     {
      "text": "y",
-     "start": 1.718,
-     "end": 1.816
+     "start": 1.442,
+     "end": 1.569
     },
     {
      "text": "a",
-     "start": 1.816,
-     "end": 1.914
+     "start": 1.569,
+     "end": 1.696
     },
     {
      "text": "412",
-     "start": 1.914,
-     "end": 2.208
+     "start": 1.696,
+     "end": 1.756
     },
     {
      "text": "habitants…",
-     "start": 2.208,
-     "end": 3.09
+     "start": 1.696,
+     "end": 2.43
     }
    ]
   },
@@ -58,58 +58,58 @@
    "say": "et quatre cent cinquante-neuf personnes qui dorment devant le magasin de jouets.",
    "pause": 0.3,
    "text": "et 459 personnes qui dorment devant le magasin de jouets.",
-   "start": 3.19,
-   "end": 6.25,
+   "start": 3.15,
+   "end": 6.31,
    "words": [
     {
      "text": "et",
-     "start": 3.19,
-     "end": 3.32
+     "start": 3.15,
+     "end": 3.45
     },
     {
      "text": "459",
-     "start": 3.32,
-     "end": 3.516
+     "start": 3.45,
+     "end": 4.31
     },
     {
      "text": "personnes",
-     "start": 3.516,
-     "end": 4.101
+     "start": 4.31,
+     "end": 4.71
     },
     {
      "text": "qui",
-     "start": 4.101,
-     "end": 4.297
+     "start": 4.71,
+     "end": 4.99
     },
     {
      "text": "dorment",
-     "start": 4.297,
-     "end": 4.753
+     "start": 4.99,
+     "end": 5.33
     },
     {
      "text": "devant",
-     "start": 4.753,
-     "end": 5.143
+     "start": 5.33,
+     "end": 5.55
     },
     {
      "text": "le",
-     "start": 5.143,
-     "end": 5.273
+     "start": 5.55,
+     "end": 5.71
     },
     {
      "text": "magasin",
-     "start": 5.273,
-     "end": 5.729
+     "start": 5.71,
+     "end": 6.03
     },
     {
      "text": "de",
-     "start": 5.729,
-     "end": 5.859
+     "start": 6.03,
+     "end": 6.11
     },
     {
      "text": "jouets.",
-     "start": 5.859,
-     "end": 6.25
+     "start": 6.11,
+     "end": 6.31
     }
    ]
   },
@@ -118,94 +118,95 @@
    "who": "vo",
    "pause": 0.12,
    "text": "Tout ça pour un coffret.",
-   "start": 6.55,
-   "end": 7.35,
+   "start": 6.79,
+   "end": 8.25,
    "words": [
     {
      "text": "Tout",
-     "start": 6.55,
-     "end": 6.67
-    },
-    {
-     "text": "ça",
-     "start": 6.67,
-     "end": 6.81
-    },
-    {
-     "text": "pour",
-     "start": 6.81,
+     "start": 6.79,
      "end": 6.95
     },
     {
-     "text": "un",
+     "text": "ça",
      "start": 6.95,
-     "end": 7.07
+     "end": 7.19
+    },
+    {
+     "text": "pour",
+     "start": 7.19,
+     "end": 7.61
+    },
+    {
+     "text": "un",
+     "start": 7.61,
+     "end": 7.91
     },
     {
      "text": "coffret.",
-     "start": 7.07,
-     "end": 7.35
+     "start": 7.91,
+     "end": 8.25
     }
    ]
   },
   {
    "id": "coffret-2",
    "who": "vo",
-   "say": "Le coffret Ultra Premium des trente ans des Bestioles Mystiques.",
+   "say": "Le coffret ultra prémium des trente ans. Des Bestioles Mystiques !",
+   "seed": 21,
    "pause": 0.15,
    "text": "Le coffret Ultra Premium des 30 ans des Bestioles Mystiques.",
-   "start": 7.53,
-   "end": 8.99,
+   "start": 8.73,
+   "end": 11.73,
    "words": [
     {
      "text": "Le",
-     "start": 7.53,
-     "end": 7.588
+     "start": 8.73,
+     "end": 8.89
     },
     {
      "text": "coffret",
-     "start": 7.588,
-     "end": 7.793
+     "start": 8.89,
+     "end": 9.21
     },
     {
      "text": "Ultra",
-     "start": 7.793,
-     "end": 7.939
+     "start": 9.21,
+     "end": 9.63
     },
     {
      "text": "Premium",
-     "start": 7.939,
-     "end": 8.143
+     "start": 9.63,
+     "end": 10.11
     },
     {
      "text": "des",
-     "start": 8.143,
-     "end": 8.231
+     "start": 10.11,
+     "end": 10.31
     },
     {
      "text": "30",
-     "start": 8.231,
-     "end": 8.289
+     "start": 10.31,
+     "end": 10.61
     },
     {
      "text": "ans",
-     "start": 8.289,
-     "end": 8.377
+     "start": 10.61,
+     "end": 10.79
     },
     {
      "text": "des",
-     "start": 8.377,
-     "end": 8.464
+     "start": 10.79,
+     "end": 10.89
     },
     {
      "text": "Bestioles",
-     "start": 8.464,
-     "end": 8.727
+     "start": 10.89,
+     "end": 11.25
     },
     {
      "text": "Mystiques.",
-     "start": 8.727,
-     "end": 8.99
+     "start": 11.25,
+     "end": 11.73
     }
    ]
   },
@@ -215,53 +216,53 @@
    "say": "Dedans, il y a la carte : Lunafenn, version dorée.",
    "pause": 0.2,
    "text": "Dedans, il y a LA carte : Lunafenn, version dorée.",
-   "start": 9.14,
-   "end": 11.74,
+   "start": 12.13,
+   "end": 14.95,
    "words": [
     {
      "text": "Dedans,",
-     "start": 9.14,
-     "end": 9.52
+     "start": 12.13,
+     "end": 12.422
     },
     {
      "text": "il",
-     "start": 9.64,
-     "end": 9.74
+     "start": 12.422,
+     "end": 12.837
     },
     {
      "text": "y",
-     "start": 9.74,
-     "end": 9.82
+     "start": 12.837,
+     "end": 12.897
     },
     {
      "text": "a",
-     "start": 9.82,
-     "end": 9.86
+     "start": 12.895,
+     "end": 12.955
     },
     {
      "text": "LA",
-     "start": 9.86,
-     "end": 9.92
+     "start": 12.925,
+     "end": 13.047
     },
     {
      "text": "carte :",
-     "start": 9.92,
-     "end": 10.2
+     "start": 13.047,
+     "end": 13.324
     },
     {
      "text": "Lunafenn,",
-     "start": 10.46,
-     "end": 10.94
+     "start": 13.324,
+     "end": 14.014
     },
     {
      "text": "version",
-     "start": 11.12,
-     "end": 11.34
+     "start": 14.014,
+     "end": 14.522
     },
     {
      "text": "dorée.",
-     "start": 11.34,
-     "end": 11.74
+     "start": 14.522,
+     "end": 14.95
     }
    ]
   },
@@ -270,48 +271,48 @@
    "who": "vo",
    "pause": 0.35,
    "text": "Et le magasin n'en a reçu… qu'un seul.",
-   "start": 11.94,
-   "end": 13.62,
+   "start": 14.95,
+   "end": 17.83,
    "words": [
     {
      "text": "Et",
-     "start": 11.94,
-     "end": 12.064
+     "start": 14.95,
+     "end": 15.47
     },
     {
      "text": "le",
-     "start": 12.064,
-     "end": 12.189
+     "start": 15.47,
+     "end": 15.59
     },
     {
      "text": "magasin",
-     "start": 12.189,
-     "end": 12.624
+     "start": 15.59,
+     "end": 16.05
     },
     {
      "text": "n'en",
-     "start": 12.624,
-     "end": 12.811
+     "start": 16.05,
+     "end": 16.23
     },
     {
      "text": "a",
-     "start": 12.811,
-     "end": 12.873
+     "start": 16.23,
+     "end": 16.37
     },
     {
      "text": "reçu…",
-     "start": 12.873,
-     "end": 13.122
+     "start": 16.37,
+     "end": 16.75
     },
     {
      "text": "qu'un",
-     "start": 13.122,
-     "end": 13.371
+     "start": 16.75,
+     "end": 17.49
     },
     {
      "text": "seul.",
-     "start": 13.371,
-     "end": 13.62
+     "start": 17.49,
+     "end": 17.83
     }
    ]
   },
@@ -321,73 +322,74 @@
    "say": "Première de la file : Gisèle, soixante-dix-huit ans.",
    "pause": 0.1,
    "text": "Première de la file : Gisèle, 78 ans.",
-   "start": 13.97,
-   "end": 16.37,
+   "start": 18.41,
+   "end": 21.05,
    "words": [
     {
      "text": "Première",
-     "start": 13.97,
-     "end": 14.681
+     "start": 18.41,
+     "end": 18.742
     },
     {
      "text": "de",
-     "start": 14.681,
-     "end": 14.859
+     "start": 18.742,
+     "end": 18.865
     },
     {
      "text": "la",
-     "start": 14.859,
-     "end": 15.037
+     "start": 18.865,
+     "end": 18.985
     },
     {
      "text": "file :",
-     "start": 15.037,
-     "end": 15.392
+     "start": 18.985,
+     "end": 19.672
     },
     {
      "text": "Gisèle,",
-     "start": 15.392,
-     "end": 15.926
+     "start": 19.672,
+     "end": 20.006
     },
     {
      "text": "78",
-     "start": 15.926,
-     "end": 16.103
+     "start": 20.006,
+     "end": 20.741
     },
     {
      "text": "ans.",
-     "start": 16.103,
-     "end": 16.37
+     "start": 20.741,
+     "end": 21.05
     }
    ]
   },
   {
    "id": "gisele-2",
    "who": "vo",
+   "seed": 17,
    "pause": 0.1,
    "text": "Elle campe depuis mardi.",
-   "start": 16.47,
-   "end": 17.33,
+   "start": 21.41,
+   "end": 22.59,
    "words": [
     {
      "text": "Elle",
-     "start": 16.47,
-     "end": 16.63
+     "start": 21.41,
+     "end": 21.612
     },
     {
      "text": "campe",
-     "start": 16.63,
-     "end": 16.81
+     "start": 21.612,
+     "end": 21.91
     },
     {
      "text": "depuis",
-     "start": 16.81,
-     "end": 17.03
+     "start": 21.91,
+     "end": 22.153
     },
     {
      "text": "mardi.",
-     "start": 17.03,
-     "end": 17.33
+     "start": 22.153,
+     "end": 22.59
     }
    ]
   },
@@ -396,58 +398,58 @@
    "who": "vo",
    "pause": 0.3,
    "text": "Avec son fauteuil, sa soupe, et un thermos de café.",
-   "start": 17.49,
-   "end": 19.37,
+   "start": 22.93,
+   "end": 25.61,
    "words": [
     {
      "text": "Avec",
-     "start": 17.49,
-     "end": 17.683
+     "start": 22.93,
+     "end": 23.21
     },
     {
      "text": "son",
-     "start": 17.683,
-     "end": 17.827
+     "start": 23.21,
+     "end": 23.39
     },
     {
      "text": "fauteuil,",
-     "start": 17.827,
-     "end": 18.213
+     "start": 23.39,
+     "end": 24.11
     },
     {
      "text": "sa",
-     "start": 18.213,
-     "end": 18.309
+     "start": 24.11,
+     "end": 24.23
     },
     {
      "text": "soupe,",
-     "start": 18.309,
-     "end": 18.551
+     "start": 24.23,
+     "end": 24.59
     },
     {
      "text": "et",
-     "start": 18.551,
-     "end": 18.647
+     "start": 24.59,
+     "end": 24.89
     },
     {
      "text": "un",
-     "start": 18.647,
-     "end": 18.743
+     "start": 24.89,
+     "end": 25.03
     },
     {
      "text": "thermos",
-     "start": 18.743,
-     "end": 19.081
+     "start": 25.03,
+     "end": 25.25
     },
     {
      "text": "de",
-     "start": 19.081,
-     "end": 19.177
+     "start": 25.25,
+     "end": 25.37
     },
     {
      "text": "café.",
-     "start": 19.177,
-     "end": 19.37
+     "start": 25.37,
+     "end": 25.61
     }
    ]
   },
@@ -456,48 +458,48 @@
    "who": "vo",
    "pause": 0.1,
    "text": "Le maire a planté sa tente juste derrière.",
-   "start": 19.67,
-   "end": 21.55,
+   "start": 26.15,
+   "end": 28.13,
    "words": [
     {
      "text": "Le",
-     "start": 19.67,
-     "end": 19.81
+     "start": 26.15,
+     "end": 26.29
     },
     {
      "text": "maire",
-     "start": 19.81,
-     "end": 20.09
+     "start": 26.29,
+     "end": 26.53
     },
     {
      "text": "a",
-     "start": 20.09,
-     "end": 20.25
+     "start": 26.53,
+     "end": 26.73
     },
     {
      "text": "planté",
-     "start": 20.25,
-     "end": 20.59
+     "start": 26.73,
+     "end": 27.03
     },
     {
      "text": "sa",
-     "start": 20.59,
-     "end": 20.71
+     "start": 27.03,
+     "end": 27.15
     },
     {
      "text": "tente",
-     "start": 20.71,
-     "end": 20.95
+     "start": 27.15,
+     "end": 27.37
     },
     {
      "text": "juste",
-     "start": 20.95,
-     "end": 21.23
+     "start": 27.37,
+     "end": 27.77
     },
     {
      "text": "derrière.",
-     "start": 21.23,
-     "end": 21.55
+     "start": 27.77,
+     "end": 28.13
     }
    ]
   },
@@ -506,149 +508,151 @@
    "who": "vo",
    "pause": 0.15,
    "text": "Officiellement, il « inspecte la file ».",
-   "start": 21.65,
-   "end": 23.35,
+   "start": 28.85,
+   "end": 30.39,
    "words": [
     {
      "text": "Officiellement,",
-     "start": 21.65,
-     "end": 22.35
+     "start": 28.85,
+     "end": 29.33
     },
     {
      "text": "il",
-     "start": 22.41,
-     "end": 22.51
+     "start": 29.33,
+     "end": 29.63
     },
     {
      "text": "« inspecte",
-     "start": 22.65,
-     "end": 23.07
+     "start": 29.63,
+     "end": 30.07
     },
     {
      "text": "la",
-     "start": 23.07,
-     "end": 23.13
+     "start": 30.07,
+     "end": 30.19
     },
     {
      "text": "file».",
-     "start": 23.13,
-     "end": 23.35
+     "start": 30.19,
+     "end": 30.39
     }
    ]
   },
   {
    "id": "maire-3",
    "who": "vo",
+   "seed": 17,
    "pause": 0.3,
    "text": "Ça fait trois nuits qu'il l'inspecte. En pyjama.",
-   "start": 23.5,
-   "end": 25.4,
+   "start": 30.39,
+   "end": 33.25,
    "words": [
     {
      "text": "Ça",
-     "start": 23.5,
-     "end": 23.603
+     "start": 30.39,
+     "end": 31.032
     },
     {
      "text": "fait",
-     "start": 23.603,
-     "end": 23.808
+     "start": 31.032,
+     "end": 31.223
     },
     {
      "text": "trois",
-     "start": 23.808,
-     "end": 24.065
+     "start": 31.223,
+     "end": 31.512
     },
     {
      "text": "nuits",
-     "start": 24.065,
-     "end": 24.322
+     "start": 31.512,
+     "end": 31.731
     },
     {
      "text": "qu'il",
-     "start": 24.322,
-     "end": 24.527
+     "start": 31.731,
+     "end": 31.899
     },
     {
      "text": "l'inspecte.",
-     "start": 24.527,
-     "end": 24.989
+     "start": 31.899,
+     "end": 32.765
     },
     {
      "text": "En",
-     "start": 24.989,
-     "end": 25.092
+     "start": 32.765,
+     "end": 32.9
     },
     {
      "text": "pyjama.",
-     "start": 25.092,
-     "end": 25.4
+     "start": 32.9,
+     "end": 33.25
     }
    ]
   },
   {
    "id": "kevin-1",
    "who": "vo",
+   "seed": 17,
    "say": "Kevin, lui, a vendu sa place dans la file. Cinquante euros.",
    "pause": 0.15,
    "text": "Kevin, lui, a vendu sa place dans la file. 50 euros.",
-   "start": 25.7,
-   "end": 28.46,
+   "start": 33.25,
+   "end": 36.95,
    "words": [
     {
      "text": "Kevin,",
-     "start": 25.7,
-     "end": 25.92
+     "start": 33.25,
+     "end": 34.01
     },
     {
      "text": "lui,",
-     "start": 26.12,
-     "end": 26.2
+     "start": 34.01,
+     "end": 34.47
     },
     {
      "text": "a",
-     "start": 26.54,
-     "end": 26.62
+     "start": 34.47,
+     "end": 34.83
     },
     {
      "text": "vendu",
-     "start": 26.62,
-     "end": 26.92
+     "start": 34.83,
+     "end": 35.13
     },
     {
      "text": "sa",
-     "start": 26.92,
-     "end": 27.02
+     "start": 35.13,
+     "end": 35.29
     },
     {
      "text": "place",
-     "start": 27.02,
-     "end": 27.22
+     "start": 35.29,
+     "end": 35.45
     },
     {
      "text": "dans",
-     "start": 27.22,
-     "end": 27.38
+     "start": 35.45,
+     "end": 35.61
     },
     {
      "text": "la",
-     "start": 27.38,
-     "end": 27.5
+     "start": 35.61,
+     "end": 35.73
     },
     {
      "text": "file.",
-     "start": 27.5,
-     "end": 27.68
+     "start": 35.73,
+     "end": 35.95
     },
     {
      "text": "50",
-     "start": 27.96,
-     "end": 28.28
+     "start": 35.95,
+     "end": 36.59
     },
     {
      "text": "euros.",
-     "start": 28.28,
-     "end": 28.46
+     "start": 36.59,
+     "end": 36.95
     }
    ]
   },
@@ -658,38 +662,38 @@
    "say": "Puis il l'a rachetée. Quatre-vingts euros.",
    "pause": 0.15,
    "text": "Puis il l'a rachetée. 80 euros.",
-   "start": 28.61,
-   "end": 30.05,
+   "start": 36.95,
+   "end": 39.15,
    "words": [
     {
      "text": "Puis",
-     "start": 28.61,
-     "end": 28.86
+     "start": 36.95,
+     "end": 37.473
     },
     {
      "text": "il",
-     "start": 28.86,
-     "end": 28.986
+     "start": 37.473,
+     "end": 37.689
     },
     {
      "text": "l'a",
-     "start": 28.986,
-     "end": 29.111
+     "start": 37.689,
+     "end": 37.85
     },
     {
      "text": "rachetée.",
-     "start": 29.111,
-     "end": 29.612
+     "start": 37.85,
+     "end": 38.207
     },
     {
      "text": "80",
-     "start": 29.612,
-     "end": 29.737
+     "start": 38.207,
+     "end": 38.84
     },
     {
      "text": "euros.",
-     "start": 29.737,
-     "end": 30.05
+     "start": 38.84,
+     "end": 39.15
     }
    ]
   },
@@ -698,83 +702,83 @@
    "who": "vo",
    "pause": 0.35,
    "text": "Kevin a un business plan. Il ne le comprend pas, mais il en a un.",
-   "start": 30.2,
-   "end": 33.26,
+   "start": 39.15,
+   "end": 42.73,
    "words": [
     {
      "text": "Kevin",
-     "start": 30.2,
-     "end": 30.44
+     "start": 39.15,
+     "end": 39.802
     },
     {
      "text": "a",
-     "start": 30.44,
-     "end": 30.68
+     "start": 39.802,
+     "end": 40.025
     },
     {
      "text": "un",
-     "start": 30.68,
-     "end": 30.84
+     "start": 40.025,
+     "end": 40.173
     },
     {
      "text": "business",
-     "start": 30.84,
-     "end": 31.08
+     "start": 40.173,
+     "end": 40.41
     },
     {
      "text": "plan.",
-     "start": 31.08,
-     "end": 31.46
+     "start": 40.41,
+     "end": 40.683
     },
     {
      "text": "Il",
-     "start": 31.66,
-     "end": 31.82
+     "start": 40.683,
+     "end": 41.01
     },
     {
      "text": "ne",
-     "start": 31.82,
-     "end": 31.96
+     "start": 41.01,
+     "end": 41.28
     },
     {
      "text": "le",
-     "start": 31.96,
-     "end": 32.02
+     "start": 41.28,
+     "end": 41.353
     },
     {
      "text": "comprend",
-     "start": 32.02,
-     "end": 32.26
+     "start": 41.353,
+     "end": 41.596
     },
     {
      "text": "pas,",
-     "start": 32.26,
-     "end": 32.56
+     "start": 41.596,
+     "end": 41.916
     },
     {
      "text": "mais",
-     "start": 32.68,
-     "end": 32.78
+     "start": 41.916,
+     "end": 42.287
     },
     {
      "text": "il",
-     "start": 32.78,
-     "end": 32.84
+     "start": 42.287,
+     "end": 42.4
     },
     {
      "text": "en",
-     "start": 32.84,
-     "end": 32.92
+     "start": 42.4,
+     "end": 42.508
     },
     {
      "text": "a",
-     "start": 32.92,
-     "end": 33.06
+     "start": 42.508,
+     "end": 42.634
     },
     {
      "text": "un.",
-     "start": 33.06,
-     "end": 33.26
+     "start": 42.634,
+     "end": 42.73
     }
    ]
   },
@@ -783,38 +787,38 @@
    "who": "vo",
    "pause": 0.12,
    "text": "Et puis, il y a Jean-Revente.",
-   "start": 33.61,
-   "end": 35.19,
+   "start": 42.73,
+   "end": 44.61,
    "words": [
     {
      "text": "Et",
-     "start": 33.61,
-     "end": 33.76
+     "start": 42.73,
+     "end": 43.206
     },
     {
      "text": "puis,",
-     "start": 33.76,
-     "end": 34.061
+     "start": 43.206,
+     "end": 43.453
     },
     {
      "text": "il",
-     "start": 34.061,
-     "end": 34.212
+     "start": 43.453,
+     "end": 43.713
     },
     {
      "text": "y",
-     "start": 34.212,
-     "end": 34.287
+     "start": 43.713,
+     "end": 43.839
     },
     {
      "text": "a",
-     "start": 34.287,
-     "end": 34.362
+     "start": 43.839,
+     "end": 43.932
     },
     {
      "text": "Jean-Revente.",
-     "start": 34.362,
-     "end": 35.19
+     "start": 43.932,
+     "end": 44.61
     }
    ]
   },
@@ -823,53 +827,53 @@
    "who": "vo",
    "pause": 0.2,
    "text": "Jean-Revente n'aime pas les cartes. Il aime les marges.",
-   "start": 35.31,
-   "end": 37.27,
+   "start": 45.21,
+   "end": 47.59,
    "words": [
     {
      "text": "Jean-Revente",
-     "start": 35.31,
-     "end": 35.811
+     "start": 45.21,
+     "end": 45.8
     },
     {
      "text": "n'aime",
-     "start": 35.811,
-     "end": 36.039
+     "start": 45.8,
+     "end": 45.964
     },
     {
      "text": "pas",
-     "start": 36.039,
-     "end": 36.176
+     "start": 45.964,
+     "end": 46.094
     },
     {
      "text": "les",
-     "start": 36.176,
-     "end": 36.313
+     "start": 46.094,
+     "end": 46.273
     },
     {
      "text": "cartes.",
-     "start": 36.313,
-     "end": 36.586
+     "start": 46.273,
+     "end": 46.765
     },
     {
      "text": "Il",
-     "start": 36.586,
-     "end": 36.677
+     "start": 46.765,
+     "end": 46.898
     },
     {
      "text": "aime",
-     "start": 36.677,
-     "end": 36.86
+     "start": 46.898,
+     "end": 47.049
     },
     {
      "text": "les",
-     "start": 36.86,
-     "end": 36.997
+     "start": 47.049,
+     "end": 47.191
     },
     {
      "text": "marges.",
-     "start": 36.997,
-     "end": 37.27
+     "start": 47.191,
+     "end": 47.59
     }
    ]
   },
@@ -879,48 +883,48 @@
    "say": "Il est venu avec ses cousins. Quarante-sept cousins.",
    "pause": 0.15,
    "text": "Il est venu avec ses cousins. 47 cousins.",
-   "start": 37.47,
-   "end": 39.55,
+   "start": 47.59,
+   "end": 50.25,
    "words": [
     {
      "text": "Il",
-     "start": 37.47,
-     "end": 37.6
+     "start": 47.59,
+     "end": 48.03
     },
     {
      "text": "est",
-     "start": 37.6,
-     "end": 37.795
+     "start": 48.03,
+     "end": 48.11
     },
     {
      "text": "venu",
-     "start": 37.795,
-     "end": 38.055
+     "start": 48.11,
+     "end": 48.31
     },
     {
      "text": "avec",
-     "start": 38.055,
-     "end": 38.315
+     "start": 48.31,
+     "end": 48.45
     },
     {
      "text": "ses",
-     "start": 38.315,
-     "end": 38.51
+     "start": 48.45,
+     "end": 48.63
     },
     {
      "text": "cousins.",
-     "start": 38.51,
-     "end": 38.965
+     "start": 48.63,
+     "end": 48.87
     },
     {
      "text": "47",
-     "start": 38.965,
-     "end": 39.095
+     "start": 48.87,
+     "end": 49.77
     },
     {
      "text": "cousins.",
-     "start": 39.095,
-     "end": 39.55
+     "start": 49.77,
+     "end": 50.25
     }
    ]
   },
@@ -929,48 +933,48 @@
    "who": "vo",
    "pause": 0.35,
    "text": "Tous avec une moustache. Un peu de travers.",
-   "start": 39.7,
-   "end": 41.82,
+   "start": 50.25,
+   "end": 52.67,
    "words": [
     {
      "text": "Tous",
-     "start": 39.7,
-     "end": 39.949
+     "start": 50.25,
+     "end": 50.75
     },
     {
      "text": "avec",
-     "start": 39.949,
-     "end": 40.199
+     "start": 50.75,
+     "end": 51.09
     },
     {
      "text": "une",
-     "start": 40.199,
-     "end": 40.386
+     "start": 51.09,
+     "end": 51.29
     },
     {
      "text": "moustache.",
-     "start": 40.386,
-     "end": 40.947
+     "start": 51.29,
+     "end": 51.73
     },
     {
      "text": "Un",
-     "start": 40.947,
-     "end": 41.072
+     "start": 51.73,
+     "end": 52.21
     },
     {
      "text": "peu",
-     "start": 41.072,
-     "end": 41.259
+     "start": 52.21,
+     "end": 52.33
     },
     {
      "text": "de",
-     "start": 41.259,
-     "end": 41.384
+     "start": 52.33,
+     "end": 52.43
     },
     {
      "text": "travers.",
-     "start": 41.384,
-     "end": 41.82
+     "start": 52.43,
+     "end": 52.67
     }
    ]
   },
@@ -979,53 +983,53 @@
    "who": "vo",
    "pause": 0.15,
    "text": "Jeudi, neuf heures pile. La vendeuse ouvre la porte.",
-   "start": 42.17,
-   "end": 44.77,
+   "start": 52.67,
+   "end": 55.97,
    "words": [
     {
      "text": "Jeudi,",
-     "start": 42.17,
-     "end": 42.61
+     "start": 52.67,
+     "end": 53.53
     },
     {
      "text": "neuf",
-     "start": 42.85,
-     "end": 43.03
+     "start": 53.53,
+     "end": 54.056
     },
     {
      "text": "heures",
-     "start": 43.03,
-     "end": 43.11
+     "start": 54.056,
+     "end": 54.432
     },
     {
      "text": "pile.",
-     "start": 43.11,
-     "end": 43.41
+     "start": 54.432,
+     "end": 54.986
     },
     {
      "text": "La",
-     "start": 43.65,
-     "end": 43.73
+     "start": 54.986,
+     "end": 55.078
     },
     {
      "text": "vendeuse",
-     "start": 43.73,
-     "end": 44.13
+     "start": 55.078,
+     "end": 55.458
     },
     {
      "text": "ouvre",
-     "start": 44.13,
-     "end": 44.39
+     "start": 55.458,
+     "end": 55.713
     },
     {
      "text": "la",
-     "start": 44.39,
-     "end": 44.49
+     "start": 55.713,
+     "end": 55.794
     },
     {
      "text": "porte.",
-     "start": 44.49,
-     "end": 44.77
+     "start": 55.794,
+     "end": 55.97
     }
    ]
   },
@@ -1034,28 +1038,28 @@
    "who": "vendeuse",
    "pause": 0.2,
    "text": "Un coffret par personne !",
-   "start": 44.92,
-   "end": 46.04,
+   "start": 56.545,
+   "end": 57.525,
    "words": [
     {
      "text": "Un",
-     "start": 44.92,
-     "end": 45.18
+     "start": 56.545,
+     "end": 56.705
     },
     {
      "text": "coffret",
-     "start": 45.18,
-     "end": 45.5
+     "start": 56.705,
+     "end": 57.025
     },
     {
      "text": "par",
-     "start": 45.5,
-     "end": 45.64
+     "start": 57.025,
+     "end": 57.165
     },
     {
      "text": "personne !",
-     "start": 45.64,
-     "end": 46.04
+     "start": 57.165,
+     "end": 57.525
     }
    ]
   },
@@ -1064,48 +1068,48 @@
    "who": "vo",
    "pause": 0.3,
    "text": "Ça tombe bien. Il n'y en a qu'un.",
-   "start": 46.24,
-   "end": 47.7,
+   "start": 58.092,
+   "end": 59.492,
    "words": [
     {
      "text": "Ça",
-     "start": 46.24,
-     "end": 46.373
+     "start": 58.092,
+     "end": 58.283
     },
     {
      "text": "tombe",
-     "start": 46.373,
-     "end": 46.705
+     "start": 58.283,
+     "end": 58.423
     },
     {
      "text": "bien.",
-     "start": 46.705,
-     "end": 46.97
+     "start": 58.423,
+     "end": 58.584
     },
     {
      "text": "Il",
-     "start": 46.97,
-     "end": 47.103
+     "start": 58.584,
+     "end": 58.651
     },
     {
      "text": "n'y",
-     "start": 47.103,
-     "end": 47.235
+     "start": 58.651,
+     "end": 59.098
     },
     {
      "text": "en",
-     "start": 47.235,
-     "end": 47.368
+     "start": 59.098,
+     "end": 59.159
     },
     {
      "text": "a",
-     "start": 47.368,
-     "end": 47.435
+     "start": 59.159,
+     "end": 59.264
     },
     {
      "text": "qu'un.",
-     "start": 47.435,
-     "end": 47.7
+     "start": 59.264,
+     "end": 59.492
     }
    ]
   },
@@ -1115,28 +1119,28 @@
    "say": "Les quarante-sept cousins foncent.",
    "pause": 0.1,
    "text": "Les 47 cousins foncent.",
-   "start": 48.0,
-   "end": 49.5,
+   "start": 59.972,
+   "end": 61.532,
    "words": [
     {
      "text": "Les",
-     "start": 48.0,
-     "end": 48.237
+     "start": 59.972,
+     "end": 60.072
     },
     {
      "text": "47",
-     "start": 48.237,
-     "end": 48.395
+     "start": 60.072,
+     "end": 60.572
     },
     {
      "text": "cousins",
-     "start": 48.395,
-     "end": 48.947
+     "start": 60.572,
+     "end": 60.892
     },
     {
      "text": "foncent.",
-     "start": 48.947,
-     "end": 49.5
+     "start": 60.892,
+     "end": 61.532
     }
    ]
   },
@@ -1145,33 +1149,33 @@
    "who": "vo",
    "pause": 0.4,
    "text": "Gisèle aussi. Avec le fauteuil.",
-   "start": 49.6,
-   "end": 51.44,
+   "start": 62.192,
+   "end": 63.632,
    "words": [
     {
      "text": "Gisèle",
-     "start": 49.6,
-     "end": 50.1
+     "start": 62.192,
+     "end": 62.411
     },
     {
      "text": "aussi.",
-     "start": 50.1,
-     "end": 50.34
+     "start": 62.411,
+     "end": 63.043
     },
     {
      "text": "Avec",
-     "start": 50.62,
-     "end": 50.8
+     "start": 63.043,
+     "end": 63.252
     },
     {
      "text": "le",
-     "start": 50.8,
-     "end": 51.0
+     "start": 63.252,
+     "end": 63.328
     },
     {
      "text": "fauteuil.",
-     "start": 51.0,
-     "end": 51.44
+     "start": 63.328,
+     "end": 63.632
     }
    ]
   },
@@ -1180,63 +1184,63 @@
    "who": "vo",
    "pause": 0.15,
    "text": "Et moi ? J'étais déjà à l'intérieur depuis cinq heures du matin.",
-   "start": 51.84,
-   "end": 54.88,
+   "start": 64.072,
+   "end": 66.992,
    "words": [
     {
      "text": "Et",
-     "start": 51.84,
-     "end": 51.964
+     "start": 64.072,
+     "end": 64.172
     },
     {
      "text": "moi ?",
-     "start": 51.964,
-     "end": 52.15
+     "start": 64.172,
+     "end": 64.852
     },
     {
      "text": "J'étais",
-     "start": 52.15,
-     "end": 52.522
+     "start": 64.852,
+     "end": 65.072
     },
     {
      "text": "déjà",
-     "start": 52.522,
-     "end": 52.771
+     "start": 65.072,
+     "end": 65.372
     },
     {
      "text": "à",
-     "start": 52.771,
-     "end": 52.833
+     "start": 65.372,
+     "end": 65.452
     },
     {
      "text": "l'intérieur",
-     "start": 52.833,
-     "end": 53.453
+     "start": 65.452,
+     "end": 65.752
     },
     {
      "text": "depuis",
-     "start": 53.453,
-     "end": 53.825
+     "start": 65.752,
+     "end": 66.072
     },
     {
      "text": "cinq",
-     "start": 53.825,
-     "end": 54.073
+     "start": 66.072,
+     "end": 66.432
     },
     {
      "text": "heures",
-     "start": 54.073,
-     "end": 54.446
+     "start": 66.432,
+     "end": 66.592
     },
     {
      "text": "du",
-     "start": 54.446,
-     "end": 54.57
+     "start": 66.592,
+     "end": 66.712
     },
     {
      "text": "matin.",
-     "start": 54.57,
-     "end": 54.88
+     "start": 66.712,
+     "end": 66.992
     }
    ]
   },
@@ -1245,53 +1249,53 @@
    "who": "vo",
    "pause": 0.2,
    "text": "Je livre les croissants du magasin. J'avais les clés.",
-   "start": 55.03,
-   "end": 57.51,
+   "start": 67.372,
+   "end": 69.672,
    "words": [
     {
      "text": "Je",
-     "start": 55.03,
-     "end": 55.148
+     "start": 67.372,
+     "end": 67.532
     },
     {
      "text": "livre",
-     "start": 55.148,
-     "end": 55.443
+     "start": 67.532,
+     "end": 67.732
     },
     {
      "text": "les",
-     "start": 55.443,
-     "end": 55.62
+     "start": 67.732,
+     "end": 67.912
     },
     {
      "text": "croissants",
-     "start": 55.62,
-     "end": 56.211
+     "start": 67.912,
+     "end": 68.232
     },
     {
      "text": "du",
-     "start": 56.211,
-     "end": 56.329
+     "start": 68.232,
+     "end": 68.332
     },
     {
      "text": "magasin.",
-     "start": 56.329,
-     "end": 56.742
+     "start": 68.332,
+     "end": 69.052
     },
     {
      "text": "J'avais",
-     "start": 56.742,
-     "end": 57.097
+     "start": 69.052,
+     "end": 69.272
     },
     {
      "text": "les",
-     "start": 57.097,
-     "end": 57.274
+     "start": 69.272,
+     "end": 69.432
     },
     {
      "text": "clés.",
-     "start": 57.274,
-     "end": 57.51
+     "start": 69.432,
+     "end": 69.672
     }
    ]
   },
@@ -1300,58 +1304,58 @@
    "who": "vo",
    "pause": 0.2,
    "text": "J'ai acheté le coffret… et je l'ai donné à Gisèle.",
-   "start": 57.71,
-   "end": 60.41,
+   "start": 70.072,
+   "end": 71.792,
    "words": [
     {
      "text": "J'ai",
-     "start": 57.71,
-     "end": 57.929
+     "start": 70.072,
+     "end": 70.202
     },
     {
      "text": "acheté",
-     "start": 57.929,
-     "end": 58.367
+     "start": 70.202,
+     "end": 70.379
     },
     {
      "text": "le",
-     "start": 58.367,
-     "end": 58.513
+     "start": 70.379,
+     "end": 70.452
     },
     {
      "text": "coffret…",
-     "start": 58.513,
-     "end": 59.024
+     "start": 70.452,
+     "end": 70.772
     },
     {
      "text": "et",
-     "start": 59.024,
-     "end": 59.169
+     "start": 70.772,
+     "end": 70.863
     },
     {
      "text": "je",
-     "start": 59.169,
-     "end": 59.315
+     "start": 70.863,
+     "end": 71.212
     },
     {
      "text": "l'ai",
-     "start": 59.315,
-     "end": 59.534
+     "start": 71.212,
+     "end": 71.4
     },
     {
      "text": "donné",
-     "start": 59.534,
-     "end": 59.899
+     "start": 71.4,
+     "end": 71.537
     },
     {
      "text": "à",
-     "start": 59.899,
-     "end": 59.972
+     "start": 71.537,
+     "end": 71.597
     },
     {
      "text": "Gisèle.",
-     "start": 59.972,
-     "end": 60.41
+     "start": 71.57,
+     "end": 71.792
     }
    ]
   },
@@ -1360,23 +1364,23 @@
    "who": "gisele",
    "pause": 0.25,
    "text": "Merci, mon petit !",
-   "start": 60.61,
-   "end": 61.49,
+   "start": 72.571,
+   "end": 73.371,
    "words": [
     {
      "text": "Merci,",
-     "start": 60.61,
-     "end": 61.01
+     "start": 72.571,
+     "end": 72.911
     },
     {
      "text": "mon",
-     "start": 61.17,
-     "end": 61.25
+     "start": 72.911,
+     "end": 73.131
     },
     {
      "text": "petit !",
-     "start": 61.25,
-     "end": 61.49
+     "start": 73.131,
+     "end": 73.371
     }
    ]
   },
@@ -1386,48 +1390,48 @@
    "say": "Jean-Revente lui en a proposé deux mille euros.",
    "pause": 0.15,
    "text": "Jean-Revente lui en a proposé 2 000 euros.",
-   "start": 61.74,
-   "end": 63.96,
+   "start": 73.902,
+   "end": 76.262,
    "words": [
     {
      "text": "Jean-Revente",
-     "start": 61.74,
-     "end": 62.48
+     "start": 73.902,
+     "end": 74.562
     },
     {
      "text": "lui",
-     "start": 62.48,
-     "end": 62.682
+     "start": 74.562,
+     "end": 74.862
     },
     {
      "text": "en",
-     "start": 62.682,
-     "end": 62.816
+     "start": 74.862,
+     "end": 75.102
     },
     {
      "text": "a",
-     "start": 62.816,
-     "end": 62.884
+     "start": 75.102,
+     "end": 75.222
     },
     {
      "text": "proposé",
-     "start": 62.884,
-     "end": 63.355
+     "start": 75.222,
+     "end": 75.642
     },
     {
      "text": "2",
-     "start": 63.355,
-     "end": 63.422
+     "start": 75.642,
+     "end": 75.922
     },
     {
      "text": "000",
-     "start": 63.422,
-     "end": 63.624
+     "start": 75.922,
+     "end": 76.042
     },
     {
      "text": "euros.",
-     "start": 63.624,
-     "end": 63.96
+     "start": 76.042,
+     "end": 76.262
     }
    ]
   },
@@ -1436,48 +1440,48 @@
    "who": "vo",
    "pause": 0.4,
    "text": "Elle a dit non. C'était pour son petit-fils.",
-   "start": 64.11,
-   "end": 65.93,
+   "start": 76.682,
+   "end": 78.602,
    "words": [
     {
      "text": "Elle",
-     "start": 64.11,
-     "end": 64.331
+     "start": 76.682,
+     "end": 76.842
     },
     {
      "text": "a",
-     "start": 64.331,
-     "end": 64.386
+     "start": 76.842,
+     "end": 76.942
     },
     {
      "text": "dit",
-     "start": 64.386,
-     "end": 64.551
+     "start": 76.942,
+     "end": 77.042
     },
     {
      "text": "non.",
-     "start": 64.551,
-     "end": 64.717
+     "start": 77.042,
+     "end": 77.642
     },
     {
      "text": "C'était",
-     "start": 64.717,
-     "end": 65.048
+     "start": 77.642,
+     "end": 77.842
     },
     {
      "text": "pour",
-     "start": 65.048,
-     "end": 65.268
+     "start": 77.842,
+     "end": 78.022
     },
     {
      "text": "son",
-     "start": 65.268,
-     "end": 65.434
+     "start": 78.022,
+     "end": 78.162
     },
     {
      "text": "petit-fils.",
-     "start": 65.434,
-     "end": 65.93
+     "start": 78.162,
+     "end": 78.602
     }
    ]
   },
@@ -1486,53 +1490,53 @@
    "who": "vo",
    "pause": 0.3,
    "text": "Le lendemain, l'éditeur annonce une réédition. En quantité illimitée.",
-   "start": 66.33,
-   "end": 70.53,
+   "start": 79.262,
+   "end": 82.462,
    "words": [
     {
      "text": "Le",
-     "start": 66.33,
-     "end": 66.477
+     "start": 79.262,
+     "end": 79.346
     },
     {
      "text": "lendemain,",
-     "start": 66.477,
-     "end": 67.141
+     "start": 79.346,
+     "end": 79.701
     },
     {
      "text": "l'éditeur",
-     "start": 67.141,
-     "end": 67.73
+     "start": 79.701,
+     "end": 80.399
     },
     {
      "text": "annonce",
-     "start": 67.73,
-     "end": 68.246
+     "start": 80.399,
+     "end": 80.67
     },
     {
      "text": "une",
-     "start": 68.246,
-     "end": 68.467
+     "start": 80.67,
+     "end": 80.763
     },
     {
      "text": "réédition.",
-     "start": 68.467,
-     "end": 69.13
+     "start": 80.763,
+     "end": 81.175
     },
     {
      "text": "En",
-     "start": 69.13,
-     "end": 69.277
+     "start": 81.175,
+     "end": 81.284
     },
     {
      "text": "quantité",
-     "start": 69.277,
-     "end": 69.867
+     "start": 81.284,
+     "end": 82.026
     },
     {
      "text": "illimitée.",
-     "start": 69.867,
-     "end": 70.53
+     "start": 82.026,
+     "end": 82.462
     }
    ]
   },
@@ -1541,53 +1545,53 @@
    "who": "vo",
    "pause": 0.2,
    "text": "Ce matin, Jean-Revente dort à nouveau devant le magasin.",
-   "start": 70.83,
-   "end": 73.91,
+   "start": 83.722,
+   "end": 86.542,
    "words": [
     {
      "text": "Ce",
-     "start": 70.83,
-     "end": 70.967
+     "start": 83.722,
+     "end": 83.822
     },
     {
      "text": "matin,",
-     "start": 70.967,
-     "end": 71.309
+     "start": 83.822,
+     "end": 84.462
     },
     {
      "text": "Jean-Revente",
-     "start": 71.309,
-     "end": 72.062
+     "start": 84.462,
+     "end": 85.082
     },
     {
      "text": "dort",
-     "start": 72.062,
-     "end": 72.336
+     "start": 85.082,
+     "end": 85.322
     },
     {
      "text": "à",
-     "start": 72.336,
-     "end": 72.404
+     "start": 85.322,
+     "end": 85.482
     },
     {
      "text": "nouveau",
-     "start": 72.404,
-     "end": 72.883
+     "start": 85.482,
+     "end": 85.702
     },
     {
      "text": "devant",
-     "start": 72.883,
-     "end": 73.294
+     "start": 85.702,
+     "end": 85.962
     },
     {
      "text": "le",
-     "start": 73.294,
-     "end": 73.431
+     "start": 85.962,
+     "end": 86.122
     },
     {
      "text": "magasin.",
-     "start": 73.431,
-     "end": 73.91
+     "start": 86.122,
+     "end": 86.542
     }
    ]
   },
@@ -1597,53 +1601,53 @@
    "say": "Mais cette fois... pour se faire rembourser quarante-sept coffrets.",
    "pause": 0.5,
    "text": "Mais cette fois… pour se faire rembourser 47 coffrets.",
-   "start": 74.11,
-   "end": 76.53,
+   "start": 86.882,
+   "end": 90.142,
    "words": [
     {
      "text": "Mais",
-     "start": 74.11,
-     "end": 74.33
+     "start": 86.882,
+     "end": 87.062
     },
     {
      "text": "cette",
-     "start": 74.33,
-     "end": 74.605
+     "start": 87.062,
+     "end": 87.202
     },
     {
      "text": "fois…",
-     "start": 74.605,
-     "end": 74.825
+     "start": 87.202,
+     "end": 88.102
     },
     {
      "text": "pour",
-     "start": 74.825,
-     "end": 75.045
+     "start": 88.102,
+     "end": 88.322
     },
     {
      "text": "se",
-     "start": 75.045,
-     "end": 75.155
+     "start": 88.322,
+     "end": 88.462
     },
     {
      "text": "faire",
-     "start": 75.155,
-     "end": 75.43
+     "start": 88.462,
+     "end": 88.642
     },
     {
      "text": "rembourser",
-     "start": 75.43,
-     "end": 75.98
+     "start": 88.642,
+     "end": 89.142
     },
     {
      "text": "47",
-     "start": 75.98,
-     "end": 76.09
+     "start": 89.142,
+     "end": 89.662
     },
     {
      "text": "coffrets.",
-     "start": 76.09,
-     "end": 76.53
+     "start": 89.662,
+     "end": 90.142
     }
    ]
   },
@@ -1652,73 +1656,73 @@
    "who": "vo",
    "pause": 0.15,
    "text": "Et toi, tu dormirais combien de nuits devant un magasin pour un coffret ?",
-   "start": 77.03,
-   "end": 80.65,
+   "start": 90.722,
+   "end": 93.782,
    "words": [
     {
      "text": "Et",
-     "start": 77.03,
-     "end": 77.25
+     "start": 90.722,
+     "end": 90.802
     },
     {
      "text": "toi,",
-     "start": 77.25,
-     "end": 77.55
+     "start": 90.802,
+     "end": 91.302
     },
     {
      "text": "tu",
-     "start": 77.91,
-     "end": 77.99
+     "start": 91.302,
+     "end": 91.362
     },
     {
      "text": "dormirais",
-     "start": 77.99,
-     "end": 78.41
+     "start": 91.362,
+     "end": 91.722
     },
     {
      "text": "combien",
-     "start": 78.41,
-     "end": 78.69
+     "start": 91.722,
+     "end": 91.962
     },
     {
      "text": "de",
-     "start": 78.69,
-     "end": 78.93
+     "start": 91.962,
+     "end": 92.182
     },
     {
      "text": "nuits",
-     "start": 78.93,
-     "end": 79.19
+     "start": 92.182,
+     "end": 92.362
     },
     {
      "text": "devant",
-     "start": 79.19,
-     "end": 79.37
+     "start": 92.362,
+     "end": 92.542
     },
     {
      "text": "un",
-     "start": 79.37,
-     "end": 79.55
+     "start": 92.542,
+     "end": 92.682
     },
     {
      "text": "magasin",
-     "start": 79.55,
-     "end": 79.99
+     "start": 92.682,
+     "end": 93.062
     },
     {
      "text": "pour",
-     "start": 79.99,
-     "end": 80.17
+     "start": 93.062,
+     "end": 93.222
     },
     {
      "text": "un",
-     "start": 80.17,
-     "end": 80.33
+     "start": 93.222,
+     "end": 93.442
     },
     {
      "text": "coffret ?",
-     "start": 80.33,
-     "end": 80.65
+     "start": 93.442,
+     "end": 93.782
     }
    ]
   },
@@ -1727,23 +1731,23 @@
    "who": "vo",
    "pause": 1.2,
    "text": "Dis-le en commentaire.",
-   "start": 80.8,
-   "end": 81.86,
+   "start": 94.142,
+   "end": 94.982,
    "words": [
     {
      "text": "Dis-le",
-     "start": 80.8,
-     "end": 81.094
+     "start": 94.142,
+     "end": 94.442
     },
     {
      "text": "en",
-     "start": 81.094,
-     "end": 81.212
+     "start": 94.442,
+     "end": 94.542
     },
     {
      "text": "commentaire.",
-     "start": 81.212,
-     "end": 81.86
+     "start": 94.542,
+     "end": 94.982
     }
    ]
   }
