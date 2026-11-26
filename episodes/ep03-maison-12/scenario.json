@@ -61,7 +61,7 @@
      "clock": "00:03:00",
      "plan": {"ambiance": "nuit bleue", "visuel": "Noé hésite devant la porte (gros plan), puis fonce à l'intérieur. Panneau « INTERDIT DE RESTER DEDANS » en amorce.", "sfx": ["porte qui claque"]}},
     {"id": "plan15", "who": "vo", "text": "Mamie m'attendait. Avec sa valise. Et Lila, déjà prête.", "pause": 1.1,
-     "clock": "00:00:30",
+     "clock": "00:00:30", "clockTo": "00:00:01",
      "bubbles": [{"who": "odette", "text": "Tu viens, mon grand ?", "atEnd": true}],
      "plan": {"ambiance": "salon nuit", "visuel": "Salon : mamie debout en manteau, valise à la main (récolte INDICE 3), Lila et Pistache dans ses bras, toutes souriantes. Bulle : « Tu viens, mon grand ? »", "sfx": ["battement de cœur qui accélère"]}},
     {"id": "plan16", "who": "vo", "text": "*Minuit*.", "pause": 0.9,

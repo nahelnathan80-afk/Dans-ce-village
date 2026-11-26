@@ -49,8 +49,10 @@ export const Chalet: React.FC<{
 	balcony?: boolean;
 	night?: boolean;
 	floors?: number;
+	/** numéro de maison affiché au-dessus de la porte */
+	number?: number;
 	children?: React.ReactNode;
-}> = ({w = 5, d = 5, h = 5, wall = '#c8864a', stone = '#e9dfcf', roof = '#8f3b22', shutter = '#2e8b57', position = [0, 0, 0], rotY = 0, balcony = true, night = false, floors = 2, children}) => {
+}> = ({w = 5, d = 5, h = 5, wall = '#c8864a', stone = '#e9dfcf', roof = '#8f3b22', shutter = '#2e8b57', position = [0, 0, 0], rotY = 0, balcony = true, night = false, floors = 2, number, children}) => {
 	const ridge = w * 0.42;
 	const geom = useMemo(() => {
 		const s = new THREE.Shape();
@@ -137,8 +139,25 @@ export const Chalet: React.FC<{
 			)}
 			{/* cheminée */}
 			<Box s={[0.6, 1.6, 0.6]} p={[w * 0.22, h + ridge * 0.6, -d * 0.2]} c="#a39486" />
+			{number !== undefined && <HouseNumber n={number} position={[-w / 2 + (Math.floor(Math.max(2, Math.round(w / 2.2)) / 2) + 0.5) * (w / Math.max(2, Math.round(w / 2.2))), 2.4, d / 2 + 0.09]} />}
 			{children}
 		</group>
+	);
+};
+
+/** Plaque émaillée bleue avec le numéro de la maison. */
+export const HouseNumber: React.FC<{n: number; position?: V3; scale?: number}> = ({n, position, scale = 1}) => {
+	const tex = textTexture(String(n), {bg: '#1f4fd8', fg: '#ffffff', w: 256, h: 256, radius: 40, border: '#ffffff', size: 170});
+	return (
+		<mesh position={position} scale={scale}>
+			<boxGeometry args={[0.75, 0.75, 0.06]} />
+			<meshStandardMaterial attach="material-0" color="#ffffff" />
+			<meshStandardMaterial attach="material-1" color="#ffffff" />
+			<meshStandardMaterial attach="material-2" color="#ffffff" />
+			<meshStandardMaterial attach="material-3" color="#ffffff" />
+			<meshStandardMaterial attach="material-4" map={tex} />
+			<meshStandardMaterial attach="material-5" color="#1f4fd8" />
+		</mesh>
 	);
 };
 
@@ -433,6 +452,8 @@ const CHALETS: {p: V3; r: number; w: number; d: number; h: number; wall: string;
 	return out;
 })();
 
+const HOUSE_NUMBERS = [3, 5, 8, 11, 14, 2, 9, 16, 4, 13, 6, 18, 10, 21, 15, 1, 19, 22, 17, 20, 23];
+
 const TREES: [V3, number][] = (() => {
 	const R = rng(9);
 	const out: [V3, number][] = [];
@@ -474,11 +495,15 @@ export type VillageProps = {
 	hideBakery?: boolean;
 	/** remplace la mairie + l'estrade par un autre bâtiment (ex. magasin de jouets) */
 	replaceMairie?: React.ReactNode;
+	/** remplace la boulangerie */
+	replaceBakery?: React.ReactNode;
+	/** numéros sur les portes des chalets */
+	numbered?: boolean;
 	children?: React.ReactNode;
 };
 
 /** Le décor complet du village (réutilisable dans tous les épisodes). */
-export const Village: React.FC<VillageProps> = ({night = false, bellSwing = 0, hideBakery = false, replaceMairie, children}) => {
+export const Village: React.FC<VillageProps> = ({night = false, bellSwing = 0, hideBakery = false, replaceMairie, replaceBakery, numbered = false, children}) => {
 	const grass = useMemo(() => grassTexture(60), []);
 	const cobble = useMemo(() => cobbleTexture(7), []);
 	return (
@@ -493,7 +518,7 @@ export const Village: React.FC<VillageProps> = ({night = false, bellSwing = 0, h
 			</mesh>
 			<Fountain />
 			<Square />
-			{!hideBakery && <Bakery night={night} />}
+			{replaceBakery ?? (!hideBakery && <Bakery night={night} />)}
 			{replaceMairie ?? (
 				<>
 					<Mairie night={night} />
@@ -502,7 +527,7 @@ export const Village: React.FC<VillageProps> = ({night = false, bellSwing = 0, h
 			)}
 			<Church bellSwing={bellSwing} night={night} />
 			{CHALETS.map((c, i) => (
-				<Chalet key={i} position={c.p} rotY={c.r} w={c.w} d={c.d} h={c.h} wall={c.wall} roof={c.roof} shutter={c.sh} night={night} />
+				<Chalet key={i} position={c.p} rotY={c.r} w={c.w} d={c.d} h={c.h} wall={c.wall} roof={c.roof} shutter={c.sh} night={night} number={numbered ? HOUSE_NUMBERS[i % HOUSE_NUMBERS.length] : undefined} />
 			))}
 			{TREES.map(([p, s], i) => (
 				<Sapin key={i} p={p} s={s} />

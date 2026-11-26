@@ -68,7 +68,8 @@ export const Subtitles: React.FC<{tl: Timeline; maxWords?: number; top?: number;
 				const pop = active ? spring({frame: wf + 1, fps, config: {damping: 9, stiffness: 380, mass: 0.4}}) : 1;
 				const inWorld = w.paid || (w.who !== 'vo' && w.who !== 'echo'); // mot prononcé dans le village
 				const echo = w.who === 'echo';
-				const size = inWorld ? 128 : 104;
+				const emph = w.text.includes('*'); // mot mis en valeur dans le script (*mot*)
+				const size = inWorld || emph ? 128 : 104;
 				return (
 					<span
 						key={i}
@@ -76,7 +77,7 @@ export const Subtitles: React.FC<{tl: Timeline; maxWords?: number; top?: number;
 							fontFamily: FONT,
 							fontSize: size,
 							lineHeight: 1.12,
-							color: inWorld ? '#ffe14d' : '#ffffff',
+							color: inWorld || emph ? '#ffe14d' : '#ffffff',
 							opacity: said ? (echo ? 0.85 : 1) : 0.55,
 							WebkitTextStroke: '15px #000',
 							paintOrder: 'stroke fill',
@@ -88,7 +89,7 @@ export const Subtitles: React.FC<{tl: Timeline; maxWords?: number; top?: number;
 							textTransform: 'uppercase',
 						}}
 					>
-						{w.text}
+						{w.text.replace(/\*/g, '')}
 					</span>
 				);
 			})}

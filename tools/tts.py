@@ -62,7 +62,7 @@ def display_tokens(text: str) -> list[str]:
 
 def speakable(text: str) -> str:
     """Texte envoyé au TTS (on enlève les guillemets qui perturbent la prosodie)."""
-    return re.sub(r"[«»“”]", "", text).replace("…", ",").strip()
+    return re.sub(r"[«»“”*]", "", text).replace("…", ",").strip()
 
 
 def synth_line(text: str, cfg: dict):

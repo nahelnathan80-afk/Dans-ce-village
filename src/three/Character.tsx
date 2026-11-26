@@ -9,8 +9,12 @@ export type CharacterLook = {
 	pants: string;
 	shoes?: string;
 	hair: string;
-	hairStyle?: 'short' | 'bun' | 'bald' | 'long' | 'spiky' | 'none';
-	hat?: 'toque' | 'cap' | 'beret' | 'none';
+	hairStyle?: 'short' | 'bun' | 'bald' | 'long' | 'spiky' | 'pigtails' | 'none';
+	hat?: 'toque' | 'cap' | 'beret' | 'bowler' | 'none';
+	overalls?: string; // salopette (couleur)
+	cardigan?: string; // gilet ouvert (couleur)
+	bowtie?: string; // nœud papillon (couleur)
+	coat?: string; // manteau long (couleur)
 	hatColor?: string;
 	apron?: string;
 	sash?: boolean; // écharpe tricolore du maire
@@ -139,6 +143,36 @@ export const Character: React.FC<CharacterProps> = ({
 				{/* Corps */}
 				<Box size={[0.98, 1.0, 0.56]} position={[0, 1.4, 0]} color={look.shirt} />
 				{look.hoodie && <Box size={[0.9, 0.3, 0.3]} position={[0, 1.95, -0.25]} color={look.shirt} />}
+				{look.overalls && (
+					<>
+						<Box size={[0.86, 0.62, 0.6]} position={[0, 1.2, 0]} color={look.overalls} />
+						{[-0.26, 0.26].map((x) => (
+							<Box key={x} size={[0.14, 0.5, 0.6]} position={[x, 1.66, 0]} color={look.overalls!} />
+						))}
+						{[-0.26, 0.26].map((x) => (
+							<Box key={'b' + x} size={[0.1, 0.1, 0.62]} position={[x, 1.55, 0]} color="#3a3a3a" />
+						))}
+					</>
+				)}
+				{look.cardigan &&
+					[-1, 1].map((sd) => <Box key={sd} size={[0.36, 1.02, 0.6]} position={[sd * 0.32, 1.4, 0]} color={look.cardigan!} />)}
+				{look.coat && (
+					<>
+						{[-1, 1].map((sd) => <Box key={sd} size={[0.4, 1.5, 0.62]} position={[sd * 0.3, 1.15, 0]} color={look.coat!} />)}
+						<Box size={[1.0, 0.16, 0.62]} position={[0, 1.86, 0]} color={look.coat} />
+					</>
+				)}
+				{look.bowtie && (
+					<group position={[0, 1.82, 0.3]}>
+						<mesh rotation={[0, 0, Math.PI / 2]} position={[-0.11, 0, 0]} material={M(look.bowtie)}>
+							<coneGeometry args={[0.1, 0.18, 4]} />
+						</mesh>
+						<mesh rotation={[0, 0, -Math.PI / 2]} position={[0.11, 0, 0]} material={M(look.bowtie)}>
+							<coneGeometry args={[0.1, 0.18, 4]} />
+						</mesh>
+						<Box size={[0.08, 0.08, 0.08]} color={look.bowtie} />
+					</group>
+				)}
 				{look.apron && (
 					<>
 						<Box size={[0.8, 0.95, 0.04]} position={[0, 1.25, 0.3]} color={look.apron} />
@@ -195,6 +229,19 @@ export const Character: React.FC<CharacterProps> = ({
 							<Box size={[0.8, 0.06, 0.45]} position={[0, -0.06, -0.72]} color={hatColor} />
 						</group>
 					)}
+					{look.hat === 'bowler' && (
+						<group position={[0, 1.12, 0]}>
+							<mesh castShadow material={M(hatColor)} position={[0, 0.02, 0]}>
+								<cylinderGeometry args={[0.78, 0.78, 0.06, 20]} />
+							</mesh>
+							<mesh castShadow material={M(hatColor)} position={[0, 0.28, 0]} scale={[1, 0.85, 1]}>
+								<sphereGeometry args={[0.52, 18, 12, 0, Math.PI * 2, 0, Math.PI / 2]} />
+							</mesh>
+							<mesh material={M('#7a1010')} position={[0, 0.1, 0]}>
+								<cylinderGeometry args={[0.53, 0.53, 0.1, 20]} />
+							</mesh>
+						</group>
+					)}
 					{look.hat === 'beret' && (
 						<mesh castShadow material={M(hatColor)} position={[0.05, 1.06, 0]} scale={[1, 0.3, 1]}>
 							<sphereGeometry args={[0.6, 16, 10]} />
@@ -238,6 +285,22 @@ const Hair: React.FC<{look: CharacterLook}> = ({look}) => {
 					<Box size={[0.14, 1.1, 1.0]} position={[-0.52, 0.45, -0.04]} color={c} />
 					<Box size={[0.14, 1.1, 1.0]} position={[0.52, 0.45, -0.04]} color={c} />
 					<Box size={[1.08, 0.18, 0.2]} position={[0, 0.9, 0.48]} color={c} />
+				</>
+			);
+		case 'pigtails':
+			return (
+				<>
+					<Box size={[1.08, 0.24, 1.08]} position={[0, 1.04, 0]} color={c} />
+					<Box size={[1.08, 0.2, 0.22]} position={[0, 0.9, 0.46]} color={c} />
+					<Box size={[1.08, 0.7, 0.14]} position={[0, 0.66, -0.5]} color={c} />
+					{[-1, 1].map((sd) => (
+						<group key={sd} position={[sd * 0.68, 0.8, -0.05]} rotation={[0, 0, sd * -0.5]}>
+							<mesh castShadow material={M(c)} position={[sd * 0.12, -0.15, 0]} scale={[0.75, 1.2, 0.75]}>
+								<sphereGeometry args={[0.28, 12, 10]} />
+							</mesh>
+							<Box size={[0.14, 0.14, 0.14]} position={[0, 0.08, 0]} color="#ff4d8d" />
+						</group>
+					))}
 				</>
 			);
 		case 'spiky':

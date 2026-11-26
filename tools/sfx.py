@@ -265,6 +265,111 @@ def music(total):
     return norm(np.tanh(out * 1.3), 0.85)
 
 
+# ——— Ép. 03 : tension / retournement ———
+def heartbeat():
+    """Un battement « lub-dub »."""
+    out = np.zeros(int(SR * 0.7))
+    for st, f0, a in ((0.0, 62, 1.0), (0.18, 55, 0.7)):
+        t = t_(0.25)
+        x = np.sin(2 * np.pi * np.cumsum(f0 * (1 + 0.6 * np.exp(-t * 30))) / SR) * np.exp(-t * 18) * a
+        i = int(st * SR)
+        out[i:i + len(x)] += x
+    return norm(lp(out, 400), 0.95)
+
+
+def tick():
+    n = int(SR * 0.06)
+    x = hp(rs.standard_normal(n), 3000) * np.exp(-np.linspace(0, 14, n))
+    t = t_(0.06)
+    x += np.sin(2 * np.pi * 3200 * t) * np.exp(-t * 90) * 0.6
+    return norm(x, 0.5)
+
+
+def impact():
+    t = t_(1.6)
+    x = np.sin(2 * np.pi * np.cumsum(70 * np.exp(-t * 2) + 30) / SR) * np.exp(-t * 2.5)
+    x += lp(rs.standard_normal(len(t)), 300) * np.exp(-t * 6) * 0.6
+    return norm(np.tanh(x * 2), 0.95)
+
+
+def piano_note(f, d=2.5, v=1.0):
+    t = t_(d)
+    x = sum(a * np.sin(2 * np.pi * f * k * t) * np.exp(-t * (1.2 + k * 0.9)) for k, a in ((1, 1), (2, 0.45), (3, 0.2), (4, 0.1)))
+    x *= np.minimum(1, t / 0.004)
+    return x * v
+
+
+def piano_cue():
+    """Trois notes douces (indice)."""
+    out = np.zeros(int(SR * 3))
+    for i, f in enumerate((659.25, 783.99, 987.77)):
+        n = piano_note(f, 2.4, 0.5)
+        j = int(i * 0.28 * SR)
+        out[j:j + len(n)] += n[: len(out) - j]
+    return norm(out, 0.6)
+
+
+def tension(total):
+    """Drone grave + pulsation qui accélère + tic-tac, intensité croissante."""
+    t = t_(total)
+    prog = t / total
+    drone = np.sin(2 * np.pi * 55 * t) + 0.5 * np.sin(2 * np.pi * 82.4 * t + 0.3) + 0.3 * np.sin(2 * np.pi * 110 * t)
+    drone *= 0.35 + 0.4 * prog
+    noise = lp(rs.standard_normal(len(t)), 500) * 0.15 * prog
+    out = drone + noise
+    # pulsation (kick sourd) : 70 → 128 bpm
+    beat_t = 0.0
+    while beat_t < total:
+        bpm = 70 + 58 * (beat_t / total) ** 1.5
+        k = np.sin(2 * np.pi * np.cumsum(80 * np.exp(-t_(0.3) * 18) + 40) / SR) * np.exp(-t_(0.3) * 10)
+        i = int(beat_t * SR)
+        out[i:i + len(k)] += k[: len(out) - i] * (0.5 + 0.5 * beat_t / total)
+        beat_t += 60 / bpm
+    # tic-tac régulier
+    tk = tick()
+    for j in range(int(total * 2)):
+        i = int(j * 0.5 * SR)
+        out[i:i + len(tk)] += tk[: len(out) - i] * 0.25
+    # nappe aiguë qui monte (cordes synthétiques)
+    f = 220 * (1 + prog * 0.5)
+    pad = np.sin(2 * np.pi * np.cumsum(f) / SR) * 0.12 * prog ** 2
+    out += pad
+    fade = int(SR * 0.05)
+    out[-fade:] *= np.linspace(1, 0, fade)
+    return norm(np.tanh(out * 1.2), 0.85)
+
+
+def piano_music(total):
+    """Piano doux et chaleureux : arpèges Do – La m – Fa – Sol."""
+    chords = [(261.63, 329.63, 392.0), (220.0, 261.63, 329.63), (174.61, 220.0, 261.63), (196.0, 246.94, 293.66)]
+    out = np.zeros(int(SR * (total + 3)))
+    step = 0.42
+    i = 0
+    tt = 0.0
+    while tt < total:
+        ch = chords[(i // 8) % 4]
+        f = ch[i % 3] * (2 if i % 8 >= 6 else 1)
+        n = piano_note(f, 2.6, 0.55)
+        j = int(tt * SR)
+        out[j:j + len(n)] += n[: len(out) - j]
+        if i % 8 == 0:
+            b = piano_note(ch[0] / 2, 3.2, 0.6)
+            out[j:j + len(b)] += b[: len(out) - j]
+        i += 1
+        tt += step
+    out = out[: int(SR * total)]
+    out[: int(SR * 0.8)] *= np.linspace(0, 1, int(SR * 0.8))
+    out[-int(SR * 2):] *= np.linspace(1, 0, int(SR * 2))
+    return norm(out, 0.8)
+
+
+def main_ep03():
+    for name, fn in [("heartbeat", heartbeat), ("tick", tick), ("impact", impact), ("piano-cue", piano_cue)]:
+        save(name, fn())
+    save("tension", tension(100), folder="music")
+    save("piano-doux", piano_music(40), folder="music")
+
+
 def main():
     total = float(sys.argv[1]) if len(sys.argv) > 1 else 95
     for name, fn in [("pop", pop), ("cash", cash), ("bell", bell), ("whoosh", whoosh), ("boom", boom), ("ding", ding),
@@ -275,4 +380,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) > 1 and sys.argv[1] == "ep03":
+        main_ep03()
+    else:
+        main()

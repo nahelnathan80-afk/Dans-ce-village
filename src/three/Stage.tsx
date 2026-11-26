@@ -34,13 +34,18 @@ const CameraRig: React.FC<CameraShot> = ({pos, target, fov = 40, roll = 0, shake
 	return null;
 };
 
-export type Ambiance = 'day' | 'night' | 'interior' | 'sunset';
+export type Ambiance = 'day' | 'night' | 'interior' | 'sunset' | 'morning' | 'golden' | 'nightblue' | 'valley' | 'interiorNight';
 
 const AMB: Record<Ambiance, {top: string; bottom: string; fog: string; hemi: [string, string, number]; sun: [string, number]; amb: number}> = {
 	day: {top: '#2f8cff', bottom: '#bfe6ff', fog: '#cfe9ff', hemi: ['#e4f2ff', '#b7c9a0', 1.15], sun: ['#fff1d6', 2.4], amb: 0.35},
 	sunset: {top: '#5b6cff', bottom: '#ffc58a', fog: '#ffd9b0', hemi: ['#ffe3c2', '#7a9c5f', 1.0], sun: ['#ffc27a', 2.2], amb: 0.35},
 	night: {top: '#1a1446', bottom: '#6a3fa0', fog: '#3a2a6a', hemi: ['#8b7bff', '#1d2450', 0.7], sun: ['#a9b8ff', 0.8], amb: 0.25},
 	interior: {top: '#f3c98b', bottom: '#f3c98b', fog: '#f3c98b', hemi: ['#ffe9c7', '#8a5a3a', 1.1], sun: ['#ffd6a0', 1.6], amb: 0.45},
+	morning: {top: '#4aa8ff', bottom: '#fff1cf', fog: '#ffeccc', hemi: ['#fff4dc', '#9fca86', 1.15], sun: ['#fff0c8', 2.5], amb: 0.38},
+	golden: {top: '#6f8dff', bottom: '#ffcf7a', fog: '#ffd9a0', hemi: ['#ffe4b8', '#a08a5a', 1.05], sun: ['#ffb85c', 2.4], amb: 0.35},
+	nightblue: {top: '#050a24', bottom: '#1b2f6b', fog: '#14234f', hemi: ['#6f86ff', '#0a1030', 0.55], sun: ['#8fa6ff', 0.6], amb: 0.2},
+	valley: {top: '#59b7ff', bottom: '#ffe9b8', fog: '#fff0d0', hemi: ['#fff6e0', '#9fdc7a', 1.25], sun: ['#fff0c0', 2.8], amb: 0.45},
+	interiorNight: {top: '#2b2440', bottom: '#2b2440', fog: '#2b2440', hemi: ['#b8a6ff', '#3a2a40', 0.55], sun: ['#9fb0ff', 0.5], amb: 0.3},
 };
 
 const Environment: React.FC<{ambiance: Ambiance; fogNear: number; fogFar: number}> = ({ambiance, fogNear, fogFar}) => {
