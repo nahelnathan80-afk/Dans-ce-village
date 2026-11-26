@@ -40,8 +40,9 @@ def frame(bg, carte, t, W, H):
     d.text((cx, y0 + r * 0.1), "?", font=font(int(110 * k * sc), True), fill=(24, 30, 52, 255), anchor="mm")
     if a > 0.4:
         q = carte.get("question", "")
-        f, bb = fit_text(d, _wrap(q), cw - 120 * k, ch - 260 * k, int(110 * k), black=True)
-        d.multiline_text((cx, y0 + ch * 0.52), _wrap(q), font=f, fill=(24, 30, 52, 255), anchor="mm",
+        txt = _wrap(q, 13)
+        f, bb = fit_text(d, txt, cw - 110 * k, ch - 220 * k, int(150 * k * sc), black=True)
+        d.multiline_text((cx, y0 + ch * 0.55), txt, font=f, fill=(24, 30, 52, 255), anchor="mm",
                          align="center", spacing=int(f.size * 0.12))
     if t > 0.6:
         pulse = 1 + 0.05 * math.sin((t - 0.6) * 6)
@@ -51,13 +52,15 @@ def frame(bg, carte, t, W, H):
         d.rounded_rectangle([bx, by, bx + bw, by + bh], radius=bh / 2, fill=(24, 30, 52, 245),
                             outline=(255, 210, 31, 255), width=max(3, int(7 * k)))
         _comment_icon(d, bx + 40 * k, by + bh / 2 - 32 * k, 64 * k, (255, 210, 31, 255))
-        d.text((bx + 150 * k + (bw - 150 * k) / 2 - 20 * k, by + bh / 2), carte.get("appel", "RÉPONDS EN COMMENTAIRE"),
-               font=font(int(46 * k * pulse), True), fill=(255, 255, 255, 255), anchor="mm")
+        appel = carte.get("appel", "RÉPONDS EN COMMENTAIRE")
+        fa, _ = fit_text(d, appel, bw - 190 * k, bh * 0.6, int(46 * k * pulse), black=True)
+        d.text((bx + 140 * k + (bw - 170 * k) / 2, by + bh / 2), appel, font=fa, fill=(255, 255, 255, 255), anchor="mm")
     return im.convert("RGB")
 
 
 def _wrap(q, maxc=16):
-    words, lines, cur = q.split(), [], ""
+    q = q.replace(" ?", "\u00a0?").replace(" !", "\u00a0!")      # pas de « ? » orphelin
+    words, lines, cur = q.split(" "), [], ""
     for w in words:
         if len((cur + " " + w).strip()) <= maxc or not cur:
             cur = (cur + " " + w).strip()

@@ -27,7 +27,9 @@ def assemble(clips, specs, fade, total, ass_path, audio_path, out_mp4, mode):
     for i in range(1, n):
         off = specs[i]["debut"]
         out = f"[x{i}]"
-        chain.append(f"{prev}[{i}:v]xfade=transition=fade:duration={fade:.4f}:offset={off:.4f}{out}")
+        # flash-forward / rembobinage / carte : coupe SÈCHE (le flash ou l'effet fait la transition)
+        dur = 1 / config.FPS if specs[i].get("transition") in ("flash", "rembobinage") or specs[i].get("carte") else fade
+        chain.append(f"{prev}[{i}:v]xfade=transition=fade:duration={dur:.4f}:offset={off:.4f}{out}")
         prev = out
     last = specs[-1]
     end_content = last["debut"] + last["duree"]
