@@ -1,0 +1,28 @@
+Épisode leo_hier — mode final — 2026-11-26 19:48:49
+Durée : 81.8 s — fichier : output/leo_hier/leo_hier.mp4 (46.0 Mo) — son : -14.2 LUFS
+
+Plan     durée  cadrages  état      temps (dont rendu Blender)
+plan01    4.60s     3      cache     0 s (9 min 11 s)
+plan02    8.40s     6      cache     0 s (17 min 38 s)
+plan03    4.57s     3      cache     0 s (9 min 10 s)
+plan04    5.33s     3      cache     0 s (10 min 21 s)
+plan05    5.50s     4      cache     0 s (11 min 03 s)
+plan06    5.20s     3      cache     0 s (9 min 26 s)
+plan07    5.00s     3      cache     0 s (9 min 52 s)
+plan08    4.17s     3      cache     0 s (8 min 18 s)
+plan09    6.80s     5      reprise   7 min 14 s (6 min 21 s)
+plan10    5.50s     3      rendu     10 min 58 s (10 min 17 s)
+plan11    5.00s     3      rendu     8 min 30 s (7 min 50 s)
+plan12    5.00s     3      rendu     10 min 06 s (9 min 26 s)
+plan13    8.00s     6      rendu     19 min 01 s (17 min 55 s)
+plan14    7.50s     5      rendu     17 min 40 s (16 min 40 s)
+
+Temps total : 75 min 43 s
+
+Checklist :
+  [OK] 1re phrase commence par « Dans cette ville, »
+  [OK] Aucune phrase de plus de 12 mots — max 12 mots : « Dans cette ville, tout le monde connaît la date de sa mort. »
+  [OK] Un cadrage change au moins toutes les 2 s — cadrage le plus long : 2.00 s
+  [OK] Jamais de silence total (niveau mini -53 dBFS)
+  [i] Timing des sous-titres : whisper.cpp
+  [i] Voix : mp3 fourni
