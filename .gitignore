@@ -3,6 +3,7 @@ cache/
 output/**
 !output/*/
 !output/*/*.mp4
+!output/*/rapport_*.txt
 output/*/*_plans/
 # Modèles téléchargés par scripts/setup.sh
 .models/
