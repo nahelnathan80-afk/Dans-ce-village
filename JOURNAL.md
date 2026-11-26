@@ -7,7 +7,7 @@ Branche de travail : `claude/video-generator-dans-cette-ville-2mn6k8`
 
 ---
 
-## 1. Où en est-on ? (26/11/2026, 17 h 30 heure de Paris)
+## 1. Où en est-on ? (26/11/2026, 20 h 50 heure de Paris)
 
 | Élément | État |
 |---|---|
@@ -16,7 +16,7 @@ Branche de travail : `claude/video-generator-dans-cette-ville-2mn6k8`
 | 13 voix de Grégory (ElevenLabs) dans `episodes/leo_hier/voix/` | ✅ commitées |
 | 1er aperçu (voix temporaire Piper) | ✅ poussé, puis remplacé |
 | Aperçu avec la voix de Grégory (540×960, 81,8 s) | ✅ poussé (checklist OK, -14,2 LUFS) |
-| Rendu FINAL 1080×1920 | ⏳ en cours, plans 1 à 8 finis (reprise après la coupure de 2 h). Le MP4 sera poussé tout seul dans `output/leo_hier/leo_hier.mp4` |
+| Rendu FINAL 1080×1920 | ✅ poussé : `output/leo_hier/leo_hier.mp4`, 81,8 s, 46 Mo, -14,2 LUFS, toute la checklist est OK |
 
 ### Si la session est perdue, comment reprendre
 1. Ouvre une nouvelle session Claude Code sur ce dépôt, sur la branche ci-dessus.
@@ -150,3 +150,10 @@ README.md                  format du scénario + guide iPad
 | 16 h 11 | Aperçu avec la voix de Grégory lancé, puis enchaînement automatique sur le FINAL. |
 | 16 h 35 | Aperçu poussé : 81,8 s, -14,2 LUFS, toute la checklist est OK. Le FINAL démarre (≈ 3,8 s par image en réalité). |
 | 18 h 32 | Rendu FINAL coupé après 2 h (limite d'une tâche en arrière-plan) : plans 1 à 8 finis, plan 9 à 114/212 images. Relancé aussitôt, il reprend depuis le cache. Fin estimée vers 19 h 55 UTC (20 h 55 heure de Paris). |
+| 19 h 48 | ✅ FINAL terminé et poussé (`b748b4f`) : 1080×1920, 30 i/s, 81,8 s, 46 Mo, -14,2 LUFS. Durée totale de rendu ≈ 3 h 15 (coupure comprise). |
+
+## 7. Défaut connu, à corriger si tu le veux
+- Plan 14, dernier gros plan : la bulle « Toi aussi, tu les vois ? » cache en partie le
+  compteur AUJOURD'HUI d'Inès, et sa pointe descend sur son visage. Pour corriger : placer
+  la bulle sur le côté dans les gros plans, puis `./scripts/make_episode.sh leo_hier final`
+  (seuls la finition du plan 14 et le montage sont refaits, ≈ 10 min).
