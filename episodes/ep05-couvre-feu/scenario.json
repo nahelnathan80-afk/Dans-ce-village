@@ -1,0 +1,277 @@
+// Épisode 05 — « Couvre-feu » — frisson / suspense, sans violence ni sang.
+// Concept original : à 21 h, ceux qui sont encore dehors « changent » et deviennent
+// des Souriants (sourire figé, immobiles). Aucun lien avec une œuvre existante.
+// Même moteur et même style que les épisodes précédents. [NOUVEAU] = élément réutilisable ajouté.
+{
+  "titre": "Couvre-feu",
+  "casting": ["nora", "timeo", "maman_nora", "monsieur_remi"],
+  "voix_off": { "elevenlabs_voice_id": "ctilxqiD5xHFsAqEwjvS" },
+  "pause_apres_voix": 0.9,
+  "musique_theme": "nuit",                                   // [NOUVEAU] musique sombre (drone + battement)
+
+  // [NOUVEAU] la pastille du haut en mode compte à rebours (format mm:ss)
+  "compteur_haut": { "label": "COUVRE-FEU", "format": "temps" },
+
+  "plans": [
+    {
+      "id": "plan01", "decor": "rue", "mood": "nuit_rouge", "duree_min": 3.4,   // [NOUVEAU] ambiance
+      // 0-1 s : la règle MONTRÉE — horloge de la ville 20:59, lampadaires qui virent au rouge
+      "textes_decor": [ { "type": "horloge", "emplacement": "horloge_ville", "texte": "20:59" } ],   // [NOUVEAU] horloge publique
+      "rue": { "lampadaires": "rouges" },
+      "foule": { "nombre": 8, "zone": "trottoirs", "action": "passer", "compteurs": "aucun" },
+      "invites": 59,
+      "sons": [ { "type": "cloche", "debut": "0%" } ],         // [NOUVEAU] bruitages synthétisés
+      "cadrages": [
+        { "camera": "zoom_brusque", "cible": "horloge_ville", "duree": 1 },
+        { "camera": "plan_large", "cible": "rue", "duree": 1 }
+      ],
+      "voix": { "texte": "Dans cette ville, à 21 h, il faut être *rentré*." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan02", "decor": "rue", "mood": "nuit_rouge", "duree_min": 4.2,
+      // FLASH-FORWARD : Nora court, au bout de la rue un Souriant immobile
+      "transition": "flash", "effets_ecran": ["brouillard"],    // [NOUVEAU] brouillard 2D
+      "rue": { "lampadaires": "rouges" },
+      "personnages": [
+        { "qui": "nora", "position": [3, 1.6], "action": "courir", "vers": [-3, 1.8], "expression": "peur", "etiquette": false },  // [NOUVEAU] courir
+        { "qui": "monsieur_remi", "position": [-1.2, 7.5], "action": "attendre", "regarde": "camera", "expression": "souriant_fige", "etiquette": false }  // [NOUVEAU] expression
+      ],
+      "invites": 40, "invites_style": "flash", "hud_label": "RETARD", "hud_signe": "+",   // [NOUVEAU] « RETARD : +0:40 »
+      "sons": [ { "type": "coeur", "debut": "0%" } ],
+      "cadrages": [
+        { "camera": "travelling_suivi", "cible": "nora", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "monsieur_remi", "duree": 1 }
+      ],
+      "voix": { "texte": "Ce soir-là, je suis rentrée quarante secondes trop *tard*." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan03", "decor": "chambre_ado", "mood": "soir_lampe", "duree_min": 2.0,   // [NOUVEAU] ambiance
+      "transition": "rembobinage",
+      "personnages": [ { "qui": "nora", "position": "lit", "action": "assis", "objet": "lit", "expression": "neutre", "etiquette": false } ],
+      "invites": 900,
+      "cadrages": [ { "camera": "plan_large", "cible": "piece", "duree": 1 } ],
+      "voix": { "texte": "Revenons à 20 h 45." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan04", "decor": "chambre_ado", "mood": "soir_lampe",
+      "personnages": [
+        { "qui": "nora", "position": [-0.6, 2.4], "action": "regarder", "cible": "timeo", "expression": "interrogatif" },
+        { "qui": "timeo", "position": [0.5, 2.0], "action": "attendre", "regarde": "nora", "expression": "pleure" }
+      ],
+      "invites": { "de": 900, "a": 880 },
+      "cadrages": [
+        { "camera": "plan_large", "cible": "piece", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "timeo", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "nora", "duree": 1 }
+      ],
+      "voix": { "texte": "Moi, c'est *Nora*. Mon petit frère avait oublié son doudou au parc." },
+      "bulles": [ { "qui": "timeo", "texte": "Mon doudou est tout seul dehors !", "debut": "45%", "fin": "100%" } ],
+      "musique": "normal"
+    },
+    {
+      "id": "plan05", "decor": "cuisine", "mood": "soir_lampe",
+      "personnages": [
+        { "qui": "maman_nora", "position": "pres_table", "action": "parler", "regarde": "nora", "expression": "peur" },
+        { "qui": "nora", "position": [-1.6, 1.2], "action": "regarder", "cible": "maman_nora", "expression": "neutre" }
+      ],
+      "invites": { "de": 880, "a": 860 },
+      "cadrages": [
+        { "camera": "par_dessus_epaule", "cible": "nora>maman_nora", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "maman_nora", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "maman_nora", "duree": 1 }
+      ],
+      "voix": { "texte": "La règle, tout le monde la connaît. Dehors après 21 h… tu *changes*." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan06", "decor": "maison_yanis", "mood": "nuit_rouge",
+      // *INDICE 1* : le voisin resté dehors mardi, à sa fenêtre, sourire figé
+      "personnages": [
+        { "qui": "monsieur_remi", "position": "fenetre_voisin", "action": "attendre", "regarde": "camera", "expression": "souriant_fige" }
+      ],
+      "invites": { "de": 860, "a": 840 },
+      "sons": [ { "type": "grincement", "debut": "30%" } ],
+      "cadrages": [
+        { "camera": "plan_large", "cible": "maison", "duree": 1 },
+        { "camera": "zoom_brusque", "cible": "monsieur_remi", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "monsieur_remi", "duree": 1.2 }
+      ],
+      "voix": { "texte": "Monsieur Rémi, le voisin, est resté dehors mardi. Depuis, il *sourit*." },
+      "musique": "coupe"
+    },
+    {
+      "id": "plan07", "decor": "rue", "mood": "nuit_bleue_froide",
+      "personnages": [ { "qui": "nora", "position": [3.5, 1.6], "action": "courir", "vers": [-3.5, 2.0], "expression": "peur" } ],
+      "invites": { "de": 840, "a": 720 },
+      "sons": [ { "type": "pas_rapides", "debut": "0%" } ],
+      "cadrages": [
+        { "camera": "travelling_suivi", "cible": "nora", "duree": 1 },
+        { "camera": "contre_plongee", "cible": "nora", "duree": 1 },
+        { "camera": "plan_large", "cible": "rue", "duree": 1 }
+      ],
+      "voix": { "texte": "Le parc était à dix minutes. J'en avais *quinze*." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan08", "decor": "parc", "mood": "nuit_bleue_froide",       // [NOUVEAU] décor parc
+      "effets_ecran": ["brouillard"],
+      "personnages": [ { "qui": "nora", "position": "devant_toboggan", "action": "regarder", "cible": "doudou", "expression": "peur" } ],
+      "accessoires": { "balancoire_qui_bouge": true, "doudou": "toboggan" },
+      "invites": { "de": 720, "a": 300 },
+      "sons": [ { "type": "grincement", "debut": "10%" } ],
+      "cadrages": [
+        { "camera": "plan_large", "cible": "parc", "duree": 1 },
+        { "camera": "gros_plan_objet", "cible": "balancoire", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "doudou", "duree": 1.2 }
+      ],
+      "voix": { "texte": "Le doudou était sur le toboggan. Comme si quelqu'un l'avait *posé* là." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan09", "decor": "rue", "mood": "nuit_bleue_froide",
+      // RELANCE : « Sauf que… » les lampadaires s'éteignent un par un
+      "rue": { "lampadaires": "extinction" },                              // [NOUVEAU] extinction en cascade
+      "personnages": [ { "qui": "nora", "position": [4, 1.6], "action": "courir", "vers": [0, 1.7], "expression": "peur", "objet": "doudou" } ],
+      "invites": { "de": 300, "a": 180 },
+      "sons": [ { "type": "extinction", "debut": "15%" }, { "type": "extinction", "debut": "40%" }, { "type": "extinction", "debut": "65%" } ],
+      "cadrages": [
+        { "camera": "plan_large", "cible": "rue", "duree": 1 },
+        { "camera": "travelling_suivi", "cible": "nora", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "nora", "duree": 1 }
+      ],
+      "voix": { "texte": "Sauf que les lampadaires… ont commencé à *s'éteindre*." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan10", "decor": "rue", "mood": "nuit_rouge",
+      "rue": { "lampadaires": "rouges", "volets": "tombent" },             // [NOUVEAU] volets qui se ferment
+      "foule": { "nombre": 10, "zone": "trottoirs", "action": "courir", "compteurs": "aucun" },
+      "invites": { "de": 180, "a": 60 },
+      "sons": [ { "type": "porte_claque", "debut": "20%" }, { "type": "porte_claque", "debut": "55%" }, { "type": "volet", "debut": "75%" } ],
+      "cadrages": [
+        { "camera": "travelling_suivi", "cible": "foule", "duree": 1 },
+        { "camera": "plan_large", "cible": "rue", "duree": 1 },
+        { "camera": "zoom_brusque", "cible": "rue", "duree": 1 }
+      ],
+      "voix": { "texte": "Les gens couraient. Les portes claquaient. Les volets tombaient." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan11", "decor": "rue", "mood": "nuit_rouge", "duree_min": 4.5,
+      // RELANCE : son coupé, quelqu'un ne court pas
+      "rue": { "lampadaires": "rouges" },
+      "effets_ecran": ["brouillard"],
+      "personnages": [
+        { "qui": "nora", "position": [1.5, 1.6], "action": "attendre", "regarde": "monsieur_remi", "expression": "peur", "objet": "doudou" },
+        { "qui": "monsieur_remi", "position": [-2.5, 5.5], "action": "attendre", "regarde": "nora", "expression": "souriant_fige", "etiquette": false }
+      ],
+      "invites": { "de": 60, "a": 30 },
+      "voix_delai": 0.8,
+      "cadrages": [
+        { "camera": "par_dessus_epaule", "cible": "nora>monsieur_remi", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "monsieur_remi", "duree": 1.3 }
+      ],
+      "voix": { "texte": "Et au coin de la rue… quelqu'un ne courait *pas*." },
+      "musique": "coupe"
+    },
+    {
+      "id": "plan12", "decor": "rue", "mood": "nuit_rouge", "duree_min": 3.6,
+      "personnages": [
+        { "qui": "monsieur_remi", "position": [-2.5, 5.5], "action": "marcher", "vers": [-1.5, 3.5], "expression": "souriant_fige", "etiquette": false }
+      ],
+      "invites": { "de": 30, "a": 18 },
+      "sons": [ { "type": "coeur", "debut": "0%" } ],
+      "cadrages": [
+        { "camera": "zoom_brusque", "cible": "monsieur_remi", "duree": 1 },
+        { "camera": "contre_plongee", "cible": "monsieur_remi", "duree": 1 }
+      ],
+      "voix": { "texte": "Monsieur Rémi. Et il me *souriait*." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan13", "decor": "maison_yanis", "mood": "nuit_rouge", "duree_min": 5.0,
+      // le sprint final : le compte à rebours passe 0:00 puis vire au rouge « RETARD : +0:40 »
+      "personnages": [ { "qui": "nora", "position": [-3, 1.4], "action": "courir", "vers": "devant_porte", "expression": "peur", "objet": "doudou" } ],
+      "invites": { "de": 18, "a": 0, "puis_retard": 40 },                 // [NOUVEAU] passage au retard
+      "invites_effet": "explose",
+      "sons": [ { "type": "coeur", "debut": "0%" }, { "type": "porte_claque", "debut": "90%" } ],
+      "cadrages": [
+        { "camera": "travelling_suivi", "cible": "nora", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "nora", "duree": 1 },
+        { "camera": "gros_plan_objet", "cible": "compteur_haut", "duree": 1 }
+      ],
+      "voix": { "texte": "J'ai couru. J'ai claqué la porte. Il était 21 h… et quarante secondes." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan14", "decor": "cuisine", "mood": "soir_lampe",
+      "personnages": [
+        { "qui": "maman_nora", "position": "pres_table", "action": "serrer", "cible": "nora", "expression": "pleure" },
+        { "qui": "nora", "position": [1.1, 2.9], "action": "serrer", "cible": "maman_nora", "expression": "triste" },
+        { "qui": "timeo", "position": [-0.9, 1.5], "action": "attendre", "objet": "doudou", "expression": "joyeux" }
+      ],
+      "invites": 40, "invites_style": "deborde", "hud_label": "RETARD", "hud_signe": "+",
+      "cadrages": [
+        { "camera": "plan_large", "cible": "piece", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "timeo", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "maman_nora", "duree": 1 }
+      ],
+      "voix": { "texte": "Maman pleurait. Timéo avait son doudou. J'étais *rentrée*." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan15", "decor": "maison_yanis", "mood": "nuit_rouge",
+      // *INDICE 2* : de l'extérieur, la fenêtre de la chambre de Nora est allumée… avec une silhouette
+      "maison": { "fenetre_etage": "allumee_silhouette" },                // [NOUVEAU]
+      "invites": 40, "invites_style": "deborde", "hud_label": "RETARD", "hud_signe": "+",
+      "cadrages": [
+        { "camera": "plan_large", "cible": "maison", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "fenetre_etage", "duree": 1.3 }
+      ],
+      "voix": { "texte": "Mais en montant me coucher… ma lumière était déjà *allumée*." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan16", "decor": "chambre_ado", "mood": "nuit_chambre",          // [NOUVEAU] ambiance
+      "personnages": [
+        { "qui": "nora_double", "position": "lit", "orientation": 90, "action": "dormir", "pose": "allonge", "expression": "dort", "etiquette": false },
+        { "qui": "nora", "position": [1.6, 1.4], "action": "sursauter", "debut_action": "55%", "expression": "choque" }
+      ],
+      "invites": 40, "invites_style": "deborde", "hud_label": "RETARD", "hud_signe": "+",
+      "voix_delai": 0.5,
+      "sons": [ { "type": "coeur", "debut": "0%" } ],
+      "cadrages": [
+        { "camera": "par_dessus_epaule", "cible": "nora>lit", "duree": 1 },
+        { "camera": "plongee", "cible": "nora_double", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "nora", "duree": 1 }
+      ],
+      "voix": { "texte": "Dans mon lit, quelqu'un dormait déjà. C'était… *moi*." },
+      "musique": "coupe"
+    },
+    {
+      "id": "plan17", "decor": "chambre_ado", "mood": "nuit_chambre", "duree_min": 5.0,
+      // CHUTE (5 mots) : son reflet sourit… pas elle
+      "personnages": [
+        { "qui": "nora", "position": "devant_miroir", "orientation": "miroir", "action": "attendre", "expression": "peur",
+          "expression_reflet": "souriant_fige", "etiquette": false }       // [NOUVEAU] le reflet a sa propre expression
+      ],
+      "invites": 40, "invites_style": "deborde", "hud_label": "RETARD", "hud_signe": "+",
+      "cadrages": [
+        { "camera": "par_dessus_epaule", "cible": "nora>miroir", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "reflet:nora", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "reflet:nora", "duree": 1.3 }
+      ],
+      "voix": { "texte": "Et dans le miroir… je *souriais*." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan18", "type": "carte_question", "duree": 4.0,
+      "decor": "chambre_ado", "mood": "nuit_chambre", "fond": "plan17",
+      "carte": { "question": "ET TOI, TU RENTRES OU TU CHERCHES LE DOUDOU ?", "appel": "RÉPONDS EN COMMENTAIRE" },
+      "voix": null, "musique": "normal", "fin": { "noir": 0.5 }
+    }
+  ]
+}
