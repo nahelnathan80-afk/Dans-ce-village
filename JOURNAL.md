@@ -157,3 +157,20 @@ README.md                  format du scénario + guide iPad
   compteur AUJOURD'HUI d'Inès, et sa pointe descend sur son visage. Pour corriger : placer
   la bulle sur le côté dans les gros plans, puis `./scripts/make_episode.sh leo_hier final`
   (seuls la finition du plan 14 et le montage sont refaits, ≈ 10 min).
+
+---
+
+## 8. Épisode 04 « Villa Kado » (27/11/2026)
+
+- ✅ **Final poussé** : `output/ep04-villa-kado/ep04-villa-kado.mp4`, 1080×1920, 30 i/s, 99,1 s, 48 Mo,
+  -14,3 LUFS. Toute la checklist est OK (cadrage le plus long : 2,00 s ; phrase la plus longue : 10 mots).
+- 17 voix de Grégory générées avec le connecteur ElevenLabs (≈ 900 crédits ; flow `TqJfctZF49HFlHecFfnl`).
+- Nouveaux éléments réutilisables :
+  - `hud.py` : pastille du haut (comptage, saut, emballement, explosion qui déborde)
+  - `endcard.py` : carte-question finale
+  - `fx.py` : flash, rembobinage VHS, pluie, ZZZ
+  - 4 décors : villa_exterieur, villa_interieur, maison_yanis, chambre_amis
+  - 6 ambiances, le preset `zoom_brusque` et le paramètre de cadrage `angle`
+  - actions dormir, filmer, frapper, rouler, pousser, plus porter un canapé
+  - vêtements à motifs, façade invisible pour la caméra
+- Rendu final : ≈ 3 h, avec une coupure à 2 h et un redémarrage du conteneur ; reprise depuis le cache sans perte.
