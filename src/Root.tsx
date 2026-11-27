@@ -1,6 +1,7 @@
 import React from 'react';
 import {Composition} from 'remotion';
 import {TestScene} from './TestScene';
+import {Poster} from './posters/Posters';
 import {Episode} from './episodes/ep01/Episode';
 import {ep01, FPS} from './episodes/ep01/data';
 import {Episode02} from './episodes/ep02/Episode';
@@ -12,6 +13,9 @@ import {ep04} from './episodes/ep04/data';
 
 export const RemotionRoot: React.FC = () => (
 	<>
+		{[1, 2, 3, 4, 5, 6].map((n) => (
+			<Composition key={n} id={`Photo${n}`} component={Poster} width={1080} height={1920} fps={30} durationInFrames={1} defaultProps={{n}} />
+		))}
 		<Composition id="Ep01" component={Episode} width={1080} height={1920} fps={FPS} durationInFrames={ep01.tl.durationInFrames} />
 		<Composition id="Ep02" component={Episode02} width={1080} height={1920} fps={FPS} durationInFrames={ep02.tl.durationInFrames} />
 		<Composition id="Ep03" component={Episode03} width={1080} height={1920} fps={FPS} durationInFrames={ep03.tl.durationInFrames} />
