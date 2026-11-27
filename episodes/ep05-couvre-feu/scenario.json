@@ -67,8 +67,8 @@
         { "camera": "gros_plan_visage", "cible": "timeo", "duree": 1 },
         { "camera": "gros_plan_visage", "cible": "nora", "duree": 1 }
       ],
-      "voix": { "texte": "Moi, c'est *Nora*. Mon petit frère avait oublié son doudou au parc." },
-      "bulles": [ { "qui": "timeo", "texte": "Mon doudou est tout seul dehors !", "debut": "45%", "fin": "100%" } ],
+      "voix": { "texte": "Moi, c'est *Nora*. Mon petit frère avait oublié son ALLO DOUDOU au parc." },
+      "bulles": [ { "qui": "timeo", "texte": "Mon ALLO DOUDOU est tout seul dehors !", "debut": "45%", "fin": "100%" } ],
       "musique": "normal"
     },
     {
@@ -129,7 +129,7 @@
         { "camera": "plongee", "cible": "doudou", "duree": 1.2 },
         { "camera": "gros_plan_visage", "cible": "nora", "duree": 1 }
       ],
-      "voix": { "texte": "Le doudou était sur le toboggan. Comme si quelqu'un l'avait *posé* là." },
+      "voix": { "texte": "Le ALLO DOUDOU était sur le toboggan. Comme si quelqu'un l'avait *posé* là." },
       "musique": "baisse"
     },
     {
@@ -222,7 +222,7 @@
         { "camera": "gros_plan_visage", "cible": "timeo", "duree": 1 },
         { "camera": "gros_plan_visage", "cible": "maman_nora", "duree": 1 }
       ],
-      "voix": { "texte": "Maman pleurait. Timéo avait son doudou. J'étais *rentrée*." },
+      "voix": { "texte": "Maman pleurait. Timéo avait son ALLO DOUDOU. J'étais *rentrée*." },
       "musique": "normal"
     },
     {
@@ -273,7 +273,7 @@
     {
       "id": "plan18", "type": "carte_question", "duree": 4.0,
       "decor": "chambre_ado", "mood": "nuit_chambre", "fond": "plan17",
-      "carte": { "question": "ET TOI, TU RENTRES OU TU CHERCHES LE DOUDOU ?", "appel": "RÉPONDS EN COMMENTAIRE" },
+      "carte": { "question": "ET TOI, TU RENTRES OU TU CHERCHES LE ALLO DOUDOU ?", "appel": "RÉPONDS EN COMMENTAIRE" },
       "voix": null, "musique": "normal", "fin": { "noir": 0.5 }
     }
   ]
