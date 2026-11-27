@@ -14,7 +14,7 @@ const serveUrl = await bundle({entryPoint: path.resolve('src/index.ts')});
 const browser = await openBrowser('chrome', {browserExecutable, chromiumOptions: {gl: 'angle'}});
 const composition = await selectComposition({serveUrl, id: COMP, puppeteerInstance: browser});
 const {shots, fps} = JSON.parse(fs.readFileSync(`out/${ep}/shots.json`, 'utf8'));
-const dir = `out/${ep}/sheet`;
+const dir = process.env.SHEET_DIR ?? `out/${ep}/sheet`;
 fs.mkdirSync(dir, {recursive: true});
 for (const s of shots) {
   if (only && !only.has(s.id)) continue;

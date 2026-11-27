@@ -1,5 +1,5 @@
 {
- "duration": 61.757,
+ "duration": 61.26,
  "tempo": 1.0,
  "source": "voix temporaires Piper",
  "lines": [
@@ -11,87 +11,87 @@
     {
      "text": "Dans",
      "start": 0.0,
-     "end": 0.138
+     "end": 0.155
     },
     {
      "text": "mon",
-     "start": 0.138,
-     "end": 0.307
+     "start": 0.155,
+     "end": 0.318
     },
     {
      "text": "village,",
-     "start": 0.307,
-     "end": 0.968
+     "start": 0.318,
+     "end": 0.908
     },
     {
      "text": "on",
-     "start": 0.968,
-     "end": 1.098
+     "start": 0.908,
+     "end": 1.025
     },
     {
      "text": "habite",
-     "start": 1.098,
-     "end": 1.491
+     "start": 1.025,
+     "end": 1.38
     },
     {
      "text": "dans",
-     "start": 1.491,
-     "end": 1.719
+     "start": 1.38,
+     "end": 1.58
     },
     {
      "text": "des",
-     "start": 1.719,
-     "end": 1.811
+     "start": 1.58,
+     "end": 1.661
     },
     {
      "text": "*citrouilles.*",
-     "start": 1.811,
-     "end": 2.626
+     "start": 1.661,
+     "end": 2.483
     },
     {
      "text": "Et",
-     "start": 2.626,
-     "end": 2.704
+     "start": 2.483,
+     "end": 2.56
     },
     {
      "text": "si",
-     "start": 2.704,
-     "end": 2.787
+     "start": 2.56,
+     "end": 2.641
     },
     {
      "text": "on",
-     "start": 2.787,
-     "end": 2.882
+     "start": 2.641,
+     "end": 2.727
     },
     {
      "text": "arrête",
-     "start": 2.882,
-     "end": 3.167
+     "start": 2.727,
+     "end": 3.001
     },
     {
      "text": "de",
-     "start": 3.167,
-     "end": 3.285
+     "start": 3.001,
+     "end": 3.114
     },
     {
      "text": "chanter,",
-     "start": 3.285,
-     "end": 3.669
+     "start": 3.114,
+     "end": 3.481
     },
     {
      "text": "elles",
-     "start": 3.669,
-     "end": 4.115
+     "start": 3.481,
+     "end": 3.952
     },
     {
      "text": "*pourrissent.*",
-     "start": 4.115,
-     "end": 4.835
+     "start": 3.952,
+     "end": 4.695
     }
    ],
    "text": "Dans mon village, on habite dans des *citrouilles*. Et si on arrête de chanter, elles *pourrissent*.",
    "start": 0.0,
-   "end": 4.835
+   "end": 4.695
   },
   {
    "id": "plan02",
@@ -100,38 +100,38 @@
    "words": [
     {
      "text": "Un",
-     "start": 5.035,
-     "end": 5.202
+     "start": 4.895,
+     "end": 5.085
     },
     {
      "text": "soir,",
-     "start": 5.202,
-     "end": 5.804
+     "start": 5.085,
+     "end": 5.656
     },
     {
      "text": "il",
-     "start": 5.804,
-     "end": 5.86
+     "start": 5.656,
+     "end": 5.711
     },
     {
      "text": "n'en",
-     "start": 5.86,
-     "end": 5.91
+     "start": 5.711,
+     "end": 5.761
     },
     {
      "text": "restait",
-     "start": 5.91,
-     "end": 6.399
+     "start": 5.761,
+     "end": 6.289
     },
     {
      "text": "*qu'une.*",
-     "start": 6.399,
-     "end": 6.61
+     "start": 6.289,
+     "end": 6.51
     }
    ],
    "text": "Un soir, il n'en restait *qu'une*.",
-   "start": 5.035,
-   "end": 6.61
+   "start": 4.895,
+   "end": 6.51
   },
   {
    "id": "plan03",
@@ -140,28 +140,28 @@
    "words": [
     {
      "text": "Tout",
-     "start": 6.81,
-     "end": 6.86
+     "start": 6.71,
+     "end": 6.76
     },
     {
      "text": "a",
-     "start": 6.86,
-     "end": 6.91
+     "start": 6.76,
+     "end": 6.81
     },
     {
      "text": "commencé",
-     "start": 6.91,
-     "end": 7.25
+     "start": 6.81,
+     "end": 7.133
     },
     {
      "text": "dimanche.",
-     "start": 7.25,
-     "end": 7.84
+     "start": 7.133,
+     "end": 7.725
     }
    ],
    "text": "Tout a commencé dimanche.",
-   "start": 6.81,
-   "end": 7.84
+   "start": 6.71,
+   "end": 7.725
   },
   {
    "id": "plan04",
@@ -173,55 +173,55 @@
    "filtre": "chorale",
    "who": "chanson",
    "text": "J'habite une maison citrouille, Rapetipeto, le soleil est rond",
-   "start": 7.89,
-   "end": 11.89,
-   "song_start": 7.89,
-   "song_end": 11.89,
+   "start": 7.775,
+   "end": 11.775,
+   "song_start": 7.775,
+   "song_end": 11.775,
    "words": [
     {
      "text": "J'habite",
-     "start": 8.04,
-     "end": 8.509
+     "start": 7.925,
+     "end": 8.394
     },
     {
      "text": "une",
-     "start": 8.509,
-     "end": 8.821
+     "start": 8.394,
+     "end": 8.706
     },
     {
      "text": "maison",
-     "start": 8.821,
-     "end": 9.29
+     "start": 8.706,
+     "end": 9.175
     },
     {
      "text": "citrouille,",
-     "start": 9.29,
-     "end": 10.071
+     "start": 9.175,
+     "end": 9.956
     },
     {
      "text": "Rapetipeto,",
-     "start": 10.071,
-     "end": 10.852
+     "start": 9.956,
+     "end": 10.737
     },
     {
      "text": "le",
-     "start": 10.852,
-     "end": 11.009
+     "start": 10.737,
+     "end": 10.894
     },
     {
      "text": "soleil",
-     "start": 11.009,
-     "end": 11.477
+     "start": 10.894,
+     "end": 11.362
     },
     {
      "text": "est",
-     "start": 11.477,
-     "end": 11.634
+     "start": 11.362,
+     "end": 11.519
     },
     {
      "text": "rond",
-     "start": 11.634,
-     "end": 11.79
+     "start": 11.519,
+     "end": 11.675
     }
    ]
   },
@@ -232,63 +232,63 @@
    "words": [
     {
      "text": "Moi,",
-     "start": 11.97,
-     "end": 12.31
+     "start": 11.855,
+     "end": 12.141
     },
     {
      "text": "c'est",
-     "start": 12.31,
-     "end": 12.424
+     "start": 12.141,
+     "end": 12.236
     },
     {
      "text": "*Léon.*",
-     "start": 12.424,
-     "end": 12.559
+     "start": 12.236,
+     "end": 12.351
     },
     {
      "text": "Chaque",
-     "start": 12.559,
-     "end": 13.044
+     "start": 12.351,
+     "end": 12.809
     },
     {
      "text": "matin,",
-     "start": 13.044,
-     "end": 13.519
+     "start": 12.809,
+     "end": 13.275
     },
     {
      "text": "tout",
-     "start": 13.519,
-     "end": 13.764
+     "start": 13.275,
+     "end": 13.531
     },
     {
      "text": "le",
-     "start": 13.764,
-     "end": 13.834
+     "start": 13.531,
+     "end": 13.607
     },
     {
      "text": "village",
-     "start": 13.834,
-     "end": 14.274
+     "start": 13.607,
+     "end": 14.042
     },
     {
      "text": "chante.",
-     "start": 14.274,
-     "end": 15.094
+     "start": 14.042,
+     "end": 14.72
     },
     {
      "text": "Sauf",
-     "start": 15.094,
-     "end": 15.334
+     "start": 14.72,
+     "end": 14.964
     },
     {
      "text": "*lui.*",
-     "start": 15.334,
-     "end": 15.405
+     "start": 14.964,
+     "end": 15.174
     }
    ],
    "text": "Moi, c'est *Léon*. Chaque matin, tout le village chante. Sauf *lui*.",
-   "start": 11.97,
-   "end": 15.405
+   "start": 11.855,
+   "end": 15.174
   },
   {
    "id": "plan06a",
@@ -297,28 +297,28 @@
    "words": [
     {
      "text": "Cette",
-     "start": 15.545,
-     "end": 15.595
+     "start": 15.314,
+     "end": 15.364
     },
     {
      "text": "chanson",
-     "start": 15.595,
-     "end": 16.061
+     "start": 15.364,
+     "end": 15.859
     },
     {
      "text": "est",
-     "start": 16.061,
-     "end": 16.171
+     "start": 15.859,
+     "end": 15.949
     },
     {
      "text": "*interdite !*",
-     "start": 16.171,
-     "end": 16.735
+     "start": 15.949,
+     "end": 16.434
     }
    ],
    "text": "Cette chanson est *interdite* !",
-   "start": 15.545,
-   "end": 16.735
+   "start": 15.314,
+   "end": 16.434
   },
   {
    "id": "plan06b",
@@ -327,18 +327,18 @@
    "words": [
     {
      "text": "Mais",
-     "start": 16.815,
-     "end": 16.959
+     "start": 16.514,
+     "end": 16.788
     },
     {
      "text": "Grisou…",
-     "start": 16.959,
-     "end": 17.175
+     "start": 16.904,
+     "end": 16.839
     }
    ],
    "text": "Mais Grisou…",
-   "start": 16.815,
-   "end": 17.175
+   "start": 16.514,
+   "end": 16.839
   },
   {
    "id": "plan06c",
@@ -347,23 +347,23 @@
    "words": [
     {
      "text": "Interdite !",
-     "start": 17.255,
-     "end": 18.135
+     "start": 16.919,
+     "end": 17.855
     },
     {
      "text": "Sinon,",
-     "start": 18.135,
-     "end": 18.616
+     "start": 17.855,
+     "end": 18.128
     },
     {
      "text": "amende !",
-     "start": 18.616,
-     "end": 18.64
+     "start": 18.128,
+     "end": 18.509
     }
    ],
    "text": "Interdite ! Sinon, amende !",
-   "start": 17.255,
-   "end": 18.64
+   "start": 16.919,
+   "end": 18.509
   },
   {
    "id": "plan07",
@@ -373,33 +373,33 @@
    "words": [
     {
      "text": "Lundi,",
-     "start": 18.94,
-     "end": 19.352
+     "start": 18.809,
+     "end": 19.107
     },
     {
      "text": "plus",
-     "start": 19.352,
-     "end": 19.612
+     "start": 19.107,
+     "end": 19.301
     },
     {
      "text": "personne",
-     "start": 19.612,
-     "end": 20.018
+     "start": 19.301,
+     "end": 19.641
     },
     {
      "text": "ne",
-     "start": 20.018,
-     "end": 20.099
+     "start": 19.641,
+     "end": 19.825
     },
     {
      "text": "chantait.",
-     "start": 20.099,
-     "end": 20.39
+     "start": 19.825,
+     "end": 20.214
     }
    ],
    "text": "Lundi, plus personne ne chantait.",
-   "start": 18.94,
-   "end": 20.39
+   "start": 18.809,
+   "end": 20.214
   },
   {
    "id": "plan08a",
@@ -408,33 +408,33 @@
    "words": [
     {
      "text": "Ma",
-     "start": 20.53,
-     "end": 20.589
+     "start": 20.354,
+     "end": 20.414
     },
     {
      "text": "citrouille",
-     "start": 20.589,
-     "end": 21.092
+     "start": 20.414,
+     "end": 20.928
     },
     {
      "text": "fait",
-     "start": 21.092,
-     "end": 21.246
+     "start": 20.928,
+     "end": 21.091
     },
     {
      "text": "des",
-     "start": 21.246,
-     "end": 21.383
+     "start": 21.091,
+     "end": 21.229
     },
     {
      "text": "*rides !*",
-     "start": 21.383,
-     "end": 21.595
+     "start": 21.229,
+     "end": 21.459
     }
    ],
    "text": "Ma citrouille fait des *rides* !",
-   "start": 20.53,
-   "end": 21.595
+   "start": 20.354,
+   "end": 21.459
   },
   {
    "id": "plan08b",
@@ -443,33 +443,33 @@
    "words": [
     {
      "text": "La",
-     "start": 21.735,
-     "end": 21.785
+     "start": 21.599,
+     "end": 21.649
     },
     {
      "text": "mienne",
-     "start": 21.785,
-     "end": 22.083
+     "start": 21.649,
+     "end": 21.874
     },
     {
      "text": "sent",
-     "start": 22.083,
-     "end": 22.233
+     "start": 21.874,
+     "end": 22.003
     },
     {
      "text": "le",
-     "start": 22.233,
-     "end": 22.306
+     "start": 22.003,
+     "end": 22.074
     },
     {
      "text": "*fromage !*",
-     "start": 22.306,
-     "end": 22.835
+     "start": 22.074,
+     "end": 22.574
     }
    ],
    "text": "La mienne sent le *fromage* !",
-   "start": 21.735,
-   "end": 22.835
+   "start": 21.599,
+   "end": 22.574
   },
   {
    "id": "plan08c",
@@ -478,53 +478,53 @@
    "words": [
     {
      "text": "Mardi,",
-     "start": 22.975,
-     "end": 23.397
+     "start": 22.714,
+     "end": 23.319
     },
     {
      "text": "la",
-     "start": 23.397,
-     "end": 23.469
+     "start": 23.319,
+     "end": 23.382
     },
     {
      "text": "moitié",
-     "start": 23.469,
-     "end": 23.907
+     "start": 23.382,
+     "end": 23.811
     },
     {
      "text": "du",
-     "start": 23.907,
-     "end": 24.042
+     "start": 23.811,
+     "end": 23.946
     },
     {
      "text": "village",
-     "start": 24.042,
-     "end": 24.502
+     "start": 23.946,
+     "end": 24.387
     },
     {
      "text": "dormait",
-     "start": 24.502,
-     "end": 24.871
+     "start": 24.387,
+     "end": 24.775
     },
     {
      "text": "sous",
-     "start": 24.871,
-     "end": 25.039
+     "start": 24.775,
+     "end": 24.926
     },
     {
      "text": "la",
-     "start": 25.039,
-     "end": 25.147
+     "start": 24.926,
+     "end": 25.016
     },
     {
      "text": "*pluie.*",
-     "start": 25.147,
-     "end": 25.285
+     "start": 25.016,
+     "end": 25.159
     }
    ],
    "text": "Mardi, la moitié du village dormait sous la *pluie*.",
-   "start": 22.975,
-   "end": 25.285
+   "start": 22.714,
+   "end": 25.159
   },
   {
    "id": "plan08d",
@@ -533,23 +533,23 @@
    "words": [
     {
      "text": "Léon,",
-     "start": 25.365,
-     "end": 25.956
+     "start": 25.239,
+     "end": 25.804
     },
     {
      "text": "j'ai",
-     "start": 25.956,
-     "end": 26.017
+     "start": 25.804,
+     "end": 25.864
     },
     {
      "text": "froid.",
-     "start": 26.017,
-     "end": 26.32
+     "start": 25.864,
+     "end": 26.159
     }
    ],
    "text": "Léon, j'ai froid.",
-   "start": 25.365,
-   "end": 26.32
+   "start": 25.239,
+   "end": 26.159
   },
   {
    "id": "plan08e",
@@ -558,28 +558,28 @@
    "words": [
     {
      "text": "Je",
-     "start": 26.46,
-     "end": 26.525
+     "start": 26.299,
+     "end": 26.364
     },
     {
      "text": "vais",
-     "start": 26.525,
-     "end": 26.68
+     "start": 26.364,
+     "end": 26.521
     },
     {
      "text": "trouver",
-     "start": 26.68,
-     "end": 27.199
+     "start": 26.521,
+     "end": 27.041
     },
     {
      "text": "*pourquoi.*",
-     "start": 27.199,
-     "end": 27.57
+     "start": 27.041,
+     "end": 27.394
     }
    ],
    "text": "Je vais trouver *pourquoi*.",
-   "start": 26.46,
-   "end": 27.57
+   "start": 26.299,
+   "end": 27.394
   },
   {
    "id": "plan09",
@@ -588,78 +588,78 @@
    "words": [
     {
      "text": "Bizarre.",
-     "start": 27.71,
-     "end": 28.423
+     "start": 27.534,
+     "end": 28.201
     },
     {
      "text": "La",
-     "start": 28.423,
-     "end": 28.513
+     "start": 28.201,
+     "end": 28.306
     },
     {
      "text": "citrouille",
-     "start": 28.513,
-     "end": 29.207
+     "start": 28.306,
+     "end": 29.016
     },
     {
      "text": "de",
-     "start": 29.207,
-     "end": 29.329
+     "start": 29.016,
+     "end": 29.142
     },
     {
      "text": "Grisou",
-     "start": 29.329,
-     "end": 29.943
+     "start": 29.142,
+     "end": 29.697
     },
     {
      "text": "restait",
-     "start": 29.943,
-     "end": 30.69
+     "start": 29.697,
+     "end": 30.433
     },
     {
      "text": "*orange.*",
-     "start": 30.69,
-     "end": 30.922
+     "start": 30.433,
+     "end": 30.675
     },
     {
      "text": "Et",
-     "start": 30.922,
-     "end": 30.979
+     "start": 30.675,
+     "end": 30.74
     },
     {
      "text": "il",
-     "start": 30.979,
-     "end": 31.036
+     "start": 30.74,
+     "end": 30.805
     },
     {
      "text": "ne",
-     "start": 31.036,
-     "end": 31.086
+     "start": 30.805,
+     "end": 30.856
     },
     {
      "text": "quittait",
-     "start": 31.086,
-     "end": 31.548
+     "start": 30.856,
+     "end": 31.338
     },
     {
      "text": "jamais",
-     "start": 31.548,
-     "end": 31.857
+     "start": 31.338,
+     "end": 31.635
     },
     {
      "text": "son",
-     "start": 31.857,
-     "end": 31.967
+     "start": 31.635,
+     "end": 31.768
     },
     {
      "text": "*casque.*",
-     "start": 31.967,
-     "end": 32.26
+     "start": 31.768,
+     "end": 32.059
     }
    ],
    "text": "Bizarre. La citrouille de Grisou restait *orange*. Et il ne quittait jamais son *casque*.",
-   "start": 27.71,
-   "end": 32.26
+   "start": 27.534,
+   "end": 32.059
   },
   {
    "id": "plan10",
@@ -668,38 +668,38 @@
    "words": [
     {
      "text": "Alors",
-     "start": 32.46,
-     "end": 32.775
+     "start": 32.259,
+     "end": 32.543
     },
     {
      "text": "mercredi",
-     "start": 32.775,
-     "end": 33.685
+     "start": 32.543,
+     "end": 33.423
     },
     {
      "text": "soir,",
-     "start": 33.685,
-     "end": 33.797
+     "start": 33.423,
+     "end": 33.517
     },
     {
      "text": "je",
-     "start": 33.797,
-     "end": 33.847
+     "start": 33.517,
+     "end": 33.567
     },
     {
      "text": "l'ai",
-     "start": 33.847,
-     "end": 33.897
+     "start": 33.567,
+     "end": 33.617
     },
     {
      "text": "*espionné.*",
-     "start": 33.897,
-     "end": 34.29
+     "start": 33.617,
+     "end": 34.014
     }
    ],
    "text": "Alors mercredi soir, je l'ai *espionné*.",
-   "start": 32.46,
-   "end": 34.29
+   "start": 32.259,
+   "end": 34.014
   },
   {
    "id": "plan11a",
@@ -711,50 +711,50 @@
    "filtre": "radio",
    "who": "chanson",
    "text": "J'aime les grenouilles, et la pluie qui mouille",
-   "start": 34.34,
-   "end": 36.34,
-   "song_start": 34.34,
-   "song_end": 36.34,
+   "start": 34.064,
+   "end": 36.064,
+   "song_start": 34.064,
+   "song_end": 36.064,
    "words": [
     {
      "text": "J'aime",
-     "start": 34.34,
-     "end": 34.625
+     "start": 34.064,
+     "end": 34.349
     },
     {
      "text": "les",
-     "start": 34.625,
-     "end": 34.72
+     "start": 34.349,
+     "end": 34.444
     },
     {
      "text": "grenouilles,",
-     "start": 34.72,
-     "end": 35.195
+     "start": 34.444,
+     "end": 34.919
     },
     {
      "text": "et",
-     "start": 35.195,
-     "end": 35.29
+     "start": 34.919,
+     "end": 35.014
     },
     {
      "text": "la",
-     "start": 35.29,
-     "end": 35.385
+     "start": 35.014,
+     "end": 35.109
     },
     {
      "text": "pluie",
-     "start": 35.385,
-     "end": 35.67
+     "start": 35.109,
+     "end": 35.394
     },
     {
      "text": "qui",
-     "start": 35.67,
-     "end": 35.86
+     "start": 35.394,
+     "end": 35.584
     },
     {
      "text": "mouille",
-     "start": 35.86,
-     "end": 36.24
+     "start": 35.584,
+     "end": 35.964
     }
    ]
   },
@@ -765,33 +765,33 @@
    "words": [
     {
      "text": "Il",
-     "start": 36.42,
-     "end": 36.577
+     "start": 36.144,
+     "end": 36.298
     },
     {
      "text": "la",
-     "start": 36.577,
-     "end": 36.735
+     "start": 36.298,
+     "end": 36.452
     },
     {
      "text": "chantait.",
-     "start": 36.735,
-     "end": 37.234
+     "start": 36.452,
+     "end": 36.893
     },
     {
      "text": "En",
-     "start": 37.234,
-     "end": 37.339
+     "start": 36.893,
+     "end": 36.992
     },
     {
      "text": "*cachette.*",
-     "start": 37.339,
-     "end": 37.92
+     "start": 36.992,
+     "end": 37.708
     }
    ],
    "text": "Il la chantait. En *cachette*.",
-   "start": 36.42,
-   "end": 37.92
+   "start": 36.144,
+   "end": 37.708
   },
   {
    "id": "plan12",
@@ -800,88 +800,88 @@
    "words": [
     {
      "text": "C'était",
-     "start": 38.12,
-     "end": 38.335
+     "start": 37.908,
+     "end": 38.117
     },
     {
      "text": "*sa*",
-     "start": 38.335,
-     "end": 38.439
+     "start": 38.117,
+     "end": 38.226
     },
     {
      "text": "chanson.",
-     "start": 38.439,
-     "end": 39.119
+     "start": 38.226,
+     "end": 38.932
     },
     {
      "text": "Il",
-     "start": 39.119,
-     "end": 39.191
+     "start": 38.932,
+     "end": 39.037
     },
     {
      "text": "l'avait",
-     "start": 39.191,
-     "end": 39.605
+     "start": 39.037,
+     "end": 39.366
     },
     {
      "text": "écrite",
-     "start": 39.605,
-     "end": 40.081
+     "start": 39.366,
+     "end": 39.862
     },
     {
      "text": "à",
-     "start": 40.081,
-     "end": 40.131
+     "start": 39.862,
+     "end": 39.912
     },
     {
      "text": "huit",
-     "start": 40.131,
-     "end": 40.405
+     "start": 39.912,
+     "end": 40.182
     },
     {
      "text": "ans.",
-     "start": 40.405,
-     "end": 40.654
+     "start": 40.182,
+     "end": 40.444
     },
     {
      "text": "Et",
-     "start": 40.654,
-     "end": 40.75
+     "start": 40.444,
+     "end": 40.539
     },
     {
      "text": "toute",
-     "start": 40.75,
-     "end": 41.007
+     "start": 40.539,
+     "end": 40.777
     },
     {
      "text": "l'école",
-     "start": 41.007,
-     "end": 41.34
+     "start": 40.777,
+     "end": 41.165
     },
     {
      "text": "s'était",
-     "start": 41.34,
-     "end": 41.625
+     "start": 41.165,
+     "end": 41.426
     },
     {
      "text": "*moquée*",
-     "start": 41.625,
-     "end": 42.149
+     "start": 41.426,
+     "end": 41.928
     },
     {
      "text": "de",
-     "start": 42.149,
-     "end": 42.247
+     "start": 41.928,
+     "end": 42.017
     },
     {
      "text": "lui.",
-     "start": 42.247,
-     "end": 42.29
+     "start": 42.017,
+     "end": 42.068
     }
    ],
    "text": "C'était *sa* chanson. Il l'avait écrite à huit ans. Et toute l'école s'était *moquée* de lui.",
-   "start": 38.12,
-   "end": 42.29
+   "start": 37.908,
+   "end": 42.068
   },
   {
    "id": "plan13a",
@@ -890,18 +890,18 @@
    "words": [
     {
      "text": "Monsieur",
-     "start": 42.37,
-     "end": 42.815
+     "start": 42.148,
+     "end": 42.543
     },
     {
      "text": "Grisou ?",
-     "start": 42.995,
-     "end": 42.815
+     "start": 42.743,
+     "end": 42.543
     }
    ],
    "text": "Monsieur Grisou ?",
-   "start": 42.37,
-   "end": 42.815
+   "start": 42.148,
+   "end": 42.543
   },
   {
    "id": "plan13b",
@@ -910,13 +910,13 @@
    "words": [
     {
      "text": "Va-t'en !",
-     "start": 42.895,
-     "end": 43.23
+     "start": 42.623,
+     "end": 42.988
     }
    ],
    "text": "Va-t'en !",
-   "start": 42.895,
-   "end": 43.23
+   "start": 42.623,
+   "end": 42.988
   },
   {
    "id": "plan13c",
@@ -925,33 +925,33 @@
    "words": [
     {
      "text": "C'est",
-     "start": 43.37,
-     "end": 43.42
+     "start": 43.128,
+     "end": 43.178
     },
     {
      "text": "vous",
-     "start": 43.42,
-     "end": 43.47
+     "start": 43.178,
+     "end": 43.228
     },
     {
      "text": "qui",
-     "start": 43.47,
-     "end": 43.521
+     "start": 43.228,
+     "end": 43.278
     },
     {
      "text": "l'avez",
-     "start": 43.521,
-     "end": 43.624
+     "start": 43.278,
+     "end": 43.343
     },
     {
      "text": "*écrite !*",
-     "start": 43.624,
-     "end": 44.295
+     "start": 43.343,
+     "end": 44.028
     }
    ],
    "text": "C'est vous qui l'avez *écrite* !",
-   "start": 43.37,
-   "end": 44.295
+   "start": 43.128,
+   "end": 44.028
   },
   {
    "id": "plan13d",
@@ -960,33 +960,33 @@
    "words": [
     {
      "text": "Et",
-     "start": 44.435,
-     "end": 44.485
+     "start": 44.168,
+     "end": 44.218
     },
     {
      "text": "vous",
-     "start": 44.485,
-     "end": 44.535
+     "start": 44.218,
+     "end": 44.268
     },
     {
      "text": "avez",
-     "start": 44.535,
-     "end": 45.127
+     "start": 44.268,
+     "end": 44.674
     },
     {
      "text": "ri.",
-     "start": 45.127,
-     "end": 45.308
+     "start": 44.674,
+     "end": 44.912
     },
     {
      "text": "*Tous.*",
-     "start": 45.456,
-     "end": 45.315
+     "start": 44.912,
+     "end": 45.213
     }
    ],
    "text": "Et vous avez ri. *Tous*.",
-   "start": 44.435,
-   "end": 45.315
+   "start": 44.168,
+   "end": 45.213
   },
   {
    "id": "plan14",
@@ -994,8 +994,8 @@
    "pause": true,
    "who": "narrateur",
    "text": "",
-   "start": 45.315,
-   "end": 45.815,
+   "start": 45.213,
+   "end": 45.713,
    "words": []
   },
   {
@@ -1005,58 +1005,58 @@
    "words": [
     {
      "text": "Le",
-     "start": 45.815,
-     "end": 45.897
+     "start": 45.713,
+     "end": 45.763
     },
     {
      "text": "lendemain,",
-     "start": 45.897,
-     "end": 46.598
+     "start": 45.763,
+     "end": 46.321
     },
     {
      "text": "j'ai",
-     "start": 46.598,
-     "end": 46.725
+     "start": 46.321,
+     "end": 46.439
     },
     {
      "text": "amené",
-     "start": 46.725,
-     "end": 47.104
+     "start": 46.439,
+     "end": 46.782
     },
     {
      "text": "tout",
-     "start": 47.104,
-     "end": 47.305
+     "start": 46.782,
+     "end": 46.981
     },
     {
      "text": "le",
-     "start": 47.305,
-     "end": 47.385
+     "start": 46.981,
+     "end": 47.068
     },
     {
      "text": "village",
-     "start": 47.385,
-     "end": 47.828
+     "start": 47.068,
+     "end": 47.528
     },
     {
      "text": "devant",
-     "start": 47.828,
-     "end": 48.225
+     "start": 47.528,
+     "end": 47.948
     },
     {
      "text": "sa",
-     "start": 48.225,
-     "end": 48.371
+     "start": 47.948,
+     "end": 48.095
     },
     {
      "text": "*porte.*",
-     "start": 48.371,
-     "end": 48.56
+     "start": 48.095,
+     "end": 48.363
     }
    ],
    "text": "Le lendemain, j'ai amené tout le village devant sa *porte*.",
-   "start": 45.815,
-   "end": 48.56
+   "start": 45.713,
+   "end": 48.363
   },
   {
    "id": "plan16",
@@ -1068,120 +1068,120 @@
    "filtre": "chorale",
    "who": "chanson",
    "text": "Grisou chante dans sa citrouille, Rapetipeto, on lui dit pardon, Fini les embrouilles, plus de nuit qui mouille, vive l'omelette aux hannetons !",
-   "start": 48.61,
-   "end": 57.942,
-   "song_start": 48.61,
-   "song_end": 57.942,
+   "start": 48.413,
+   "end": 57.745,
+   "song_start": 48.413,
+   "song_end": 57.745,
    "words": [
     {
      "text": "Grisou",
-     "start": 48.71,
-     "end": 49.172
+     "start": 48.513,
+     "end": 48.975
     },
     {
      "text": "chante",
-     "start": 49.172,
-     "end": 49.481
+     "start": 48.975,
+     "end": 49.284
     },
     {
      "text": "dans",
-     "start": 49.481,
-     "end": 49.635
+     "start": 49.284,
+     "end": 49.438
     },
     {
      "text": "sa",
-     "start": 49.635,
-     "end": 49.789
+     "start": 49.438,
+     "end": 49.592
     },
     {
      "text": "citrouille,",
-     "start": 49.789,
-     "end": 50.56
+     "start": 49.592,
+     "end": 50.363
     },
     {
      "text": "Rapetipeto,",
-     "start": 50.61,
-     "end": 51.56
+     "start": 50.413,
+     "end": 51.363
     },
     {
      "text": "on",
-     "start": 51.61,
-     "end": 51.818
+     "start": 51.413,
+     "end": 51.621
     },
     {
      "text": "lui",
-     "start": 51.818,
-     "end": 52.235
+     "start": 51.621,
+     "end": 52.038
     },
     {
      "text": "dit",
-     "start": 52.235,
-     "end": 52.443
+     "start": 52.038,
+     "end": 52.246
     },
     {
      "text": "pardon,",
-     "start": 52.443,
-     "end": 52.86
+     "start": 52.246,
+     "end": 52.663
     },
     {
      "text": "Fini",
-     "start": 52.91,
-     "end": 53.247
+     "start": 52.713,
+     "end": 53.05
     },
     {
      "text": "les",
-     "start": 53.248,
-     "end": 53.416
+     "start": 53.051,
+     "end": 53.219
     },
     {
      "text": "embrouilles,",
-     "start": 53.416,
-     "end": 54.26
+     "start": 53.219,
+     "end": 54.063
     },
     {
      "text": "plus",
-     "start": 54.31,
-     "end": 54.445
+     "start": 54.113,
+     "end": 54.248
     },
     {
      "text": "de",
-     "start": 54.445,
-     "end": 54.58
+     "start": 54.248,
+     "end": 54.383
     },
     {
      "text": "nuit",
-     "start": 54.58,
-     "end": 54.85
+     "start": 54.383,
+     "end": 54.653
     },
     {
      "text": "qui",
-     "start": 54.85,
-     "end": 55.12
+     "start": 54.653,
+     "end": 54.923
     },
     {
      "text": "mouille,",
-     "start": 55.12,
-     "end": 55.66
+     "start": 54.923,
+     "end": 55.463
     },
     {
      "text": "vive",
-     "start": 55.71,
-     "end": 56.065
+     "start": 55.513,
+     "end": 55.868
     },
     {
      "text": "l'omelette",
-     "start": 56.065,
-     "end": 56.774
+     "start": 55.868,
+     "end": 56.577
     },
     {
      "text": "aux",
-     "start": 56.774,
-     "end": 57.128
+     "start": 56.577,
+     "end": 56.931
     },
     {
      "text": "hannetons !",
-     "start": 57.128,
-     "end": 57.66
+     "start": 56.931,
+     "end": 57.463
     }
    ]
   },
@@ -1192,38 +1192,38 @@
    "words": [
     {
      "text": "Pour",
-     "start": 58.022,
-     "end": 58.072
+     "start": 57.825,
+     "end": 57.875
     },
     {
      "text": "vous",
-     "start": 58.072,
-     "end": 58.122
+     "start": 57.875,
+     "end": 57.925
     },
     {
      "text": "remercier :",
-     "start": 58.122,
-     "end": 58.324
+     "start": 57.925,
+     "end": 57.997
     },
     {
      "text": "omelette",
-     "start": 58.324,
-     "end": 58.374
+     "start": 57.997,
+     "end": 58.047
     },
     {
      "text": "aux",
-     "start": 58.374,
-     "end": 58.424
+     "start": 58.047,
+     "end": 58.097
     },
     {
      "text": "*hannetons !*",
-     "start": 58.424,
-     "end": 59.702
+     "start": 58.097,
+     "end": 59.39
     }
    ],
    "text": "Pour vous remercier : omelette aux *hannetons* !",
-   "start": 58.022,
-   "end": 59.702
+   "start": 57.825,
+   "end": 59.39
   },
   {
    "id": "plan17b",
@@ -1232,13 +1232,13 @@
    "words": [
     {
      "text": "*Rapeti-beurk.*",
-     "start": 59.782,
-     "end": 60.957
+     "start": 59.47,
+     "end": 60.46
     }
    ],
    "text": "Rapeti-*beurk*.",
-   "start": 59.782,
-   "end": 60.957
+   "start": 59.47,
+   "end": 60.46
   }
  ]
 }

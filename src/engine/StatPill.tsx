@@ -30,7 +30,12 @@ export const StatPill: React.FC<{
 	redBelow?: number;
 	visible?: (t: number) => boolean;
 	top?: number;
-}> = ({label, unit = '', events, redBelow = -Infinity, visible, top = 170}) => {
+	/** couleurs : remontée (vert par défaut, orange pour les citrouilles), badge de baisse (rouge par défaut) */
+	upColors?: [string, string, string];
+	downBadge?: string;
+	/** pulsation en rythme (moments chantés) : renvoie un facteur ≥ 1 */
+	beat?: (t: number) => number;
+}> = ({label, unit = '', events, redBelow = -Infinity, visible, top = 170, upColors = ['#3ee07a', '#13a64a', '#0b5e2a'], downBadge = '#ff3b3b', beat}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const t = frame / fps;
@@ -53,7 +58,7 @@ export const StatPill: React.FC<{
 	const red = !green && v < redBelow;
 	const pulse = red ? 1 + 0.08 * Math.max(0, Math.sin(t * Math.PI * 2 * 1.6)) : 1;
 	const glow = red ? 0.5 + 0.5 * Math.sin(t * Math.PI * 2 * 1.6) : 0;
-	const c = green ? ['#3ee07a', '#13a64a', '#0b5e2a'] : red ? ['#ff3b3b', '#c40d1d', '#6e0610'] : ['#3f8cff', '#1f5fd6', '#0f347a'];
+	const c = green ? upColors : red ? ['#ff3b3b', '#c40d1d', '#6e0610'] : ['#3f8cff', '#1f5fd6', '#0f347a'];
 	const flash = since < 8 ? interpolate(since, [0, 8], [1, 0]) : 0;
 	const flashCol = up ? '80,255,140' : '255,60,60';
 	return (
@@ -61,7 +66,7 @@ export const StatPill: React.FC<{
 			<div style={{position: 'absolute', top, left: 0, width: 1080 - 150, display: 'flex', justifyContent: 'center', paddingLeft: 75}}>
 				<div
 					style={{
-						transform: `translateX(${shakeX}px) scale(${bump * pulse})`,
+						transform: `translateX(${shakeX}px) scale(${bump * pulse * (beat ? beat(t) : 1)})`,
 						background: `linear-gradient(180deg, ${c[0]} 0%, ${c[1]} 100%)`,
 						borderRadius: 999,
 						padding: '14px 38px 16px',
@@ -95,7 +100,7 @@ export const StatPill: React.FC<{
 						transform: `scale(${spring({frame: since, fps, config: {damping: 8, stiffness: 400}})}) rotate(${up ? -6 : 6}deg)`,
 					}}
 				>
-					<span style={{whiteSpace: 'nowrap', fontFamily: FONT, fontSize: up ? 96 : 84, color: up ? '#3ee07a' : '#ff3b3b', WebkitTextStroke: '12px #fff', paintOrder: 'stroke fill', textShadow: '0 6px 0 rgba(0,0,0,0.5)'}}>
+					<span style={{whiteSpace: 'nowrap', fontFamily: FONT, fontSize: up ? 96 : 84, color: up ? upColors[0] : downBadge, WebkitTextStroke: '12px #fff', paintOrder: 'stroke fill', textShadow: '0 6px 0 rgba(0,0,0,0.5)'}}>
 						{last.badge ?? `${last.value > prevV ? '+' : '−'}${Math.abs(last.value - prevV)} ${unit}`}
 					</span>
 				</div>
@@ -105,8 +110,8 @@ export const StatPill: React.FC<{
 };
 
 /** Petit son à chaque changement du compteur. */
-export const counterSfx = (events: CounterEvent[], fps: number) =>
+export const counterSfx = (events: CounterEvent[], fps: number, sounds: {up?: string; down?: string} = {}) =>
 	events.slice(1).map((e, i) => {
 		const up = e.value > events[i].value;
-		return {at: Math.round(e.t * fps), name: e.quiet ? 'whoosh' : up ? 'ding' : 'pop', vol: up ? 0.7 : 0.55};
+		return {at: Math.round(e.t * fps), name: e.quiet ? 'whoosh' : up ? sounds.up ?? 'ding' : sounds.down ?? 'pop', vol: up ? 0.7 : 0.55};
 	});

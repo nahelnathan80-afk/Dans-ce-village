@@ -486,6 +486,16 @@ def main():
     pub = ROOT / "public" / ep
     pub.mkdir(parents=True, exist_ok=True)
     sf.write(pub / "voice.wav", mix, SR, subtype="PCM_16")
+    # musique de fond (vraie ou temporaire) → public/<ep>/ pour le montage
+    import shutil
+    mus = script.get("musique") or {}
+    if mus.get("fond"):
+        real = epi_dir / mus["fond"]
+        src = real if real.exists() else ROOT / "out" / ep / "temp" / Path(mus["fond"]).name
+        if src.exists():
+            shutil.copy(src, pub / "fond.mp3")
+            tri = ROOT / "out" / ep / "temp" / "fond_triste.mp3"
+            shutil.copy(tri if (not real.exists() and tri.exists()) else src, pub / "fond_triste.mp3")
     (ep_dir / "timeline.json").write_text(json.dumps({"duration": round(total, 3), "tempo": round(tempo, 3), "source": kind,
                                                        "lines": timeline}, ensure_ascii=False, indent=1))
     rep = {"source": kind, "brut": round(dur, 2), "duree_video": round(total, 2), "mots": n_words,
