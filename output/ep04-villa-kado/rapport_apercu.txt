@@ -1,32 +1,32 @@
-Épisode ep04-villa-kado — mode apercu — 2026-11-27 00:01:50
-Durée : 85.7 s — fichier : output/ep04-villa-kado/ep04-villa-kado.mp4 (7.7 Mo) — son : -14.3 LUFS
+Épisode ep04-villa-kado — mode apercu — 2026-11-27 00:50:36
+Durée : 99.1 s — fichier : output/ep04-villa-kado/ep04-villa-kado.mp4 (8.7 Mo) — son : -14.3 LUFS
 
 Plan     durée  cadrages  état      temps (dont rendu Blender)
-plan01    4.53s     3      cache     3 s (1 min 05 s)
-plan02    3.57s     2      cache     3 s (51 s)
-plan03    2.20s     2      cache     2 s (34 s)
-plan04    5.90s     4      cache     6 s (1 min 21 s)
-plan05    4.53s     3      cache     4 s (1 min 05 s)
-plan06    7.60s     5      cache     6 s (1 min 40 s)
-plan07    4.13s     3      cache     3 s (56 s)
-plan08    5.93s     4      cache     5 s (1 min 20 s)
-plan09    6.37s     4      cache     5 s (1 min 29 s)
-plan10    6.30s     4      cache     5 s (1 min 30 s)
-plan11    5.13s     3      cache     5 s (1 min 10 s)
-plan12    5.37s     3      cache     4 s (1 min 11 s)
-plan13    3.00s     2      cache     3 s (45 s)
-plan14    3.30s     3      cache     3 s (49 s)
-plan15    4.50s     3      cache     4 s (1 min 01 s)
-plan16    5.37s     4      cache     4 s (1 min 12 s)
-plan17    4.00s     3      cache     3 s (54 s)
-plan18    3.50s     0      carte     2 s (0 s)
+plan01    3.63s     2      rendu     51 s (49 s)
+plan02    4.60s     3      rendu     1 min 03 s (1 min 00 s)
+plan03    2.20s     2      rendu     33 s (31 s)
+plan04    5.60s     4      rendu     1 min 15 s (1 min 10 s)
+plan05    5.60s     3      rendu     1 min 15 s (1 min 11 s)
+plan06    6.00s     4      rendu     1 min 18 s (1 min 14 s)
+plan07    6.00s     3      rendu     1 min 19 s (1 min 14 s)
+plan08    6.60s     4      rendu     1 min 23 s (1 min 19 s)
+plan09    7.20s     4      rendu     1 min 34 s (1 min 30 s)
+plan10    6.80s     4      rendu     1 min 29 s (1 min 24 s)
+plan11    6.00s     4      rendu     1 min 20 s (1 min 16 s)
+plan12    6.40s     4      rendu     1 min 25 s (1 min 21 s)
+plan13    4.20s     3      rendu     56 s (52 s)
+plan14    5.20s     3      rendu     1 min 11 s (1 min 06 s)
+plan15    6.40s     4      rendu     1 min 23 s (1 min 17 s)
+plan16    6.60s     4      rendu     1 min 30 s (1 min 25 s)
+plan17    5.60s     4      rendu     1 min 13 s (1 min 09 s)
+plan18    4.00s     0      carte     3 s (0 s)
 
-Temps total : 1 min 58 s
+Temps total : 22 min 11 s
 
 Checklist :
   [OK] 1re phrase commence par « Dans cette ville, »
   [OK] Aucune phrase de plus de 12 mots — max 10 mots : « Et une nuit, c'est lui qui a frappé chez moi. »
-  [OK] Un cadrage change au moins toutes les 2 s — cadrage le plus long : 1.92 s
+  [OK] Un cadrage change au moins toutes les 2 s — cadrage le plus long : 2.00 s
   [OK] Jamais de silence total (niveau mini -53 dBFS)
   [i] Timing des sous-titres : whisper.cpp
-  [i] Voix : temporaire (cache)
+  [i] Voix : mp3 fourni
