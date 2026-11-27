@@ -1,0 +1,32 @@
+Épisode ep05-couvre-feu — mode apercu — 2026-11-27 09:42:45
+Durée : 98.0 s — fichier : output/ep05-couvre-feu/ep05-couvre-feu.mp4 (7.4 Mo) — son : -14.1 LUFS
+
+Plan     durée  cadrages  état      temps (dont rendu Blender)
+plan01    4.70s     3      rendu     1 min 35 s (1 min 30 s)
+plan02    4.83s     3      rendu     1 min 42 s (1 min 33 s)
+plan03    3.77s     2      rendu     1 min 11 s (1 min 06 s)
+plan04    6.87s     4      rendu     2 min 22 s (2 min 13 s)
+plan05    6.97s     4      rendu     2 min 31 s (2 min 22 s)
+plan06    6.27s     4      rendu     1 min 57 s (1 min 50 s)
+plan07    4.23s     3      rendu     1 min 19 s (1 min 14 s)
+plan08    6.60s     4      rendu     2 min 00 s (1 min 49 s)
+plan09    5.13s     3      rendu     1 min 36 s (1 min 31 s)
+plan10    5.83s     3      rendu     1 min 50 s (1 min 44 s)
+plan11    5.27s     4      rendu     1 min 45 s (1 min 37 s)
+plan12    3.70s     2      rendu     1 min 06 s (1 min 02 s)
+plan13    7.63s     4      rendu     2 min 07 s (2 min 00 s)
+plan14    5.90s     3      rendu     1 min 50 s (1 min 44 s)
+plan15    5.13s     4      rendu     1 min 29 s (1 min 25 s)
+plan16    5.63s     3      rendu     1 min 43 s (1 min 36 s)
+plan17    5.00s     3      rendu     1 min 36 s (1 min 31 s)
+plan18    4.00s     0      carte     4 s (0 s)
+
+Temps total : 31 min 10 s
+
+Checklist :
+  [OK] 1re phrase commence par « Dans cette ville, »
+  [OK] Aucune phrase de plus de 12 mots — max 10 mots : « Dans cette ville, à 21 h, il faut être rentré. »
+  [OK] Un cadrage change au moins toutes les 2 s — cadrage le plus long : 1.97 s
+  [OK] Jamais de silence total (niveau mini -48 dBFS)
+  [i] Timing des sous-titres : whisper.cpp
+  [i] Voix : mp3 fourni
