@@ -1,0 +1,32 @@
+Épisode ep04-villa-kado — mode final — 2026-11-27 03:53:46
+Durée : 99.1 s — fichier : output/ep04-villa-kado/ep04-villa-kado.mp4 (48.1 Mo) — son : -14.3 LUFS
+
+Plan     durée  cadrages  état      temps (dont rendu Blender)
+plan01    3.63s     2      cache     0 s (6 min 02 s)
+plan02    4.60s     3      cache     0 s (7 min 45 s)
+plan03    2.20s     2      cache     0 s (3 min 59 s)
+plan04    5.60s     4      cache     0 s (8 min 56 s)
+plan05    5.60s     3      cache     0 s (8 min 52 s)
+plan06    6.00s     4      cache     0 s (9 min 33 s)
+plan07    6.00s     3      cache     0 s (9 min 51 s)
+plan08    6.60s     4      cache     0 s (9 min 58 s)
+plan09    7.20s     4      cache     0 s (11 min 32 s)
+plan10    6.80s     4      cache     0 s (11 min 13 s)
+plan11    6.00s     4      reprise   10 min 54 s (10 min 01 s)
+plan12    6.40s     4      rendu     13 min 37 s (12 min 41 s)
+plan13    4.20s     3      rendu     9 min 46 s (9 min 10 s)
+plan14    5.20s     3      rendu     11 min 17 s (10 min 31 s)
+plan15    6.40s     4      rendu     13 min 04 s (12 min 08 s)
+plan16    6.60s     4      rendu     13 min 37 s (12 min 41 s)
+plan17    5.60s     4      rendu     11 min 35 s (10 min 50 s)
+plan18    4.00s     0      carte     10 s (0 s)
+
+Temps total : 86 min 28 s
+
+Checklist :
+  [OK] 1re phrase commence par « Dans cette ville, »
+  [OK] Aucune phrase de plus de 12 mots — max 10 mots : « Et une nuit, c'est lui qui a frappé chez moi. »
+  [OK] Un cadrage change au moins toutes les 2 s — cadrage le plus long : 2.00 s
+  [OK] Jamais de silence total (niveau mini -53 dBFS)
+  [i] Timing des sous-titres : whisper.cpp
+  [i] Voix : mp3 fourni
