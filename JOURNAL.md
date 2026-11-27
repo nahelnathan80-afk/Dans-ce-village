@@ -191,3 +191,26 @@ README.md                  format du scénario + guide iPad
   - pastille au format `temps` avec `retard`
   - pause réglable par plan (`pause_apres_voix`) ; musique `theme_nuit`
 - Rendu final : ≈ 4 h de calcul (≈ 5,5 s par image), avec 2 coupures (limite de 2 h) et un redémarrage de session ; reprise depuis le cache sans perte.
+
+---
+
+## 10. Épisode 06 « Le Reflet » (27/11/2026)
+
+- ✅ **Final poussé** (`e2bcba9`) : `output/ep06-le-reflet/ep06-le-reflet.mp4`, 1080×1920, 30 i/s, 76,2 s,
+  22,7 Mo, -14,1 LUFS. Toute la checklist est OK (cadrage le plus long : 1,98 s ; phrase la plus longue : 8 mots).
+- Concept : ton reflet s'endort après toi. Le retournement final : la narratrice est le reflet.
+- Voix : Julia (`mNu8EQcIlFZdOJs7yfhe`) avec le modèle **eleven_v4** et des consignes de jeu
+  ([whispers], [sobbing], [panicked]…). Les consignes ne sont pas dans le scénario.
+  Voix accélérée ×1,12 par `vitesse_voix`. 17 voix (flow `xomQVfUptMBYCaAHFsRJ`), ≈ 1 000 crédits.
+- ⚠️ **Crédits ElevenLabs du plan gratuit presque épuisés** : la recharge est vers le 27/12/2026.
+- Nouveaux éléments réutilisables :
+  - `vitesse_voix` (épisode ou plan) : atempo, avec les silences de début et de fin coupés
+  - reflet :
+    - `reflet_retard` (secondes)
+    - `action_reflet`, `position_reflet`, `orientation_reflet`
+    - `expression_reflet` existait déjà
+  - `lumiere: {"allume": "x%"}` (plafonnier qui s'allume)
+  - sons `coups_vitre` et `interrupteur`
+  - format de pastille `heure` (hh:mm)
+- Leçon : dans `chambre_ado`, la caméra ne peut pas filmer de face un personnage collé au miroir, car elle passe derrière le mur.
+  Il faut placer le personnage en [-0.4, 3.2] et utiliser `position_reflet: "devant_miroir"`.
