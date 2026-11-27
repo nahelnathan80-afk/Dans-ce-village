@@ -1,0 +1,1244 @@
+{
+ "duration": 61.757,
+ "tempo": 1.0,
+ "source": "voix temporaires Piper",
+ "lines": [
+  {
+   "id": "plan01",
+   "qui": "narrateur",
+   "who": "narrateur",
+   "words": [
+    {
+     "text": "Dans",
+     "start": 0.0,
+     "end": 0.138
+    },
+    {
+     "text": "mon",
+     "start": 0.138,
+     "end": 0.307
+    },
+    {
+     "text": "village,",
+     "start": 0.307,
+     "end": 0.968
+    },
+    {
+     "text": "on",
+     "start": 0.968,
+     "end": 1.098
+    },
+    {
+     "text": "habite",
+     "start": 1.098,
+     "end": 1.491
+    },
+    {
+     "text": "dans",
+     "start": 1.491,
+     "end": 1.719
+    },
+    {
+     "text": "des",
+     "start": 1.719,
+     "end": 1.811
+    },
+    {
+     "text": "*citrouilles.*",
+     "start": 1.811,
+     "end": 2.626
+    },
+    {
+     "text": "Et",
+     "start": 2.626,
+     "end": 2.704
+    },
+    {
+     "text": "si",
+     "start": 2.704,
+     "end": 2.787
+    },
+    {
+     "text": "on",
+     "start": 2.787,
+     "end": 2.882
+    },
+    {
+     "text": "arrête",
+     "start": 2.882,
+     "end": 3.167
+    },
+    {
+     "text": "de",
+     "start": 3.167,
+     "end": 3.285
+    },
+    {
+     "text": "chanter,",
+     "start": 3.285,
+     "end": 3.669
+    },
+    {
+     "text": "elles",
+     "start": 3.669,
+     "end": 4.115
+    },
+    {
+     "text": "*pourrissent.*",
+     "start": 4.115,
+     "end": 4.835
+    }
+   ],
+   "text": "Dans mon village, on habite dans des *citrouilles*. Et si on arrête de chanter, elles *pourrissent*.",
+   "start": 0.0,
+   "end": 4.835
+  },
+  {
+   "id": "plan02",
+   "qui": "narrateur",
+   "who": "narrateur",
+   "words": [
+    {
+     "text": "Un",
+     "start": 5.035,
+     "end": 5.202
+    },
+    {
+     "text": "soir,",
+     "start": 5.202,
+     "end": 5.804
+    },
+    {
+     "text": "il",
+     "start": 5.804,
+     "end": 5.86
+    },
+    {
+     "text": "n'en",
+     "start": 5.86,
+     "end": 5.91
+    },
+    {
+     "text": "restait",
+     "start": 5.91,
+     "end": 6.399
+    },
+    {
+     "text": "*qu'une.*",
+     "start": 6.399,
+     "end": 6.61
+    }
+   ],
+   "text": "Un soir, il n'en restait *qu'une*.",
+   "start": 5.035,
+   "end": 6.61
+  },
+  {
+   "id": "plan03",
+   "qui": "narrateur",
+   "who": "narrateur",
+   "words": [
+    {
+     "text": "Tout",
+     "start": 6.81,
+     "end": 6.86
+    },
+    {
+     "text": "a",
+     "start": 6.86,
+     "end": 6.91
+    },
+    {
+     "text": "commencé",
+     "start": 6.91,
+     "end": 7.25
+    },
+    {
+     "text": "dimanche.",
+     "start": 7.25,
+     "end": 7.84
+    }
+   ],
+   "text": "Tout a commencé dimanche.",
+   "start": 6.81,
+   "end": 7.84
+  },
+  {
+   "id": "plan04",
+   "type": "chanson",
+   "fichier": "musique/originale.mp3",
+   "debut": 0.0,
+   "fin": 4.0,
+   "volume": 1.0,
+   "filtre": "chorale",
+   "who": "chanson",
+   "text": "J'habite une maison citrouille, Rapetipeto, le soleil est rond",
+   "start": 7.89,
+   "end": 11.89,
+   "song_start": 7.89,
+   "song_end": 11.89,
+   "words": [
+    {
+     "text": "J'habite",
+     "start": 8.04,
+     "end": 8.509
+    },
+    {
+     "text": "une",
+     "start": 8.509,
+     "end": 8.821
+    },
+    {
+     "text": "maison",
+     "start": 8.821,
+     "end": 9.29
+    },
+    {
+     "text": "citrouille,",
+     "start": 9.29,
+     "end": 10.071
+    },
+    {
+     "text": "Rapetipeto,",
+     "start": 10.071,
+     "end": 10.852
+    },
+    {
+     "text": "le",
+     "start": 10.852,
+     "end": 11.009
+    },
+    {
+     "text": "soleil",
+     "start": 11.009,
+     "end": 11.477
+    },
+    {
+     "text": "est",
+     "start": 11.477,
+     "end": 11.634
+    },
+    {
+     "text": "rond",
+     "start": 11.634,
+     "end": 11.79
+    }
+   ]
+  },
+  {
+   "id": "plan05",
+   "qui": "narrateur",
+   "who": "narrateur",
+   "words": [
+    {
+     "text": "Moi,",
+     "start": 11.97,
+     "end": 12.31
+    },
+    {
+     "text": "c'est",
+     "start": 12.31,
+     "end": 12.424
+    },
+    {
+     "text": "*Léon.*",
+     "start": 12.424,
+     "end": 12.559
+    },
+    {
+     "text": "Chaque",
+     "start": 12.559,
+     "end": 13.044
+    },
+    {
+     "text": "matin,",
+     "start": 13.044,
+     "end": 13.519
+    },
+    {
+     "text": "tout",
+     "start": 13.519,
+     "end": 13.764
+    },
+    {
+     "text": "le",
+     "start": 13.764,
+     "end": 13.834
+    },
+    {
+     "text": "village",
+     "start": 13.834,
+     "end": 14.274
+    },
+    {
+     "text": "chante.",
+     "start": 14.274,
+     "end": 15.094
+    },
+    {
+     "text": "Sauf",
+     "start": 15.094,
+     "end": 15.334
+    },
+    {
+     "text": "*lui.*",
+     "start": 15.334,
+     "end": 15.405
+    }
+   ],
+   "text": "Moi, c'est *Léon*. Chaque matin, tout le village chante. Sauf *lui*.",
+   "start": 11.97,
+   "end": 15.405
+  },
+  {
+   "id": "plan06a",
+   "qui": "grisou",
+   "who": "grisou",
+   "words": [
+    {
+     "text": "Cette",
+     "start": 15.545,
+     "end": 15.595
+    },
+    {
+     "text": "chanson",
+     "start": 15.595,
+     "end": 16.061
+    },
+    {
+     "text": "est",
+     "start": 16.061,
+     "end": 16.171
+    },
+    {
+     "text": "*interdite !*",
+     "start": 16.171,
+     "end": 16.735
+    }
+   ],
+   "text": "Cette chanson est *interdite* !",
+   "start": 15.545,
+   "end": 16.735
+  },
+  {
+   "id": "plan06b",
+   "qui": "maire",
+   "who": "maire",
+   "words": [
+    {
+     "text": "Mais",
+     "start": 16.815,
+     "end": 16.959
+    },
+    {
+     "text": "Grisou…",
+     "start": 16.959,
+     "end": 17.175
+    }
+   ],
+   "text": "Mais Grisou…",
+   "start": 16.815,
+   "end": 17.175
+  },
+  {
+   "id": "plan06c",
+   "qui": "grisou",
+   "who": "grisou",
+   "words": [
+    {
+     "text": "Interdite !",
+     "start": 17.255,
+     "end": 18.135
+    },
+    {
+     "text": "Sinon,",
+     "start": 18.135,
+     "end": 18.616
+    },
+    {
+     "text": "amende !",
+     "start": 18.616,
+     "end": 18.64
+    }
+   ],
+   "text": "Interdite ! Sinon, amende !",
+   "start": 17.255,
+   "end": 18.64
+  },
+  {
+   "id": "plan07",
+   "qui": "narrateur",
+   "scratch": true,
+   "who": "narrateur",
+   "words": [
+    {
+     "text": "Lundi,",
+     "start": 18.94,
+     "end": 19.352
+    },
+    {
+     "text": "plus",
+     "start": 19.352,
+     "end": 19.612
+    },
+    {
+     "text": "personne",
+     "start": 19.612,
+     "end": 20.018
+    },
+    {
+     "text": "ne",
+     "start": 20.018,
+     "end": 20.099
+    },
+    {
+     "text": "chantait.",
+     "start": 20.099,
+     "end": 20.39
+    }
+   ],
+   "text": "Lundi, plus personne ne chantait.",
+   "start": 18.94,
+   "end": 20.39
+  },
+  {
+   "id": "plan08a",
+   "qui": "rose",
+   "who": "rose",
+   "words": [
+    {
+     "text": "Ma",
+     "start": 20.53,
+     "end": 20.589
+    },
+    {
+     "text": "citrouille",
+     "start": 20.589,
+     "end": 21.092
+    },
+    {
+     "text": "fait",
+     "start": 21.092,
+     "end": 21.246
+    },
+    {
+     "text": "des",
+     "start": 21.246,
+     "end": 21.383
+    },
+    {
+     "text": "*rides !*",
+     "start": 21.383,
+     "end": 21.595
+    }
+   ],
+   "text": "Ma citrouille fait des *rides* !",
+   "start": 20.53,
+   "end": 21.595
+  },
+  {
+   "id": "plan08b",
+   "qui": "lou",
+   "who": "lou",
+   "words": [
+    {
+     "text": "La",
+     "start": 21.735,
+     "end": 21.785
+    },
+    {
+     "text": "mienne",
+     "start": 21.785,
+     "end": 22.083
+    },
+    {
+     "text": "sent",
+     "start": 22.083,
+     "end": 22.233
+    },
+    {
+     "text": "le",
+     "start": 22.233,
+     "end": 22.306
+    },
+    {
+     "text": "*fromage !*",
+     "start": 22.306,
+     "end": 22.835
+    }
+   ],
+   "text": "La mienne sent le *fromage* !",
+   "start": 21.735,
+   "end": 22.835
+  },
+  {
+   "id": "plan08c",
+   "qui": "narrateur",
+   "who": "narrateur",
+   "words": [
+    {
+     "text": "Mardi,",
+     "start": 22.975,
+     "end": 23.397
+    },
+    {
+     "text": "la",
+     "start": 23.397,
+     "end": 23.469
+    },
+    {
+     "text": "moitié",
+     "start": 23.469,
+     "end": 23.907
+    },
+    {
+     "text": "du",
+     "start": 23.907,
+     "end": 24.042
+    },
+    {
+     "text": "village",
+     "start": 24.042,
+     "end": 24.502
+    },
+    {
+     "text": "dormait",
+     "start": 24.502,
+     "end": 24.871
+    },
+    {
+     "text": "sous",
+     "start": 24.871,
+     "end": 25.039
+    },
+    {
+     "text": "la",
+     "start": 25.039,
+     "end": 25.147
+    },
+    {
+     "text": "*pluie.*",
+     "start": 25.147,
+     "end": 25.285
+    }
+   ],
+   "text": "Mardi, la moitié du village dormait sous la *pluie*.",
+   "start": 22.975,
+   "end": 25.285
+  },
+  {
+   "id": "plan08d",
+   "qui": "lou",
+   "who": "lou",
+   "words": [
+    {
+     "text": "Léon,",
+     "start": 25.365,
+     "end": 25.956
+    },
+    {
+     "text": "j'ai",
+     "start": 25.956,
+     "end": 26.017
+    },
+    {
+     "text": "froid.",
+     "start": 26.017,
+     "end": 26.32
+    }
+   ],
+   "text": "Léon, j'ai froid.",
+   "start": 25.365,
+   "end": 26.32
+  },
+  {
+   "id": "plan08e",
+   "qui": "leon",
+   "who": "leon",
+   "words": [
+    {
+     "text": "Je",
+     "start": 26.46,
+     "end": 26.525
+    },
+    {
+     "text": "vais",
+     "start": 26.525,
+     "end": 26.68
+    },
+    {
+     "text": "trouver",
+     "start": 26.68,
+     "end": 27.199
+    },
+    {
+     "text": "*pourquoi.*",
+     "start": 27.199,
+     "end": 27.57
+    }
+   ],
+   "text": "Je vais trouver *pourquoi*.",
+   "start": 26.46,
+   "end": 27.57
+  },
+  {
+   "id": "plan09",
+   "qui": "narrateur",
+   "who": "narrateur",
+   "words": [
+    {
+     "text": "Bizarre.",
+     "start": 27.71,
+     "end": 28.423
+    },
+    {
+     "text": "La",
+     "start": 28.423,
+     "end": 28.513
+    },
+    {
+     "text": "citrouille",
+     "start": 28.513,
+     "end": 29.207
+    },
+    {
+     "text": "de",
+     "start": 29.207,
+     "end": 29.329
+    },
+    {
+     "text": "Grisou",
+     "start": 29.329,
+     "end": 29.943
+    },
+    {
+     "text": "restait",
+     "start": 29.943,
+     "end": 30.69
+    },
+    {
+     "text": "*orange.*",
+     "start": 30.69,
+     "end": 30.922
+    },
+    {
+     "text": "Et",
+     "start": 30.922,
+     "end": 30.979
+    },
+    {
+     "text": "il",
+     "start": 30.979,
+     "end": 31.036
+    },
+    {
+     "text": "ne",
+     "start": 31.036,
+     "end": 31.086
+    },
+    {
+     "text": "quittait",
+     "start": 31.086,
+     "end": 31.548
+    },
+    {
+     "text": "jamais",
+     "start": 31.548,
+     "end": 31.857
+    },
+    {
+     "text": "son",
+     "start": 31.857,
+     "end": 31.967
+    },
+    {
+     "text": "*casque.*",
+     "start": 31.967,
+     "end": 32.26
+    }
+   ],
+   "text": "Bizarre. La citrouille de Grisou restait *orange*. Et il ne quittait jamais son *casque*.",
+   "start": 27.71,
+   "end": 32.26
+  },
+  {
+   "id": "plan10",
+   "qui": "narrateur",
+   "who": "narrateur",
+   "words": [
+    {
+     "text": "Alors",
+     "start": 32.46,
+     "end": 32.775
+    },
+    {
+     "text": "mercredi",
+     "start": 32.775,
+     "end": 33.685
+    },
+    {
+     "text": "soir,",
+     "start": 33.685,
+     "end": 33.797
+    },
+    {
+     "text": "je",
+     "start": 33.797,
+     "end": 33.847
+    },
+    {
+     "text": "l'ai",
+     "start": 33.847,
+     "end": 33.897
+    },
+    {
+     "text": "*espionné.*",
+     "start": 33.897,
+     "end": 34.29
+    }
+   ],
+   "text": "Alors mercredi soir, je l'ai *espionné*.",
+   "start": 32.46,
+   "end": 34.29
+  },
+  {
+   "id": "plan11a",
+   "type": "chanson",
+   "fichier": "musique/originale.mp3",
+   "debut": 8.0,
+   "fin": 10.0,
+   "volume": 0.8,
+   "filtre": "radio",
+   "who": "chanson",
+   "text": "J'aime les grenouilles, et la pluie qui mouille",
+   "start": 34.34,
+   "end": 36.34,
+   "song_start": 34.34,
+   "song_end": 36.34,
+   "words": [
+    {
+     "text": "J'aime",
+     "start": 34.34,
+     "end": 34.625
+    },
+    {
+     "text": "les",
+     "start": 34.625,
+     "end": 34.72
+    },
+    {
+     "text": "grenouilles,",
+     "start": 34.72,
+     "end": 35.195
+    },
+    {
+     "text": "et",
+     "start": 35.195,
+     "end": 35.29
+    },
+    {
+     "text": "la",
+     "start": 35.29,
+     "end": 35.385
+    },
+    {
+     "text": "pluie",
+     "start": 35.385,
+     "end": 35.67
+    },
+    {
+     "text": "qui",
+     "start": 35.67,
+     "end": 35.86
+    },
+    {
+     "text": "mouille",
+     "start": 35.86,
+     "end": 36.24
+    }
+   ]
+  },
+  {
+   "id": "plan11b",
+   "qui": "narrateur",
+   "who": "narrateur",
+   "words": [
+    {
+     "text": "Il",
+     "start": 36.42,
+     "end": 36.577
+    },
+    {
+     "text": "la",
+     "start": 36.577,
+     "end": 36.735
+    },
+    {
+     "text": "chantait.",
+     "start": 36.735,
+     "end": 37.234
+    },
+    {
+     "text": "En",
+     "start": 37.234,
+     "end": 37.339
+    },
+    {
+     "text": "*cachette.*",
+     "start": 37.339,
+     "end": 37.92
+    }
+   ],
+   "text": "Il la chantait. En *cachette*.",
+   "start": 36.42,
+   "end": 37.92
+  },
+  {
+   "id": "plan12",
+   "qui": "narrateur",
+   "who": "narrateur",
+   "words": [
+    {
+     "text": "C'était",
+     "start": 38.12,
+     "end": 38.335
+    },
+    {
+     "text": "*sa*",
+     "start": 38.335,
+     "end": 38.439
+    },
+    {
+     "text": "chanson.",
+     "start": 38.439,
+     "end": 39.119
+    },
+    {
+     "text": "Il",
+     "start": 39.119,
+     "end": 39.191
+    },
+    {
+     "text": "l'avait",
+     "start": 39.191,
+     "end": 39.605
+    },
+    {
+     "text": "écrite",
+     "start": 39.605,
+     "end": 40.081
+    },
+    {
+     "text": "à",
+     "start": 40.081,
+     "end": 40.131
+    },
+    {
+     "text": "huit",
+     "start": 40.131,
+     "end": 40.405
+    },
+    {
+     "text": "ans.",
+     "start": 40.405,
+     "end": 40.654
+    },
+    {
+     "text": "Et",
+     "start": 40.654,
+     "end": 40.75
+    },
+    {
+     "text": "toute",
+     "start": 40.75,
+     "end": 41.007
+    },
+    {
+     "text": "l'école",
+     "start": 41.007,
+     "end": 41.34
+    },
+    {
+     "text": "s'était",
+     "start": 41.34,
+     "end": 41.625
+    },
+    {
+     "text": "*moquée*",
+     "start": 41.625,
+     "end": 42.149
+    },
+    {
+     "text": "de",
+     "start": 42.149,
+     "end": 42.247
+    },
+    {
+     "text": "lui.",
+     "start": 42.247,
+     "end": 42.29
+    }
+   ],
+   "text": "C'était *sa* chanson. Il l'avait écrite à huit ans. Et toute l'école s'était *moquée* de lui.",
+   "start": 38.12,
+   "end": 42.29
+  },
+  {
+   "id": "plan13a",
+   "qui": "leon",
+   "who": "leon",
+   "words": [
+    {
+     "text": "Monsieur",
+     "start": 42.37,
+     "end": 42.815
+    },
+    {
+     "text": "Grisou ?",
+     "start": 42.995,
+     "end": 42.815
+    }
+   ],
+   "text": "Monsieur Grisou ?",
+   "start": 42.37,
+   "end": 42.815
+  },
+  {
+   "id": "plan13b",
+   "qui": "grisou",
+   "who": "grisou",
+   "words": [
+    {
+     "text": "Va-t'en !",
+     "start": 42.895,
+     "end": 43.23
+    }
+   ],
+   "text": "Va-t'en !",
+   "start": 42.895,
+   "end": 43.23
+  },
+  {
+   "id": "plan13c",
+   "qui": "leon",
+   "who": "leon",
+   "words": [
+    {
+     "text": "C'est",
+     "start": 43.37,
+     "end": 43.42
+    },
+    {
+     "text": "vous",
+     "start": 43.42,
+     "end": 43.47
+    },
+    {
+     "text": "qui",
+     "start": 43.47,
+     "end": 43.521
+    },
+    {
+     "text": "l'avez",
+     "start": 43.521,
+     "end": 43.624
+    },
+    {
+     "text": "*écrite !*",
+     "start": 43.624,
+     "end": 44.295
+    }
+   ],
+   "text": "C'est vous qui l'avez *écrite* !",
+   "start": 43.37,
+   "end": 44.295
+  },
+  {
+   "id": "plan13d",
+   "qui": "grisou",
+   "who": "grisou",
+   "words": [
+    {
+     "text": "Et",
+     "start": 44.435,
+     "end": 44.485
+    },
+    {
+     "text": "vous",
+     "start": 44.485,
+     "end": 44.535
+    },
+    {
+     "text": "avez",
+     "start": 44.535,
+     "end": 45.127
+    },
+    {
+     "text": "ri.",
+     "start": 45.127,
+     "end": 45.308
+    },
+    {
+     "text": "*Tous.*",
+     "start": 45.456,
+     "end": 45.315
+    }
+   ],
+   "text": "Et vous avez ri. *Tous*.",
+   "start": 44.435,
+   "end": 45.315
+  },
+  {
+   "id": "plan14",
+   "qui": "narrateur",
+   "pause": true,
+   "who": "narrateur",
+   "text": "",
+   "start": 45.315,
+   "end": 45.815,
+   "words": []
+  },
+  {
+   "id": "plan15",
+   "qui": "narrateur",
+   "who": "narrateur",
+   "words": [
+    {
+     "text": "Le",
+     "start": 45.815,
+     "end": 45.897
+    },
+    {
+     "text": "lendemain,",
+     "start": 45.897,
+     "end": 46.598
+    },
+    {
+     "text": "j'ai",
+     "start": 46.598,
+     "end": 46.725
+    },
+    {
+     "text": "amené",
+     "start": 46.725,
+     "end": 47.104
+    },
+    {
+     "text": "tout",
+     "start": 47.104,
+     "end": 47.305
+    },
+    {
+     "text": "le",
+     "start": 47.305,
+     "end": 47.385
+    },
+    {
+     "text": "village",
+     "start": 47.385,
+     "end": 47.828
+    },
+    {
+     "text": "devant",
+     "start": 47.828,
+     "end": 48.225
+    },
+    {
+     "text": "sa",
+     "start": 48.225,
+     "end": 48.371
+    },
+    {
+     "text": "*porte.*",
+     "start": 48.371,
+     "end": 48.56
+    }
+   ],
+   "text": "Le lendemain, j'ai amené tout le village devant sa *porte*.",
+   "start": 45.815,
+   "end": 48.56
+  },
+  {
+   "id": "plan16",
+   "type": "chanson",
+   "fichier": "musique/chorale_finale.mp3",
+   "debut": 0.0,
+   "fin": null,
+   "volume": 1.0,
+   "filtre": "chorale",
+   "who": "chanson",
+   "text": "Grisou chante dans sa citrouille, Rapetipeto, on lui dit pardon, Fini les embrouilles, plus de nuit qui mouille, vive l'omelette aux hannetons !",
+   "start": 48.61,
+   "end": 57.942,
+   "song_start": 48.61,
+   "song_end": 57.942,
+   "words": [
+    {
+     "text": "Grisou",
+     "start": 48.71,
+     "end": 49.172
+    },
+    {
+     "text": "chante",
+     "start": 49.172,
+     "end": 49.481
+    },
+    {
+     "text": "dans",
+     "start": 49.481,
+     "end": 49.635
+    },
+    {
+     "text": "sa",
+     "start": 49.635,
+     "end": 49.789
+    },
+    {
+     "text": "citrouille,",
+     "start": 49.789,
+     "end": 50.56
+    },
+    {
+     "text": "Rapetipeto,",
+     "start": 50.61,
+     "end": 51.56
+    },
+    {
+     "text": "on",
+     "start": 51.61,
+     "end": 51.818
+    },
+    {
+     "text": "lui",
+     "start": 51.818,
+     "end": 52.235
+    },
+    {
+     "text": "dit",
+     "start": 52.235,
+     "end": 52.443
+    },
+    {
+     "text": "pardon,",
+     "start": 52.443,
+     "end": 52.86
+    },
+    {
+     "text": "Fini",
+     "start": 52.91,
+     "end": 53.247
+    },
+    {
+     "text": "les",
+     "start": 53.248,
+     "end": 53.416
+    },
+    {
+     "text": "embrouilles,",
+     "start": 53.416,
+     "end": 54.26
+    },
+    {
+     "text": "plus",
+     "start": 54.31,
+     "end": 54.445
+    },
+    {
+     "text": "de",
+     "start": 54.445,
+     "end": 54.58
+    },
+    {
+     "text": "nuit",
+     "start": 54.58,
+     "end": 54.85
+    },
+    {
+     "text": "qui",
+     "start": 54.85,
+     "end": 55.12
+    },
+    {
+     "text": "mouille,",
+     "start": 55.12,
+     "end": 55.66
+    },
+    {
+     "text": "vive",
+     "start": 55.71,
+     "end": 56.065
+    },
+    {
+     "text": "l'omelette",
+     "start": 56.065,
+     "end": 56.774
+    },
+    {
+     "text": "aux",
+     "start": 56.774,
+     "end": 57.128
+    },
+    {
+     "text": "hannetons !",
+     "start": 57.128,
+     "end": 57.66
+    }
+   ]
+  },
+  {
+   "id": "plan17a",
+   "qui": "grisou",
+   "who": "grisou",
+   "words": [
+    {
+     "text": "Pour",
+     "start": 58.022,
+     "end": 58.072
+    },
+    {
+     "text": "vous",
+     "start": 58.072,
+     "end": 58.122
+    },
+    {
+     "text": "remercier :",
+     "start": 58.122,
+     "end": 58.324
+    },
+    {
+     "text": "omelette",
+     "start": 58.324,
+     "end": 58.374
+    },
+    {
+     "text": "aux",
+     "start": 58.374,
+     "end": 58.424
+    },
+    {
+     "text": "*hannetons !*",
+     "start": 58.424,
+     "end": 59.702
+    }
+   ],
+   "text": "Pour vous remercier : omelette aux *hannetons* !",
+   "start": 58.022,
+   "end": 59.702
+  },
+  {
+   "id": "plan17b",
+   "qui": "maire",
+   "who": "maire",
+   "words": [
+    {
+     "text": "*Rapeti-beurk.*",
+     "start": 59.782,
+     "end": 60.957
+    }
+   ],
+   "text": "Rapeti-*beurk*.",
+   "start": 59.782,
+   "end": 60.957
+  }
+ ]
+}

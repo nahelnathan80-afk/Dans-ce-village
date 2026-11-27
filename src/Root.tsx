@@ -12,6 +12,7 @@ import {Episode04} from './episodes/ep04/Episode';
 import {ep04} from './episodes/ep04/data';
 import {Episode05} from './episodes/ep05/Episode';
 import {ep05} from './episodes/ep05/data';
+import {LookTest} from './episodes/ep06/LookTest';
 
 export const RemotionRoot: React.FC = () => (
 	<>
@@ -23,6 +24,9 @@ export const RemotionRoot: React.FC = () => (
 		<Composition id="Ep03" component={Episode03} width={1080} height={1920} fps={FPS} durationInFrames={ep03.tl.durationInFrames} />
 		<Composition id="Ep04" component={Episode04} width={1080} height={1920} fps={FPS} durationInFrames={ep04.tl.durationInFrames} />
 		<Composition id="Ep05" component={Episode05} width={1080} height={1920} fps={FPS} durationInFrames={ep05.tl.durationInFrames} />
+		{(['place', 'grisou', 'pluie', 'chorale'] as const).flatMap((sc) => [false, true].map((cine) => (
+			<Composition key={sc + cine} id={`Look-${sc}-${cine ? 'apres' : 'avant'}`} component={LookTest} width={1080} height={1920} fps={30} durationInFrames={30} defaultProps={{scene: sc, cine}} />
+		)))}
 		<Composition id="TestWide" component={TestScene} width={1080} height={1920} fps={30} durationInFrames={1} defaultProps={{view: 'wide' as const}} />
 		<Composition id="TestClose" component={TestScene} width={1080} height={1920} fps={30} durationInFrames={1} defaultProps={{view: 'close' as const}} />
 	</>

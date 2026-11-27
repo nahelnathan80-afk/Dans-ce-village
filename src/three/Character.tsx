@@ -1,6 +1,7 @@
 import React, {useMemo} from 'react';
 import * as THREE from 'three';
 import {Emotion, FaceStyle, getFaceTexture} from './faceTexture';
+import {LOOK, blobTex, fabric, roundedBox, skin as skinMat} from './look';
 
 /** Apparence d'un personnage blocky (tout est paramétrable → nouveaux habitants en 1 ligne). */
 export type CharacterLook = {
@@ -10,7 +11,8 @@ export type CharacterLook = {
 	shoes?: string;
 	hair: string;
 	hairStyle?: 'short' | 'bun' | 'bald' | 'long' | 'spiky' | 'pigtails' | 'none';
-	hat?: 'toque' | 'cap' | 'beret' | 'bowler' | 'none';
+	hat?: 'toque' | 'cap' | 'beret' | 'bowler' | 'beanie' | 'pumpkin' | 'none';
+	headphones?: string; // casque audio vintage (couleur)
 	overalls?: string; // salopette (couleur)
 	cardigan?: string; // gilet ouvert (couleur)
 	bowtie?: string; // nœud papillon (couleur)
@@ -71,16 +73,20 @@ export const M = (color: string) => {
 	return m;
 };
 
+let SKIN = '';
 const Box: React.FC<{
 	size: [number, number, number];
 	position?: [number, number, number];
 	rotation?: [number, number, number];
 	color: string;
-}> = ({size, position, rotation, color}) => (
-	<mesh position={position} rotation={rotation} castShadow receiveShadow material={M(color)}>
-		<boxGeometry args={size} />
-	</mesh>
-);
+}> = ({size, position, rotation, color}) =>
+	LOOK.cine ? (
+		<mesh position={position} rotation={rotation} castShadow receiveShadow material={color === SKIN ? skinMat(color) : fabric(color)} geometry={roundedBox(size[0], size[1], size[2])} />
+	) : (
+		<mesh position={position} rotation={rotation} castShadow receiveShadow material={M(color)}>
+			<boxGeometry args={size} />
+		</mesh>
+	);
 
 export const Character: React.FC<CharacterProps> = ({
 	look,
@@ -99,13 +105,14 @@ export const Character: React.FC<CharacterProps> = ({
 	children,
 	leftHand,
 }) => {
+	SKIN = look.skin;
 	const faceStyle: FaceStyle = {skin: look.skin, ...look.face};
 	const faceTex = getFaceTexture(faceStyle, emotion, mouthOpen, eyes, blink);
 	const headMats = useMemo(() => {
-		const s = M(look.skin);
+		const s = LOOK.cine ? skinMat(look.skin) : M(look.skin);
 		return [s, s, s, s, null, s];
 	}, [look.skin]);
-	const faceMat = useMemo(() => new THREE.MeshStandardMaterial({roughness: 0.8}), []);
+	const faceMat = useMemo(() => new THREE.MeshStandardMaterial({roughness: LOOK.cine ? 0.5 : 0.8}), []);
 	faceMat.map = faceTex;
 	faceMat.needsUpdate = true;
 	const mats = [...headMats.slice(0, 4), faceMat, headMats[5]] as THREE.Material[];
@@ -133,6 +140,12 @@ export const Character: React.FC<CharacterProps> = ({
 
 	return (
 		<group position={position} rotation={rotation} scale={[sc * sx, sc * squash, sc * sx]}>
+			{LOOK.cine && !sit && (
+				<mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.015, 0.02]} renderOrder={1}>
+					<planeGeometry args={[1.9, 1.3]} />
+					<meshBasicMaterial map={blobTex()} transparent depthWrite={false} opacity={0.8} />
+				</mesh>
+			)}
 			<group position={[0, walkBob + bob + (sit ? -0.4 : 0), 0]} rotation={[pose.lean ?? 0, pose.twist ?? 0, 0]}>
 				{/* Jambes (pivot à la hanche) */}
 				{([[-0.24, legL], [0.24, legR]] as const).map(([x, r], i) => (
@@ -217,9 +230,13 @@ export const Character: React.FC<CharacterProps> = ({
 					position={[0, 1.92, 0]}
 					rotation={[pose.headNod ?? 0, pose.headTurn ?? 0, pose.headTilt ?? 0]}
 				>
-					<mesh position={[0, 0.5, 0]} material={mats} castShadow>
-						<boxGeometry args={[1, 1, 1]} />
-					</mesh>
+					{LOOK.cine ? (
+						<mesh position={[0, 0.5, 0]} material={mats} castShadow geometry={roundedBox(1, 1, 1)} />
+					) : (
+						<mesh position={[0, 0.5, 0]} material={mats} castShadow>
+							<boxGeometry args={[1, 1, 1]} />
+						</mesh>
+					)}
 					<Hair look={look} />
 					{look.hat === 'toque' && (
 						<group position={[0, 1.2, 0]}>
@@ -248,6 +265,51 @@ export const Character: React.FC<CharacterProps> = ({
 							<mesh material={M('#7a1010')} position={[0, 0.1, 0]}>
 								<cylinderGeometry args={[0.53, 0.53, 0.1, 20]} />
 							</mesh>
+						</group>
+					)}
+					{look.hat === 'beanie' && (
+						<group position={[0, 1.0, 0]}>
+							<Box size={[1.12, 0.42, 1.12]} position={[0, 0.12, 0]} color={hatColor} />
+							<Box size={[1.16, 0.16, 1.16]} position={[0, -0.06, 0]} color={hatColor} />
+							<mesh castShadow material={LOOK.cine ? fabric('#f5e6a8') : M('#f5e6a8')} position={[0, 0.46, 0]}>
+								<sphereGeometry args={[0.16, 12, 10]} />
+							</mesh>
+						</group>
+					)}
+					{look.hat === 'pumpkin' && (
+						<group position={[0, 1.02, 0]}>
+							<mesh castShadow position={[0, 0.02, 0]}>
+								<cylinderGeometry args={[0.8, 0.8, 0.06, 24]} />
+								<meshStandardMaterial color="#1b1b1b" roughness={0.5} />
+							</mesh>
+							<mesh castShadow position={[0, 0.42, 0]} scale={[1, 0.8, 1]}>
+								<sphereGeometry args={[0.52, 20, 14]} />
+								<meshStandardMaterial color="#f07a12" roughness={0.45} />
+							</mesh>
+							<mesh castShadow position={[0.04, 0.88, 0]} rotation={[0, 0, -0.3]}>
+								<cylinderGeometry args={[0.05, 0.08, 0.26, 8]} />
+								<meshStandardMaterial color="#4a6b2a" />
+							</mesh>
+						</group>
+					)}
+					{look.headphones && (
+						<group>
+							<mesh castShadow position={[0, 1.12, 0]} rotation={[0, 0, 0]}>
+								<torusGeometry args={[0.62, 0.06, 8, 24, Math.PI]} />
+								<meshStandardMaterial color="#3a2a1a" roughness={0.4} metalness={0.3} />
+							</mesh>
+							{[-1, 1].map((sd) => (
+								<group key={sd} position={[sd * 0.6, 0.52, 0]}>
+									<mesh castShadow rotation={[0, 0, Math.PI / 2]}>
+										<cylinderGeometry args={[0.26, 0.26, 0.18, 20]} />
+										<meshStandardMaterial color={look.headphones} roughness={0.35} metalness={0.2} />
+									</mesh>
+									<mesh position={[sd * 0.1, 0, 0]} rotation={[0, 0, Math.PI / 2]}>
+										<cylinderGeometry args={[0.18, 0.18, 0.04, 20]} />
+										<meshStandardMaterial color="#c9a227" metalness={0.8} roughness={0.25} />
+									</mesh>
+								</group>
+							))}
 						</group>
 					)}
 					{look.hat === 'beret' && (
