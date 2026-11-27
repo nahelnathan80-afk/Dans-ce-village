@@ -10,7 +10,7 @@
   },
   "voices": {
     "vo": {
-      "_final": "ElevenLabs « Grégory - Dynamic », accélérée à 1,3x (atempo), assets/voix/ep04/"
+      "_final": "ElevenLabs « Grégory - Dynamic » (lots A/B/C), piste continue reconstruite par tools/voice.py"
     }
   },
   "cast": {
@@ -101,7 +101,6 @@
       "id": "plan01",
       "who": "vo",
       "text": "Cette *guerre*, c'est à cause de *moi*. Mais ça, personne ne le savait encore.",
-      "pause": 1.0,
       "plan": {
         "ambiance": "nuit",
         "visuel": "Léo de dos devant le mur, la nuit. Compteur orange « MUR FERMÉ DANS 00:00:57 »."
@@ -111,7 +110,6 @@
       "id": "plan02",
       "who": "vo",
       "text": "Dans notre village, chaque maison, c'était un *pays*. On mangeait tous ensemble le *dimanche*.",
-      "pause": 1.8,
       "plan": {
         "ambiance": "jour",
         "visuel": "Plan large de jour : 8 chalets avec leur drapeau au balcon, grande table commune, tout le monde mange ensemble."
@@ -121,7 +119,6 @@
       "id": "plan03",
       "who": "vo",
       "text": "Un matin, la seule *pomme* de l'arbre du milieu avait *disparu*. Chaque pays a *accusé* l'autre.",
-      "pause": 1.6,
       "plan": {
         "ambiance": "matin",
         "visuel": "Arbre au centre de la place, branche vide, zoom. Doigts pointés."
@@ -131,7 +128,6 @@
       "id": "plan04",
       "who": "vo",
       "text": "Les *drapeaux*. Les *cris*. Un *mur* au milieu de la place. Et le maire a juré : on trouvera le *voleur*.",
-      "pause": 4.4,
       "plan": {
         "ambiance": "après-midi",
         "visuel": "Montage rapide : drapeaux agités, visages fâchés, le mur monte au milieu de la place, le maire pointe du doigt."
@@ -141,7 +137,6 @@
       "id": "plan05",
       "who": "vo",
       "text": "De l'autre côté, il y avait *Yuki*. Celle qui riait trop fort. Celle à qui je n'avais jamais osé *parler*.",
-      "pause": 2.2,
       "plan": {
         "ambiance": "après-midi doré",
         "visuel": "Yuki de l'autre côté du mur (par la porte), elle rit ; Léo la regarde de loin."
@@ -151,7 +146,6 @@
       "id": "plan06",
       "who": "vo",
       "text": "Chaque soir, des avions en papier par-dessus le mur. Le sien disait : « Tu me *manques*. » Le mien : « Moi *aussi*. »",
-      "pause": 4.4,
       "plan": {
         "ambiance": "nuit",
         "visuel": "Avions en papier qui passent au-dessus du mur ; gros plans sur les messages écrits."
@@ -161,7 +155,6 @@
       "id": "plan07",
       "who": "vo",
       "text": "Chaque jour, le maire fouillait une maison de plus. Chaque jour, il se rapprochait de la *mienne*.",
-      "pause": 4.0,
       "plan": {
         "ambiance": "nuit",
         "visuel": "Le maire avec une lampe frappe aux portes, une maison après l'autre, il se rapproche de celle de Léo. Insert TRÈS bref (0,5 s) : Léo glisse un objet rouge sous son lit (indice non expliqué)."
@@ -171,7 +164,6 @@
       "id": "plan08",
       "who": "vo",
       "text": "Ce soir, à *minuit*, la porte du mur se ferme pour toujours. Ma mère m'a dit : *reste*. Mamie Odette m'a regardé longtemps… et m'a dit : *cours*.",
-      "pause": 2.4,
       "plan": {
         "ambiance": "intérieur",
         "visuel": "La mère de Léo, puis mamie Odette dans son fauteuil au milieu de ses horloges, regard long."
@@ -181,7 +173,6 @@
       "id": "plan09",
       "who": "vo",
       "text": "J'ai *couru*. *Dix* secondes. *Cinq*. Elle courait aussi.",
-      "pause": 5.0,
       "plan": {
         "ambiance": "nuit",
         "visuel": "Compteur rouge qui pulse. Léo court, la porte du mur se referme lentement ; montage alterné avec Yuki qui court de l'autre côté. Battements de cœur."
@@ -191,7 +182,6 @@
       "id": "plan10",
       "who": "vo",
       "text": "On s'est arrêtés pile au *milieu*. Elle a pris ma *main*. Elle a senti quelque chose dedans.",
-      "pause": 3.4,
       "plan": {
         "ambiance": "nuit",
         "visuel": "Ils s'arrêtent au milieu de la porte, ralenti ; elle lui prend la main."
@@ -201,17 +191,16 @@
       "id": "plan11",
       "who": "vo",
       "text": "Je l'avais cueillie ce matin-là. Pour *elle*. Je n'avais jamais osé la lui donner.",
-      "pause": 3.0,
       "plan": {
         "ambiance": "nuit",
         "visuel": "Gros plan : Léo ouvre la main, c'est la POMME ROUGE. La musique se coupe net."
-      }
+      },
+      "pause": true
     },
     {
       "id": "plan12",
       "who": "vo",
       "text": "Une guerre entière… pour une fille à qui je n'osais pas *parler*.",
-      "pause": 3.0,
       "plan": {
         "ambiance": "nuit",
         "visuel": "Visage choqué de Yuki, puis plan derrière eux : la lampe du maire s'allume, il a tout vu. Le compteur passe à 00:00:00, écran noir."
@@ -221,11 +210,15 @@
       "id": "plan13",
       "who": "vo",
       "text": "Toi, tu lui *pardonnes* ? Dis-le en commentaire.",
-      "pause": 5.0,
       "plan": {
         "ambiance": "nuit",
         "visuel": "Carte finale (même design que l'ép. 03) : « TOI, TU LUI PARDONNES ? » (PARDONNES en rouge) + « DIS-LE EN COMMENTAIRE » + flèche jaune."
       }
     }
+  ],
+  "voix_sources": [
+    "assets/voix/ep04/lotA.mp3",
+    "assets/voix/ep04/lotB.mp3",
+    "assets/voix/ep04/lotC.mp3"
   ]
 }

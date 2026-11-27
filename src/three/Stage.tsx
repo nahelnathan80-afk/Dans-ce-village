@@ -14,13 +14,27 @@ export type CameraShot = {
 	roll?: number;
 	/** intensité de tremblement (0 = aucun) */
 	shake?: number;
+	/** mouvement permanent de la caméra (zoom lent + orbite), 1 = défaut, 0 = aucun. Jamais d'image figée. */
+	drift?: number;
 };
 
-const CameraRig: React.FC<CameraShot> = ({pos, target, fov = 40, roll = 0, shake = 0}) => {
+const CameraRig: React.FC<CameraShot> = ({pos: pos0, target, fov = 40, roll = 0, shake = 0, drift = 1}) => {
 	const {camera} = useThree();
 	const frame = useCurrentFrame();
 	useLayoutEffect(() => {
 		const cam = camera as THREE.PerspectiveCamera;
+		// moteur v2 : la caméra bouge toujours (rapprochement lent + petite orbite autour de la cible)
+		const tt = (frame / 30) * drift;
+		const sgn = Math.sin(pos0[0] * 7.3 + pos0[2] * 3.1 + target[1]) >= 0 ? 1 : -1;
+		const dx = pos0[0] - target[0];
+		const dz = pos0[2] - target[2];
+		const ang = 0.05 * tt * sgn;
+		const k = 1 - 0.04 * tt;
+		const pos: Vec3 = [
+			target[0] + (dx * Math.cos(ang) - dz * Math.sin(ang)) * k,
+			target[1] + (pos0[1] - target[1]) * k,
+			target[2] + (dx * Math.sin(ang) + dz * Math.cos(ang)) * k,
+		];
 		const sx = shake ? (Math.sin(frame * 2.1) + Math.sin(frame * 3.7)) * 0.5 * shake : 0;
 		const sy = shake ? (Math.cos(frame * 2.7) + Math.sin(frame * 1.3)) * 0.5 * shake : 0;
 		cam.position.set(pos[0] + sx, pos[1] + sy, pos[2]);

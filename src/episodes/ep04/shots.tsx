@@ -13,6 +13,7 @@ import {Apple, AppleTree, BedRoom, Flag, FlagCode, LongTable, PaperNote, PaperPl
 import {villager} from '../cast';
 import {blinkAt, punch, ramp, squashAt} from '../../lib/anim';
 import {CAST4, ep04} from './data';
+import {buildShots, BuiltShot} from '../../engine/shots';
 
 const tl = ep04.tl;
 const FPS = 30;
@@ -128,7 +129,7 @@ export const SHOTS: ShotDef[] = [
 	},
 	{
 		id: 'p02-drapeaux',
-		from: F('plan02', 0.0, 'end'),
+		from: Wt('plan02', 'chaque', -0.1),
 		render: (c) => (
 			<Stage camera={{pos: [-2.5, 3.6, 4.5], target: [-14, 4.2, 2], fov: 40}} ambiance="morning">
 				{town({wall: 0, apple: true, frame: c.g})}
@@ -166,7 +167,7 @@ export const SHOTS: ShotDef[] = [
 	},
 	{
 		id: 'p03-accuse2',
-		from: F('plan03', 0.05, 'end'),
+		from: Wt('plan03', 'accusé', -0.1),
 		render: (c) => (
 			<Stage camera={closeUp([2.6, 0, 4.0], -1.3, 3.4, {side: 0.25, shake: 0.01})} ambiance="morning">
 				{town({wall: 0, apple: false, frame: c.g})}
@@ -213,7 +214,7 @@ export const SHOTS: ShotDef[] = [
 	},
 	{
 		id: 'p04-ouest',
-		from: F('plan04', 0.05, 'end'),
+		from: Wn('plan04', 'Les', 2, -0.1),
 		render: (c) => (
 			<Stage camera={{pos: [-1.8, 3.8, 13], target: [-1.6, 1.6, 3.2], fov: 46, shake: 0.02}} ambiance="golden">
 				{town({wall: 1, close: 0, frame: c.g})}
@@ -225,7 +226,7 @@ export const SHOTS: ShotDef[] = [
 	},
 	{
 		id: 'p04-est',
-		from: F('plan04', 1.55, 'end'),
+		from: Wt('plan04', 'place', -0.1),
 		render: (c) => (
 			<Stage camera={{pos: [8.2, 3.8, 13], target: [6.6, 1.6, 3.2], fov: 46, shake: 0.02}} ambiance="golden">
 				{town({wall: 1, close: 0, frame: c.g})}
@@ -237,7 +238,7 @@ export const SHOTS: ShotDef[] = [
 	},
 	{
 		id: 'p04-coupe',
-		from: F('plan04', 3.0, 'end'),
+		from: Wt('plan04', 'voleur', -0.1),
 		render: (c) => (
 			<Stage camera={{pos: [WALL.x - 1, 22 - ramp(c.f, 0, c.d) * 3, 18], target: [WALL.x, 0, 0], fov: 50}} ambiance="golden">
 				{town({wall: 1, close: 0, frame: c.g})}
@@ -281,7 +282,7 @@ export const SHOTS: ShotDef[] = [
 	},
 	{
 		id: 'p05-loin',
-		from: F('plan05', 0.0, 'end'),
+		from: Wt('plan05', 'osé', -0.1),
 		render: (c) => (
 			<Stage camera={{pos: [WALL.x - 9, 3.4, WALL.gateZ - 5], target: [WALL.x + 2, 1.6, WALL.gateZ + 0.5], fov: 44}} ambiance="golden">
 				{town({wall: 1, close: 0, frame: c.g})}
@@ -330,7 +331,7 @@ export const SHOTS: ShotDef[] = [
 	},
 	{
 		id: 'p06-sourire',
-		from: F('plan06', 0.45, 'end'),
+		from: Wt('plan06', 'Moi', -0.05),
 		render: (c) => (
 			<Stage camera={closeUp([-1.5, 0, 7.5], 0.3, 3.3, {side: 0.2})} ambiance="nightblue" fogNear={30} fogFar={150}>
 				{town({night: true, close: 0.75, frame: c.g})}
@@ -342,7 +343,7 @@ export const SHOTS: ShotDef[] = [
 	},
 	{
 		id: 'p06-retour',
-		from: F('plan06', 2.2, 'end'),
+		from: Wt('plan06', 'par-dessus', -0.1),
 		render: (c) => {
 			const k = ramp(c.f, 0, c.d, (x) => x);
 			const p: Vec3 = [WALL.x - 5 + k * 10, 3.0 + Math.sin(k * Math.PI) * 3.4, WALL.gateZ - 1];
@@ -377,7 +378,7 @@ export const SHOTS: ShotDef[] = [
 	// INDICE (0,5 s) : Léo glisse un objet rouge sous son lit — jamais expliqué
 	{
 		id: 'p07-indice',
-		from: F('plan07', 0.15, 'end'),
+		from: Wt('plan07', 'rapprochait', -0.1),
 		render: (c) => {
 			const k = ramp(c.f, 0, 12);
 			return (
@@ -392,7 +393,7 @@ export const SHOTS: ShotDef[] = [
 	},
 	{
 		id: 'p07-approche',
-		from: F('plan07', 0.65, 'end'),
+		from: Wt('plan07', 'mienne', -0.1),
 		render: (c) => (
 			<Stage camera={{pos: [10.5, 3.2, 9.5], target: [3, 1.6, 3.4], fov: 48}} ambiance="nightblue" fogNear={30} fogFar={150}>
 				<MayorStreet f={c.g} mayorX={1 + ramp(c.f, 0, c.d, (x) => x) * 6.6} walk />
@@ -401,7 +402,7 @@ export const SHOTS: ShotDef[] = [
 	},
 	{
 		id: 'p07-frappe',
-		from: F('plan07', 2.3, 'end'),
+		from: Wt('plan07', 'maire', -0.1),
 		render: (c) => (
 			<Stage camera={{pos: [11.8, 2.9, 9.2], target: [8.4, 2.3, 2.4], fov: 46, shake: 0.01}} ambiance="nightblue" fogNear={30} fogFar={150}>
 				<MayorStreet f={c.g} mayorX={8} knock leoWindow />
@@ -446,7 +447,7 @@ export const SHOTS: ShotDef[] = [
 	},
 	{
 		id: 'p08-cours',
-		from: Wt('plan08', 'cours', -0.2),
+		from: Wn('plan08', 'dit', 2, -0.25),
 		render: (c) => {
 			const k = punch(c.f, 4, 6);
 			return (
@@ -460,7 +461,7 @@ export const SHOTS: ShotDef[] = [
 	},
 	{
 		id: 'p08-depart',
-		from: F('plan08', 0.9, 'end'),
+		from: Wt('plan08', 'cours', 0.25),
 		render: (c) => {
 			const k = ramp(c.f, 0, c.d, (x) => x);
 			return (
@@ -477,10 +478,9 @@ export const SHOTS: ShotDef[] = [
 	// 9. CLIMAX — montage alterné, la porte se referme
 	...([
 		['p09-leo1', F('plan09', -0.15), -1, 0.0],
-		['p09-yuki1', Wt('plan09', 'Cinq', -0.12), 1, 0.3],
-		['p09-porte', F('plan09', 0.3, 'end'), 0, 0.5],
-		['p09-leo2', F('plan09', 1.9, 'end'), -1, 0.7],
-		['p09-yuki2', F('plan09', 3.4, 'end'), 1, 0.85],
+		['p09-porte', Wt('plan09', 'secondes', -0.1), 0, 0.4],
+		['p09-yuki1', Wt('plan09', 'Cinq', -0.12), 1, 0.6],
+		['p09-yuki2', Wt('plan09', 'Elle', -0.1), 1, 0.85],
 	] as [string, number, number, number][]).map(([id, from, who, k0]) => ({
 		id,
 		from,
@@ -536,7 +536,7 @@ export const SHOTS: ShotDef[] = [
 	},
 	{
 		id: 'p10-ralenti',
-		from: F('plan10', 1.5, 'end'),
+		from: Wt('plan10', 'pile', -0.1),
 		render: (c) => (
 			<Stage camera={{pos: [-6.2 + ramp(c.f, 0, c.d) * 1.2, 2.8, -5.2], target: [0, 1.6, 0], fov: 44}} ambiance="nightblue" fogNear={30} fogFar={150}>
 				<GateSet f={c.g} />
@@ -564,7 +564,7 @@ export const SHOTS: ShotDef[] = [
 	},
 	{
 		id: 'p11-silence',
-		from: F('plan11', 1.6, 'end'),
+		from: Wt('plan11', 'Pour', -0.1),
 		render: (c) => (
 			<Stage camera={{pos: [1.9, 1.85, -2.5], target: [0.3, 1.3, -0.6], fov: 40}} ambiance="nightblue" fogNear={30} fogFar={150}>
 				<GateSet f={c.g} />
@@ -578,7 +578,7 @@ export const SHOTS: ShotDef[] = [
 	// 10. LE MOMENT — au milieu de la porte, ralenti
 	{
 		id: 'p10-sent',
-		from: F('plan10', 0.0, 'end'),
+		from: Wt('plan10', 'senti', -0.15),
 		render: (c) => (
 			<Stage camera={closeUp([WALL.x + 0.45, 0, WALL.gateZ], -Math.PI / 2, 2.8, {scale: 0.95, side: 0.35})} ambiance="nightblue" fogNear={30} fogFar={150}>
 				{town({night: true, close: 0.35, frame: c.g})}
@@ -600,7 +600,7 @@ export const SHOTS: ShotDef[] = [
 	},
 	{
 		id: 'p11-yuki',
-		from: F('plan11', 0.2, 'end'),
+		from: Wt('plan11', 'donner', -0.1),
 		render: (c) => (
 			<Stage camera={closeUp([WALL.x + 0.45, 0, WALL.gateZ], -Math.PI / 2, 2.9, {scale: 0.95, side: 0.3})} ambiance="nightblue" fogNear={30} fogFar={150}>
 				{town({night: true, close: 0.35, frame: c.g})}
@@ -623,7 +623,7 @@ export const SHOTS: ShotDef[] = [
 
 	{
 		id: 'p12-maire',
-		from: F('plan12', 0.15, 'end'),
+		from: Wt('plan12', 'fille', -0.1),
 		render: (c) => {
 			const on = c.f >= 10;
 			return (
@@ -640,13 +640,14 @@ export const SHOTS: ShotDef[] = [
 		},
 	},
 
-	// 13. Carte-question (sur le village endormi)
+	// 13. Carte-question PENDANT la dernière phrase, sur l'image du début (boucle)
 	{
-		id: 'p13-cta',
-		from: F('plan13', -0.2),
+		id: 'p13-boucle',
+		from: F('plan13', -0.15),
 		render: (c) => (
-			<Stage camera={{pos: [WALL.x - 14, 12, 18 + ramp(c.f, 0, c.d) * 2], target: [WALL.x, 1, 0], fov: 50}} ambiance="nightblue" fogNear={30} fogFar={150}>
-				{town({night: true, close: 1, frame: c.g})}
+			<Stage camera={{pos: [-6.5, 2.4, WALL.gateZ + 2.7 - ramp(c.f, 0, c.d) * 1.2], target: [WALL.x, 2.6, WALL.gateZ], fov: 46}} ambiance="nightblue" fogNear={30} fogFar={150}>
+				{town({night: true, close: 0.75, frame: c.g})}
+				<Character look={L.leo} position={[WALL.x - 2.6, 0, WALL.gateZ]} rotation={[0, Math.PI / 2, 0]} emotion="sad" />
 			</Stage>
 		),
 	},
@@ -708,5 +709,9 @@ const MayorStreet: React.FC<{f: number; mayorX: number; knock?: boolean; walk?: 
 	);
 };
 
-export const shotsInOrder = () => [...SHOTS].sort((a, b) => a.from - b.from).map((s) => ({...s, from: Math.max(0, Math.round(s.from))}));
+const SHOWS: Record<string, string[]> = {"p01-mur": ["Léo", "mur"], "p01-profil": ["Léo"], "p02-village": ["village", "pays", "table"], "p02-table": ["table", "villageois"], "p02-drapeaux": ["drapeaux", "maisons"], "p03-arbre": ["arbre", "pomme"], "p03-accuse": ["villageois", "drapeaux"], "p03-accuse2": ["villageois qui accuse"], "p04-drapeaux": ["drapeaux", "villageois"], "p04-mur": ["mur"], "p04-maire": ["maire"], "p04-ouest": ["villageois qui crient"], "p04-est": ["place", "villageois"], "p04-coupe": ["mur", "maire"], "p05-leo": ["Léo"], "p05-yuki": ["Yuki"], "p05-timide": ["Léo"], "p05-loin": ["Léo", "Yuki"], "p06-avion": ["avion en papier", "mur"], "p06-mot1": ["message « Tu me manques »"], "p06-mot2": ["message « Moi aussi »"], "p06-sourire": ["Yuki"], "p06-retour": ["avion en papier"], "p07-porte1": ["maire", "maison"], "p07-porte2": ["maire", "maison"], "p07-indice": ["Léo", "objet rouge"], "p07-approche": ["maire", "maison de Léo"], "p07-frappe": ["maire"], "p08-minuit": ["horloge", "porte du mur"], "p08-mere": ["mère"], "p08-odette": ["mamie Odette"], "p08-cours": ["mamie Odette"], "p08-depart": ["Léo qui court"], "p09-leo1": ["Léo qui court"], "p09-porte": ["porte qui se ferme", "Léo"], "p09-yuki1": ["Yuki qui court"], "p09-yuki2": ["Yuki qui court"], "p10-milieu": ["Léo", "Yuki", "porte"], "p10-main": ["main", "Yuki"], "p10-ralenti": ["Léo", "Yuki"], "p10-sent": ["main"], "p11-pomme": ["pomme"], "p11-silence": ["Yuki", "pomme"], "p11-leo": ["Léo"], "p11-yuki": ["Yuki"], "p12-choc": ["Yuki"], "p12-maire": ["maire"], "p13-boucle": ["Léo", "mur"]};
+
+/** Moteur v2 : cadrages triés, recoupés au besoin sur un mot (≤ 2,2 s), avec ce qu'ils montrent. */
+export const shotsInOrder = (): BuiltShot[] =>
+	buildShots(SHOTS.map((s) => ({...s, shows: SHOWS[s.id]})), tl, tl.durationInFrames);
 export type {Pose};

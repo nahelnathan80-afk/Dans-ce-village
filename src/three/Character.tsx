@@ -21,6 +21,7 @@ export type CharacterLook = {
 	chain?: boolean; // grosse chaîne dorée
 	stripes?: string; // rayures (pyjama)
 	hoodie?: boolean;
+	tie?: string; // cravate (couleur) sur chemise blanche, veste = shirt
 	face?: Partial<FaceStyle>;
 	scale?: number;
 };
@@ -143,6 +144,13 @@ export const Character: React.FC<CharacterProps> = ({
 				{/* Corps */}
 				<Box size={[0.98, 1.0, 0.56]} position={[0, 1.4, 0]} color={look.shirt} />
 				{look.hoodie && <Box size={[0.9, 0.3, 0.3]} position={[0, 1.95, -0.25]} color={look.shirt} />}
+				{look.tie && (
+					<>
+						<Box size={[0.34, 0.7, 0.03]} position={[0, 1.55, 0.28]} color="#ffffff" />
+						<Box size={[0.13, 0.62, 0.04]} position={[0, 1.5, 0.3]} color={look.tie} />
+						<Box size={[0.18, 0.12, 0.05]} position={[0, 1.83, 0.3]} color={look.tie} />
+					</>
+				)}
 				{look.overalls && (
 					<>
 						<Box size={[0.86, 0.62, 0.6]} position={[0, 1.2, 0]} color={look.overalls} />

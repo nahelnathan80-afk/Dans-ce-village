@@ -19,8 +19,8 @@ const wordStart = (id: string, txt: string) => {
 	return w ? w.start : tl.line(id).start;
 };
 
-/** Instant de l'écran noir (fin de la réplique 12 + 1,6 s). */
-export const blackAt = () => tl.line('plan12').end + 1.6;
+/** Le compteur atteint 00:00:00 à la fin de la réplique 12 (plus d'écran noir : moteur v2). */
+export const blackAt = () => tl.line('plan12').end;
 export const ctaAt = () => tl.line('plan13').start - 0.2;
 
 /**

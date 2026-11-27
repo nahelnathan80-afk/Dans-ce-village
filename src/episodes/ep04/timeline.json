@@ -1,1207 +1,1145 @@
 {
- "duration": 89.81,
+ "duration": 58.626,
+ "tempo": 1.0,
+ "source": "fichiers du scénario",
  "lines": [
   {
    "id": "plan01",
    "who": "vo",
-   "pause": 1.0,
-   "plan": {
-    "ambiance": "nuit",
-    "visuel": "Léo de dos devant le mur, la nuit. Compteur orange « MUR FERMÉ DANS 00:00:57 »."
-   },
-   "text": "Cette *guerre*, c'est à cause de *moi*. Mais ça, personne ne le savait encore.",
-   "start": 0.13,
-   "end": 3.23,
    "words": [
     {
      "text": "Cette",
-     "start": 0.13,
-     "end": 0.27
+     "start": 0.0,
+     "end": 0.469
     },
     {
-     "text": "*guerre*,",
-     "start": 0.27,
-     "end": 0.73
+     "text": "*guerre,*",
+     "start": 0.469,
+     "end": 0.778
     },
     {
      "text": "c'est",
-     "start": 0.73,
-     "end": 0.93
+     "start": 0.778,
+     "end": 0.917
     },
     {
      "text": "à",
-     "start": 0.93,
-     "end": 0.99
+     "start": 0.917,
+     "end": 0.967
     },
     {
      "text": "cause",
-     "start": 0.99,
-     "end": 1.11
+     "start": 0.967,
+     "end": 1.155
     },
     {
      "text": "de",
-     "start": 1.11,
-     "end": 1.23
+     "start": 1.155,
+     "end": 1.234
     },
     {
-     "text": "*moi*.",
-     "start": 1.23,
-     "end": 1.79
+     "text": "*moi.*",
+     "start": 1.234,
+     "end": 1.374
     },
     {
      "text": "Mais",
-     "start": 1.79,
-     "end": 1.97
+     "start": 1.374,
+     "end": 1.717
     },
     {
      "text": "ça,",
-     "start": 1.97,
-     "end": 2.37
+     "start": 1.717,
+     "end": 1.811
     },
     {
      "text": "personne",
-     "start": 2.37,
-     "end": 2.61
+     "start": 1.811,
+     "end": 2.694
     },
     {
      "text": "ne",
-     "start": 2.61,
-     "end": 2.81
+     "start": 2.694,
+     "end": 2.785
     },
     {
      "text": "le",
-     "start": 2.81,
-     "end": 2.87
+     "start": 2.785,
+     "end": 2.837
     },
     {
      "text": "savait",
-     "start": 2.87,
-     "end": 3.07
+     "start": 2.837,
+     "end": 3.117
     },
     {
      "text": "encore.",
-     "start": 3.07,
-     "end": 3.23
+     "start": 3.117,
+     "end": 3.675
     }
-   ]
+   ],
+   "text": "Cette *guerre*, c'est à cause de *moi*. Mais ça, personne ne le savait encore.",
+   "start": 0.0,
+   "end": 3.675
   },
   {
    "id": "plan02",
    "who": "vo",
-   "pause": 1.8,
-   "plan": {
-    "ambiance": "jour",
-    "visuel": "Plan large de jour : 8 chalets avec leur drapeau au balcon, grande table commune, tout le monde mange ensemble."
-   },
-   "text": "Dans notre village, chaque maison, c'était un *pays*. On mangeait tous ensemble le *dimanche*.",
-   "start": 4.33,
-   "end": 7.71,
    "words": [
     {
      "text": "Dans",
-     "start": 4.33,
-     "end": 4.39
+     "start": 3.875,
+     "end": 4.035
     },
     {
      "text": "notre",
-     "start": 4.37,
-     "end": 4.55
+     "start": 4.035,
+     "end": 4.301
     },
     {
      "text": "village,",
-     "start": 4.55,
+     "start": 4.301,
      "end": 5.05
     },
     {
      "text": "chaque",
      "start": 5.05,
-     "end": 5.23
+     "end": 5.471
     },
     {
      "text": "maison,",
-     "start": 5.23,
-     "end": 5.71
+     "start": 5.471,
+     "end": 5.599
     },
     {
      "text": "c'était",
-     "start": 5.71,
-     "end": 5.85
+     "start": 5.599,
+     "end": 5.923
     },
     {
      "text": "un",
-     "start": 5.85,
+     "start": 5.923,
      "end": 6.01
     },
     {
-     "text": "*pays*.",
+     "text": "*pays.*",
      "start": 6.01,
-     "end": 6.53
+     "end": 6.215
     },
     {
      "text": "On",
-     "start": 6.53,
-     "end": 6.61
+     "start": 6.215,
+     "end": 6.338
     },
     {
      "text": "mangeait",
-     "start": 6.61,
-     "end": 6.83
+     "start": 6.338,
+     "end": 6.662
     },
     {
      "text": "tous",
-     "start": 6.83,
-     "end": 6.93
+     "start": 6.662,
+     "end": 6.882
     },
     {
      "text": "ensemble",
-     "start": 6.93,
-     "end": 7.21
+     "start": 6.882,
+     "end": 7.351
     },
     {
      "text": "le",
-     "start": 7.21,
-     "end": 7.39
+     "start": 7.351,
+     "end": 7.421
     },
     {
-     "text": "*dimanche*.",
-     "start": 7.39,
-     "end": 7.71
+     "text": "*dimanche.*",
+     "start": 7.421,
+     "end": 8.055
     }
-   ]
+   ],
+   "text": "Dans notre village, chaque maison, c'était un *pays*. On mangeait tous ensemble le *dimanche*.",
+   "start": 3.875,
+   "end": 8.055
   },
   {
    "id": "plan03",
    "who": "vo",
-   "pause": 1.6,
-   "plan": {
-    "ambiance": "matin",
-    "visuel": "Arbre au centre de la place, branche vide, zoom. Doigts pointés."
-   },
-   "text": "Un matin, la seule *pomme* de l'arbre du milieu avait *disparu*. Chaque pays a *accusé* l'autre.",
-   "start": 9.61,
-   "end": 13.33,
    "words": [
     {
      "text": "Un",
-     "start": 9.61,
-     "end": 9.71
+     "start": 8.255,
+     "end": 8.401
     },
     {
      "text": "matin,",
-     "start": 9.71,
-     "end": 10.25
+     "start": 8.401,
+     "end": 8.904
     },
     {
      "text": "la",
-     "start": 10.25,
-     "end": 10.33
+     "start": 8.904,
+     "end": 9.072
     },
     {
      "text": "seule",
-     "start": 10.33,
-     "end": 10.51
+     "start": 9.072,
+     "end": 9.366
     },
     {
      "text": "*pomme*",
-     "start": 10.51,
-     "end": 10.75
+     "start": 9.366,
+     "end": 9.601
     },
     {
      "text": "de",
-     "start": 10.75,
-     "end": 10.83
+     "start": 9.601,
+     "end": 9.659
     },
     {
      "text": "l'arbre",
-     "start": 10.83,
-     "end": 11.05
+     "start": 9.659,
+     "end": 9.715
     },
     {
      "text": "du",
-     "start": 11.05,
-     "end": 11.13
+     "start": 9.715,
+     "end": 9.845
     },
     {
      "text": "milieu",
-     "start": 11.13,
-     "end": 11.33
+     "start": 9.845,
+     "end": 10.246
     },
     {
      "text": "avait",
-     "start": 11.33,
-     "end": 11.49
+     "start": 10.246,
+     "end": 10.517
     },
     {
-     "text": "*disparu*.",
-     "start": 11.49,
-     "end": 12.17
+     "text": "*disparu.*",
+     "start": 10.517,
+     "end": 11.292
     },
     {
      "text": "Chaque",
-     "start": 12.17,
-     "end": 12.51
+     "start": 11.292,
+     "end": 11.753
     },
     {
      "text": "pays",
-     "start": 12.51,
-     "end": 12.71
+     "start": 11.753,
+     "end": 11.967
     },
     {
      "text": "a",
-     "start": 12.71,
-     "end": 12.87
+     "start": 11.967,
+     "end": 12.021
     },
     {
      "text": "*accusé*",
-     "start": 12.87,
-     "end": 13.17
+     "start": 12.021,
+     "end": 12.266
     },
     {
      "text": "l'autre.",
-     "start": 13.17,
-     "end": 13.33
+     "start": 12.266,
+     "end": 12.75
     }
-   ]
+   ],
+   "text": "Un matin, la seule *pomme* de l'arbre du milieu avait *disparu*. Chaque pays a *accusé* l'autre.",
+   "start": 8.255,
+   "end": 12.75
   },
   {
    "id": "plan04",
    "who": "vo",
-   "pause": 4.4,
-   "plan": {
-    "ambiance": "après-midi",
-    "visuel": "Montage rapide : drapeaux agités, visages fâchés, le mur monte au milieu de la place, le maire pointe du doigt."
-   },
-   "text": "Les *drapeaux*. Les *cris*. Un *mur* au milieu de la place. Et le maire a juré : on trouvera le *voleur*.",
-   "start": 15.03,
-   "end": 19.53,
    "words": [
     {
      "text": "Les",
-     "start": 15.03,
-     "end": 15.09
+     "start": 12.95,
+     "end": 13.079
     },
     {
-     "text": "*drapeaux*.",
-     "start": 15.09,
-     "end": 15.73
+     "text": "*drapeaux.*",
+     "start": 13.079,
+     "end": 14.075
     },
     {
      "text": "Les",
-     "start": 15.73,
-     "end": 15.79
+     "start": 14.075,
+     "end": 14.46
     },
     {
-     "text": "*cris*.",
-     "start": 15.79,
-     "end": 16.33
+     "text": "*cris.*",
+     "start": 14.46,
+     "end": 14.801
     },
     {
      "text": "Un",
-     "start": 16.33,
-     "end": 16.49
+     "start": 14.801,
+     "end": 14.897
     },
     {
      "text": "*mur*",
-     "start": 16.49,
-     "end": 16.73
+     "start": 14.897,
+     "end": 15.057
     },
     {
      "text": "au",
-     "start": 16.73,
-     "end": 16.85
+     "start": 15.057,
+     "end": 15.175
     },
     {
      "text": "milieu",
-     "start": 16.85,
-     "end": 17.03
+     "start": 15.175,
+     "end": 15.4
     },
     {
      "text": "de",
-     "start": 17.03,
-     "end": 17.15
+     "start": 15.4,
+     "end": 15.469
     },
     {
      "text": "la",
-     "start": 17.15,
-     "end": 17.23
+     "start": 15.469,
+     "end": 15.577
     },
     {
      "text": "place.",
-     "start": 17.23,
-     "end": 17.81
+     "start": 15.577,
+     "end": 16.06
     },
     {
      "text": "Et",
-     "start": 17.81,
-     "end": 17.87
+     "start": 16.06,
+     "end": 16.135
     },
     {
      "text": "le",
-     "start": 17.83,
-     "end": 17.91
+     "start": 16.135,
+     "end": 16.201
     },
     {
      "text": "maire",
-     "start": 17.91,
-     "end": 18.09
+     "start": 16.201,
+     "end": 16.37
     },
     {
      "text": "a",
-     "start": 18.09,
-     "end": 18.15
+     "start": 16.37,
+     "end": 16.42
     },
     {
      "text": "juré :",
-     "start": 18.13,
-     "end": 18.71
+     "start": 16.42,
+     "end": 16.623
     },
     {
      "text": "on",
-     "start": 18.71,
-     "end": 18.81
+     "start": 16.623,
+     "end": 16.888
     },
     {
      "text": "trouvera",
-     "start": 18.81,
-     "end": 19.17
+     "start": 16.888,
+     "end": 17.593
     },
     {
      "text": "le",
-     "start": 19.17,
-     "end": 19.25
+     "start": 17.593,
+     "end": 17.692
     },
     {
-     "text": "*voleur*.",
-     "start": 19.25,
-     "end": 19.53
+     "text": "*voleur.*",
+     "start": 17.692,
+     "end": 18.315
     }
-   ]
+   ],
+   "text": "Les *drapeaux*. Les *cris*. Un *mur* au milieu de la place. Et le maire a juré : on trouvera le *voleur*.",
+   "start": 12.95,
+   "end": 18.315
   },
   {
    "id": "plan05",
    "who": "vo",
-   "pause": 2.2,
-   "plan": {
-    "ambiance": "après-midi doré",
-    "visuel": "Yuki de l'autre côté du mur (par la porte), elle rit ; Léo la regarde de loin."
-   },
-   "text": "De l'autre côté, il y avait *Yuki*. Celle qui riait trop fort. Celle à qui je n'avais jamais osé *parler*.",
-   "start": 23.91,
-   "end": 28.17,
    "words": [
     {
      "text": "De",
-     "start": 23.91,
-     "end": 24.03
+     "start": 18.515,
+     "end": 18.565
     },
     {
      "text": "l'autre",
-     "start": 24.03,
-     "end": 24.19
+     "start": 18.565,
+     "end": 18.675
     },
     {
      "text": "côté,",
-     "start": 24.19,
-     "end": 24.75
+     "start": 18.675,
+     "end": 19.162
     },
     {
      "text": "il",
-     "start": 24.75,
-     "end": 24.83
+     "start": 19.162,
+     "end": 19.537
     },
     {
      "text": "y",
-     "start": 24.83,
-     "end": 24.93
+     "start": 19.537,
+     "end": 19.587
     },
     {
      "text": "avait",
-     "start": 24.93,
-     "end": 25.01
+     "start": 19.587,
+     "end": 19.721
     },
     {
-     "text": "*Yuki*.",
-     "start": 25.01,
-     "end": 25.77
+     "text": "*Yuki.*",
+     "start": 19.721,
+     "end": 19.897
     },
     {
      "text": "Celle",
-     "start": 25.77,
-     "end": 25.87
+     "start": 19.897,
+     "end": 20.532
     },
     {
      "text": "qui",
-     "start": 25.87,
-     "end": 26.03
+     "start": 20.532,
+     "end": 20.703
     },
     {
      "text": "riait",
-     "start": 26.03,
-     "end": 26.19
+     "start": 20.703,
+     "end": 20.962
     },
     {
      "text": "trop",
-     "start": 26.19,
-     "end": 26.33
+     "start": 20.962,
+     "end": 21.248
     },
     {
      "text": "fort.",
-     "start": 26.33,
-     "end": 26.91
+     "start": 21.248,
+     "end": 21.584
     },
     {
      "text": "Celle",
-     "start": 26.91,
-     "end": 27.03
+     "start": 21.584,
+     "end": 21.848
     },
     {
      "text": "à",
-     "start": 27.03,
-     "end": 27.13
+     "start": 21.848,
+     "end": 21.898
     },
     {
      "text": "qui",
-     "start": 27.13,
-     "end": 27.21
+     "start": 21.898,
+     "end": 21.967
     },
     {
      "text": "je",
-     "start": 27.21,
-     "end": 27.31
+     "start": 21.967,
+     "end": 22.033
     },
     {
      "text": "n'avais",
-     "start": 27.31,
-     "end": 27.45
+     "start": 22.033,
+     "end": 22.11
     },
     {
      "text": "jamais",
-     "start": 27.45,
-     "end": 27.69
+     "start": 22.11,
+     "end": 22.617
     },
     {
      "text": "osé",
-     "start": 27.69,
-     "end": 27.95
+     "start": 22.617,
+     "end": 22.826
     },
     {
-     "text": "*parler*.",
-     "start": 27.95,
-     "end": 28.17
+     "text": "*parler.*",
+     "start": 22.826,
+     "end": 23.44
     }
-   ]
+   ],
+   "text": "De l'autre côté, il y avait *Yuki*. Celle qui riait trop fort. Celle à qui je n'avais jamais osé *parler*.",
+   "start": 18.515,
+   "end": 23.44
   },
   {
    "id": "plan06",
    "who": "vo",
-   "pause": 4.4,
-   "plan": {
-    "ambiance": "nuit",
-    "visuel": "Avions en papier qui passent au-dessus du mur ; gros plans sur les messages écrits."
-   },
-   "text": "Chaque soir, des avions en papier par-dessus le mur. Le sien disait : « Tu me *manques*. » Le mien : « Moi *aussi*. »",
-   "start": 30.47,
-   "end": 35.35,
    "words": [
     {
      "text": "Chaque",
-     "start": 30.47,
-     "end": 30.67
+     "start": 23.64,
+     "end": 24.192
     },
     {
      "text": "soir,",
-     "start": 30.67,
-     "end": 31.09
+     "start": 24.192,
+     "end": 24.494
     },
     {
      "text": "des",
-     "start": 31.09,
-     "end": 31.19
+     "start": 24.494,
+     "end": 24.648
     },
     {
      "text": "avions",
-     "start": 31.19,
-     "end": 31.41
+     "start": 24.648,
+     "end": 25.005
     },
     {
      "text": "en",
-     "start": 31.41,
-     "end": 31.49
+     "start": 25.005,
+     "end": 25.104
     },
     {
      "text": "papier",
-     "start": 31.49,
-     "end": 31.69
+     "start": 25.104,
+     "end": 25.21
     },
     {
      "text": "par-dessus",
-     "start": 31.69,
-     "end": 32.01
+     "start": 25.21,
+     "end": 25.822
     },
     {
      "text": "le",
-     "start": 32.01,
-     "end": 32.11
+     "start": 25.822,
+     "end": 25.95
     },
     {
      "text": "mur.",
-     "start": 32.11,
-     "end": 32.67
+     "start": 25.95,
+     "end": 26.082
     },
     {
      "text": "Le",
-     "start": 32.67,
-     "end": 32.75
+     "start": 26.082,
+     "end": 26.153
     },
     {
      "text": "sien",
-     "start": 32.75,
-     "end": 32.91
+     "start": 26.153,
+     "end": 26.403
     },
     {
      "text": "disait :",
-     "start": 32.91,
-     "end": 33.55
+     "start": 26.403,
+     "end": 26.96
     },
     {
      "text": "« Tu",
-     "start": 33.55,
-     "end": 33.61
+     "start": 26.96,
+     "end": 27.041
     },
     {
      "text": "me",
-     "start": 33.61,
-     "end": 33.75
+     "start": 27.041,
+     "end": 27.129
     },
     {
-     "text": "*manques*. »",
-     "start": 33.75,
-     "end": 34.37
+     "text": "*manques. »*",
+     "start": 27.129,
+     "end": 27.672
     },
     {
      "text": "Le",
-     "start": 34.37,
-     "end": 34.49
+     "start": 27.672,
+     "end": 27.74
     },
     {
      "text": "mien :",
-     "start": 34.49,
-     "end": 34.99
+     "start": 27.74,
+     "end": 28.118
     },
     {
      "text": "« Moi",
-     "start": 34.99,
-     "end": 35.13
+     "start": 28.118,
+     "end": 28.331
     },
     {
-     "text": "*aussi*. »",
-     "start": 35.13,
-     "end": 35.35
+     "text": "*aussi. »*",
+     "start": 28.331,
+     "end": 28.77
     }
-   ]
+   ],
+   "text": "Chaque soir, des avions en papier par-dessus le mur. Le sien disait : « Tu me *manques*. » Le mien : « Moi *aussi*. »",
+   "start": 23.64,
+   "end": 28.77
   },
   {
    "id": "plan07",
    "who": "vo",
-   "pause": 4.0,
-   "plan": {
-    "ambiance": "nuit",
-    "visuel": "Le maire avec une lampe frappe aux portes, une maison après l'autre, il se rapproche de celle de Léo. Insert TRÈS bref (0,5 s) : Léo glisse un objet rouge sous son lit (indice non expliqué)."
-   },
-   "text": "Chaque jour, le maire fouillait une maison de plus. Chaque jour, il se rapprochait de la *mienne*.",
-   "start": 39.85,
-   "end": 43.37,
    "words": [
     {
      "text": "Chaque",
-     "start": 39.85,
-     "end": 40.064
+     "start": 28.97,
+     "end": 29.494
     },
     {
      "text": "jour,",
-     "start": 40.064,
-     "end": 40.257
+     "start": 29.494,
+     "end": 29.788
     },
     {
      "text": "le",
-     "start": 40.257,
-     "end": 40.594
+     "start": 29.788,
+     "end": 29.84
     },
     {
      "text": "maire",
-     "start": 40.594,
-     "end": 40.756
+     "start": 29.84,
+     "end": 30.077
     },
     {
      "text": "fouillait",
-     "start": 40.756,
-     "end": 41.025
+     "start": 30.077,
+     "end": 30.5
     },
     {
      "text": "une",
-     "start": 41.025,
-     "end": 41.103
+     "start": 30.5,
+     "end": 30.616
     },
     {
      "text": "maison",
-     "start": 41.103,
-     "end": 41.306
+     "start": 30.616,
+     "end": 30.833
     },
     {
      "text": "de",
-     "start": 41.306,
-     "end": 41.401
+     "start": 30.833,
+     "end": 31.005
     },
     {
      "text": "plus.",
-     "start": 41.401,
-     "end": 41.947
+     "start": 31.005,
+     "end": 31.451
     },
     {
      "text": "Chaque",
-     "start": 41.947,
-     "end": 42.192
+     "start": 31.451,
+     "end": 31.939
     },
     {
      "text": "jour,",
-     "start": 42.192,
-     "end": 42.556
+     "start": 31.939,
+     "end": 32.146
     },
     {
      "text": "il",
-     "start": 42.556,
-     "end": 42.646
+     "start": 32.146,
+     "end": 32.197
     },
     {
      "text": "se",
-     "start": 42.646,
-     "end": 42.747
+     "start": 32.197,
+     "end": 32.267
     },
     {
      "text": "rapprochait",
-     "start": 42.747,
-     "end": 43.078
+     "start": 32.267,
+     "end": 32.808
     },
     {
      "text": "de",
-     "start": 43.078,
-     "end": 43.138
+     "start": 32.808,
+     "end": 32.858
     },
     {
      "text": "la",
-     "start": 43.138,
-     "end": 43.214
+     "start": 32.858,
+     "end": 32.908
     },
     {
-     "text": "*mienne*.",
-     "start": 43.214,
-     "end": 43.37
+     "text": "*mienne.*",
+     "start": 32.908,
+     "end": 33.395
     }
-   ]
+   ],
+   "text": "Chaque jour, le maire fouillait une maison de plus. Chaque jour, il se rapprochait de la *mienne*.",
+   "start": 28.97,
+   "end": 33.395
   },
   {
    "id": "plan08",
    "who": "vo",
-   "pause": 2.4,
-   "plan": {
-    "ambiance": "intérieur",
-    "visuel": "La mère de Léo, puis mamie Odette dans son fauteuil au milieu de ses horloges, regard long."
-   },
-   "text": "Ce soir, à *minuit*, la porte du mur se ferme pour toujours. Ma mère m'a dit : *reste*. Mamie Odette m'a regardé longtemps… et m'a dit : *cours*.",
-   "start": 47.47,
-   "end": 53.93,
    "words": [
     {
      "text": "Ce",
-     "start": 47.47,
-     "end": 47.582
+     "start": 33.595,
+     "end": 33.781
     },
     {
      "text": "soir,",
-     "start": 47.582,
-     "end": 47.805
+     "start": 33.781,
+     "end": 34.153
     },
     {
      "text": "à",
-     "start": 47.805,
-     "end": 48.081
+     "start": 34.153,
+     "end": 34.243
     },
     {
-     "text": "*minuit*,",
-     "start": 48.081,
-     "end": 48.297
+     "text": "*minuit,*",
+     "start": 34.243,
+     "end": 34.692
     },
     {
      "text": "la",
-     "start": 48.297,
-     "end": 48.698
+     "start": 34.692,
+     "end": 34.886
     },
     {
      "text": "porte",
-     "start": 48.698,
-     "end": 48.851
+     "start": 34.886,
+     "end": 35.174
     },
     {
      "text": "du",
-     "start": 48.851,
-     "end": 48.933
+     "start": 35.174,
+     "end": 35.288
     },
     {
      "text": "mur",
-     "start": 48.933,
-     "end": 49.129
+     "start": 35.288,
+     "end": 35.445
     },
     {
      "text": "se",
-     "start": 49.129,
-     "end": 49.219
+     "start": 35.445,
+     "end": 35.533
     },
     {
      "text": "ferme",
-     "start": 49.219,
-     "end": 49.484
+     "start": 35.533,
+     "end": 35.826
     },
     {
      "text": "pour",
-     "start": 49.484,
-     "end": 49.635
+     "start": 35.826,
+     "end": 36.13
     },
     {
      "text": "toujours.",
-     "start": 49.635,
-     "end": 49.871
+     "start": 36.13,
+     "end": 36.745
     },
     {
      "text": "Ma",
-     "start": 49.871,
-     "end": 49.931
+     "start": 36.745,
+     "end": 36.836
     },
     {
      "text": "mère",
-     "start": 49.931,
-     "end": 50.606
+     "start": 36.836,
+     "end": 36.941
     },
     {
      "text": "m'a",
-     "start": 50.606,
-     "end": 50.666
+     "start": 36.941,
+     "end": 36.991
     },
     {
      "text": "dit :",
-     "start": 50.662,
-     "end": 50.834
+     "start": 36.991,
+     "end": 37.092
     },
     {
-     "text": "*reste*.",
-     "start": 50.834,
-     "end": 51.424
+     "text": "*reste.*",
+     "start": 37.092,
+     "end": 37.25
     },
     {
      "text": "Mamie",
-     "start": 51.424,
-     "end": 52.035
+     "start": 37.25,
+     "end": 37.83
     },
     {
      "text": "Odette",
-     "start": 52.035,
-     "end": 52.345
+     "start": 37.83,
+     "end": 38.574
     },
     {
      "text": "m'a",
-     "start": 52.345,
-     "end": 52.425
+     "start": 38.574,
+     "end": 38.624
     },
     {
      "text": "regardé",
-     "start": 52.425,
-     "end": 52.738
+     "start": 38.624,
+     "end": 39.208
     },
     {
      "text": "longtemps…",
-     "start": 52.738,
-     "end": 52.987
+     "start": 39.208,
+     "end": 39.683
     },
     {
      "text": "et",
-     "start": 52.987,
-     "end": 53.047
+     "start": 39.683,
+     "end": 39.733
     },
     {
      "text": "m'a",
-     "start": 53.024,
-     "end": 53.084
+     "start": 39.733,
+     "end": 39.83
     },
     {
      "text": "dit :",
-     "start": 53.061,
-     "end": 53.698
+     "start": 39.83,
+     "end": 40.174
     },
     {
-     "text": "*cours*.",
-     "start": 53.698,
-     "end": 53.93
+     "text": "*cours.*",
+     "start": 40.174,
+     "end": 41.125
     }
-   ]
+   ],
+   "text": "Ce soir, à *minuit*, la porte du mur se ferme pour toujours. Ma mère m'a dit : *reste*. Mamie Odette m'a regardé longtemps… et m'a dit : *cours*.",
+   "start": 33.595,
+   "end": 41.125
   },
   {
    "id": "plan09",
    "who": "vo",
-   "pause": 5.0,
-   "plan": {
-    "ambiance": "nuit",
-    "visuel": "Compteur rouge qui pulse. Léo court, la porte du mur se referme lentement ; montage alterné avec Yuki qui court de l'autre côté. Battements de cœur."
-   },
-   "text": "J'ai *couru*. *Dix* secondes. *Cinq*. Elle courait aussi.",
-   "start": 56.31,
-   "end": 59.05,
    "words": [
     {
      "text": "J'ai",
-     "start": 56.31,
-     "end": 56.49
+     "start": 41.325,
+     "end": 41.375
     },
     {
-     "text": "*couru*.",
-     "start": 56.49,
-     "end": 57.09
+     "text": "*couru.*",
+     "start": 41.375,
+     "end": 41.582
     },
     {
      "text": "*Dix*",
-     "start": 57.09,
-     "end": 57.29
+     "start": 41.582,
+     "end": 41.973
     },
     {
      "text": "secondes.",
-     "start": 57.29,
-     "end": 57.87
+     "start": 41.973,
+     "end": 42.708
     },
     {
-     "text": "*Cinq*.",
-     "start": 57.87,
-     "end": 58.51
+     "text": "*Cinq.*",
+     "start": 42.708,
+     "end": 43.172
     },
     {
      "text": "Elle",
-     "start": 58.51,
-     "end": 58.61
+     "start": 43.172,
+     "end": 43.503
     },
     {
      "text": "courait",
-     "start": 58.61,
-     "end": 58.87
+     "start": 43.503,
+     "end": 43.936
     },
     {
      "text": "aussi.",
-     "start": 58.87,
-     "end": 59.05
+     "start": 43.936,
+     "end": 44.365
     }
-   ]
+   ],
+   "text": "J'ai *couru*. *Dix* secondes. *Cinq*. Elle courait aussi.",
+   "start": 41.325,
+   "end": 44.365
   },
   {
    "id": "plan10",
    "who": "vo",
-   "pause": 3.4,
-   "plan": {
-    "ambiance": "nuit",
-    "visuel": "Ils s'arrêtent au milieu de la porte, ralenti ; elle lui prend la main."
-   },
-   "text": "On s'est arrêtés pile au *milieu*. Elle a pris ma *main*. Elle a senti quelque chose dedans.",
-   "start": 64.15,
-   "end": 67.53,
    "words": [
     {
      "text": "On",
-     "start": 64.15,
-     "end": 64.268
+     "start": 44.565,
+     "end": 44.621
     },
     {
      "text": "s'est",
-     "start": 64.268,
-     "end": 64.389
+     "start": 44.621,
+     "end": 44.672
     },
     {
      "text": "arrêtés",
-     "start": 64.389,
-     "end": 64.791
+     "start": 44.672,
+     "end": 45.234
     },
     {
      "text": "pile",
-     "start": 64.791,
-     "end": 65.067
+     "start": 45.234,
+     "end": 45.505
     },
     {
      "text": "au",
-     "start": 65.067,
-     "end": 65.149
+     "start": 45.505,
+     "end": 45.563
     },
     {
-     "text": "*milieu*.",
-     "start": 65.149,
-     "end": 65.646
+     "text": "*milieu.*",
+     "start": 45.563,
+     "end": 45.96
     },
     {
      "text": "Elle",
-     "start": 65.646,
-     "end": 65.776
+     "start": 45.96,
+     "end": 46.135
     },
     {
      "text": "a",
-     "start": 65.776,
-     "end": 65.836
+     "start": 46.135,
+     "end": 46.185
     },
     {
      "text": "pris",
-     "start": 65.83,
-     "end": 65.975
+     "start": 46.185,
+     "end": 46.312
     },
     {
      "text": "ma",
-     "start": 65.975,
-     "end": 66.066
+     "start": 46.312,
+     "end": 46.377
     },
     {
-     "text": "*main*.",
-     "start": 66.066,
-     "end": 66.556
+     "text": "*main.*",
+     "start": 46.377,
+     "end": 46.519
     },
     {
      "text": "Elle",
-     "start": 66.556,
-     "end": 66.631
+     "start": 46.519,
+     "end": 46.761
     },
     {
      "text": "a",
-     "start": 66.631,
-     "end": 66.691
+     "start": 46.761,
+     "end": 46.836
     },
     {
      "text": "senti",
-     "start": 66.688,
-     "end": 66.933
+     "start": 46.836,
+     "end": 46.979
     },
     {
      "text": "quelque",
-     "start": 66.933,
-     "end": 67.019
+     "start": 46.979,
+     "end": 47.35
     },
     {
      "text": "chose",
-     "start": 67.019,
-     "end": 67.294
+     "start": 47.35,
+     "end": 47.758
     },
     {
      "text": "dedans.",
-     "start": 67.294,
-     "end": 67.53
+     "start": 47.758,
+     "end": 48.51
     }
-   ]
+   ],
+   "text": "On s'est arrêtés pile au *milieu*. Elle a pris ma *main*. Elle a senti quelque chose dedans.",
+   "start": 44.565,
+   "end": 48.51
   },
   {
    "id": "plan11",
    "who": "vo",
-   "pause": 3.0,
-   "plan": {
-    "ambiance": "nuit",
-    "visuel": "Gros plan : Léo ouvre la main, c'est la POMME ROUGE. La musique se coupe net."
-   },
-   "text": "Je l'avais cueillie ce matin-là. Pour *elle*. Je n'avais jamais osé la lui donner.",
-   "start": 71.03,
-   "end": 74.01,
+   "pause": true,
    "words": [
     {
      "text": "Je",
-     "start": 71.03,
-     "end": 71.13
+     "start": 49.01,
+     "end": 49.06
     },
     {
      "text": "l'avais",
-     "start": 71.13,
-     "end": 71.27
+     "start": 49.06,
+     "end": 49.15
     },
     {
      "text": "cueillie",
-     "start": 71.27,
-     "end": 71.61
+     "start": 49.15,
+     "end": 49.749
     },
     {
      "text": "ce",
-     "start": 71.61,
-     "end": 71.67
+     "start": 49.749,
+     "end": 49.821
     },
     {
      "text": "matin-là.",
-     "start": 71.65,
-     "end": 72.27
+     "start": 49.821,
+     "end": 50.363
     },
     {
      "text": "Pour",
-     "start": 72.27,
-     "end": 72.43
+     "start": 50.363,
+     "end": 50.56
     },
     {
-     "text": "*elle*.",
-     "start": 72.43,
-     "end": 72.91
+     "text": "*elle.*",
+     "start": 50.56,
+     "end": 50.882
     },
     {
      "text": "Je",
-     "start": 72.91,
-     "end": 72.97
+     "start": 50.882,
+     "end": 50.932
     },
     {
      "text": "n'avais",
-     "start": 72.97,
-     "end": 73.13
+     "start": 50.932,
+     "end": 51.095
     },
     {
      "text": "jamais",
-     "start": 73.13,
-     "end": 73.35
+     "start": 51.095,
+     "end": 51.566
     },
     {
      "text": "osé",
-     "start": 73.35,
-     "end": 73.65
+     "start": 51.566,
+     "end": 51.74
     },
     {
      "text": "la",
-     "start": 73.65,
-     "end": 73.71
+     "start": 51.74,
+     "end": 51.818
     },
     {
      "text": "lui",
-     "start": 73.71,
-     "end": 73.81
+     "start": 51.818,
+     "end": 51.966
     },
     {
      "text": "donner.",
-     "start": 73.81,
-     "end": 74.01
+     "start": 51.966,
+     "end": 52.46
     }
-   ]
+   ],
+   "text": "Je l'avais cueillie ce matin-là. Pour *elle*. Je n'avais jamais osé la lui donner.",
+   "start": 49.01,
+   "end": 52.46
   },
   {
    "id": "plan12",
    "who": "vo",
-   "pause": 3.0,
-   "plan": {
-    "ambiance": "nuit",
-    "visuel": "Visage choqué de Yuki, puis plan derrière eux : la lampe du maire s'allume, il a tout vu. Le compteur passe à 00:00:00, écran noir."
-   },
-   "text": "Une guerre entière… pour une fille à qui je n'osais pas *parler*.",
-   "start": 77.11,
-   "end": 79.37,
    "words": [
     {
      "text": "Une",
-     "start": 77.11,
-     "end": 77.23
+     "start": 52.66,
+     "end": 52.883
     },
     {
      "text": "guerre",
-     "start": 77.23,
-     "end": 77.45
+     "start": 52.883,
+     "end": 53.424
     },
     {
      "text": "entière…",
-     "start": 77.45,
-     "end": 77.91
+     "start": 53.424,
+     "end": 54.043
     },
     {
      "text": "pour",
-     "start": 77.91,
-     "end": 78.27
+     "start": 54.043,
+     "end": 54.221
     },
     {
      "text": "une",
-     "start": 78.27,
-     "end": 78.39
+     "start": 54.221,
+     "end": 54.345
     },
     {
      "text": "fille",
-     "start": 78.39,
-     "end": 78.55
+     "start": 54.345,
+     "end": 54.46
     },
     {
      "text": "à",
-     "start": 78.55,
-     "end": 78.65
+     "start": 54.46,
+     "end": 54.51
     },
     {
      "text": "qui",
-     "start": 78.65,
-     "end": 78.75
+     "start": 54.51,
+     "end": 54.561
     },
     {
      "text": "je",
-     "start": 78.75,
-     "end": 78.83
+     "start": 54.561,
+     "end": 54.611
     },
     {
      "text": "n'osais",
-     "start": 78.83,
-     "end": 79.01
+     "start": 54.611,
+     "end": 54.77
     },
     {
      "text": "pas",
-     "start": 79.01,
-     "end": 79.11
+     "start": 54.77,
+     "end": 54.992
     },
     {
-     "text": "*parler*.",
-     "start": 79.11,
-     "end": 79.37
+     "text": "*parler.*",
+     "start": 54.992,
+     "end": 55.47
     }
-   ]
+   ],
+   "text": "Une guerre entière… pour une fille à qui je n'osais pas *parler*.",
+   "start": 52.66,
+   "end": 55.47
   },
   {
    "id": "plan13",
    "who": "vo",
-   "pause": 5.0,
-   "plan": {
-    "ambiance": "nuit",
-    "visuel": "Carte finale (même design que l'ép. 03) : « TOI, TU LUI PARDONNES ? » (PARDONNES en rouge) + « DIS-LE EN COMMENTAIRE » + flèche jaune."
-   },
-   "text": "Toi, tu lui *pardonnes* ? Dis-le en commentaire.",
-   "start": 82.47,
-   "end": 84.21,
    "words": [
     {
      "text": "Toi,",
-     "start": 82.47,
-     "end": 82.85
+     "start": 55.67,
+     "end": 55.964
     },
     {
      "text": "tu",
-     "start": 82.85,
-     "end": 82.91
+     "start": 55.964,
+     "end": 56.114
     },
     {
      "text": "lui",
-     "start": 82.91,
-     "end": 82.99
+     "start": 56.114,
+     "end": 56.187
     },
     {
-     "text": "*pardonnes* ?",
-     "start": 82.99,
-     "end": 83.55
+     "text": "*pardonnes ?*",
+     "start": 56.187,
+     "end": 57.003
     },
     {
      "text": "Dis-le",
-     "start": 83.55,
-     "end": 83.79
+     "start": 57.003,
+     "end": 57.079
     },
     {
      "text": "en",
-     "start": 83.79,
-     "end": 83.87
+     "start": 57.079,
+     "end": 57.176
     },
     {
      "text": "commentaire.",
-     "start": 83.87,
-     "end": 84.21
+     "start": 57.176,
+     "end": 57.826
     }
-   ]
+   ],
+   "text": "Toi, tu lui *pardonnes* ? Dis-le en commentaire.",
+   "start": 55.67,
+   "end": 57.826
   }
  ]
 }
