@@ -1,0 +1,224 @@
+{
+  "id": "ep04",
+  "title": "Le mur de minuit",
+  "startBalance": 0,
+  "payer": "none",
+  "counter": {
+    "label": "MUR FERMÉ DANS",
+    "start": 57,
+    "redFrom": "plan09"
+  },
+  "voices": {
+    "vo": {
+      "_final": "ElevenLabs « Grégory - Dynamic » (lots A/B/C), piste continue reconstruite par tools/voice.py"
+    }
+  },
+  "cast": {
+    "leo": {
+      "name": "LÉO",
+      "skin": "#f1c7a3",
+      "shirt": "#2f5dd0",
+      "hoodie": true,
+      "pants": "#3a3a48",
+      "hair": "#4a2a14",
+      "hairStyle": "short",
+      "scale": 1.0,
+      "face": {
+        "freckles": true
+      }
+    },
+    "yuki": {
+      "name": "YUKI",
+      "skin": "#ffe0c7",
+      "shirt": "#ff5a7a",
+      "pants": "#2b2d5c",
+      "hair": "#141414",
+      "hairStyle": "long",
+      "scale": 0.95,
+      "face": {
+        "lashes": true
+      }
+    },
+    "mere": {
+      "name": "MAMAN",
+      "skin": "#f3c7a5",
+      "shirt": "#2a9d8f",
+      "apron": "#ffffff",
+      "pants": "#3a3a48",
+      "hair": "#6b3a1e",
+      "hairStyle": "bun",
+      "face": {
+        "lashes": true
+      }
+    },
+    "odette": {
+      "name": "MAMIE ODETTE",
+      "skin": "#ffd9c4",
+      "shirt": "#f1e6d8",
+      "cardigan": "#7b4dff",
+      "pants": "#4a3b5c",
+      "hair": "#e8e8e8",
+      "hairStyle": "bun",
+      "scale": 0.92,
+      "face": {
+        "glasses": "#3a2a5c",
+        "wrinkles": true,
+        "browColor": "#c8c8c8"
+      }
+    },
+    "maire": {
+      "name": "M. LE MAIRE",
+      "skin": "#e8b48c",
+      "shirt": "#1b1b2f",
+      "pants": "#1b1b2f",
+      "hair": "#3a3a3a",
+      "hairStyle": "short",
+      "hat": "bowler",
+      "hatColor": "#111111",
+      "bowtie": "#e11d2e",
+      "scale": 1.18,
+      "face": {
+        "browColor": "#222222"
+      }
+    }
+  },
+  "countries": {
+    "ouest": [
+      "fr",
+      "cn",
+      "br",
+      "gb"
+    ],
+    "est": [
+      "jp",
+      "us",
+      "ru",
+      "de"
+    ]
+  },
+  "lines": [
+    {
+      "id": "plan01",
+      "who": "vo",
+      "text": "Cette *guerre*, c'est à cause de *moi*. Mais ça, personne ne le savait encore.",
+      "plan": {
+        "ambiance": "nuit",
+        "visuel": "Léo de dos devant le mur, la nuit. Compteur orange « MUR FERMÉ DANS 00:00:57 »."
+      }
+    },
+    {
+      "id": "plan02",
+      "who": "vo",
+      "text": "Dans notre village, chaque maison, c'était un *pays*. On mangeait tous ensemble le *dimanche*.",
+      "plan": {
+        "ambiance": "jour",
+        "visuel": "Plan large de jour : 8 chalets avec leur drapeau au balcon, grande table commune, tout le monde mange ensemble."
+      }
+    },
+    {
+      "id": "plan03",
+      "who": "vo",
+      "text": "Un matin, la seule *pomme* de l'arbre du milieu avait *disparu*. Chaque pays a *accusé* l'autre.",
+      "plan": {
+        "ambiance": "matin",
+        "visuel": "Arbre au centre de la place, branche vide, zoom. Doigts pointés."
+      }
+    },
+    {
+      "id": "plan04",
+      "who": "vo",
+      "text": "Les *drapeaux*. Les *cris*. Un *mur* au milieu de la place. Et le maire a juré : on trouvera le *voleur*.",
+      "plan": {
+        "ambiance": "après-midi",
+        "visuel": "Montage rapide : drapeaux agités, visages fâchés, le mur monte au milieu de la place, le maire pointe du doigt."
+      }
+    },
+    {
+      "id": "plan05",
+      "who": "vo",
+      "text": "De l'autre côté, il y avait *Yuki*. Celle qui riait trop fort. Celle à qui je n'avais jamais osé *parler*.",
+      "plan": {
+        "ambiance": "après-midi doré",
+        "visuel": "Yuki de l'autre côté du mur (par la porte), elle rit ; Léo la regarde de loin."
+      }
+    },
+    {
+      "id": "plan06",
+      "who": "vo",
+      "text": "Chaque soir, des avions en papier par-dessus le mur. Le sien disait : « Tu me *manques*. » Le mien : « Moi *aussi*. »",
+      "plan": {
+        "ambiance": "nuit",
+        "visuel": "Avions en papier qui passent au-dessus du mur ; gros plans sur les messages écrits."
+      }
+    },
+    {
+      "id": "plan07",
+      "who": "vo",
+      "text": "Chaque jour, le maire fouillait une maison de plus. Chaque jour, il se rapprochait de la *mienne*.",
+      "plan": {
+        "ambiance": "nuit",
+        "visuel": "Le maire avec une lampe frappe aux portes, une maison après l'autre, il se rapproche de celle de Léo. Insert TRÈS bref (0,5 s) : Léo glisse un objet rouge sous son lit (indice non expliqué)."
+      }
+    },
+    {
+      "id": "plan08",
+      "who": "vo",
+      "text": "Ce soir, à *minuit*, la porte du mur se ferme pour toujours. Ma mère m'a dit : *reste*. Mamie Odette m'a regardé longtemps… et m'a dit : *cours*.",
+      "plan": {
+        "ambiance": "intérieur",
+        "visuel": "La mère de Léo, puis mamie Odette dans son fauteuil au milieu de ses horloges, regard long."
+      }
+    },
+    {
+      "id": "plan09",
+      "who": "vo",
+      "text": "J'ai *couru*. *Dix* secondes. *Cinq*. Elle courait aussi.",
+      "plan": {
+        "ambiance": "nuit",
+        "visuel": "Compteur rouge qui pulse. Léo court, la porte du mur se referme lentement ; montage alterné avec Yuki qui court de l'autre côté. Battements de cœur."
+      }
+    },
+    {
+      "id": "plan10",
+      "who": "vo",
+      "text": "On s'est arrêtés pile au *milieu*. Elle a pris ma *main*. Elle a senti quelque chose dedans.",
+      "plan": {
+        "ambiance": "nuit",
+        "visuel": "Ils s'arrêtent au milieu de la porte, ralenti ; elle lui prend la main."
+      }
+    },
+    {
+      "id": "plan11",
+      "who": "vo",
+      "text": "Je l'avais cueillie ce matin-là. Pour *elle*. Je n'avais jamais osé la lui donner.",
+      "plan": {
+        "ambiance": "nuit",
+        "visuel": "Gros plan : Léo ouvre la main, c'est la POMME ROUGE. La musique se coupe net."
+      },
+      "pause": true
+    },
+    {
+      "id": "plan12",
+      "who": "vo",
+      "text": "Une guerre entière… pour une fille à qui je n'osais pas *parler*.",
+      "plan": {
+        "ambiance": "nuit",
+        "visuel": "Visage choqué de Yuki, puis plan derrière eux : la lampe du maire s'allume, il a tout vu. Le compteur passe à 00:00:00, écran noir."
+      }
+    },
+    {
+      "id": "plan13",
+      "who": "vo",
+      "text": "Toi, tu lui *pardonnes* ? Dis-le en commentaire.",
+      "plan": {
+        "ambiance": "nuit",
+        "visuel": "Carte finale (même design que l'ép. 03) : « TOI, TU LUI PARDONNES ? » (PARDONNES en rouge) + « DIS-LE EN COMMENTAIRE » + flèche jaune."
+      }
+    }
+  ],
+  "voix_sources": [
+    "assets/voix/ep04/lotA.mp3",
+    "assets/voix/ep04/lotB.mp3",
+    "assets/voix/ep04/lotC.mp3"
+  ]
+}

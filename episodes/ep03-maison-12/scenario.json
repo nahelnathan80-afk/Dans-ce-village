@@ -1,0 +1,476 @@
+{
+  "id": "ep03",
+  "title": "Dans cette ville, chaque nuit à minuit, une maison disparaît",
+  "startBalance": 0,
+  "payer": "none",
+  "counter": {
+    "label": "MINUIT DANS",
+    "format": "hh:mm:ss",
+    "redBelow": 300,
+    "heartbeatBelow": 300
+  },
+  "voices": {
+    "vo": {
+      "engine": "chatterbox",
+      "exaggeration": 0.75,
+      "cfg": 0.4,
+      "tempo": 1.05,
+      "seed": 7,
+      "_final": "ElevenLabs « Grégory - Dynamic », fichiers assets/voix/ep03/planXX.mp3"
+    }
+  },
+  "cast": {
+    "noe": {
+      "name": "NOÉ",
+      "skin": "#ffd2b3",
+      "shirt": "#2bb673",
+      "hoodie": true,
+      "pants": "#2f3e5c",
+      "hair": "#6b3a1e",
+      "hairStyle": "short",
+      "hat": "cap",
+      "hatColor": "#1f6f4a",
+      "scale": 0.82,
+      "face": {
+        "freckles": true
+      }
+    },
+    "lila": {
+      "name": "LILA",
+      "skin": "#ffe0c7",
+      "shirt": "#ffffff",
+      "overalls": "#ffd23f",
+      "pants": "#ffd23f",
+      "hair": "#c0662b",
+      "hairStyle": "pigtails",
+      "scale": 0.66,
+      "face": {
+        "lashes": true
+      }
+    },
+    "odette": {
+      "name": "MAMIE ODETTE",
+      "skin": "#ffd9c4",
+      "shirt": "#f1e6d8",
+      "cardigan": "#7b4dff",
+      "pants": "#4a3b5c",
+      "hair": "#e8e8e8",
+      "hairStyle": "bun",
+      "scale": 0.92,
+      "face": {
+        "glasses": "#3a2a5c",
+        "wrinkles": true,
+        "browColor": "#c8c8c8"
+      }
+    },
+    "maire": {
+      "name": "M. LE MAIRE",
+      "skin": "#e8b48c",
+      "shirt": "#1b1b2f",
+      "pants": "#1b1b2f",
+      "hair": "#3a3a3a",
+      "hairStyle": "short",
+      "hat": "bowler",
+      "hatColor": "#111111",
+      "bowtie": "#e11d2e",
+      "scale": 1.18,
+      "face": {
+        "browColor": "#222222"
+      }
+    },
+    "marcel": {
+      "name": "PAPI MARCEL",
+      "skin": "#f0c4a0",
+      "shirt": "#3d6fa8",
+      "cardigan": "#8b5a2b",
+      "pants": "#3a3a48",
+      "hair": "#ffffff",
+      "hairStyle": "bald",
+      "scale": 0.95,
+      "face": {
+        "mustache": "#ffffff",
+        "wrinkles": true,
+        "glasses": "#5a4630"
+      }
+    },
+    "pistache": {
+      "name": "PISTACHE",
+      "kind": "cat",
+      "fur": "#f28c28",
+      "stripes": "#c8611a"
+    }
+  },
+  "lines": [
+    {
+      "id": "plan01",
+      "who": "vo",
+      "text": "Dans cette ville, chaque nuit à minuit, une *maison* disparaît.",
+      "pause": 0.6,
+      "clock": "00:00:59",
+      "plan": {
+        "ambiance": "nuit",
+        "visuel": "Panneau géant lisible sur la place : « CE SOIR : MAISON N°12 ». Travelling avant rapide sur le panneau.",
+        "sfx": [
+          "drone grave",
+          "tic-tac"
+        ]
+      }
+    },
+    {
+      "id": "plan02",
+      "who": "vo",
+      "text": "Et cette nuit-là… c'était la *mienne*.",
+      "pause": 0.9,
+      "clock": "00:00:10",
+      "plan": {
+        "ambiance": "nuit",
+        "visuel": "FLASH-FORWARD : Noé seul devant le n°12 qui tremble, lumière blanche sous la porte. Gros plan visage terrifié. Compteur rouge qui pulse.",
+        "sfx": [
+          "battement de cœur",
+          "grondement"
+        ]
+      }
+    },
+    {
+      "id": "plan03",
+      "who": "vo",
+      "text": "Revenons à ce matin.",
+      "pause": 0.6,
+      "clock": "15:00:00",
+      "plan": {
+        "ambiance": "matin",
+        "visuel": "Effet rembobinage (comme ép. 02) puis plan large du village au soleil.",
+        "sfx": [
+          "rembobinage",
+          "whoosh"
+        ]
+      }
+    },
+    {
+      "id": "plan04",
+      "who": "vo",
+      "text": "Chaque matin, le maire tire un numéro. Toute la ville retient son souffle.",
+      "pause": 1.2,
+      "clock": "14:59:50",
+      "plan": {
+        "ambiance": "matin",
+        "visuel": "Fontaine + urne de boules numérotées. Le maire (pastille « M. LE MAIRE ») plonge la main. Contrechamp : foule figée.",
+        "sfx": [
+          "roulement de tambour léger",
+          "foule qui se tait"
+        ]
+      }
+    },
+    {
+      "id": "plan05",
+      "who": "vo",
+      "text": "Si c'est le tien, tu as jusqu'à minuit pour partir.",
+      "pause": 0.6,
+      "clock": "14:59:35",
+      "plan": {
+        "ambiance": "matin",
+        "visuel": "Familles qui courent avec des cartons devant le magasin « CARTONS - SPÉCIAL DISPARITION -50 % ».",
+        "sfx": [
+          "whoosh",
+          "pas pressés"
+        ]
+      }
+    },
+    {
+      "id": "plan06",
+      "who": "vo",
+      "text": "Une seule règle : ne jamais rester dedans. Personne n'est jamais *revenu*.",
+      "pause": 1.0,
+      "clock": "14:59:20",
+      "bubbles": [
+        {
+          "who": "passant",
+          "text": "…",
+          "atWord": 4
+        }
+      ],
+      "plan": {
+        "ambiance": "matin",
+        "visuel": "Panneau « INTERDIT DE RESTER DEDANS ». Un passant avec une bulle « … ». Zoom brusque sur « revenu » (boucle ouverte).",
+        "sfx": [
+          "coupure musique 0,5 s sur « revenu »"
+        ]
+      }
+    },
+    {
+      "id": "plan07",
+      "who": "vo",
+      "text": "Le numéro sept a disparu il y a dix ans. C'était celui de *papi*.",
+      "say": "Le numéro sept a disparu il y a dix ans. C'était celui de papi.",
+      "pause": 0.4,
+      "clock": "14:59:00",
+      "clue": 1,
+      "plan": {
+        "ambiance": "après-midi doré",
+        "visuel": "INDICE 1 : terrain vide avec panneau « ICI ÉTAIT LE N°7 ». Insert : mamie tient une photo de papi Marcel devant la porte n°7.",
+        "sfx": [
+          "piano 3 notes"
+        ]
+      }
+    },
+    {
+      "id": "plan07b",
+      "who": "vo",
+      "text": "Mamie n'en parle *jamais*.",
+      "pause": 0.9,
+      "clock": "14:58:50",
+      "added": true,
+      "plan": {
+        "ambiance": "après-midi doré",
+        "visuel": "Relance : gros plan sur mamie qui range la photo, regard ailleurs.",
+        "sfx": [
+          "piano 1 note"
+        ]
+      }
+    },
+    {
+      "id": "plan08",
+      "who": "vo",
+      "text": "Moi, c'est *Noé*. J'habite au douze. Avec Lila, mamie Odette et Pistache.",
+      "pause": 0.6,
+      "clock": "14:58:40",
+      "plan": {
+        "ambiance": "après-midi doré",
+        "visuel": "Devant la maison n°12 : pastilles de nom NOÉ, LILA, MAMIE ODETTE, PISTACHE qui popent une par une, synchronisées sur les prénoms.",
+        "sfx": [
+          "pop × 4"
+        ]
+      }
+    },
+    {
+      "id": "plan09",
+      "who": "vo",
+      "text": "Et ce matin-là, le maire a tiré… le *douze*.",
+      "pause": 1.4,
+      "clock": "14:58:20",
+      "plan": {
+        "ambiance": "matin",
+        "visuel": "Retour au tirage : gros plan sur la boule « 12 » dans la main du maire. Son coupé net + zoom brusque sur « douze ».",
+        "sfx": [
+          "silence total 0,6 s",
+          "impact grave sur « douze »"
+        ]
+      }
+    },
+    {
+      "id": "plan10",
+      "who": "vo",
+      "text": "On a tout mis en cartons. Les jouets, la vaisselle, le panier du chat.",
+      "pause": 0.4,
+      "clock": "12:00:00",
+      "clockTo": "06:00:00",
+      "plan": {
+        "ambiance": "après-midi doré",
+        "visuel": "Déménagement en accéléré : cartons qui volent, Pistache dans son panier. Le compteur défile très vite jusqu'à 06:00:00.",
+        "sfx": [
+          "musique accélérée",
+          "pop des cartons"
+        ]
+      }
+    },
+    {
+      "id": "plan10b",
+      "who": "vo",
+      "text": "Six heures avant minuit, on était prêts. *Presque*.",
+      "pause": 1.0,
+      "clock": "06:00:00",
+      "added": true,
+      "plan": {
+        "ambiance": "après-midi doré",
+        "visuel": "Relance : Noé, Lila et le chat devant les cartons ; Noé se retourne vers la fenêtre où mamie n'a pas bougé.",
+        "sfx": [
+          "coupure musique sur « Presque »"
+        ]
+      }
+    },
+    {
+      "id": "plan11",
+      "who": "vo",
+      "text": "Sauf mamie. Elle n'a pas bougé de son fauteuil.",
+      "pause": 1.6,
+      "clock": "05:40:00",
+      "bubbles": [
+        {
+          "who": "odette",
+          "text": "Moi, je reste avec mes horloges.",
+          "atEnd": true
+        }
+      ],
+      "plan": {
+        "ambiance": "salon",
+        "visuel": "Mamie immobile dans son fauteuil, salon rempli d'horloges. Bulle : « Moi, je reste avec mes horloges. »",
+        "sfx": [
+          "tic-tac de dizaines d'horloges"
+        ]
+      }
+    },
+    {
+      "id": "plan12",
+      "who": "vo",
+      "text": "Bizarre. Toutes ses horloges étaient arrêtées sur *minuit*.",
+      "pause": 1.2,
+      "clock": "05:38:00",
+      "clue": [
+        2,
+        3
+      ],
+      "plan": {
+        "ambiance": "salon",
+        "visuel": "INDICE 2 : gros plan, toutes les horloges arrêtées sur 12:00 (le tic-tac se coupe). INDICE 3 : valise bouclée visible dans un coin, derrière le fauteuil.",
+        "sfx": [
+          "tic-tac qui s'arrête net"
+        ]
+      }
+    },
+    {
+      "id": "plan13",
+      "who": "vo",
+      "text": "23 h 55. J'ai compté. Il manquait mamie. Et *Lila*.",
+      "say": "Vingt-trois heures cinquante-cinq. J'ai compté. Il manquait mamie. Et Lila.",
+      "pause": 0.4,
+      "clock": "00:05:00",
+      "plan": {
+        "ambiance": "nuit bleue",
+        "visuel": "Nuit. La famille dehors avec les voisins, Noé compte du doigt. Compteur ROUGE qui pulse + battement de cœur.",
+        "sfx": [
+          "battement de cœur (jusqu'au plan 16)"
+        ]
+      }
+    },
+    {
+      "id": "plan13b",
+      "who": "vo",
+      "text": "J'ai crié leurs noms. Personne n'a *répondu*.",
+      "pause": 0.8,
+      "clock": "00:04:00",
+      "added": true,
+      "plan": {
+        "ambiance": "nuit bleue",
+        "visuel": "Relance : Noé crie vers la maison, fenêtres éteintes, lumière blanche sous la porte.",
+        "sfx": [
+          "écho",
+          "battement de cœur"
+        ]
+      }
+    },
+    {
+      "id": "plan14",
+      "who": "vo",
+      "text": "Alors j'ai fait la seule chose interdite. Je suis rentré.",
+      "pause": 0.9,
+      "clock": "00:03:00",
+      "plan": {
+        "ambiance": "nuit bleue",
+        "visuel": "Noé hésite devant la porte (gros plan), puis fonce à l'intérieur. Panneau « INTERDIT DE RESTER DEDANS » en amorce.",
+        "sfx": [
+          "porte qui claque"
+        ]
+      }
+    },
+    {
+      "id": "plan15",
+      "who": "vo",
+      "text": "Mamie m'attendait. Avec sa valise. Et Lila, déjà prête.",
+      "pause": 1.6,
+      "clock": "00:00:30",
+      "clockTo": "00:00:01",
+      "bubbles": [
+        {
+          "who": "odette",
+          "text": "Tu viens, mon grand ?",
+          "atEnd": true
+        }
+      ],
+      "plan": {
+        "ambiance": "salon nuit",
+        "visuel": "Salon : mamie debout en manteau, valise à la main (récolte INDICE 3), Lila et Pistache dans ses bras, toutes souriantes. Bulle : « Tu viens, mon grand ? »",
+        "sfx": [
+          "battement de cœur qui accélère"
+        ]
+      }
+    },
+    {
+      "id": "plan16",
+      "who": "vo",
+      "text": "*Minuit*.",
+      "pause": 2.4,
+      "clock": "00:00:00",
+      "plan": {
+        "ambiance": "salon nuit",
+        "visuel": "Compteur 00:00:00. Musique coupée, 1 s de silence avant la voix. La maison tremble, lumière blanche, flash blanc. Les horloges (INDICE 2) se remettent à tourner.",
+        "sfx": [
+          "silence 1 s",
+          "grondement",
+          "flash"
+        ]
+      }
+    },
+    {
+      "id": "plan17",
+      "who": "vo",
+      "text": "Les maisons ne disparaissaient pas. Elles partaient… *ailleurs*.",
+      "pause": 0.4,
+      "clock": null,
+      "plan": {
+        "ambiance": "vallée lumineuse",
+        "visuel": "La porte s'ouvre sur une vallée ensoleillée remplie de maisons « disparues ». Piano doux. Le compteur disparaît.",
+        "sfx": [
+          "piano doux",
+          "oiseaux"
+        ]
+      }
+    },
+    {
+      "id": "plan17b",
+      "who": "vo",
+      "text": "Ici, il n'y avait pas de minuit. Juste du *soleil*.",
+      "pause": 1.0,
+      "clock": null,
+      "added": true,
+      "plan": {
+        "ambiance": "vallée lumineuse",
+        "visuel": "Panorama de la vallée, horloge d'une façade qui tourne normalement, oiseaux.",
+        "sfx": [
+          "piano",
+          "oiseaux"
+        ]
+      }
+    },
+    {
+      "id": "plan18",
+      "who": "vo",
+      "text": "Papi nous avait gardé quatre *chaises*.",
+      "pause": 2.4,
+      "clock": null,
+      "clue": 1,
+      "plan": {
+        "ambiance": "vallée lumineuse",
+        "visuel": "Récolte INDICE 1 : la maison n°7 juste à côté. Papi Marcel (pastille) sur le pas de la porte, table dressée dehors avec quatre chaises vides.",
+        "sfx": [
+          "piano"
+        ]
+      }
+    },
+    {
+      "id": "plan19",
+      "who": "vo",
+      "text": "Et toi, tu serais resté dans la maison ?",
+      "pause": 4.4,
+      "optional": true,
+      "clock": null,
+      "plan": {
+        "ambiance": "vallée lumineuse",
+        "visuel": "Carte-question (même style que l'ép. 02) : « TOI, TU SERAIS RESTÉ DANS LA MAISON ? » + « DIS-LE EN COMMENTAIRE » + flèche.",
+        "sfx": [
+          "whoosh",
+          "pop"
+        ]
+      }
+    }
+  ]
+}

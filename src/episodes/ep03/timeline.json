@@ -1,0 +1,1473 @@
+{
+ "duration": 89.13,
+ "lines": [
+  {
+   "id": "plan01",
+   "who": "vo",
+   "pause": 0.6,
+   "clock": "00:00:59",
+   "plan": {
+    "ambiance": "nuit",
+    "visuel": "Panneau géant lisible sur la place : « CE SOIR : MAISON N°12 ». Travelling avant rapide sur le panneau.",
+    "sfx": [
+     "drone grave",
+     "tic-tac"
+    ]
+   },
+   "text": "Dans cette ville, chaque nuit à minuit, une *maison* disparaît.",
+   "start": 0.13,
+   "end": 3.67,
+   "words": [
+    {
+     "text": "Dans",
+     "start": 0.13,
+     "end": 0.29
+    },
+    {
+     "text": "cette",
+     "start": 0.29,
+     "end": 0.47
+    },
+    {
+     "text": "ville,",
+     "start": 0.47,
+     "end": 1.11
+    },
+    {
+     "text": "chaque",
+     "start": 1.11,
+     "end": 1.27
+    },
+    {
+     "text": "nuit",
+     "start": 1.27,
+     "end": 1.53
+    },
+    {
+     "text": "à",
+     "start": 1.53,
+     "end": 1.69
+    },
+    {
+     "text": "minuit,",
+     "start": 1.69,
+     "end": 2.35
+    },
+    {
+     "text": "une",
+     "start": 2.35,
+     "end": 2.47
+    },
+    {
+     "text": "*maison*",
+     "start": 2.47,
+     "end": 2.69
+    },
+    {
+     "text": "disparaît.",
+     "start": 2.69,
+     "end": 3.67
+    }
+   ]
+  },
+  {
+   "id": "plan02",
+   "who": "vo",
+   "pause": 0.9,
+   "clock": "00:00:10",
+   "plan": {
+    "ambiance": "nuit",
+    "visuel": "FLASH-FORWARD : Noé seul devant le n°12 qui tremble, lumière blanche sous la porte. Gros plan visage terrifié. Compteur rouge qui pulse.",
+    "sfx": [
+     "battement de cœur",
+     "grondement"
+    ]
+   },
+   "text": "Et cette nuit-là… c'était la *mienne*.",
+   "start": 4.35,
+   "end": 6.11,
+   "words": [
+    {
+     "text": "Et",
+     "start": 4.35,
+     "end": 4.41
+    },
+    {
+     "text": "cette",
+     "start": 4.41,
+     "end": 4.59
+    },
+    {
+     "text": "nuit-là…",
+     "start": 4.59,
+     "end": 5.47
+    },
+    {
+     "text": "c'était",
+     "start": 5.47,
+     "end": 5.73
+    },
+    {
+     "text": "la",
+     "start": 5.73,
+     "end": 5.87
+    },
+    {
+     "text": "*mienne*.",
+     "start": 5.87,
+     "end": 6.11
+    }
+   ]
+  },
+  {
+   "id": "plan03",
+   "who": "vo",
+   "pause": 0.6,
+   "clock": "15:00:00",
+   "plan": {
+    "ambiance": "matin",
+    "visuel": "Effet rembobinage (comme ép. 02) puis plan large du village au soleil.",
+    "sfx": [
+     "rembobinage",
+     "whoosh"
+    ]
+   },
+   "text": "Revenons à ce matin.",
+   "start": 7.11,
+   "end": 7.83,
+   "words": [
+    {
+     "text": "Revenons",
+     "start": 7.11,
+     "end": 7.47
+    },
+    {
+     "text": "à",
+     "start": 7.47,
+     "end": 7.57
+    },
+    {
+     "text": "ce",
+     "start": 7.57,
+     "end": 7.65
+    },
+    {
+     "text": "matin.",
+     "start": 7.65,
+     "end": 7.83
+    }
+   ]
+  },
+  {
+   "id": "plan04",
+   "who": "vo",
+   "pause": 1.2,
+   "clock": "14:59:50",
+   "plan": {
+    "ambiance": "matin",
+    "visuel": "Fontaine + urne de boules numérotées. Le maire (pastille « M. LE MAIRE ») plonge la main. Contrechamp : foule figée.",
+    "sfx": [
+     "roulement de tambour léger",
+     "foule qui se tait"
+    ]
+   },
+   "text": "Chaque matin, le maire tire un numéro. Toute la ville retient son souffle.",
+   "start": 8.53,
+   "end": 12.21,
+   "words": [
+    {
+     "text": "Chaque",
+     "start": 8.53,
+     "end": 8.81
+    },
+    {
+     "text": "matin,",
+     "start": 8.81,
+     "end": 9.37
+    },
+    {
+     "text": "le",
+     "start": 9.37,
+     "end": 9.47
+    },
+    {
+     "text": "maire",
+     "start": 9.47,
+     "end": 9.73
+    },
+    {
+     "text": "tire",
+     "start": 9.73,
+     "end": 9.91
+    },
+    {
+     "text": "un",
+     "start": 9.91,
+     "end": 10.07
+    },
+    {
+     "text": "numéro.",
+     "start": 10.07,
+     "end": 10.81
+    },
+    {
+     "text": "Toute",
+     "start": 10.81,
+     "end": 10.99
+    },
+    {
+     "text": "la",
+     "start": 10.99,
+     "end": 11.17
+    },
+    {
+     "text": "ville",
+     "start": 11.17,
+     "end": 11.33
+    },
+    {
+     "text": "retient",
+     "start": 11.33,
+     "end": 11.69
+    },
+    {
+     "text": "son",
+     "start": 11.69,
+     "end": 11.81
+    },
+    {
+     "text": "souffle.",
+     "start": 11.81,
+     "end": 12.21
+    }
+   ]
+  },
+  {
+   "id": "plan05",
+   "who": "vo",
+   "pause": 0.6,
+   "clock": "14:59:35",
+   "plan": {
+    "ambiance": "matin",
+    "visuel": "Familles qui courent avec des cartons devant le magasin « CARTONS - SPÉCIAL DISPARITION -50 % ».",
+    "sfx": [
+     "whoosh",
+     "pas pressés"
+    ]
+   },
+   "text": "Si c'est le tien, tu as jusqu'à minuit pour partir.",
+   "start": 13.51,
+   "end": 15.79,
+   "words": [
+    {
+     "text": "Si",
+     "start": 13.51,
+     "end": 13.59
+    },
+    {
+     "text": "c'est",
+     "start": 13.59,
+     "end": 13.75
+    },
+    {
+     "text": "le",
+     "start": 13.75,
+     "end": 13.85
+    },
+    {
+     "text": "tien,",
+     "start": 13.85,
+     "end": 14.49
+    },
+    {
+     "text": "tu",
+     "start": 14.49,
+     "end": 14.55
+    },
+    {
+     "text": "as",
+     "start": 14.53,
+     "end": 14.61
+    },
+    {
+     "text": "jusqu'à",
+     "start": 14.61,
+     "end": 14.91
+    },
+    {
+     "text": "minuit",
+     "start": 14.91,
+     "end": 15.31
+    },
+    {
+     "text": "pour",
+     "start": 15.31,
+     "end": 15.45
+    },
+    {
+     "text": "partir.",
+     "start": 15.45,
+     "end": 15.79
+    }
+   ]
+  },
+  {
+   "id": "plan06",
+   "who": "vo",
+   "pause": 1.0,
+   "clock": "14:59:20",
+   "bubbles": [
+    {
+     "who": "passant",
+     "text": "…",
+     "atWord": 4
+    }
+   ],
+   "plan": {
+    "ambiance": "matin",
+    "visuel": "Panneau « INTERDIT DE RESTER DEDANS ». Un passant avec une bulle « … ». Zoom brusque sur « revenu » (boucle ouverte).",
+    "sfx": [
+     "coupure musique 0,5 s sur « revenu »"
+    ]
+   },
+   "text": "Une seule règle : ne jamais rester dedans. Personne n'est jamais *revenu*.",
+   "start": 16.49,
+   "end": 20.65,
+   "words": [
+    {
+     "text": "Une",
+     "start": 16.49,
+     "end": 16.63
+    },
+    {
+     "text": "seule",
+     "start": 16.63,
+     "end": 16.79
+    },
+    {
+     "text": "règle :",
+     "start": 16.79,
+     "end": 17.39
+    },
+    {
+     "text": "ne",
+     "start": 17.39,
+     "end": 17.57
+    },
+    {
+     "text": "jamais",
+     "start": 17.57,
+     "end": 17.97
+    },
+    {
+     "text": "rester",
+     "start": 17.97,
+     "end": 18.33
+    },
+    {
+     "text": "dedans.",
+     "start": 18.33,
+     "end": 19.41
+    },
+    {
+     "text": "Personne",
+     "start": 19.41,
+     "end": 19.77
+    },
+    {
+     "text": "n'est",
+     "start": 19.77,
+     "end": 19.99
+    },
+    {
+     "text": "jamais",
+     "start": 19.99,
+     "end": 20.21
+    },
+    {
+     "text": "*revenu*.",
+     "start": 20.21,
+     "end": 20.65
+    }
+   ]
+  },
+  {
+   "id": "plan07",
+   "who": "vo",
+   "say": "Le numéro sept a disparu il y a dix ans. C'était celui de papi.",
+   "pause": 0.4,
+   "clock": "14:59:00",
+   "clue": 1,
+   "plan": {
+    "ambiance": "après-midi doré",
+    "visuel": "INDICE 1 : terrain vide avec panneau « ICI ÉTAIT LE N°7 ». Insert : mamie tient une photo de papi Marcel devant la porte n°7.",
+    "sfx": [
+     "piano 3 notes"
+    ]
+   },
+   "text": "Le numéro sept a disparu il y a dix ans. C'était celui de *papi*.",
+   "start": 21.63,
+   "end": 24.73,
+   "words": [
+    {
+     "text": "Le",
+     "start": 21.63,
+     "end": 21.758
+    },
+    {
+     "text": "numéro",
+     "start": 21.758,
+     "end": 21.983
+    },
+    {
+     "text": "sept",
+     "start": 21.983,
+     "end": 22.278
+    },
+    {
+     "text": "a",
+     "start": 22.278,
+     "end": 22.36
+    },
+    {
+     "text": "disparu",
+     "start": 22.36,
+     "end": 23.013
+    },
+    {
+     "text": "il",
+     "start": 23.013,
+     "end": 23.136
+    },
+    {
+     "text": "y",
+     "start": 23.136,
+     "end": 23.196
+    },
+    {
+     "text": "a",
+     "start": 23.182,
+     "end": 23.242
+    },
+    {
+     "text": "dix",
+     "start": 23.228,
+     "end": 23.466
+    },
+    {
+     "text": "ans.",
+     "start": 23.466,
+     "end": 23.674
+    },
+    {
+     "text": "C'était",
+     "start": 23.674,
+     "end": 24.309
+    },
+    {
+     "text": "celui",
+     "start": 24.309,
+     "end": 24.443
+    },
+    {
+     "text": "de",
+     "start": 24.443,
+     "end": 24.53
+    },
+    {
+     "text": "*papi*.",
+     "start": 24.53,
+     "end": 24.73
+    }
+   ]
+  },
+  {
+   "id": "plan07b",
+   "who": "vo",
+   "pause": 0.9,
+   "clock": "14:58:50",
+   "added": true,
+   "plan": {
+    "ambiance": "après-midi doré",
+    "visuel": "Relance : gros plan sur mamie qui range la photo, regard ailleurs.",
+    "sfx": [
+     "piano 1 note"
+    ]
+   },
+   "text": "Mamie n'en parle *jamais*.",
+   "start": 25.23,
+   "end": 25.93,
+   "words": [
+    {
+     "text": "Mamie",
+     "start": 25.23,
+     "end": 25.452
+    },
+    {
+     "text": "n'en",
+     "start": 25.452,
+     "end": 25.523
+    },
+    {
+     "text": "parle",
+     "start": 25.523,
+     "end": 25.679
+    },
+    {
+     "text": "*jamais*.",
+     "start": 25.679,
+     "end": 25.93
+    }
+   ]
+  },
+  {
+   "id": "plan08",
+   "who": "vo",
+   "pause": 0.6,
+   "clock": "14:58:40",
+   "plan": {
+    "ambiance": "après-midi doré",
+    "visuel": "Devant la maison n°12 : pastilles de nom NOÉ, LILA, MAMIE ODETTE, PISTACHE qui popent une par une, synchronisées sur les prénoms.",
+    "sfx": [
+     "pop × 4"
+    ]
+   },
+   "text": "Moi, c'est *Noé*. J'habite au douze. Avec Lila, mamie Odette et Pistache.",
+   "start": 26.93,
+   "end": 31.13,
+   "words": [
+    {
+     "text": "Moi,",
+     "start": 26.93,
+     "end": 27.146
+    },
+    {
+     "text": "c'est",
+     "start": 27.146,
+     "end": 27.528
+    },
+    {
+     "text": "*Noé*.",
+     "start": 27.528,
+     "end": 27.774
+    },
+    {
+     "text": "J'habite",
+     "start": 27.774,
+     "end": 28.34
+    },
+    {
+     "text": "au",
+     "start": 28.34,
+     "end": 28.448
+    },
+    {
+     "text": "douze.",
+     "start": 28.448,
+     "end": 28.616
+    },
+    {
+     "text": "Avec",
+     "start": 28.616,
+     "end": 29.168
+    },
+    {
+     "text": "Lila,",
+     "start": 29.168,
+     "end": 29.539
+    },
+    {
+     "text": "mamie",
+     "start": 29.539,
+     "end": 30.088
+    },
+    {
+     "text": "Odette",
+     "start": 30.088,
+     "end": 30.453
+    },
+    {
+     "text": "et",
+     "start": 30.453,
+     "end": 30.679
+    },
+    {
+     "text": "Pistache.",
+     "start": 30.679,
+     "end": 31.13
+    }
+   ]
+  },
+  {
+   "id": "plan09",
+   "who": "vo",
+   "pause": 1.4,
+   "clock": "14:58:20",
+   "plan": {
+    "ambiance": "matin",
+    "visuel": "Retour au tirage : gros plan sur la boule « 12 » dans la main du maire. Son coupé net + zoom brusque sur « douze ».",
+    "sfx": [
+     "silence total 0,6 s",
+     "impact grave sur « douze »"
+    ]
+   },
+   "text": "Et ce matin-là, le maire a tiré… le *douze*.",
+   "start": 31.83,
+   "end": 34.41,
+   "words": [
+    {
+     "text": "Et",
+     "start": 31.83,
+     "end": 31.89
+    },
+    {
+     "text": "ce",
+     "start": 31.87,
+     "end": 32.01
+    },
+    {
+     "text": "matin-là,",
+     "start": 32.01,
+     "end": 32.75
+    },
+    {
+     "text": "le",
+     "start": 32.75,
+     "end": 32.83
+    },
+    {
+     "text": "maire",
+     "start": 32.83,
+     "end": 33.03
+    },
+    {
+     "text": "a",
+     "start": 33.03,
+     "end": 33.15
+    },
+    {
+     "text": "tiré…",
+     "start": 33.15,
+     "end": 33.57
+    },
+    {
+     "text": "le",
+     "start": 33.57,
+     "end": 34.17
+    },
+    {
+     "text": "*douze*.",
+     "start": 34.17,
+     "end": 34.41
+    }
+   ]
+  },
+  {
+   "id": "plan10",
+   "who": "vo",
+   "pause": 0.4,
+   "clock": "12:00:00",
+   "clockTo": "06:00:00",
+   "plan": {
+    "ambiance": "après-midi doré",
+    "visuel": "Déménagement en accéléré : cartons qui volent, Pistache dans son panier. Le compteur défile très vite jusqu'à 06:00:00.",
+    "sfx": [
+     "musique accélérée",
+     "pop des cartons"
+    ]
+   },
+   "text": "On a tout mis en cartons. Les jouets, la vaisselle, le panier du chat.",
+   "start": 35.91,
+   "end": 39.41,
+   "words": [
+    {
+     "text": "On",
+     "start": 35.91,
+     "end": 36.028
+    },
+    {
+     "text": "a",
+     "start": 36.028,
+     "end": 36.143
+    },
+    {
+     "text": "tout",
+     "start": 36.143,
+     "end": 36.363
+    },
+    {
+     "text": "mis",
+     "start": 36.363,
+     "end": 36.52
+    },
+    {
+     "text": "en",
+     "start": 36.52,
+     "end": 36.636
+    },
+    {
+     "text": "cartons.",
+     "start": 36.636,
+     "end": 37.367
+    },
+    {
+     "text": "Les",
+     "start": 37.367,
+     "end": 37.465
+    },
+    {
+     "text": "jouets,",
+     "start": 37.465,
+     "end": 37.998
+    },
+    {
+     "text": "la",
+     "start": 37.998,
+     "end": 38.113
+    },
+    {
+     "text": "vaisselle,",
+     "start": 38.113,
+     "end": 38.778
+    },
+    {
+     "text": "le",
+     "start": 38.778,
+     "end": 38.839
+    },
+    {
+     "text": "panier",
+     "start": 38.839,
+     "end": 39.077
+    },
+    {
+     "text": "du",
+     "start": 39.077,
+     "end": 39.194
+    },
+    {
+     "text": "chat.",
+     "start": 39.194,
+     "end": 39.41
+    }
+   ]
+  },
+  {
+   "id": "plan10b",
+   "who": "vo",
+   "pause": 1.0,
+   "clock": "06:00:00",
+   "added": true,
+   "plan": {
+    "ambiance": "après-midi doré",
+    "visuel": "Relance : Noé, Lila et le chat devant les cartons ; Noé se retourne vers la fenêtre où mamie n'a pas bougé.",
+    "sfx": [
+     "coupure musique sur « Presque »"
+    ]
+   },
+   "text": "Six heures avant minuit, on était prêts. *Presque*.",
+   "start": 39.91,
+   "end": 42.53,
+   "words": [
+    {
+     "text": "Six",
+     "start": 39.91,
+     "end": 40.144
+    },
+    {
+     "text": "heures",
+     "start": 40.144,
+     "end": 40.323
+    },
+    {
+     "text": "avant",
+     "start": 40.323,
+     "end": 40.46
+    },
+    {
+     "text": "minuit,",
+     "start": 40.46,
+     "end": 40.836
+    },
+    {
+     "text": "on",
+     "start": 40.836,
+     "end": 41.139
+    },
+    {
+     "text": "était",
+     "start": 41.139,
+     "end": 41.305
+    },
+    {
+     "text": "prêts.",
+     "start": 41.305,
+     "end": 42.101
+    },
+    {
+     "text": "*Presque*.",
+     "start": 42.101,
+     "end": 42.53
+    }
+   ]
+  },
+  {
+   "id": "plan11",
+   "who": "vo",
+   "pause": 1.6,
+   "clock": "05:40:00",
+   "bubbles": [
+    {
+     "who": "odette",
+     "text": "Moi, je reste avec mes horloges.",
+     "atEnd": true
+    }
+   ],
+   "plan": {
+    "ambiance": "salon",
+    "visuel": "Mamie immobile dans son fauteuil, salon rempli d'horloges. Bulle : « Moi, je reste avec mes horloges. »",
+    "sfx": [
+     "tic-tac de dizaines d'horloges"
+    ]
+   },
+   "text": "Sauf mamie. Elle n'a pas bougé de son fauteuil.",
+   "start": 43.63,
+   "end": 45.87,
+   "words": [
+    {
+     "text": "Sauf",
+     "start": 43.63,
+     "end": 43.77
+    },
+    {
+     "text": "mamie.",
+     "start": 43.77,
+     "end": 44.51
+    },
+    {
+     "text": "Elle",
+     "start": 44.51,
+     "end": 44.65
+    },
+    {
+     "text": "n'a",
+     "start": 44.65,
+     "end": 44.79
+    },
+    {
+     "text": "pas",
+     "start": 44.79,
+     "end": 44.99
+    },
+    {
+     "text": "bougé",
+     "start": 44.99,
+     "end": 45.29
+    },
+    {
+     "text": "de",
+     "start": 45.29,
+     "end": 45.35
+    },
+    {
+     "text": "son",
+     "start": 45.35,
+     "end": 45.45
+    },
+    {
+     "text": "fauteuil.",
+     "start": 45.45,
+     "end": 45.87
+    }
+   ]
+  },
+  {
+   "id": "plan12",
+   "who": "vo",
+   "pause": 1.2,
+   "clock": "05:38:00",
+   "clue": [
+    2,
+    3
+   ],
+   "plan": {
+    "ambiance": "salon",
+    "visuel": "INDICE 2 : gros plan, toutes les horloges arrêtées sur 12:00 (le tic-tac se coupe). INDICE 3 : valise bouclée visible dans un coin, derrière le fauteuil.",
+    "sfx": [
+     "tic-tac qui s'arrête net"
+    ]
+   },
+   "text": "Bizarre. Toutes ses horloges étaient arrêtées sur *minuit*.",
+   "start": 47.57,
+   "end": 50.29,
+   "words": [
+    {
+     "text": "Bizarre.",
+     "start": 47.57,
+     "end": 48.55
+    },
+    {
+     "text": "Toutes",
+     "start": 48.55,
+     "end": 48.77
+    },
+    {
+     "text": "ses",
+     "start": 48.77,
+     "end": 48.87
+    },
+    {
+     "text": "horloges",
+     "start": 48.87,
+     "end": 49.23
+    },
+    {
+     "text": "étaient",
+     "start": 49.23,
+     "end": 49.37
+    },
+    {
+     "text": "arrêtées",
+     "start": 49.37,
+     "end": 49.79
+    },
+    {
+     "text": "sur",
+     "start": 49.79,
+     "end": 49.95
+    },
+    {
+     "text": "*minuit*.",
+     "start": 49.95,
+     "end": 50.29
+    }
+   ]
+  },
+  {
+   "id": "plan13",
+   "who": "vo",
+   "say": "Vingt-trois heures cinquante-cinq. J'ai compté. Il manquait mamie. Et Lila.",
+   "pause": 0.4,
+   "clock": "00:05:00",
+   "plan": {
+    "ambiance": "nuit bleue",
+    "visuel": "Nuit. La famille dehors avec les voisins, Noé compte du doigt. Compteur ROUGE qui pulse + battement de cœur.",
+    "sfx": [
+     "battement de cœur (jusqu'au plan 16)"
+    ]
+   },
+   "text": "23 h 55. J'ai compté. Il manquait mamie. Et *Lila*.",
+   "start": 51.47,
+   "end": 55.61,
+   "words": [
+    {
+     "text": "23",
+     "start": 51.47,
+     "end": 51.932
+    },
+    {
+     "text": "h",
+     "start": 51.932,
+     "end": 51.992
+    },
+    {
+     "text": "55.",
+     "start": 51.957,
+     "end": 52.48
+    },
+    {
+     "text": "J'ai",
+     "start": 52.48,
+     "end": 53.14
+    },
+    {
+     "text": "compté.",
+     "start": 53.14,
+     "end": 53.546
+    },
+    {
+     "text": "Il",
+     "start": 53.546,
+     "end": 54.122
+    },
+    {
+     "text": "manquait",
+     "start": 54.122,
+     "end": 54.472
+    },
+    {
+     "text": "mamie.",
+     "start": 54.472,
+     "end": 54.794
+    },
+    {
+     "text": "Et",
+     "start": 54.794,
+     "end": 55.395
+    },
+    {
+     "text": "*Lila*.",
+     "start": 55.395,
+     "end": 55.61
+    }
+   ]
+  },
+  {
+   "id": "plan13b",
+   "who": "vo",
+   "pause": 0.8,
+   "clock": "00:04:00",
+   "added": true,
+   "plan": {
+    "ambiance": "nuit bleue",
+    "visuel": "Relance : Noé crie vers la maison, fenêtres éteintes, lumière blanche sous la porte.",
+    "sfx": [
+     "écho",
+     "battement de cœur"
+    ]
+   },
+   "text": "J'ai crié leurs noms. Personne n'a *répondu*.",
+   "start": 56.11,
+   "end": 58.37,
+   "words": [
+    {
+     "text": "J'ai",
+     "start": 56.11,
+     "end": 56.326
+    },
+    {
+     "text": "crié",
+     "start": 56.326,
+     "end": 56.58
+    },
+    {
+     "text": "leurs",
+     "start": 56.58,
+     "end": 56.748
+    },
+    {
+     "text": "noms.",
+     "start": 56.748,
+     "end": 57.432
+    },
+    {
+     "text": "Personne",
+     "start": 57.432,
+     "end": 57.894
+    },
+    {
+     "text": "n'a",
+     "start": 57.894,
+     "end": 57.957
+    },
+    {
+     "text": "*répondu*.",
+     "start": 57.957,
+     "end": 58.37
+    }
+   ]
+  },
+  {
+   "id": "plan14",
+   "who": "vo",
+   "pause": 0.9,
+   "clock": "00:03:00",
+   "plan": {
+    "ambiance": "nuit bleue",
+    "visuel": "Noé hésite devant la porte (gros plan), puis fonce à l'intérieur. Panneau « INTERDIT DE RESTER DEDANS » en amorce.",
+    "sfx": [
+     "porte qui claque"
+    ]
+   },
+   "text": "Alors j'ai fait la seule chose interdite. Je suis rentré.",
+   "start": 59.27,
+   "end": 61.95,
+   "words": [
+    {
+     "text": "Alors",
+     "start": 59.27,
+     "end": 59.45
+    },
+    {
+     "text": "j'ai",
+     "start": 59.45,
+     "end": 59.67
+    },
+    {
+     "text": "fait",
+     "start": 59.67,
+     "end": 59.77
+    },
+    {
+     "text": "la",
+     "start": 59.77,
+     "end": 59.89
+    },
+    {
+     "text": "seule",
+     "start": 59.89,
+     "end": 60.11
+    },
+    {
+     "text": "chose",
+     "start": 60.11,
+     "end": 60.33
+    },
+    {
+     "text": "interdite.",
+     "start": 60.33,
+     "end": 61.33
+    },
+    {
+     "text": "Je",
+     "start": 61.33,
+     "end": 61.45
+    },
+    {
+     "text": "suis",
+     "start": 61.45,
+     "end": 61.61
+    },
+    {
+     "text": "rentré.",
+     "start": 61.61,
+     "end": 61.95
+    }
+   ]
+  },
+  {
+   "id": "plan15",
+   "who": "vo",
+   "pause": 1.6,
+   "clock": "00:00:30",
+   "clockTo": "00:00:01",
+   "bubbles": [
+    {
+     "who": "odette",
+     "text": "Tu viens, mon grand ?",
+     "atEnd": true
+    }
+   ],
+   "plan": {
+    "ambiance": "salon nuit",
+    "visuel": "Salon : mamie debout en manteau, valise à la main (récolte INDICE 3), Lila et Pistache dans ses bras, toutes souriantes. Bulle : « Tu viens, mon grand ? »",
+    "sfx": [
+     "battement de cœur qui accélère"
+    ]
+   },
+   "text": "Mamie m'attendait. Avec sa valise. Et Lila, déjà prête.",
+   "start": 62.95,
+   "end": 66.45,
+   "words": [
+    {
+     "text": "Mamie",
+     "start": 62.95,
+     "end": 63.21
+    },
+    {
+     "text": "m'attendait.",
+     "start": 63.21,
+     "end": 63.99
+    },
+    {
+     "text": "Avec",
+     "start": 63.99,
+     "end": 64.17
+    },
+    {
+     "text": "sa",
+     "start": 64.17,
+     "end": 64.35
+    },
+    {
+     "text": "valise.",
+     "start": 64.35,
+     "end": 65.11
+    },
+    {
+     "text": "Et",
+     "start": 65.11,
+     "end": 65.27
+    },
+    {
+     "text": "Lila,",
+     "start": 65.27,
+     "end": 65.87
+    },
+    {
+     "text": "déjà",
+     "start": 65.87,
+     "end": 66.07
+    },
+    {
+     "text": "prête.",
+     "start": 66.07,
+     "end": 66.45
+    }
+   ]
+  },
+  {
+   "id": "plan16",
+   "who": "vo",
+   "pause": 2.4,
+   "clock": "00:00:00",
+   "plan": {
+    "ambiance": "salon nuit",
+    "visuel": "Compteur 00:00:00. Musique coupée, 1 s de silence avant la voix. La maison tremble, lumière blanche, flash blanc. Les horloges (INDICE 2) se remettent à tourner.",
+    "sfx": [
+     "silence 1 s",
+     "grondement",
+     "flash"
+    ]
+   },
+   "text": "*Minuit*.",
+   "start": 68.15,
+   "end": 68.49,
+   "words": [
+    {
+     "text": "*Minuit*.",
+     "start": 68.15,
+     "end": 68.49
+    }
+   ]
+  },
+  {
+   "id": "plan17",
+   "who": "vo",
+   "pause": 0.4,
+   "clock": null,
+   "plan": {
+    "ambiance": "vallée lumineuse",
+    "visuel": "La porte s'ouvre sur une vallée ensoleillée remplie de maisons « disparues ». Piano doux. Le compteur disparaît.",
+    "sfx": [
+     "piano doux",
+     "oiseaux"
+    ]
+   },
+   "text": "Les maisons ne disparaissaient pas. Elles partaient… *ailleurs*.",
+   "start": 70.99,
+   "end": 74.21,
+   "words": [
+    {
+     "text": "Les",
+     "start": 70.99,
+     "end": 71.13
+    },
+    {
+     "text": "maisons",
+     "start": 71.13,
+     "end": 71.41
+    },
+    {
+     "text": "ne",
+     "start": 71.41,
+     "end": 71.53
+    },
+    {
+     "text": "disparaissaient",
+     "start": 71.53,
+     "end": 72.13
+    },
+    {
+     "text": "pas.",
+     "start": 72.13,
+     "end": 72.83
+    },
+    {
+     "text": "Elles",
+     "start": 72.83,
+     "end": 73.01
+    },
+    {
+     "text": "partaient…",
+     "start": 73.01,
+     "end": 73.49
+    },
+    {
+     "text": "*ailleurs*.",
+     "start": 73.49,
+     "end": 74.21
+    }
+   ]
+  },
+  {
+   "id": "plan17b",
+   "who": "vo",
+   "pause": 1.0,
+   "clock": null,
+   "added": true,
+   "plan": {
+    "ambiance": "vallée lumineuse",
+    "visuel": "Panorama de la vallée, horloge d'une façade qui tourne normalement, oiseaux.",
+    "sfx": [
+     "piano",
+     "oiseaux"
+    ]
+   },
+   "text": "Ici, il n'y avait pas de minuit. Juste du *soleil*.",
+   "start": 74.71,
+   "end": 77.57,
+   "words": [
+    {
+     "text": "Ici,",
+     "start": 74.71,
+     "end": 75.33
+    },
+    {
+     "text": "il",
+     "start": 75.33,
+     "end": 75.49
+    },
+    {
+     "text": "n'y",
+     "start": 75.49,
+     "end": 75.61
+    },
+    {
+     "text": "avait",
+     "start": 75.61,
+     "end": 75.67
+    },
+    {
+     "text": "pas",
+     "start": 75.65,
+     "end": 75.87
+    },
+    {
+     "text": "de",
+     "start": 75.87,
+     "end": 76.01
+    },
+    {
+     "text": "minuit.",
+     "start": 76.01,
+     "end": 76.65
+    },
+    {
+     "text": "Juste",
+     "start": 76.65,
+     "end": 76.91
+    },
+    {
+     "text": "du",
+     "start": 76.91,
+     "end": 77.15
+    },
+    {
+     "text": "*soleil*.",
+     "start": 77.15,
+     "end": 77.57
+    }
+   ]
+  },
+  {
+   "id": "plan18",
+   "who": "vo",
+   "pause": 2.4,
+   "clock": null,
+   "clue": 1,
+   "plan": {
+    "ambiance": "vallée lumineuse",
+    "visuel": "Récolte INDICE 1 : la maison n°7 juste à côté. Papi Marcel (pastille) sur le pas de la porte, table dressée dehors avec quatre chaises vides.",
+    "sfx": [
+     "piano"
+    ]
+   },
+   "text": "Papi nous avait gardé quatre *chaises*.",
+   "start": 78.67,
+   "end": 79.99,
+   "words": [
+    {
+     "text": "Papi",
+     "start": 78.67,
+     "end": 78.775
+    },
+    {
+     "text": "nous",
+     "start": 78.775,
+     "end": 78.873
+    },
+    {
+     "text": "avait",
+     "start": 78.873,
+     "end": 79.088
+    },
+    {
+     "text": "gardé",
+     "start": 79.088,
+     "end": 79.343
+    },
+    {
+     "text": "quatre",
+     "start": 79.343,
+     "end": 79.589
+    },
+    {
+     "text": "*chaises*.",
+     "start": 79.589,
+     "end": 79.99
+    }
+   ]
+  },
+  {
+   "id": "plan19",
+   "who": "vo",
+   "pause": 4.4,
+   "optional": true,
+   "clock": null,
+   "plan": {
+    "ambiance": "vallée lumineuse",
+    "visuel": "Carte-question (même style que l'ép. 02) : « TOI, TU SERAIS RESTÉ DANS LA MAISON ? » + « DIS-LE EN COMMENTAIRE » + flèche.",
+    "sfx": [
+     "whoosh",
+     "pop"
+    ]
+   },
+   "text": "Et toi, tu serais resté dans la maison ?",
+   "start": 82.49,
+   "end": 84.13,
+   "words": [
+    {
+     "text": "Et",
+     "start": 82.49,
+     "end": 82.65
+    },
+    {
+     "text": "toi,",
+     "start": 82.65,
+     "end": 83.15
+    },
+    {
+     "text": "tu",
+     "start": 83.15,
+     "end": 83.23
+    },
+    {
+     "text": "serais",
+     "start": 83.23,
+     "end": 83.43
+    },
+    {
+     "text": "resté",
+     "start": 83.43,
+     "end": 83.71
+    },
+    {
+     "text": "dans",
+     "start": 83.71,
+     "end": 83.81
+    },
+    {
+     "text": "la",
+     "start": 83.81,
+     "end": 83.91
+    },
+    {
+     "text": "maison ?",
+     "start": 83.91,
+     "end": 84.13
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1755 @@
+{
+ "duration": 95.999,
+ "lines": [
+  {
+   "id": "hook-1",
+   "who": "vo",
+   "say": "Dans mon village, il y a quatre cent douze habitants...",
+   "pause": 0.1,
+   "text": "Dans mon village, il y a 412 habitants…",
+   "start": 0.15,
+   "end": 2.43,
+   "words": [
+    {
+     "text": "Dans",
+     "start": 0.15,
+     "end": 0.346
+    },
+    {
+     "text": "mon",
+     "start": 0.346,
+     "end": 0.496
+    },
+    {
+     "text": "village,",
+     "start": 0.496,
+     "end": 1.237
+    },
+    {
+     "text": "il",
+     "start": 1.237,
+     "end": 1.442
+    },
+    {
+     "text": "y",
+     "start": 1.442,
+     "end": 1.569
+    },
+    {
+     "text": "a",
+     "start": 1.569,
+     "end": 1.696
+    },
+    {
+     "text": "412",
+     "start": 1.696,
+     "end": 1.756
+    },
+    {
+     "text": "habitants…",
+     "start": 1.696,
+     "end": 2.43
+    }
+   ]
+  },
+  {
+   "id": "hook-2",
+   "who": "vo",
+   "say": "et quatre cent cinquante-neuf personnes qui dorment devant le magasin de jouets.",
+   "pause": 0.3,
+   "text": "et 459 personnes qui dorment devant le magasin de jouets.",
+   "start": 3.15,
+   "end": 6.31,
+   "words": [
+    {
+     "text": "et",
+     "start": 3.15,
+     "end": 3.45
+    },
+    {
+     "text": "459",
+     "start": 3.45,
+     "end": 4.31
+    },
+    {
+     "text": "personnes",
+     "start": 4.31,
+     "end": 4.71
+    },
+    {
+     "text": "qui",
+     "start": 4.71,
+     "end": 4.99
+    },
+    {
+     "text": "dorment",
+     "start": 4.99,
+     "end": 5.33
+    },
+    {
+     "text": "devant",
+     "start": 5.33,
+     "end": 5.55
+    },
+    {
+     "text": "le",
+     "start": 5.55,
+     "end": 5.71
+    },
+    {
+     "text": "magasin",
+     "start": 5.71,
+     "end": 6.03
+    },
+    {
+     "text": "de",
+     "start": 6.03,
+     "end": 6.11
+    },
+    {
+     "text": "jouets.",
+     "start": 6.11,
+     "end": 6.31
+    }
+   ]
+  },
+  {
+   "id": "coffret-1",
+   "who": "vo",
+   "pause": 0.12,
+   "text": "Tout ça pour un coffret.",
+   "start": 6.79,
+   "end": 8.25,
+   "words": [
+    {
+     "text": "Tout",
+     "start": 6.79,
+     "end": 6.95
+    },
+    {
+     "text": "ça",
+     "start": 6.95,
+     "end": 7.19
+    },
+    {
+     "text": "pour",
+     "start": 7.19,
+     "end": 7.61
+    },
+    {
+     "text": "un",
+     "start": 7.61,
+     "end": 7.91
+    },
+    {
+     "text": "coffret.",
+     "start": 7.91,
+     "end": 8.25
+    }
+   ]
+  },
+  {
+   "id": "coffret-2",
+   "who": "vo",
+   "say": "Le coffret ultra prémium des trente ans. Des Bestioles Mystiques !",
+   "seed": 21,
+   "pause": 0.15,
+   "text": "Le coffret Ultra Premium des 30 ans des Bestioles Mystiques.",
+   "start": 8.73,
+   "end": 11.73,
+   "words": [
+    {
+     "text": "Le",
+     "start": 8.73,
+     "end": 8.89
+    },
+    {
+     "text": "coffret",
+     "start": 8.89,
+     "end": 9.21
+    },
+    {
+     "text": "Ultra",
+     "start": 9.21,
+     "end": 9.63
+    },
+    {
+     "text": "Premium",
+     "start": 9.63,
+     "end": 10.11
+    },
+    {
+     "text": "des",
+     "start": 10.11,
+     "end": 10.31
+    },
+    {
+     "text": "30",
+     "start": 10.31,
+     "end": 10.61
+    },
+    {
+     "text": "ans",
+     "start": 10.61,
+     "end": 10.79
+    },
+    {
+     "text": "des",
+     "start": 10.79,
+     "end": 10.89
+    },
+    {
+     "text": "Bestioles",
+     "start": 10.89,
+     "end": 11.25
+    },
+    {
+     "text": "Mystiques.",
+     "start": 11.25,
+     "end": 11.73
+    }
+   ]
+  },
+  {
+   "id": "coffret-3",
+   "who": "vo",
+   "say": "Dedans, il y a la carte : Lunafenn, version dorée.",
+   "pause": 0.2,
+   "text": "Dedans, il y a LA carte : Lunafenn, version dorée.",
+   "start": 12.13,
+   "end": 14.95,
+   "words": [
+    {
+     "text": "Dedans,",
+     "start": 12.13,
+     "end": 12.422
+    },
+    {
+     "text": "il",
+     "start": 12.422,
+     "end": 12.837
+    },
+    {
+     "text": "y",
+     "start": 12.837,
+     "end": 12.897
+    },
+    {
+     "text": "a",
+     "start": 12.895,
+     "end": 12.955
+    },
+    {
+     "text": "LA",
+     "start": 12.925,
+     "end": 13.047
+    },
+    {
+     "text": "carte :",
+     "start": 13.047,
+     "end": 13.324
+    },
+    {
+     "text": "Lunafenn,",
+     "start": 13.324,
+     "end": 14.014
+    },
+    {
+     "text": "version",
+     "start": 14.014,
+     "end": 14.522
+    },
+    {
+     "text": "dorée.",
+     "start": 14.522,
+     "end": 14.95
+    }
+   ]
+  },
+  {
+   "id": "coffret-4",
+   "who": "vo",
+   "pause": 0.35,
+   "text": "Et le magasin n'en a reçu… qu'un seul.",
+   "start": 14.95,
+   "end": 17.83,
+   "words": [
+    {
+     "text": "Et",
+     "start": 14.95,
+     "end": 15.47
+    },
+    {
+     "text": "le",
+     "start": 15.47,
+     "end": 15.59
+    },
+    {
+     "text": "magasin",
+     "start": 15.59,
+     "end": 16.05
+    },
+    {
+     "text": "n'en",
+     "start": 16.05,
+     "end": 16.23
+    },
+    {
+     "text": "a",
+     "start": 16.23,
+     "end": 16.37
+    },
+    {
+     "text": "reçu…",
+     "start": 16.37,
+     "end": 16.75
+    },
+    {
+     "text": "qu'un",
+     "start": 16.75,
+     "end": 17.49
+    },
+    {
+     "text": "seul.",
+     "start": 17.49,
+     "end": 17.83
+    }
+   ]
+  },
+  {
+   "id": "gisele-1",
+   "who": "vo",
+   "say": "Première de la file : Gisèle, soixante-dix-huit ans.",
+   "pause": 0.1,
+   "text": "Première de la file : Gisèle, 78 ans.",
+   "start": 18.41,
+   "end": 21.05,
+   "words": [
+    {
+     "text": "Première",
+     "start": 18.41,
+     "end": 18.742
+    },
+    {
+     "text": "de",
+     "start": 18.742,
+     "end": 18.865
+    },
+    {
+     "text": "la",
+     "start": 18.865,
+     "end": 18.985
+    },
+    {
+     "text": "file :",
+     "start": 18.985,
+     "end": 19.672
+    },
+    {
+     "text": "Gisèle,",
+     "start": 19.672,
+     "end": 20.006
+    },
+    {
+     "text": "78",
+     "start": 20.006,
+     "end": 20.741
+    },
+    {
+     "text": "ans.",
+     "start": 20.741,
+     "end": 21.05
+    }
+   ]
+  },
+  {
+   "id": "gisele-2",
+   "who": "vo",
+   "seed": 17,
+   "pause": 0.1,
+   "text": "Elle campe depuis mardi.",
+   "start": 21.41,
+   "end": 22.59,
+   "words": [
+    {
+     "text": "Elle",
+     "start": 21.41,
+     "end": 21.612
+    },
+    {
+     "text": "campe",
+     "start": 21.612,
+     "end": 21.91
+    },
+    {
+     "text": "depuis",
+     "start": 21.91,
+     "end": 22.153
+    },
+    {
+     "text": "mardi.",
+     "start": 22.153,
+     "end": 22.59
+    }
+   ]
+  },
+  {
+   "id": "gisele-3",
+   "who": "vo",
+   "pause": 0.3,
+   "text": "Avec son fauteuil, sa soupe, et un thermos de café.",
+   "start": 22.93,
+   "end": 25.61,
+   "words": [
+    {
+     "text": "Avec",
+     "start": 22.93,
+     "end": 23.21
+    },
+    {
+     "text": "son",
+     "start": 23.21,
+     "end": 23.39
+    },
+    {
+     "text": "fauteuil,",
+     "start": 23.39,
+     "end": 24.11
+    },
+    {
+     "text": "sa",
+     "start": 24.11,
+     "end": 24.23
+    },
+    {
+     "text": "soupe,",
+     "start": 24.23,
+     "end": 24.59
+    },
+    {
+     "text": "et",
+     "start": 24.59,
+     "end": 24.89
+    },
+    {
+     "text": "un",
+     "start": 24.89,
+     "end": 25.03
+    },
+    {
+     "text": "thermos",
+     "start": 25.03,
+     "end": 25.25
+    },
+    {
+     "text": "de",
+     "start": 25.25,
+     "end": 25.37
+    },
+    {
+     "text": "café.",
+     "start": 25.37,
+     "end": 25.61
+    }
+   ]
+  },
+  {
+   "id": "maire-1",
+   "who": "vo",
+   "pause": 0.1,
+   "text": "Le maire a planté sa tente juste derrière.",
+   "start": 26.15,
+   "end": 28.13,
+   "words": [
+    {
+     "text": "Le",
+     "start": 26.15,
+     "end": 26.29
+    },
+    {
+     "text": "maire",
+     "start": 26.29,
+     "end": 26.53
+    },
+    {
+     "text": "a",
+     "start": 26.53,
+     "end": 26.73
+    },
+    {
+     "text": "planté",
+     "start": 26.73,
+     "end": 27.03
+    },
+    {
+     "text": "sa",
+     "start": 27.03,
+     "end": 27.15
+    },
+    {
+     "text": "tente",
+     "start": 27.15,
+     "end": 27.37
+    },
+    {
+     "text": "juste",
+     "start": 27.37,
+     "end": 27.77
+    },
+    {
+     "text": "derrière.",
+     "start": 27.77,
+     "end": 28.13
+    }
+   ]
+  },
+  {
+   "id": "maire-2",
+   "who": "vo",
+   "pause": 0.15,
+   "text": "Officiellement, il « inspecte la file ».",
+   "start": 28.85,
+   "end": 30.39,
+   "words": [
+    {
+     "text": "Officiellement,",
+     "start": 28.85,
+     "end": 29.33
+    },
+    {
+     "text": "il",
+     "start": 29.33,
+     "end": 29.63
+    },
+    {
+     "text": "« inspecte",
+     "start": 29.63,
+     "end": 30.07
+    },
+    {
+     "text": "la",
+     "start": 30.07,
+     "end": 30.19
+    },
+    {
+     "text": "file».",
+     "start": 30.19,
+     "end": 30.39
+    }
+   ]
+  },
+  {
+   "id": "maire-3",
+   "who": "vo",
+   "seed": 17,
+   "pause": 0.3,
+   "text": "Ça fait trois nuits qu'il l'inspecte. En pyjama.",
+   "start": 30.39,
+   "end": 33.25,
+   "words": [
+    {
+     "text": "Ça",
+     "start": 30.39,
+     "end": 31.032
+    },
+    {
+     "text": "fait",
+     "start": 31.032,
+     "end": 31.223
+    },
+    {
+     "text": "trois",
+     "start": 31.223,
+     "end": 31.512
+    },
+    {
+     "text": "nuits",
+     "start": 31.512,
+     "end": 31.731
+    },
+    {
+     "text": "qu'il",
+     "start": 31.731,
+     "end": 31.899
+    },
+    {
+     "text": "l'inspecte.",
+     "start": 31.899,
+     "end": 32.765
+    },
+    {
+     "text": "En",
+     "start": 32.765,
+     "end": 32.9
+    },
+    {
+     "text": "pyjama.",
+     "start": 32.9,
+     "end": 33.25
+    }
+   ]
+  },
+  {
+   "id": "kevin-1",
+   "who": "vo",
+   "seed": 17,
+   "say": "Kevin, lui, a vendu sa place dans la file. Cinquante euros.",
+   "pause": 0.15,
+   "text": "Kevin, lui, a vendu sa place dans la file. 50 euros.",
+   "start": 33.25,
+   "end": 36.95,
+   "words": [
+    {
+     "text": "Kevin,",
+     "start": 33.25,
+     "end": 34.01
+    },
+    {
+     "text": "lui,",
+     "start": 34.01,
+     "end": 34.47
+    },
+    {
+     "text": "a",
+     "start": 34.47,
+     "end": 34.83
+    },
+    {
+     "text": "vendu",
+     "start": 34.83,
+     "end": 35.13
+    },
+    {
+     "text": "sa",
+     "start": 35.13,
+     "end": 35.29
+    },
+    {
+     "text": "place",
+     "start": 35.29,
+     "end": 35.45
+    },
+    {
+     "text": "dans",
+     "start": 35.45,
+     "end": 35.61
+    },
+    {
+     "text": "la",
+     "start": 35.61,
+     "end": 35.73
+    },
+    {
+     "text": "file.",
+     "start": 35.73,
+     "end": 35.95
+    },
+    {
+     "text": "50",
+     "start": 35.95,
+     "end": 36.59
+    },
+    {
+     "text": "euros.",
+     "start": 36.59,
+     "end": 36.95
+    }
+   ]
+  },
+  {
+   "id": "kevin-2",
+   "who": "vo",
+   "say": "Puis il l'a rachetée. Quatre-vingts euros.",
+   "pause": 0.15,
+   "text": "Puis il l'a rachetée. 80 euros.",
+   "start": 36.95,
+   "end": 39.15,
+   "words": [
+    {
+     "text": "Puis",
+     "start": 36.95,
+     "end": 37.473
+    },
+    {
+     "text": "il",
+     "start": 37.473,
+     "end": 37.689
+    },
+    {
+     "text": "l'a",
+     "start": 37.689,
+     "end": 37.85
+    },
+    {
+     "text": "rachetée.",
+     "start": 37.85,
+     "end": 38.207
+    },
+    {
+     "text": "80",
+     "start": 38.207,
+     "end": 38.84
+    },
+    {
+     "text": "euros.",
+     "start": 38.84,
+     "end": 39.15
+    }
+   ]
+  },
+  {
+   "id": "kevin-3",
+   "who": "vo",
+   "pause": 0.35,
+   "text": "Kevin a un business plan. Il ne le comprend pas, mais il en a un.",
+   "start": 39.15,
+   "end": 42.73,
+   "words": [
+    {
+     "text": "Kevin",
+     "start": 39.15,
+     "end": 39.802
+    },
+    {
+     "text": "a",
+     "start": 39.802,
+     "end": 40.025
+    },
+    {
+     "text": "un",
+     "start": 40.025,
+     "end": 40.173
+    },
+    {
+     "text": "business",
+     "start": 40.173,
+     "end": 40.41
+    },
+    {
+     "text": "plan.",
+     "start": 40.41,
+     "end": 40.683
+    },
+    {
+     "text": "Il",
+     "start": 40.683,
+     "end": 41.01
+    },
+    {
+     "text": "ne",
+     "start": 41.01,
+     "end": 41.28
+    },
+    {
+     "text": "le",
+     "start": 41.28,
+     "end": 41.353
+    },
+    {
+     "text": "comprend",
+     "start": 41.353,
+     "end": 41.596
+    },
+    {
+     "text": "pas,",
+     "start": 41.596,
+     "end": 41.916
+    },
+    {
+     "text": "mais",
+     "start": 41.916,
+     "end": 42.287
+    },
+    {
+     "text": "il",
+     "start": 42.287,
+     "end": 42.4
+    },
+    {
+     "text": "en",
+     "start": 42.4,
+     "end": 42.508
+    },
+    {
+     "text": "a",
+     "start": 42.508,
+     "end": 42.634
+    },
+    {
+     "text": "un.",
+     "start": 42.634,
+     "end": 42.73
+    }
+   ]
+  },
+  {
+   "id": "jr-1",
+   "who": "vo",
+   "pause": 0.12,
+   "text": "Et puis, il y a Jean-Revente.",
+   "start": 42.73,
+   "end": 44.61,
+   "words": [
+    {
+     "text": "Et",
+     "start": 42.73,
+     "end": 43.206
+    },
+    {
+     "text": "puis,",
+     "start": 43.206,
+     "end": 43.453
+    },
+    {
+     "text": "il",
+     "start": 43.453,
+     "end": 43.713
+    },
+    {
+     "text": "y",
+     "start": 43.713,
+     "end": 43.839
+    },
+    {
+     "text": "a",
+     "start": 43.839,
+     "end": 43.932
+    },
+    {
+     "text": "Jean-Revente.",
+     "start": 43.932,
+     "end": 44.61
+    }
+   ]
+  },
+  {
+   "id": "jr-2",
+   "who": "vo",
+   "pause": 0.2,
+   "text": "Jean-Revente n'aime pas les cartes. Il aime les marges.",
+   "start": 45.21,
+   "end": 47.59,
+   "words": [
+    {
+     "text": "Jean-Revente",
+     "start": 45.21,
+     "end": 45.8
+    },
+    {
+     "text": "n'aime",
+     "start": 45.8,
+     "end": 45.964
+    },
+    {
+     "text": "pas",
+     "start": 45.964,
+     "end": 46.094
+    },
+    {
+     "text": "les",
+     "start": 46.094,
+     "end": 46.273
+    },
+    {
+     "text": "cartes.",
+     "start": 46.273,
+     "end": 46.765
+    },
+    {
+     "text": "Il",
+     "start": 46.765,
+     "end": 46.898
+    },
+    {
+     "text": "aime",
+     "start": 46.898,
+     "end": 47.049
+    },
+    {
+     "text": "les",
+     "start": 47.049,
+     "end": 47.191
+    },
+    {
+     "text": "marges.",
+     "start": 47.191,
+     "end": 47.59
+    }
+   ]
+  },
+  {
+   "id": "jr-3",
+   "who": "vo",
+   "say": "Il est venu avec ses cousins. Quarante-sept cousins.",
+   "pause": 0.15,
+   "text": "Il est venu avec ses cousins. 47 cousins.",
+   "start": 47.59,
+   "end": 50.25,
+   "words": [
+    {
+     "text": "Il",
+     "start": 47.59,
+     "end": 48.03
+    },
+    {
+     "text": "est",
+     "start": 48.03,
+     "end": 48.11
+    },
+    {
+     "text": "venu",
+     "start": 48.11,
+     "end": 48.31
+    },
+    {
+     "text": "avec",
+     "start": 48.31,
+     "end": 48.45
+    },
+    {
+     "text": "ses",
+     "start": 48.45,
+     "end": 48.63
+    },
+    {
+     "text": "cousins.",
+     "start": 48.63,
+     "end": 48.87
+    },
+    {
+     "text": "47",
+     "start": 48.87,
+     "end": 49.77
+    },
+    {
+     "text": "cousins.",
+     "start": 49.77,
+     "end": 50.25
+    }
+   ]
+  },
+  {
+   "id": "jr-4",
+   "who": "vo",
+   "pause": 0.35,
+   "text": "Tous avec une moustache. Un peu de travers.",
+   "start": 50.25,
+   "end": 52.67,
+   "words": [
+    {
+     "text": "Tous",
+     "start": 50.25,
+     "end": 50.75
+    },
+    {
+     "text": "avec",
+     "start": 50.75,
+     "end": 51.09
+    },
+    {
+     "text": "une",
+     "start": 51.09,
+     "end": 51.29
+    },
+    {
+     "text": "moustache.",
+     "start": 51.29,
+     "end": 51.73
+    },
+    {
+     "text": "Un",
+     "start": 51.73,
+     "end": 52.21
+    },
+    {
+     "text": "peu",
+     "start": 52.21,
+     "end": 52.33
+    },
+    {
+     "text": "de",
+     "start": 52.33,
+     "end": 52.43
+    },
+    {
+     "text": "travers.",
+     "start": 52.43,
+     "end": 52.67
+    }
+   ]
+  },
+  {
+   "id": "ouv-1",
+   "who": "vo",
+   "pause": 0.15,
+   "text": "Jeudi, neuf heures pile. La vendeuse ouvre la porte.",
+   "start": 52.67,
+   "end": 55.97,
+   "words": [
+    {
+     "text": "Jeudi,",
+     "start": 52.67,
+     "end": 53.53
+    },
+    {
+     "text": "neuf",
+     "start": 53.53,
+     "end": 54.056
+    },
+    {
+     "text": "heures",
+     "start": 54.056,
+     "end": 54.432
+    },
+    {
+     "text": "pile.",
+     "start": 54.432,
+     "end": 54.986
+    },
+    {
+     "text": "La",
+     "start": 54.986,
+     "end": 55.078
+    },
+    {
+     "text": "vendeuse",
+     "start": 55.078,
+     "end": 55.458
+    },
+    {
+     "text": "ouvre",
+     "start": 55.458,
+     "end": 55.713
+    },
+    {
+     "text": "la",
+     "start": 55.713,
+     "end": 55.794
+    },
+    {
+     "text": "porte.",
+     "start": 55.794,
+     "end": 55.97
+    }
+   ]
+  },
+  {
+   "id": "ouv-2",
+   "who": "vendeuse",
+   "pause": 0.2,
+   "text": "Un coffret par personne !",
+   "start": 56.545,
+   "end": 57.525,
+   "words": [
+    {
+     "text": "Un",
+     "start": 56.545,
+     "end": 56.705
+    },
+    {
+     "text": "coffret",
+     "start": 56.705,
+     "end": 57.025
+    },
+    {
+     "text": "par",
+     "start": 57.025,
+     "end": 57.165
+    },
+    {
+     "text": "personne !",
+     "start": 57.165,
+     "end": 57.525
+    }
+   ]
+  },
+  {
+   "id": "ouv-3",
+   "who": "vo",
+   "pause": 0.3,
+   "text": "Ça tombe bien. Il n'y en a qu'un.",
+   "start": 58.092,
+   "end": 59.492,
+   "words": [
+    {
+     "text": "Ça",
+     "start": 58.092,
+     "end": 58.283
+    },
+    {
+     "text": "tombe",
+     "start": 58.283,
+     "end": 58.423
+    },
+    {
+     "text": "bien.",
+     "start": 58.423,
+     "end": 58.584
+    },
+    {
+     "text": "Il",
+     "start": 58.584,
+     "end": 58.651
+    },
+    {
+     "text": "n'y",
+     "start": 58.651,
+     "end": 59.098
+    },
+    {
+     "text": "en",
+     "start": 59.098,
+     "end": 59.159
+    },
+    {
+     "text": "a",
+     "start": 59.159,
+     "end": 59.264
+    },
+    {
+     "text": "qu'un.",
+     "start": 59.264,
+     "end": 59.492
+    }
+   ]
+  },
+  {
+   "id": "ruee-1",
+   "who": "vo",
+   "say": "Les quarante-sept cousins foncent.",
+   "pause": 0.1,
+   "text": "Les 47 cousins foncent.",
+   "start": 59.972,
+   "end": 61.532,
+   "words": [
+    {
+     "text": "Les",
+     "start": 59.972,
+     "end": 60.072
+    },
+    {
+     "text": "47",
+     "start": 60.072,
+     "end": 60.572
+    },
+    {
+     "text": "cousins",
+     "start": 60.572,
+     "end": 60.892
+    },
+    {
+     "text": "foncent.",
+     "start": 60.892,
+     "end": 61.532
+    }
+   ]
+  },
+  {
+   "id": "ruee-2",
+   "who": "vo",
+   "pause": 0.4,
+   "text": "Gisèle aussi. Avec le fauteuil.",
+   "start": 62.192,
+   "end": 63.632,
+   "words": [
+    {
+     "text": "Gisèle",
+     "start": 62.192,
+     "end": 62.411
+    },
+    {
+     "text": "aussi.",
+     "start": 62.411,
+     "end": 63.043
+    },
+    {
+     "text": "Avec",
+     "start": 63.043,
+     "end": 63.252
+    },
+    {
+     "text": "le",
+     "start": 63.252,
+     "end": 63.328
+    },
+    {
+     "text": "fauteuil.",
+     "start": 63.328,
+     "end": 63.632
+    }
+   ]
+  },
+  {
+   "id": "climax-1",
+   "who": "vo",
+   "pause": 0.15,
+   "text": "Et moi ? J'étais déjà à l'intérieur depuis cinq heures du matin.",
+   "start": 64.072,
+   "end": 66.992,
+   "words": [
+    {
+     "text": "Et",
+     "start": 64.072,
+     "end": 64.172
+    },
+    {
+     "text": "moi ?",
+     "start": 64.172,
+     "end": 64.852
+    },
+    {
+     "text": "J'étais",
+     "start": 64.852,
+     "end": 65.072
+    },
+    {
+     "text": "déjà",
+     "start": 65.072,
+     "end": 65.372
+    },
+    {
+     "text": "à",
+     "start": 65.372,
+     "end": 65.452
+    },
+    {
+     "text": "l'intérieur",
+     "start": 65.452,
+     "end": 65.752
+    },
+    {
+     "text": "depuis",
+     "start": 65.752,
+     "end": 66.072
+    },
+    {
+     "text": "cinq",
+     "start": 66.072,
+     "end": 66.432
+    },
+    {
+     "text": "heures",
+     "start": 66.432,
+     "end": 66.592
+    },
+    {
+     "text": "du",
+     "start": 66.592,
+     "end": 66.712
+    },
+    {
+     "text": "matin.",
+     "start": 66.712,
+     "end": 66.992
+    }
+   ]
+  },
+  {
+   "id": "climax-2",
+   "who": "vo",
+   "pause": 0.2,
+   "text": "Je livre les croissants du magasin. J'avais les clés.",
+   "start": 67.372,
+   "end": 69.672,
+   "words": [
+    {
+     "text": "Je",
+     "start": 67.372,
+     "end": 67.532
+    },
+    {
+     "text": "livre",
+     "start": 67.532,
+     "end": 67.732
+    },
+    {
+     "text": "les",
+     "start": 67.732,
+     "end": 67.912
+    },
+    {
+     "text": "croissants",
+     "start": 67.912,
+     "end": 68.232
+    },
+    {
+     "text": "du",
+     "start": 68.232,
+     "end": 68.332
+    },
+    {
+     "text": "magasin.",
+     "start": 68.332,
+     "end": 69.052
+    },
+    {
+     "text": "J'avais",
+     "start": 69.052,
+     "end": 69.272
+    },
+    {
+     "text": "les",
+     "start": 69.272,
+     "end": 69.432
+    },
+    {
+     "text": "clés.",
+     "start": 69.432,
+     "end": 69.672
+    }
+   ]
+  },
+  {
+   "id": "climax-3",
+   "who": "vo",
+   "pause": 0.2,
+   "text": "J'ai acheté le coffret… et je l'ai donné à Gisèle.",
+   "start": 70.072,
+   "end": 71.792,
+   "words": [
+    {
+     "text": "J'ai",
+     "start": 70.072,
+     "end": 70.202
+    },
+    {
+     "text": "acheté",
+     "start": 70.202,
+     "end": 70.379
+    },
+    {
+     "text": "le",
+     "start": 70.379,
+     "end": 70.452
+    },
+    {
+     "text": "coffret…",
+     "start": 70.452,
+     "end": 70.772
+    },
+    {
+     "text": "et",
+     "start": 70.772,
+     "end": 70.863
+    },
+    {
+     "text": "je",
+     "start": 70.863,
+     "end": 71.212
+    },
+    {
+     "text": "l'ai",
+     "start": 71.212,
+     "end": 71.4
+    },
+    {
+     "text": "donné",
+     "start": 71.4,
+     "end": 71.537
+    },
+    {
+     "text": "à",
+     "start": 71.537,
+     "end": 71.597
+    },
+    {
+     "text": "Gisèle.",
+     "start": 71.57,
+     "end": 71.792
+    }
+   ]
+  },
+  {
+   "id": "merci",
+   "who": "gisele",
+   "pause": 0.25,
+   "text": "Merci, mon petit !",
+   "start": 72.571,
+   "end": 73.371,
+   "words": [
+    {
+     "text": "Merci,",
+     "start": 72.571,
+     "end": 72.911
+    },
+    {
+     "text": "mon",
+     "start": 72.911,
+     "end": 73.131
+    },
+    {
+     "text": "petit !",
+     "start": 73.131,
+     "end": 73.371
+    }
+   ]
+  },
+  {
+   "id": "climax-4",
+   "who": "vo",
+   "say": "Jean-Revente lui en a proposé deux mille euros.",
+   "pause": 0.15,
+   "text": "Jean-Revente lui en a proposé 2 000 euros.",
+   "start": 73.902,
+   "end": 76.262,
+   "words": [
+    {
+     "text": "Jean-Revente",
+     "start": 73.902,
+     "end": 74.562
+    },
+    {
+     "text": "lui",
+     "start": 74.562,
+     "end": 74.862
+    },
+    {
+     "text": "en",
+     "start": 74.862,
+     "end": 75.102
+    },
+    {
+     "text": "a",
+     "start": 75.102,
+     "end": 75.222
+    },
+    {
+     "text": "proposé",
+     "start": 75.222,
+     "end": 75.642
+    },
+    {
+     "text": "2",
+     "start": 75.642,
+     "end": 75.922
+    },
+    {
+     "text": "000",
+     "start": 75.922,
+     "end": 76.042
+    },
+    {
+     "text": "euros.",
+     "start": 76.042,
+     "end": 76.262
+    }
+   ]
+  },
+  {
+   "id": "climax-5",
+   "who": "vo",
+   "pause": 0.4,
+   "text": "Elle a dit non. C'était pour son petit-fils.",
+   "start": 76.682,
+   "end": 78.602,
+   "words": [
+    {
+     "text": "Elle",
+     "start": 76.682,
+     "end": 76.842
+    },
+    {
+     "text": "a",
+     "start": 76.842,
+     "end": 76.942
+    },
+    {
+     "text": "dit",
+     "start": 76.942,
+     "end": 77.042
+    },
+    {
+     "text": "non.",
+     "start": 77.042,
+     "end": 77.642
+    },
+    {
+     "text": "C'était",
+     "start": 77.642,
+     "end": 77.842
+    },
+    {
+     "text": "pour",
+     "start": 77.842,
+     "end": 78.022
+    },
+    {
+     "text": "son",
+     "start": 78.022,
+     "end": 78.162
+    },
+    {
+     "text": "petit-fils.",
+     "start": 78.162,
+     "end": 78.602
+    }
+   ]
+  },
+  {
+   "id": "chute-1",
+   "who": "vo",
+   "pause": 0.3,
+   "text": "Le lendemain, l'éditeur annonce une réédition. En quantité illimitée.",
+   "start": 79.262,
+   "end": 82.462,
+   "words": [
+    {
+     "text": "Le",
+     "start": 79.262,
+     "end": 79.346
+    },
+    {
+     "text": "lendemain,",
+     "start": 79.346,
+     "end": 79.701
+    },
+    {
+     "text": "l'éditeur",
+     "start": 79.701,
+     "end": 80.399
+    },
+    {
+     "text": "annonce",
+     "start": 80.399,
+     "end": 80.67
+    },
+    {
+     "text": "une",
+     "start": 80.67,
+     "end": 80.763
+    },
+    {
+     "text": "réédition.",
+     "start": 80.763,
+     "end": 81.175
+    },
+    {
+     "text": "En",
+     "start": 81.175,
+     "end": 81.284
+    },
+    {
+     "text": "quantité",
+     "start": 81.284,
+     "end": 82.026
+    },
+    {
+     "text": "illimitée.",
+     "start": 82.026,
+     "end": 82.462
+    }
+   ]
+  },
+  {
+   "id": "chute-2",
+   "who": "vo",
+   "pause": 0.2,
+   "text": "Ce matin, Jean-Revente dort à nouveau devant le magasin.",
+   "start": 83.722,
+   "end": 86.542,
+   "words": [
+    {
+     "text": "Ce",
+     "start": 83.722,
+     "end": 83.822
+    },
+    {
+     "text": "matin,",
+     "start": 83.822,
+     "end": 84.462
+    },
+    {
+     "text": "Jean-Revente",
+     "start": 84.462,
+     "end": 85.082
+    },
+    {
+     "text": "dort",
+     "start": 85.082,
+     "end": 85.322
+    },
+    {
+     "text": "à",
+     "start": 85.322,
+     "end": 85.482
+    },
+    {
+     "text": "nouveau",
+     "start": 85.482,
+     "end": 85.702
+    },
+    {
+     "text": "devant",
+     "start": 85.702,
+     "end": 85.962
+    },
+    {
+     "text": "le",
+     "start": 85.962,
+     "end": 86.122
+    },
+    {
+     "text": "magasin.",
+     "start": 86.122,
+     "end": 86.542
+    }
+   ]
+  },
+  {
+   "id": "chute-3",
+   "who": "vo",
+   "say": "Mais cette fois... pour se faire rembourser quarante-sept coffrets.",
+   "pause": 0.5,
+   "text": "Mais cette fois… pour se faire rembourser 47 coffrets.",
+   "start": 86.882,
+   "end": 90.142,
+   "words": [
+    {
+     "text": "Mais",
+     "start": 86.882,
+     "end": 87.062
+    },
+    {
+     "text": "cette",
+     "start": 87.062,
+     "end": 87.202
+    },
+    {
+     "text": "fois…",
+     "start": 87.202,
+     "end": 88.102
+    },
+    {
+     "text": "pour",
+     "start": 88.102,
+     "end": 88.322
+    },
+    {
+     "text": "se",
+     "start": 88.322,
+     "end": 88.462
+    },
+    {
+     "text": "faire",
+     "start": 88.462,
+     "end": 88.642
+    },
+    {
+     "text": "rembourser",
+     "start": 88.642,
+     "end": 89.142
+    },
+    {
+     "text": "47",
+     "start": 89.142,
+     "end": 89.662
+    },
+    {
+     "text": "coffrets.",
+     "start": 89.662,
+     "end": 90.142
+    }
+   ]
+  },
+  {
+   "id": "cta-1",
+   "who": "vo",
+   "pause": 0.15,
+   "text": "Et toi, tu dormirais combien de nuits devant un magasin pour un coffret ?",
+   "start": 90.722,
+   "end": 93.782,
+   "words": [
+    {
+     "text": "Et",
+     "start": 90.722,
+     "end": 90.802
+    },
+    {
+     "text": "toi,",
+     "start": 90.802,
+     "end": 91.302
+    },
+    {
+     "text": "tu",
+     "start": 91.302,
+     "end": 91.362
+    },
+    {
+     "text": "dormirais",
+     "start": 91.362,
+     "end": 91.722
+    },
+    {
+     "text": "combien",
+     "start": 91.722,
+     "end": 91.962
+    },
+    {
+     "text": "de",
+     "start": 91.962,
+     "end": 92.182
+    },
+    {
+     "text": "nuits",
+     "start": 92.182,
+     "end": 92.362
+    },
+    {
+     "text": "devant",
+     "start": 92.362,
+     "end": 92.542
+    },
+    {
+     "text": "un",
+     "start": 92.542,
+     "end": 92.682
+    },
+    {
+     "text": "magasin",
+     "start": 92.682,
+     "end": 93.062
+    },
+    {
+     "text": "pour",
+     "start": 93.062,
+     "end": 93.222
+    },
+    {
+     "text": "un",
+     "start": 93.222,
+     "end": 93.442
+    },
+    {
+     "text": "coffret ?",
+     "start": 93.442,
+     "end": 93.782
+    }
+   ]
+  },
+  {
+   "id": "cta-2",
+   "who": "vo",
+   "pause": 1.2,
+   "text": "Dis-le en commentaire.",
+   "start": 94.142,
+   "end": 94.982,
+   "words": [
+    {
+     "text": "Dis-le",
+     "start": 94.142,
+     "end": 94.442
+    },
+    {
+     "text": "en",
+     "start": 94.442,
+     "end": 94.542
+    },
+    {
+     "text": "commentaire.",
+     "start": 94.542,
+     "end": 94.982
+    }
+   ]
+  }
+ ]
+}

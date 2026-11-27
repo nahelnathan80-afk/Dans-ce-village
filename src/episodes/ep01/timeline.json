@@ -1,0 +1,1879 @@
+{
+ "duration": 86.51,
+ "lines": [
+  {
+   "id": "hook-courez",
+   "who": "leon",
+   "say": "Courez !",
+   "paid": true,
+   "balanceBefore": 14,
+   "pause": 0.17,
+   "text": "COUREZ !",
+   "start": 0.15,
+   "end": 0.69,
+   "words": [
+    {
+     "text": "COUREZ !",
+     "start": 0.15,
+     "end": 0.69
+    }
+   ]
+  },
+  {
+   "id": "hook-1",
+   "who": "vo",
+   "pause": 0.1,
+   "text": "Dans mon village, chaque mot coûte un euro.",
+   "start": 0.86,
+   "end": 2.68,
+   "words": [
+    {
+     "text": "Dans",
+     "start": 0.86,
+     "end": 1.02
+    },
+    {
+     "text": "mon",
+     "start": 1.02,
+     "end": 1.18
+    },
+    {
+     "text": "village,",
+     "start": 1.18,
+     "end": 1.44
+    },
+    {
+     "text": "chaque",
+     "start": 1.76,
+     "end": 1.9
+    },
+    {
+     "text": "mot",
+     "start": 1.9,
+     "end": 2.14
+    },
+    {
+     "text": "coûte",
+     "start": 2.14,
+     "end": 2.46
+    },
+    {
+     "text": "un",
+     "start": 2.46,
+     "end": 2.52
+    },
+    {
+     "text": "euro.",
+     "start": 2.52,
+     "end": 2.68
+    }
+   ]
+  },
+  {
+   "id": "hook-2",
+   "who": "vo",
+   "speed": 0.85,
+   "balanceBefore": 15,
+   "pause": 0.14,
+   "text": "Et moi, il me reste quinze euros.",
+   "start": 2.78,
+   "end": 4.42,
+   "words": [
+    {
+     "text": "Et",
+     "start": 2.78,
+     "end": 2.92
+    },
+    {
+     "text": "moi,",
+     "start": 2.92,
+     "end": 3.16
+    },
+    {
+     "text": "il",
+     "start": 3.44,
+     "end": 3.52
+    },
+    {
+     "text": "me",
+     "start": 3.52,
+     "end": 3.6
+    },
+    {
+     "text": "reste",
+     "start": 3.6,
+     "end": 3.82
+    },
+    {
+     "text": "quinze",
+     "start": 3.82,
+     "end": 4.24
+    },
+    {
+     "text": "euros.",
+     "start": 4.24,
+     "end": 4.42
+    }
+   ]
+  },
+  {
+   "id": "rewind",
+   "who": "vo",
+   "pause": 0.24,
+   "text": "Attends… je reprends depuis le début.",
+   "start": 4.56,
+   "end": 6.02,
+   "words": [
+    {
+     "text": "Attends…",
+     "start": 4.56,
+     "end": 4.94
+    },
+    {
+     "text": "je",
+     "start": 5.14,
+     "end": 5.24
+    },
+    {
+     "text": "reprends",
+     "start": 5.24,
+     "end": 5.7
+    },
+    {
+     "text": "depuis",
+     "start": 5.7,
+     "end": 5.72
+    },
+    {
+     "text": "le",
+     "start": 5.72,
+     "end": 5.84
+    },
+    {
+     "text": "début.",
+     "start": 5.84,
+     "end": 6.02
+    }
+   ]
+  },
+  {
+   "id": "maire-1",
+   "who": "vo",
+   "pause": 0.1,
+   "text": "Le maire fait tous ses discours en mime.",
+   "start": 6.26,
+   "end": 7.84,
+   "words": [
+    {
+     "text": "Le",
+     "start": 6.26,
+     "end": 6.4
+    },
+    {
+     "text": "maire",
+     "start": 6.4,
+     "end": 6.66
+    },
+    {
+     "text": "fait",
+     "start": 6.66,
+     "end": 6.8
+    },
+    {
+     "text": "tous",
+     "start": 6.8,
+     "end": 7.0
+    },
+    {
+     "text": "ses",
+     "start": 7.0,
+     "end": 7.12
+    },
+    {
+     "text": "discours",
+     "start": 7.12,
+     "end": 7.44
+    },
+    {
+     "text": "en",
+     "start": 7.44,
+     "end": 7.6
+    },
+    {
+     "text": "mime.",
+     "start": 7.6,
+     "end": 7.84
+    }
+   ]
+  },
+  {
+   "id": "maire-2",
+   "who": "vo",
+   "pause": 0.14,
+   "text": "La dernière fois, il a mimé « budget ».",
+   "start": 7.94,
+   "end": 9.32,
+   "words": [
+    {
+     "text": "La",
+     "start": 7.94,
+     "end": 8.12
+    },
+    {
+     "text": "dernière",
+     "start": 8.12,
+     "end": 8.26
+    },
+    {
+     "text": "fois,",
+     "start": 8.26,
+     "end": 8.58
+    },
+    {
+     "text": "il",
+     "start": 8.78,
+     "end": 8.8
+    },
+    {
+     "text": "a",
+     "start": 8.8,
+     "end": 8.92
+    },
+    {
+     "text": "mimé",
+     "start": 8.92,
+     "end": 9.12
+    },
+    {
+     "text": "« budget».",
+     "start": 9.24,
+     "end": 9.32
+    }
+   ]
+  },
+  {
+   "id": "maire-3",
+   "who": "vo",
+   "pause": 0.28,
+   "text": "On a cru qu'il se noyait.",
+   "start": 9.46,
+   "end": 10.3,
+   "words": [
+    {
+     "text": "On",
+     "start": 9.46,
+     "end": 9.553
+    },
+    {
+     "text": "a",
+     "start": 9.553,
+     "end": 9.6
+    },
+    {
+     "text": "cru",
+     "start": 9.6,
+     "end": 9.74
+    },
+    {
+     "text": "qu'il",
+     "start": 9.74,
+     "end": 9.927
+    },
+    {
+     "text": "se",
+     "start": 9.927,
+     "end": 10.02
+    },
+    {
+     "text": "noyait.",
+     "start": 10.02,
+     "end": 10.3
+    }
+   ]
+  },
+  {
+   "id": "boul-1",
+   "who": "vo",
+   "pause": 0.14,
+   "text": "La boulangère vend tout avec des pancartes.",
+   "start": 10.58,
+   "end": 12.52,
+   "words": [
+    {
+     "text": "La",
+     "start": 10.58,
+     "end": 10.72
+    },
+    {
+     "text": "boulangère",
+     "start": 10.72,
+     "end": 11.26
+    },
+    {
+     "text": "vend",
+     "start": 11.26,
+     "end": 11.48
+    },
+    {
+     "text": "tout",
+     "start": 11.48,
+     "end": 11.68
+    },
+    {
+     "text": "avec",
+     "start": 11.68,
+     "end": 11.86
+    },
+    {
+     "text": "des",
+     "start": 11.86,
+     "end": 12.0
+    },
+    {
+     "text": "pancartes.",
+     "start": 12.0,
+     "end": 12.52
+    }
+   ]
+  },
+  {
+   "id": "boul-2",
+   "who": "vo",
+   "pause": 0.17,
+   "text": "Baguette.",
+   "start": 12.66,
+   "end": 13.16,
+   "words": [
+    {
+     "text": "Baguette.",
+     "start": 12.66,
+     "end": 13.16
+    }
+   ]
+  },
+  {
+   "id": "boul-3",
+   "who": "vo",
+   "pause": 0.17,
+   "text": "Croissant.",
+   "start": 13.33,
+   "end": 13.73,
+   "words": [
+    {
+     "text": "Croissant.",
+     "start": 13.33,
+     "end": 13.73
+    }
+   ]
+  },
+  {
+   "id": "boul-4",
+   "who": "vo",
+   "pause": 0.28,
+   "text": "On ne fait pas crédit.",
+   "start": 13.9,
+   "end": 14.98,
+   "words": [
+    {
+     "text": "On",
+     "start": 13.9,
+     "end": 14.04
+    },
+    {
+     "text": "ne",
+     "start": 14.04,
+     "end": 14.14
+    },
+    {
+     "text": "fait",
+     "start": 14.14,
+     "end": 14.26
+    },
+    {
+     "text": "pas",
+     "start": 14.26,
+     "end": 14.4
+    },
+    {
+     "text": "crédit.",
+     "start": 14.4,
+     "end": 14.98
+    }
+   ]
+  },
+  {
+   "id": "amour-1",
+   "who": "vo",
+   "pause": 0.1,
+   "text": "Les amoureux se parlent en morse, avec des lampes de poche.",
+   "start": 15.26,
+   "end": 17.74,
+   "words": [
+    {
+     "text": "Les",
+     "start": 15.26,
+     "end": 15.38
+    },
+    {
+     "text": "amoureux",
+     "start": 15.38,
+     "end": 15.72
+    },
+    {
+     "text": "se",
+     "start": 15.72,
+     "end": 15.82
+    },
+    {
+     "text": "parlent",
+     "start": 15.82,
+     "end": 16.14
+    },
+    {
+     "text": "en",
+     "start": 16.14,
+     "end": 16.26
+    },
+    {
+     "text": "morse,",
+     "start": 16.26,
+     "end": 16.68
+    },
+    {
+     "text": "avec",
+     "start": 16.72,
+     "end": 16.9
+    },
+    {
+     "text": "des",
+     "start": 16.9,
+     "end": 17.1
+    },
+    {
+     "text": "lampes",
+     "start": 17.1,
+     "end": 17.3
+    },
+    {
+     "text": "de",
+     "start": 17.3,
+     "end": 17.38
+    },
+    {
+     "text": "poche.",
+     "start": 17.38,
+     "end": 17.74
+    }
+   ]
+  },
+  {
+   "id": "amour-2",
+   "who": "vo",
+   "pause": 0.21,
+   "text": "Ça fait trois ans qu'ils essaient de se dire « je t'aime ».",
+   "start": 17.84,
+   "end": 20.22,
+   "words": [
+    {
+     "text": "Ça",
+     "start": 17.84,
+     "end": 17.953
+    },
+    {
+     "text": "fait",
+     "start": 17.953,
+     "end": 18.18
+    },
+    {
+     "text": "trois",
+     "start": 18.18,
+     "end": 18.463
+    },
+    {
+     "text": "ans",
+     "start": 18.463,
+     "end": 18.633
+    },
+    {
+     "text": "qu'ils",
+     "start": 18.633,
+     "end": 18.917
+    },
+    {
+     "text": "essaient",
+     "start": 18.917,
+     "end": 19.37
+    },
+    {
+     "text": "de",
+     "start": 19.37,
+     "end": 19.483
+    },
+    {
+     "text": "se",
+     "start": 19.483,
+     "end": 19.597
+    },
+    {
+     "text": "dire",
+     "start": 19.597,
+     "end": 19.823
+    },
+    {
+     "text": "« je",
+     "start": 19.823,
+     "end": 19.937
+    },
+    {
+     "text": "t'aime».",
+     "start": 19.937,
+     "end": 20.22
+    }
+   ]
+  },
+  {
+   "id": "amour-3",
+   "who": "vo",
+   "pause": 0.35,
+   "text": "Ils en sont au J.",
+   "start": 20.43,
+   "end": 21.25,
+   "words": [
+    {
+     "text": "Ils",
+     "start": 20.43,
+     "end": 20.67
+    },
+    {
+     "text": "en",
+     "start": 20.67,
+     "end": 20.77
+    },
+    {
+     "text": "sont",
+     "start": 20.77,
+     "end": 20.93
+    },
+    {
+     "text": "au",
+     "start": 20.93,
+     "end": 21.13
+    },
+    {
+     "text": "J.",
+     "start": 21.13,
+     "end": 21.25
+    }
+   ]
+  },
+  {
+   "id": "kevin-1",
+   "who": "vo",
+   "pause": 0.07,
+   "text": "Et puis, il y a Kevin.",
+   "start": 21.6,
+   "end": 22.74,
+   "words": [
+    {
+     "text": "Et",
+     "start": 21.6,
+     "end": 21.8
+    },
+    {
+     "text": "puis,",
+     "start": 21.8,
+     "end": 21.98
+    },
+    {
+     "text": "il",
+     "start": 22.22,
+     "end": 22.3
+    },
+    {
+     "text": "y",
+     "start": 22.3,
+     "end": 22.4
+    },
+    {
+     "text": "a",
+     "start": 22.4,
+     "end": 22.48
+    },
+    {
+     "text": "Kevin.",
+     "start": 22.48,
+     "end": 22.74
+    }
+   ]
+  },
+  {
+   "id": "kevin-2",
+   "who": "vo",
+   "pause": 0.14,
+   "text": "Kevin a dit bonjour… à la montagne.",
+   "start": 22.81,
+   "end": 24.95,
+   "words": [
+    {
+     "text": "Kevin",
+     "start": 22.81,
+     "end": 23.05
+    },
+    {
+     "text": "a",
+     "start": 23.05,
+     "end": 23.45
+    },
+    {
+     "text": "dit",
+     "start": 23.45,
+     "end": 23.55
+    },
+    {
+     "text": "bonjour…",
+     "start": 23.55,
+     "end": 23.99
+    },
+    {
+     "text": "à",
+     "start": 24.29,
+     "end": 24.41
+    },
+    {
+     "text": "la",
+     "start": 24.41,
+     "end": 24.49
+    },
+    {
+     "text": "montagne.",
+     "start": 24.49,
+     "end": 24.95
+    }
+   ]
+  },
+  {
+   "id": "kevin-bonjour",
+   "who": "kevin",
+   "paid": true,
+   "payer": "kevin",
+   "pause": 0.07,
+   "text": "Bonjour !",
+   "start": 25.09,
+   "end": 25.85,
+   "words": [
+    {
+     "text": "Bonjour !",
+     "start": 25.09,
+     "end": 25.85
+    }
+   ]
+  },
+  {
+   "id": "kevin-echo",
+   "who": "echo",
+   "of": "kevin-bonjour",
+   "repeats": 3,
+   "gap": 0.42,
+   "paid": true,
+   "payer": "kevin",
+   "pause": 0.14,
+   "text": "bonjour…",
+   "start": 25.87,
+   "end": 28.99,
+   "words": [
+    {
+     "text": "bonjour…",
+     "start": 25.87,
+     "end": 26.63,
+     "echo": 1
+    },
+    {
+     "text": "bonjour…",
+     "start": 27.05,
+     "end": 27.81,
+     "echo": 2
+    },
+    {
+     "text": "bonjour…",
+     "start": 28.23,
+     "end": 28.99,
+     "echo": 3
+    }
+   ]
+  },
+  {
+   "id": "kevin-3",
+   "who": "vo",
+   "pause": 0.28,
+   "text": "L'écho, ça se paie aussi.",
+   "start": 29.13,
+   "end": 30.41,
+   "words": [
+    {
+     "text": "L'écho,",
+     "start": 29.13,
+     "end": 29.486
+    },
+    {
+     "text": "ça",
+     "start": 29.486,
+     "end": 29.628
+    },
+    {
+     "text": "se",
+     "start": 29.628,
+     "end": 29.77
+    },
+    {
+     "text": "paie",
+     "start": 29.77,
+     "end": 30.054
+    },
+    {
+     "text": "aussi.",
+     "start": 30.054,
+     "end": 30.41
+    }
+   ]
+  },
+  {
+   "id": "pense-1",
+   "who": "vo",
+   "pause": 0.07,
+   "text": "Moi, je parle surtout dans ma tête.",
+   "start": 30.69,
+   "end": 32.23,
+   "words": [
+    {
+     "text": "Moi,",
+     "start": 30.69,
+     "end": 30.93
+    },
+    {
+     "text": "je",
+     "start": 31.27,
+     "end": 31.35
+    },
+    {
+     "text": "parle",
+     "start": 31.35,
+     "end": 31.51
+    },
+    {
+     "text": "surtout",
+     "start": 31.51,
+     "end": 31.71
+    },
+    {
+     "text": "dans",
+     "start": 31.71,
+     "end": 31.93
+    },
+    {
+     "text": "ma",
+     "start": 31.93,
+     "end": 32.03
+    },
+    {
+     "text": "tête.",
+     "start": 32.03,
+     "end": 32.23
+    }
+   ]
+  },
+  {
+   "id": "pense-2",
+   "who": "vo",
+   "pause": 0.35,
+   "text": "Penser, c'est gratuit.",
+   "start": 32.3,
+   "end": 33.42,
+   "words": [
+    {
+     "text": "Penser,",
+     "start": 32.3,
+     "end": 32.695
+    },
+    {
+     "text": "c'est",
+     "start": 32.695,
+     "end": 32.959
+    },
+    {
+     "text": "gratuit.",
+     "start": 32.959,
+     "end": 33.42
+    }
+   ]
+  },
+  {
+   "id": "four-1",
+   "who": "vo",
+   "pause": 0.1,
+   "text": "Ce matin, je suis seul à la boulangerie.",
+   "start": 33.77,
+   "end": 35.83,
+   "words": [
+    {
+     "text": "Ce",
+     "start": 33.77,
+     "end": 33.95
+    },
+    {
+     "text": "matin,",
+     "start": 33.95,
+     "end": 34.19
+    },
+    {
+     "text": "je",
+     "start": 34.59,
+     "end": 34.81
+    },
+    {
+     "text": "suis",
+     "start": 34.81,
+     "end": 34.95
+    },
+    {
+     "text": "seul",
+     "start": 34.95,
+     "end": 35.17
+    },
+    {
+     "text": "à",
+     "start": 35.17,
+     "end": 35.29
+    },
+    {
+     "text": "la",
+     "start": 35.29,
+     "end": 35.37
+    },
+    {
+     "text": "boulangerie.",
+     "start": 35.37,
+     "end": 35.83
+    }
+   ]
+  },
+  {
+   "id": "four-2",
+   "who": "vo",
+   "pause": 0.1,
+   "text": "Le four fait un drôle de bruit.",
+   "start": 35.93,
+   "end": 37.35,
+   "words": [
+    {
+     "text": "Le",
+     "start": 35.93,
+     "end": 36.07
+    },
+    {
+     "text": "four",
+     "start": 36.07,
+     "end": 36.31
+    },
+    {
+     "text": "fait",
+     "start": 36.31,
+     "end": 36.53
+    },
+    {
+     "text": "un",
+     "start": 36.53,
+     "end": 36.67
+    },
+    {
+     "text": "drôle",
+     "start": 36.67,
+     "end": 36.95
+    },
+    {
+     "text": "de",
+     "start": 36.95,
+     "end": 37.05
+    },
+    {
+     "text": "bruit.",
+     "start": 37.05,
+     "end": 37.35
+    }
+   ]
+  },
+  {
+   "id": "four-3",
+   "who": "vo",
+   "pause": 0.1,
+   "text": "L'aiguille est dans le rouge.",
+   "start": 37.45,
+   "end": 38.47,
+   "words": [
+    {
+     "text": "L'aiguille",
+     "start": 37.45,
+     "end": 37.849
+    },
+    {
+     "text": "est",
+     "start": 37.849,
+     "end": 37.982
+    },
+    {
+     "text": "dans",
+     "start": 37.982,
+     "end": 38.16
+    },
+    {
+     "text": "le",
+     "start": 38.16,
+     "end": 38.248
+    },
+    {
+     "text": "rouge.",
+     "start": 38.248,
+     "end": 38.47
+    }
+   ]
+  },
+  {
+   "id": "four-4",
+   "who": "vo",
+   "pause": 0.24,
+   "text": "Il va exploser.",
+   "start": 38.57,
+   "end": 39.51,
+   "words": [
+    {
+     "text": "Il",
+     "start": 38.57,
+     "end": 38.73
+    },
+    {
+     "text": "va",
+     "start": 38.73,
+     "end": 38.89
+    },
+    {
+     "text": "exploser.",
+     "start": 38.89,
+     "end": 39.51
+    }
+   ]
+  },
+  {
+   "id": "four-5",
+   "who": "vo",
+   "pause": 0.1,
+   "text": "Et tout le village est sur la place, juste devant.",
+   "start": 39.75,
+   "end": 42.19,
+   "words": [
+    {
+     "text": "Et",
+     "start": 39.75,
+     "end": 39.91
+    },
+    {
+     "text": "tout",
+     "start": 39.91,
+     "end": 40.01
+    },
+    {
+     "text": "le",
+     "start": 40.01,
+     "end": 40.11
+    },
+    {
+     "text": "village",
+     "start": 40.11,
+     "end": 40.45
+    },
+    {
+     "text": "est",
+     "start": 40.45,
+     "end": 40.69
+    },
+    {
+     "text": "sur",
+     "start": 40.69,
+     "end": 40.83
+    },
+    {
+     "text": "la",
+     "start": 40.83,
+     "end": 40.97
+    },
+    {
+     "text": "place,",
+     "start": 40.97,
+     "end": 41.31
+    },
+    {
+     "text": "juste",
+     "start": 41.59,
+     "end": 41.89
+    },
+    {
+     "text": "devant.",
+     "start": 41.89,
+     "end": 42.19
+    }
+   ]
+  },
+  {
+   "id": "four-6",
+   "who": "vo",
+   "pause": 0.07,
+   "text": "Je dois prévenir tout le monde.",
+   "start": 42.29,
+   "end": 43.37,
+   "words": [
+    {
+     "text": "Je",
+     "start": 42.29,
+     "end": 42.43
+    },
+    {
+     "text": "dois",
+     "start": 42.43,
+     "end": 42.57
+    },
+    {
+     "text": "prévenir",
+     "start": 42.57,
+     "end": 42.89
+    },
+    {
+     "text": "tout",
+     "start": 42.89,
+     "end": 43.11
+    },
+    {
+     "text": "le",
+     "start": 43.11,
+     "end": 43.19
+    },
+    {
+     "text": "monde.",
+     "start": 43.19,
+     "end": 43.37
+    }
+   ]
+  },
+  {
+   "id": "four-7",
+   "who": "vo",
+   "pause": 0.07,
+   "text": "Avec quinze mots.",
+   "start": 43.44,
+   "end": 44.32,
+   "words": [
+    {
+     "text": "Avec",
+     "start": 43.44,
+     "end": 43.7
+    },
+    {
+     "text": "quinze",
+     "start": 43.7,
+     "end": 44.14
+    },
+    {
+     "text": "mots.",
+     "start": 44.14,
+     "end": 44.32
+    }
+   ]
+  },
+  {
+   "id": "four-8",
+   "who": "vo",
+   "pause": 0.28,
+   "text": "Maximum.",
+   "start": 44.39,
+   "end": 45.05,
+   "words": [
+    {
+     "text": "Maximum.",
+     "start": 44.39,
+     "end": 45.05
+    }
+   ]
+  },
+  {
+   "id": "euh",
+   "who": "leon",
+   "say": "Euuuh...",
+   "paid": true,
+   "pause": 0.17,
+   "text": "Euh…",
+   "start": 45.33,
+   "end": 46.73,
+   "words": [
+    {
+     "text": "Euh…",
+     "start": 45.33,
+     "end": 46.73
+    }
+   ]
+  },
+  {
+   "id": "euh-2",
+   "who": "vo",
+   "say": "Non ! Le euh, ça compte !",
+   "pause": 0.21,
+   "text": "Non ! Le « euh », ça compte !",
+   "start": 46.9,
+   "end": 48.68,
+   "words": [
+    {
+     "text": "Non !",
+     "start": 46.9,
+     "end": 47.234
+    },
+    {
+     "text": "Le",
+     "start": 47.234,
+     "end": 47.456
+    },
+    {
+     "text": "« euh»,",
+     "start": 47.456,
+     "end": 47.79
+    },
+    {
+     "text": "ça",
+     "start": 47.79,
+     "end": 48.013
+    },
+    {
+     "text": "compte !",
+     "start": 48.013,
+     "end": 48.68
+    }
+   ]
+  },
+  {
+   "id": "choix-1",
+   "who": "vo",
+   "pause": 0.14,
+   "text": "« Mesdames et messieurs » ? Trois euros. Trop cher.",
+   "start": 48.89,
+   "end": 51.45,
+   "words": [
+    {
+     "text": "« Mesdames",
+     "start": 48.89,
+     "end": 49.444
+    },
+    {
+     "text": "et",
+     "start": 49.444,
+     "end": 49.582
+    },
+    {
+     "text": "messieurs » ?",
+     "start": 49.582,
+     "end": 50.205
+    },
+    {
+     "text": "Trois",
+     "start": 50.205,
+     "end": 50.551
+    },
+    {
+     "text": "euros.",
+     "start": 50.551,
+     "end": 50.896
+    },
+    {
+     "text": "Trop",
+     "start": 50.896,
+     "end": 51.173
+    },
+    {
+     "text": "cher.",
+     "start": 51.173,
+     "end": 51.45
+    }
+   ]
+  },
+  {
+   "id": "choix-2",
+   "who": "vo",
+   "pause": 0.07,
+   "text": "« Attention, le four va exploser » ? Cinq euros.",
+   "start": 51.59,
+   "end": 54.19,
+   "words": [
+    {
+     "text": "« Attention,",
+     "start": 51.59,
+     "end": 52.278
+    },
+    {
+     "text": "le",
+     "start": 52.278,
+     "end": 52.431
+    },
+    {
+     "text": "four",
+     "start": 52.431,
+     "end": 52.737
+    },
+    {
+     "text": "va",
+     "start": 52.737,
+     "end": 52.89
+    },
+    {
+     "text": "exploser » ?",
+     "start": 52.89,
+     "end": 53.502
+    },
+    {
+     "text": "Cinq",
+     "start": 53.502,
+     "end": 53.808
+    },
+    {
+     "text": "euros.",
+     "start": 53.808,
+     "end": 54.19
+    }
+   ]
+  },
+  {
+   "id": "choix-3",
+   "who": "vo",
+   "pause": 0.24,
+   "text": "Et personne ne m'écoute.",
+   "start": 54.26,
+   "end": 55.5,
+   "words": [
+    {
+     "text": "Et",
+     "start": 54.26,
+     "end": 54.391
+    },
+    {
+     "text": "personne",
+     "start": 54.391,
+     "end": 54.913
+    },
+    {
+     "text": "ne",
+     "start": 54.913,
+     "end": 55.043
+    },
+    {
+     "text": "m'écoute.",
+     "start": 55.043,
+     "end": 55.5
+    }
+   ]
+  },
+  {
+   "id": "idee-1",
+   "who": "vo",
+   "pause": 0.1,
+   "text": "Et là, j'ai une idée.",
+   "start": 55.74,
+   "end": 57.18,
+   "words": [
+    {
+     "text": "Et",
+     "start": 55.74,
+     "end": 55.946
+    },
+    {
+     "text": "là,",
+     "start": 55.946,
+     "end": 56.151
+    },
+    {
+     "text": "j'ai",
+     "start": 56.151,
+     "end": 56.46
+    },
+    {
+     "text": "une",
+     "start": 56.46,
+     "end": 56.769
+    },
+    {
+     "text": "idée.",
+     "start": 56.769,
+     "end": 57.18
+    }
+   ]
+  },
+  {
+   "id": "idee-2",
+   "who": "vo",
+   "pause": 0.14,
+   "text": "Dessiner dans la farine, c'est gratuit.",
+   "start": 57.28,
+   "end": 58.68,
+   "words": [
+    {
+     "text": "Dessiner",
+     "start": 57.28,
+     "end": 57.641
+    },
+    {
+     "text": "dans",
+     "start": 57.641,
+     "end": 57.822
+    },
+    {
+     "text": "la",
+     "start": 57.822,
+     "end": 57.912
+    },
+    {
+     "text": "farine,",
+     "start": 57.912,
+     "end": 58.183
+    },
+    {
+     "text": "c'est",
+     "start": 58.183,
+     "end": 58.364
+    },
+    {
+     "text": "gratuit.",
+     "start": 58.364,
+     "end": 58.68
+    }
+   ]
+  },
+  {
+   "id": "idee-3",
+   "who": "vo",
+   "pause": 0.77,
+   "text": "Sonner les cloches, c'est gratuit.",
+   "start": 58.82,
+   "end": 60.52,
+   "words": [
+    {
+     "text": "Sonner",
+     "start": 58.82,
+     "end": 59.198
+    },
+    {
+     "text": "les",
+     "start": 59.198,
+     "end": 59.387
+    },
+    {
+     "text": "cloches,",
+     "start": 59.387,
+     "end": 59.827
+    },
+    {
+     "text": "c'est",
+     "start": 59.827,
+     "end": 60.079
+    },
+    {
+     "text": "gratuit.",
+     "start": 60.079,
+     "end": 60.52
+    }
+   ]
+  },
+  {
+   "id": "courez",
+   "who": "leon",
+   "say": "Courez !",
+   "paid": true,
+   "pause": 0.07,
+   "text": "COUREZ !",
+   "start": 61.29,
+   "end": 62.13,
+   "words": [
+    {
+     "text": "COUREZ !",
+     "start": 61.29,
+     "end": 62.13
+    }
+   ]
+  },
+  {
+   "id": "courez-echo",
+   "who": "echo",
+   "of": "courez",
+   "repeats": 3,
+   "gap": 0.38,
+   "paid": true,
+   "pause": 0.14,
+   "text": "courez…",
+   "start": 62.15,
+   "end": 65.43,
+   "words": [
+    {
+     "text": "courez…",
+     "start": 62.15,
+     "end": 62.99,
+     "echo": 1
+    },
+    {
+     "text": "courez…",
+     "start": 63.37,
+     "end": 64.21,
+     "echo": 2
+    },
+    {
+     "text": "courez…",
+     "start": 64.59,
+     "end": 65.43,
+     "echo": 3
+    }
+   ]
+  },
+  {
+   "id": "echo-oubli",
+   "who": "vo",
+   "pause": 0.28,
+   "text": "J'avais oublié l'écho.",
+   "start": 65.57,
+   "end": 66.37,
+   "words": [
+    {
+     "text": "J'avais",
+     "start": 65.57,
+     "end": 65.852
+    },
+    {
+     "text": "oublié",
+     "start": 65.852,
+     "end": 66.135
+    },
+    {
+     "text": "l'écho.",
+     "start": 66.135,
+     "end": 66.37
+    }
+   ]
+  },
+  {
+   "id": "chute-1",
+   "who": "vo",
+   "pause": 0.14,
+   "text": "Tout le monde court.",
+   "start": 66.65,
+   "end": 67.51,
+   "words": [
+    {
+     "text": "Tout",
+     "start": 66.65,
+     "end": 66.83
+    },
+    {
+     "text": "le",
+     "start": 66.83,
+     "end": 66.93
+    },
+    {
+     "text": "monde",
+     "start": 66.93,
+     "end": 67.13
+    },
+    {
+     "text": "court.",
+     "start": 67.13,
+     "end": 67.51
+    }
+   ]
+  },
+  {
+   "id": "chute-2",
+   "who": "vo",
+   "pause": 0.63,
+   "text": "Le four explose…",
+   "start": 67.65,
+   "end": 68.49,
+   "words": [
+    {
+     "text": "Le",
+     "start": 67.65,
+     "end": 67.81
+    },
+    {
+     "text": "four",
+     "start": 67.81,
+     "end": 67.99
+    },
+    {
+     "text": "explose…",
+     "start": 67.99,
+     "end": 68.49
+    }
+   ]
+  },
+  {
+   "id": "chute-3",
+   "who": "vo",
+   "pause": 0.1,
+   "text": "et il pleut des croissants sur tout le village.",
+   "start": 69.12,
+   "end": 70.64,
+   "words": [
+    {
+     "text": "et",
+     "start": 69.12,
+     "end": 69.3
+    },
+    {
+     "text": "il",
+     "start": 69.3,
+     "end": 69.4
+    },
+    {
+     "text": "pleut",
+     "start": 69.4,
+     "end": 69.64
+    },
+    {
+     "text": "des",
+     "start": 69.64,
+     "end": 69.7
+    },
+    {
+     "text": "croissants",
+     "start": 69.7,
+     "end": 70.06
+    },
+    {
+     "text": "sur",
+     "start": 70.06,
+     "end": 70.2
+    },
+    {
+     "text": "tout",
+     "start": 70.2,
+     "end": 70.38
+    },
+    {
+     "text": "le",
+     "start": 70.38,
+     "end": 70.46
+    },
+    {
+     "text": "village.",
+     "start": 70.46,
+     "end": 70.64
+    }
+   ]
+  },
+  {
+   "id": "merci-1",
+   "who": "vo",
+   "pause": 0.21,
+   "text": "Le maire s'approche. Ému. Il ouvre la bouche…",
+   "start": 70.74,
+   "end": 73.54,
+   "words": [
+    {
+     "text": "Le",
+     "start": 70.74,
+     "end": 70.905
+    },
+    {
+     "text": "maire",
+     "start": 70.905,
+     "end": 71.316
+    },
+    {
+     "text": "s'approche.",
+     "start": 71.316,
+     "end": 72.058
+    },
+    {
+     "text": "Ému.",
+     "start": 72.058,
+     "end": 72.305
+    },
+    {
+     "text": "Il",
+     "start": 72.305,
+     "end": 72.469
+    },
+    {
+     "text": "ouvre",
+     "start": 72.469,
+     "end": 72.881
+    },
+    {
+     "text": "la",
+     "start": 72.881,
+     "end": 73.046
+    },
+    {
+     "text": "bouche…",
+     "start": 73.046,
+     "end": 73.54
+    }
+   ]
+  },
+  {
+   "id": "merci",
+   "who": "maire",
+   "paid": true,
+   "payer": "maire",
+   "pause": 0.24,
+   "text": "Merci.",
+   "start": 73.75,
+   "end": 74.11,
+   "words": [
+    {
+     "text": "Merci.",
+     "start": 73.75,
+     "end": 74.11
+    }
+   ]
+  },
+  {
+   "id": "merci-2",
+   "who": "vo",
+   "pause": 0.21,
+   "text": "Un euro. Le plus gros pourboire de l'histoire du village.",
+   "start": 74.35,
+   "end": 76.91,
+   "words": [
+    {
+     "text": "Un",
+     "start": 74.35,
+     "end": 74.464
+    },
+    {
+     "text": "euro.",
+     "start": 74.464,
+     "end": 74.691
+    },
+    {
+     "text": "Le",
+     "start": 74.691,
+     "end": 74.805
+    },
+    {
+     "text": "plus",
+     "start": 74.805,
+     "end": 75.033
+    },
+    {
+     "text": "gros",
+     "start": 75.033,
+     "end": 75.26
+    },
+    {
+     "text": "pourboire",
+     "start": 75.26,
+     "end": 75.772
+    },
+    {
+     "text": "de",
+     "start": 75.772,
+     "end": 75.886
+    },
+    {
+     "text": "l'histoire",
+     "start": 75.886,
+     "end": 76.398
+    },
+    {
+     "text": "du",
+     "start": 76.398,
+     "end": 76.512
+    },
+    {
+     "text": "village.",
+     "start": 76.512,
+     "end": 76.91
+    }
+   ]
+  },
+  {
+   "id": "fin-1",
+   "who": "vo",
+   "pause": 0.07,
+   "text": "Il me reste dix euros.",
+   "start": 77.12,
+   "end": 78.32,
+   "words": [
+    {
+     "text": "Il",
+     "start": 77.12,
+     "end": 77.3
+    },
+    {
+     "text": "me",
+     "start": 77.3,
+     "end": 77.36
+    },
+    {
+     "text": "reste",
+     "start": 77.36,
+     "end": 77.66
+    },
+    {
+     "text": "dix",
+     "start": 77.66,
+     "end": 78.12
+    },
+    {
+     "text": "euros.",
+     "start": 78.12,
+     "end": 78.32
+    }
+   ]
+  },
+  {
+   "id": "fin-2",
+   "who": "vo",
+   "pause": 0.35,
+   "text": "Je les garde pour un truc important.",
+   "start": 78.39,
+   "end": 80.11,
+   "words": [
+    {
+     "text": "Je",
+     "start": 78.39,
+     "end": 78.59
+    },
+    {
+     "text": "les",
+     "start": 78.59,
+     "end": 78.71
+    },
+    {
+     "text": "garde",
+     "start": 78.71,
+     "end": 78.99
+    },
+    {
+     "text": "pour",
+     "start": 78.99,
+     "end": 79.27
+    },
+    {
+     "text": "un",
+     "start": 79.27,
+     "end": 79.43
+    },
+    {
+     "text": "truc",
+     "start": 79.43,
+     "end": 79.61
+    },
+    {
+     "text": "important.",
+     "start": 79.61,
+     "end": 80.11
+    }
+   ]
+  },
+  {
+   "id": "cta-1",
+   "who": "vo",
+   "pause": 0.14,
+   "text": "Et toi, tu dirais quoi avec quinze mots ?",
+   "start": 80.46,
+   "end": 82.46,
+   "words": [
+    {
+     "text": "Et",
+     "start": 80.46,
+     "end": 80.64
+    },
+    {
+     "text": "toi,",
+     "start": 80.64,
+     "end": 80.92
+    },
+    {
+     "text": "tu",
+     "start": 81.2,
+     "end": 81.3
+    },
+    {
+     "text": "dirais",
+     "start": 81.3,
+     "end": 81.62
+    },
+    {
+     "text": "quoi",
+     "start": 81.62,
+     "end": 81.72
+    },
+    {
+     "text": "avec",
+     "start": 81.72,
+     "end": 81.94
+    },
+    {
+     "text": "quinze",
+     "start": 81.94,
+     "end": 82.28
+    },
+    {
+     "text": "mots ?",
+     "start": 82.28,
+     "end": 82.46
+    }
+   ]
+  },
+  {
+   "id": "cta-2",
+   "who": "vo",
+   "pause": 0.07,
+   "text": "Écris-le en commentaire.",
+   "start": 82.6,
+   "end": 84.0,
+   "words": [
+    {
+     "text": "Écris-le",
+     "start": 82.6,
+     "end": 83.09
+    },
+    {
+     "text": "en",
+     "start": 83.09,
+     "end": 83.23
+    },
+    {
+     "text": "commentaire.",
+     "start": 83.23,
+     "end": 84.0
+    }
+   ]
+  },
+  {
+   "id": "cta-3",
+   "who": "vo",
+   "pause": 0.84,
+   "text": "Ici, c'est gratuit.",
+   "start": 84.07,
+   "end": 85.37,
+   "words": [
+    {
+     "text": "Ici,",
+     "start": 84.07,
+     "end": 84.349
+    },
+    {
+     "text": "c'est",
+     "start": 84.349,
+     "end": 84.72
+    },
+    {
+     "text": "gratuit.",
+     "start": 84.72,
+     "end": 85.37
+    }
+   ]
+  }
+ ]
+}

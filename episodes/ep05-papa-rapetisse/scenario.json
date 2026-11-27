@@ -1,0 +1,339 @@
+{
+  "id": "ep05",
+  "nom": "ep05-papa-rapetisse",
+  "title": "Papa rapetisse",
+  "startBalance": 0,
+  "payer": "none",
+  "duree_cible": "60-70 s",
+  "gap": 0.2,
+  "voices": {
+    "vo": {
+      "_final": "ElevenLabs « Kev - French - Dynamic Tiktok, Short, Reel or Ads » (jGpnMdbhtKgQbVrYezOx), eleven_multilingual_v2, un seul fichier voix/narration.mp3 (choisi par l'auteur à la place de Mathis)",
+      "_apercu": "voix temporaire Piper fr_FR-tom-medium (tools/voice.py)"
+    }
+  },
+  "compteur": {
+    "label": "TAILLE DE PAPA :",
+    "unite": "cm",
+    "depart": 182,
+    "rouge_sous": 50,
+    "etapes": [
+      {
+        "plan": "plan02",
+        "mot": "vingt",
+        "valeur": 20,
+        "note": "flash-forward (rouge)"
+      },
+      {
+        "plan": "plan03",
+        "mot": "Tout",
+        "valeur": 182,
+        "note": "rembobinage → retour à 182"
+      },
+      {
+        "plan": "plan07",
+        "mot": "Moins",
+        "valeur": 181,
+        "note": "−1 cm"
+      },
+      {
+        "plan": "plan07",
+        "mot": "deux",
+        "valeur": 180,
+        "note": "−1 cm"
+      },
+      {
+        "plan": "plan08",
+        "mot": "dépassé",
+        "valeur": 140,
+        "note": "rafale de −1 cm (une semaine de mensonges)"
+      },
+      {
+        "plan": "plan08",
+        "mot": "traînait",
+        "valeur": 90,
+        "note": "rafale de −1 cm"
+      },
+      {
+        "plan": "plan10",
+        "mot": "banc",
+        "valeur": 60,
+        "note": "rafale"
+      },
+      {
+        "plan": "plan12",
+        "mot": "mentait",
+        "valeur": 30,
+        "note": "rafale, rouge qui pulse"
+      },
+      {
+        "plan": "plan12",
+        "mot": "nous",
+        "valeur": 20,
+        "note": "battement de cœur"
+      },
+      {
+        "plan": "plan16",
+        "mot": "pouf",
+        "valeur": 182,
+        "note": "remonte d'un coup en VERT + gros POUF"
+      }
+    ]
+  },
+  "cast": {
+    "noah": {
+      "name": "NOAH",
+      "skin": "#f2c4a0",
+      "shirt": "#ff7a1a",
+      "hoodie": true,
+      "pants": "#2f3e5c",
+      "hair": "#5a3418",
+      "hairStyle": "short",
+      "hat": "cap",
+      "hatColor": "#1f6fd1",
+      "scale": 0.78,
+      "face": {
+        "freckles": true
+      }
+    },
+    "papa": {
+      "name": "PAPA (MARC)",
+      "skin": "#eab48c",
+      "shirt": "#8a8f9a",
+      "tie": "#1f5fd6",
+      "pants": "#7d828c",
+      "shoes": "#2a1d14",
+      "hair": "#3a2716",
+      "hairStyle": "short",
+      "scale": 1.08,
+      "face": {
+        "browColor": "#2a1a10"
+      }
+    },
+    "maman": {
+      "name": "MAMAN (SOPHIE)",
+      "skin": "#f3c7a5",
+      "shirt": "#e35d6a",
+      "apron": "#ffffff",
+      "pants": "#3a3a48",
+      "hair": "#8a4b22",
+      "hairStyle": "bun",
+      "face": {
+        "glasses": "#2a2a5c",
+        "lashes": true
+      }
+    },
+    "lou": {
+      "name": "LOU",
+      "skin": "#ffe0c7",
+      "shirt": "#ffd23f",
+      "pants": "#ff8fb1",
+      "hair": "#c98a3a",
+      "hairStyle": "pigtails",
+      "scale": 0.6,
+      "face": {
+        "lashes": true,
+        "blush": true
+      }
+    },
+    "maire": {
+      "name": "M. LE MAIRE",
+      "skin": "#e8b48c",
+      "shirt": "#1b1b2f",
+      "pants": "#1b1b2f",
+      "hair": "#bdbdbd",
+      "hairStyle": "bald",
+      "sash": true,
+      "bowtie": "#e11d2e",
+      "scale": 0.11,
+      "face": {
+        "mustache": "#9a9a9a"
+      }
+    },
+    "passant": {
+      "name": "PASSANT",
+      "skin": "#d9a07a",
+      "shirt": "#43aa8b",
+      "pants": "#30303a",
+      "hair": "#1f1f1f",
+      "hairStyle": "spiky"
+    },
+    "homme_tele": {
+      "name": "HOMME À LA TÉLÉ",
+      "skin": "#c98b62",
+      "shirt": "#9b5de5",
+      "pants": "#30303a",
+      "hair": "#2b1b10",
+      "hairStyle": "short"
+    }
+  },
+  "elements_nouveaux": [
+    "Panneau de rue « ICI, LES MENTEURS RAPETISSENT » + toise géante (entrée de l'école)",
+    "Écran télé « EN DIRECT » sur la place",
+    "Panneau officiel « MENSONGE POUR PROTÉGER QUELQU'UN = DOUBLE »",
+    "Banc de parc + pigeons qui picorent",
+    "Mallette (ouverte, vide) + lettre « ...VOUS ÊTES LICENCIÉ... »",
+    "Boîte à chaussures transformée en lit",
+    "Pupitre du maire + micro géant",
+    "Cuisine (table, chaises, frigo, fenêtre) — matin et soir",
+    "Plat de lasagnes, carnet de détective, doudou lapin, poubelle de rue, lampe de poche",
+    "Costume de papa qui ne rétrécit pas (de plus en plus trop grand)",
+    "Effets : pouf (rétrécir) / pouf vert (regrandir), rembobinage, larme bleue"
+  ],
+  "lines": [
+    {
+      "id": "plan01",
+      "who": "vo",
+      "text": "Dans ma ville, chaque *mensonge* te fait rapetisser d'un centimètre.",
+      "plan": {
+        "ambiance": "matin ensoleillé",
+        "visuel": "Panneau « ICI, LES MENTEURS RAPETISSENT » dès la 1re image. Un passant ment (bulle « J'ai pas mangé le gâteau ! ») devant la toise et rétrécit d'un coup (pouf + −1 cm)."
+      }
+    },
+    {
+      "id": "plan02",
+      "who": "vo",
+      "text": "Et mon papa faisait *vingt* centimètres.",
+      "plan": {
+        "ambiance": "nuit bleue",
+        "visuel": "FLASH-FORWARD : papa de 20 cm dort dans une boîte à chaussures, Noah penché au-dessus avec une lampe. Compteur rouge 20 cm."
+      }
+    },
+    {
+      "id": "plan03",
+      "who": "vo",
+      "text": "Tout a commencé lundi.",
+      "plan": {
+        "ambiance": "matin ensoleillé",
+        "visuel": "Effet rembobinage rapide (lignes, ⏪), puis matin ensoleillé sur la ville. Compteur revient à 182."
+      }
+    },
+    {
+      "id": "plan04",
+      "who": "vo",
+      "text": "Ici, les menteurs se voient. Le maire mesure vingt centimètres.",
+      "plan": {
+        "ambiance": "matin",
+        "visuel": "Survol de la place, puis le maire de 20 cm debout sur son pupitre avec un micro géant."
+      }
+    },
+    {
+      "id": "plan05",
+      "who": "vo",
+      "text": "Mais dire la vérité fait *regrandir*. Et mentir pour protéger quelqu'un compte *double*.",
+      "plan": {
+        "ambiance": "matin",
+        "visuel": "INDICE 1 : écran télé « EN DIRECT », un homme avoue et regrandit (pouf vert). INDICE 2 : panneau officiel « MENSONGE POUR PROTÉGER QUELQU'UN = DOUBLE »."
+      }
+    },
+    {
+      "id": "plan06",
+      "who": "vo",
+      "text": "Moi, c'est *Noah*. Mon papa mesurait un mètre quatre-vingt-deux.",
+      "plan": {
+        "ambiance": "matin, cuisine",
+        "visuel": "Cuisine, pastilles NOAH, LOU, MAMAN, PAPA. Compteur 182 cm."
+      }
+    },
+    {
+      "id": "plan07",
+      "who": "vo",
+      "text": "Lundi, il a dit : grosse journée au bureau. Moins *deux* centimètres.",
+      "plan": {
+        "ambiance": "matin",
+        "visuel": "Papa à la porte, sourire forcé, bulle « Grosse journée au bureau ! ». −1 cm −1 cm."
+      }
+    },
+    {
+      "id": "plan08",
+      "who": "vo",
+      "text": "Mardi, ma petite sœur l'a dépassé. Jeudi, son costume traînait par terre.",
+      "plan": {
+        "ambiance": "matin",
+        "visuel": "Montage rapide : Lou dépasse papa (dos à dos), puis le costume traîne par terre. Compteur 140, puis 90 cm."
+      }
+    },
+    {
+      "id": "plan09",
+      "who": "vo",
+      "text": "Alors vendredi, je l'ai *suivi*.",
+      "plan": {
+        "ambiance": "matin",
+        "visuel": "Noah suit papa dans la rue, caché derrière une poubelle, carnet à la main."
+      }
+    },
+    {
+      "id": "plan10",
+      "who": "vo",
+      "text": "Il n'est pas allé au bureau. Il est resté sur un banc. Toute la journée.",
+      "plan": {
+        "ambiance": "journée → fin d'après-midi",
+        "visuel": "Papa seul sur un banc, il nourrit les pigeons. Compteur 60 cm."
+      }
+    },
+    {
+      "id": "plan11",
+      "who": "vo",
+      "text": "Dans sa mallette, une seule lettre. Papa avait perdu son *travail*.",
+      "plan": {
+        "ambiance": "fin d'après-midi",
+        "visuel": "INDICE 3 : papa ouvre la mallette, vide, à part la lettre « ...VOUS ÊTES LICENCIÉ... ». Gros plan sur Noah."
+      }
+    },
+    {
+      "id": "plan12",
+      "who": "vo",
+      "text": "Chaque soir, il mentait pour qu'on ne s'inquiète pas. Il rapetissait pour *nous*.",
+      "plan": {
+        "ambiance": "soirée chaude (repas), puis nuit bleue",
+        "visuel": "Papa de 30 cm monte sur la table, bulle « Journée géniale ! ». Compteur rouge 20 cm, battement de cœur. Retour sur l'image du flash-forward."
+      }
+    },
+    {
+      "id": "plan13",
+      "who": "vo",
+      "text": "",
+      "pause": true,
+      "plan": {
+        "ambiance": "nuit bleue",
+        "visuel": "PAUSE DRAMATIQUE 0,5 s : musique coupée, gros plan sur Noah qui prend sa décision."
+      }
+    },
+    {
+      "id": "plan14",
+      "who": "vo",
+      "text": "Le lendemain, j'ai posé la lettre sur la table. *Papa, on sait.*",
+      "plan": {
+        "ambiance": "matin lumineux",
+        "visuel": "Petit déjeuner : Noah pose la lettre sur la table, toute la famille regarde papa."
+      }
+    },
+    {
+      "id": "plan15",
+      "who": "vo",
+      "text": "Pour la première fois, il a dit la *vérité*.",
+      "plan": {
+        "ambiance": "matin lumineux",
+        "visuel": "Papa minuscule baisse la tête, larme bleue, bulle « J'ai perdu mon travail. »"
+      }
+    },
+    {
+      "id": "plan16",
+      "who": "vo",
+      "text": "Et *pouf*. Un mètre quatre-vingt-deux.",
+      "plan": {
+        "ambiance": "matin lumineux",
+        "visuel": "POUF : papa regrandit d'un coup, le costume lui va enfin, compteur vert jusqu'à 182 cm, câlin de famille, musique joyeuse."
+      }
+    },
+    {
+      "id": "plan17",
+      "who": "vo",
+      "text": "Depuis, papa dit toujours la vérité. Même sur les *lasagnes* de maman.",
+      "plan": {
+        "ambiance": "soir, repas",
+        "visuel": "Maman sert des lasagnes, papa goûte, bulle « Bof. », maman choquée, tout le monde rit. Carte-question PENDANT la phrase : « TOI, TU MENS POUR PROTÉGER QUELQU'UN ? » + « DIS-LE EN COMMENTAIRE ». Fin 0,8 s après le dernier mot sur le panneau du plan 1 (boucle)."
+      }
+    }
+  ]
+}

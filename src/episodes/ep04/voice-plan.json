@@ -1,0 +1,35 @@
+{
+ "split": true,
+ "tempo": 1.3,
+ "export": "assets/voix/ep04/repliques",
+ "parts": [
+  {
+   "file": "assets/voix/ep04/lotA.mp3",
+   "lines": [
+    "plan01",
+    "plan02",
+    "plan03",
+    "plan04"
+   ]
+  },
+  {
+   "file": "assets/voix/ep04/lotB.mp3",
+   "lines": [
+    "plan05",
+    "plan06",
+    "plan07",
+    "plan08"
+   ]
+  },
+  {
+   "file": "assets/voix/ep04/lotC.mp3",
+   "lines": [
+    "plan09",
+    "plan10",
+    "plan11",
+    "plan12",
+    "plan13"
+   ]
+  }
+ ]
+}
