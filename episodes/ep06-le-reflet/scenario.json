@@ -1,0 +1,237 @@
+// Épisode 06 — « Le Reflet » — frisson / suspense, sans violence.
+// Concept original : dans cette ville, ton reflet s'endort une seconde après toi.
+// Même moteur et même style que les épisodes précédents. [NOUVEAU] = élément réutilisable ajouté.
+{
+  "titre": "Le Reflet",
+  "casting": ["nora", "maman_nora"],
+  "voix_off": { "elevenlabs_voice_id": "mNu8EQcIlFZdOJs7yfhe" },   // « Julia », modèle eleven_v4 avec consignes de jeu
+  "vitesse_voix": 1.12,                                       // [NOUVEAU] voix accélérée (sans changer la hauteur)
+  "pause_apres_voix": 0.55,
+  "musique_theme": "nuit",
+
+  // [NOUVEAU] la pastille du haut en horloge hh:mm (valeur = minutes depuis 0 h)
+  "compteur_haut": { "label": "HEURE", "format": "heure" },
+
+  "plans": [
+    {
+      "id": "plan01", "decor": "chambre_ado", "mood": "nuit_chambre", "duree_min": 3.0,
+      // la règle MONTRÉE : Nora dort… son reflet, lui, est debout et la regarde
+      "personnages": [
+        { "qui": "nora", "position": "lit", "action": "dormir", "pose": "allonge", "expression": "dort", "etiquette": false,
+          "position_reflet": "devant_miroir", "orientation_reflet": "miroir", "expression_reflet": "neutre" }   // [NOUVEAU]
+      ],
+      "invites": 1439,
+      "cadrages": [
+        { "camera": "zoom_brusque", "cible": "reflet:nora", "duree": 1 },
+        { "camera": "plongee", "cible": "nora", "duree": 1 }
+      ],
+      "voix": { "texte": "Dans cette ville, ton reflet s'endort *après* toi." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan02", "decor": "chambre_ado", "mood": "nuit_chambre", "duree_min": 3.4,
+      // FLASH-FORWARD : Nora en larmes devant le miroir, le reflet sourit
+      "transition": "flash",
+      "personnages": [
+        { "qui": "nora", "position": "devant_miroir", "orientation": "miroir", "action": "frissonner", "expression": "pleure",
+          "expression_reflet": "souriant_fige", "action_reflet": "attendre", "etiquette": false }
+      ],
+      "invites": 1440, "invites_style": "flash",
+      "sons": [ { "type": "coeur", "debut": "0%" } ],
+      "cadrages": [
+        { "camera": "par_dessus_epaule", "cible": "nora>miroir", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "reflet:nora", "duree": 1 }
+      ],
+      "voix": { "texte": "Cette nuit-là, le mien ne s'est *pas* endormi." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan03", "decor": "chambre_ado", "mood": "soir_lampe", "duree_min": 1.8,
+      "transition": "rembobinage",
+      "personnages": [ { "qui": "nora", "position": "lit", "action": "assis", "objet": "lit", "expression": "neutre", "etiquette": false } ],
+      "invites": 1380,
+      "cadrages": [ { "camera": "plan_large", "cible": "piece", "duree": 1 } ],
+      "voix": { "texte": "Revenons à 23 h." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan04", "decor": "cuisine", "mood": "soir_lampe",
+      "personnages": [
+        { "qui": "maman_nora", "position": "pres_table", "action": "parler", "regarde": "nora", "expression": "peur" },
+        { "qui": "nora", "position": [-1.6, 1.2], "action": "regarder", "cible": "maman_nora", "expression": "neutre" }
+      ],
+      "invites": { "de": 1380, "a": 1395 },
+      "cadrages": [
+        { "camera": "par_dessus_epaule", "cible": "nora>maman_nora", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "maman_nora", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "maman_nora", "duree": 1 }
+      ],
+      "voix": { "texte": "Maman le répète : jamais de miroir après *minuit*." },
+      "bulles": [ { "qui": "maman_nora", "texte": "Tu ne le regardes PAS.", "debut": "40%", "fin": "100%" } ],
+      "musique": "baisse"
+    },
+    {
+      "id": "plan05", "decor": "chambre_ado", "mood": "soir_lampe",
+      "personnages": [ { "qui": "nora", "position": [-0.6, 2.6], "action": "marcher", "vers": "lit", "expression": "joyeux" } ],
+      "invites": { "de": 1395, "a": 1430 },
+      "cadrages": [
+        { "camera": "travelling_suivi", "cible": "nora", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "nora", "duree": 1 },
+        { "camera": "plan_large", "cible": "piece", "duree": 1 }
+      ],
+      "voix": { "texte": "Moi, j'y croyais pas. Je me suis *couchée*." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan06", "decor": "chambre_ado", "mood": "nuit_chambre",
+      // minuit pile : l'horloge passe à 00:00 (zoom sur la pastille)
+      "personnages": [ { "qui": "nora", "position": [-1.2, 2.5], "action": "se_lever", "expression": "fatigue", "etiquette": false } ],
+      "invites": { "de": 1439, "a": 1440, "courbe": "saut" },
+      "invites_effet": "explose",
+      "cadrages": [
+        { "camera": "zoom_brusque", "cible": "compteur_haut", "duree": 1 },
+        { "camera": "plan_large", "cible": "piece", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "nora", "duree": 1 }
+      ],
+      "voix": { "texte": "Minuit *pile*. Je me lève pour boire." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan07", "decor": "chambre_ado", "mood": "nuit_chambre", "duree_min": 4.4,
+      // *INDICE* : le reflet bouge UNE seconde en retard
+      "personnages": [
+        { "qui": "nora", "position": [0.2, 3.6], "action": "marcher", "vers": "devant_miroir", "orientation": "miroir",
+          "expression": "neutre", "reflet_retard": 1.0, "etiquette": false }        // [NOUVEAU] reflet en retard
+      ],
+      "invites": 1440,
+      "voix_delai": 0.5,
+      "cadrages": [
+        { "camera": "par_dessus_epaule", "cible": "nora>miroir", "duree": 1.4 },
+        { "camera": "zoom_lent_avant", "cible": "reflet:nora", "duree": 1.2 }
+      ],
+      "voix": { "texte": "Et mon reflet… a bougé une seconde *après* moi." },
+      "musique": "coupe"
+    },
+    {
+      "id": "plan08", "decor": "chambre_ado", "mood": "nuit_chambre",
+      // Nora sursaute, le reflet reste immobile
+      "personnages": [
+        { "qui": "nora", "position": "devant_miroir", "orientation": "miroir", "action": "sursauter", "expression": "peur",
+          "action_reflet": "attendre", "expression_reflet": "neutre", "etiquette": false }   // [NOUVEAU] action propre au reflet
+      ],
+      "invites": 1440,
+      "sons": [ { "type": "coeur", "debut": "0%" } ],
+      "cadrages": [
+        { "camera": "gros_plan_visage", "cible": "nora", "duree": 1 },
+        { "camera": "par_dessus_epaule", "cible": "nora>miroir", "duree": 1 }
+      ],
+      "voix": { "texte": "J'ai sursauté. Lui, *non*." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan09", "decor": "chambre_ado", "mood": "nuit_chambre", "duree_min": 2.8,
+      "personnages": [
+        { "qui": "nora", "position": "devant_miroir", "orientation": "miroir", "action": "attendre", "expression": "peur",
+          "action_reflet": "attendre", "expression_reflet": "souriant_fige", "etiquette": false }
+      ],
+      "invites": 1441,
+      "sons": [ { "type": "coeur", "debut": "0%" } ],
+      "cadrages": [
+        { "camera": "zoom_brusque", "cible": "reflet:nora", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "reflet:nora", "duree": 1 }
+      ],
+      "voix": { "texte": "Il m'a *souri*." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan10", "decor": "chambre_ado", "mood": "nuit_chambre",
+      // la lumière s'allume d'un coup… il est toujours là
+      "lumiere": { "allume": "12%" },                                       // [NOUVEAU] lumière qui s'allume
+      "personnages": [
+        { "qui": "nora", "position": [-0.4, 3.2], "orientation": "miroir", "action": "attendre", "expression": "choque",
+          "action_reflet": "attendre", "position_reflet": "devant_miroir", "expression_reflet": "souriant_fige", "etiquette": false }
+      ],
+      "invites": 1441,
+      "sons": [ { "type": "interrupteur", "debut": "12%" } ],                  // [NOUVEAU] bruitage
+      "cadrages": [
+        { "camera": "plan_large", "cible": "piece", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "reflet:nora", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "nora", "duree": 1 }
+      ],
+      "voix": { "texte": "J'ai allumé la lumière. Il était toujours *là*." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan11", "decor": "chambre_ado", "mood": "nuit_chambre", "duree_min": 4.4,
+      // le reflet frappe trois fois sur la vitre
+      "lumiere": { "allume": "0%" },
+      "personnages": [
+        { "qui": "nora", "position": [-0.4, 3.2], "orientation": "miroir", "action": "frissonner", "expression": "peur",
+          "action_reflet": "frapper", "position_reflet": "devant_miroir", "expression_reflet": "souriant_fige", "etiquette": false }
+      ],
+      "invites": 1442,
+      "sons": [ { "type": "coups_vitre", "debut": "45%" } ],                    // [NOUVEAU] bruitage
+      "cadrages": [
+        { "camera": "gros_plan_visage", "cible": "reflet:nora", "duree": 1 },
+        { "camera": "par_dessus_epaule", "cible": "nora>miroir", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "nora", "duree": 1 }
+      ],
+      "voix": { "texte": "Il a levé la main. Et il a frappé. *Trois* fois." },
+      "musique": "coupe"
+    },
+    {
+      "id": "plan12", "decor": "chambre_ado", "mood": "petit_matin_doux",
+      "transition": "flash",
+      "personnages": [
+        { "qui": "nora", "position": "devant_miroir", "orientation": "miroir", "action": "attendre", "expression": "fatigue", "etiquette": false }
+      ],
+      "invites": 450,
+      "cadrages": [
+        { "camera": "plan_large", "cible": "piece", "duree": 1 },
+        { "camera": "par_dessus_epaule", "cible": "nora>miroir", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "reflet:nora", "duree": 1 }
+      ],
+      "voix": { "texte": "Le matin, plus rien. Un miroir *normal*." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan13", "decor": "cuisine", "mood": "matin_interieur",
+      "personnages": [
+        { "qui": "maman_nora", "position": "pres_table", "action": "regarder", "cible": "nora", "expression": "interrogatif" },
+        { "qui": "nora", "position": [-1.6, 1.2], "action": "attendre", "regarde": "camera", "expression": "souriant_fige" }
+      ],
+      "invites": { "de": 450, "a": 455 },
+      "cadrages": [
+        { "camera": "gros_plan_visage", "cible": "maman_nora", "duree": 1 },
+        { "camera": "par_dessus_epaule", "cible": "maman_nora>nora", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "nora", "duree": 1 }
+      ],
+      "voix": { "texte": "Maman m'a dit que j'avais l'air *bizarre*." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan14", "decor": "chambre_ado", "mood": "nuit_chambre", "duree_min": 5.2,
+      // RETOURNEMENT : Nora sourit, figée… dans le miroir, la vraie Nora pleure et frappe la vitre
+      "transition": "flash",
+      "personnages": [
+        { "qui": "nora", "position": "devant_miroir", "orientation": "miroir", "action": "attendre", "expression": "souriant_fige",
+          "action_reflet": "frapper", "expression_reflet": "pleure", "etiquette": false }
+      ],
+      "invites": 455,
+      "sons": [ { "type": "coups_vitre", "debut": "55%" } ],
+      "cadrages": [
+        { "camera": "gros_plan_visage", "cible": "nora", "duree": 1 },
+        { "camera": "par_dessus_epaule", "cible": "nora>miroir", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "reflet:nora", "duree": 1.3 }
+      ],
+      "voix": { "texte": "Normal. La vraie Nora… est restée de l'autre *côté*." },
+      "musique": "coupe"
+    },
+    {
+      "id": "plan15", "type": "carte_question", "duree": 4.0,
+      "decor": "chambre_ado", "mood": "nuit_chambre", "fond": "plan14",
+      "carte": { "question": "ET TOI, TU DORS AVEC UN MIROIR DANS TA CHAMBRE ?", "appel": "RÉPONDS EN COMMENTAIRE" },
+      "voix": null, "musique": "normal", "fin": { "noir": 0.5 }
+    }
+  ]
+}

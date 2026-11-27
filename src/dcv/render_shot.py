@@ -199,6 +199,26 @@ class Shot:
             sc.collection.objects.link(lo)
             lo.location = (0, 2.8, 3.0)
 
+        # [ep06] lumière qui s'allume d'un coup : « lumiere »: {"allume": "40%"}
+        lum = self.plan.get("lumiere")
+        if lum and lum.get("allume") is not None:
+            import bpy as _b
+            from .scenario import parse_time
+            t_on = parse_time(lum["allume"], self.duree, 0.0)
+            ld = _b.data.lights.new("plafonnier_allume", "AREA")
+            ld.size, ld.use_shadow, ld.color = 4.0, False, (1.0, 0.95, 0.85)
+            lo = _b.data.objects.new("plafonnier_allume", ld)
+            sc.collection.objects.link(lo)
+            lo.location = (0, 2.5, 2.85)
+            e0 = sc.view_settings.exposure
+            on_e = float(lum.get("energie", 260))
+
+            def _lumiere(t, ld=ld, sc=sc, e0=e0, t_on=t_on, on_e=on_e):
+                on = t >= t_on
+                ld.energy = on_e if on else 0.0
+                sc.view_settings.exposure = e0 + (0.35 if on else 0.0)
+            self.world.animations.append(_lumiere)
+
         # --- acteurs : principaux + foule
         mains = self.plan["personnages"]
         main_pos = []
@@ -314,6 +334,17 @@ class Shot:
         own_face = bool(src.spec.get("expression_reflet"))
         if own_face:                # le reflet a SA propre expression (ex. il sourit… pas l'original)
             spec["expression"] = src.spec["expression_reflet"]
+        # le reflet peut jouer SA propre action (ex. reste immobile, frappe la vitre)
+        if src.spec.get("position_reflet"):     # le reflet se tient ailleurs (ex. debout alors qu'on dort)
+            spec["position"] = src.spec["position_reflet"]
+            spec["orientation"] = src.spec.get("orientation_reflet", "miroir")
+            spec.setdefault("action_reflet", "attendre")
+            src.spec.setdefault("action_reflet", spec["action_reflet"])
+            spec.pop("objet", None)
+        if src.spec.get("action_reflet"):
+            spec["action"] = src.spec["action_reflet"]
+            spec.pop("vers", None)
+            spec.pop("objet", None) if spec["action"] == "frapper" else None
         actor = self._add_actor(spec, name=f"reflet:{name}")
         self.reflet = (name, f"reflet:{name}")
         if not own_face:
@@ -362,7 +393,15 @@ class Shot:
             orig, rn = self.reflet
             my = self.world.mirror["y"]
             out = []
-            for p in self.poses[orig]:
+            if self.actors[orig].spec.get("action_reflet"):
+                base = [self.actors[rn].pose(self.t_of(f), others) for f in range(1, N + 1)]
+            else:
+                base = self.poses[orig]
+            # reflet en retard : il rejoue les gestes avec X secondes de décalage
+            lag = int(round(float(self.actors[orig].spec.get("reflet_retard", 0.0)) * self.fps))
+            if lag > 0:
+                base = [base[max(0, i - lag)] for i in range(len(base))]
+            for p in base:
                 q = dict(p)
                 q["y"] = 2 * my - p["y"]
                 q["yaw"] = math.pi - p["yaw"]

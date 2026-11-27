@@ -1,7 +1,7 @@
 """Bruitages synthétisés (numpy) — libres de droits, réutilisables.
 Dans le scénario : "sons": [{"type": "cloche", "debut": "0%", "volume": 1.0}, …]
 Types : cloche, coeur (battements jusqu'à la fin du plan), grincement, porte_claque,
-volet, pas_rapides, extinction (coupure électrique).
+volet, pas_rapides, extinction (coupure électrique), coups_vitre, interrupteur.
 """
 import numpy as np
 
@@ -97,7 +97,29 @@ def extinction(dur=0.8):
     return ((clunk + hum) * 0.7).astype(np.float32)
 
 
-SONS = {"cloche": cloche, "grincement": grincement, "porte_claque": porte_claque, "volet": volet,
+def coups_vitre(dur=1.6):
+    """Trois coups secs sur une vitre (toc… toc… toc)."""
+    n = int(dur * SR)
+    out = np.zeros(n, np.float32)
+    rng = np.random.default_rng(4)
+    for k in range(3):
+        i = int(k * 0.48 * SR)
+        m = int(0.18 * SR)
+        tt = np.arange(m) / SR
+        knock = np.sin(2 * np.pi * 180 * tt) * np.exp(-tt * 45) + 0.5 * np.sin(2 * np.pi * 1350 * tt) * np.exp(-tt * 70)
+        knock += rng.normal(0, 1, m) * np.exp(-tt * 120) * 0.4
+        out[i:i + m] += knock
+    return out * 0.9
+
+
+def interrupteur(dur=0.25):
+    n = int(dur * SR)
+    t = np.arange(n) / SR
+    rng = np.random.default_rng(5)
+    return ((rng.normal(0, 1, n) * np.exp(-t * 300) + np.sin(2 * np.pi * 2200 * t) * np.exp(-t * 200)) * 0.6).astype(np.float32)
+
+
+SONS = {"coups_vitre": coups_vitre, "interrupteur": interrupteur, "cloche": cloche, "grincement": grincement, "porte_claque": porte_claque, "volet": volet,
         "pas_rapides": pas_rapides, "extinction": extinction}
 
 

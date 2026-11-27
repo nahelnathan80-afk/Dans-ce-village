@@ -42,6 +42,9 @@ def valeur(h, u):
 
 def fmt(v, format="nombre", signe=""):
     n = int(round(v))
+    if format == "heure":                      # horloge hh:mm (valeur = minutes depuis 0 h, 1440 → 00:00)
+        n = int(n) % 1440
+        return f"{n // 60:02d}:{n % 60:02d}"
     if format == "temps":                      # compte à rebours mm:ss
         n = max(0, n)
         return f"{signe}{n // 60}:{n % 60:02d}"
@@ -136,7 +139,7 @@ def draw(img, h, t, duree, prev_value=None):
     x0 = max(config.SAFE_LEFT * W, min(x0, config.SAFE_RIGHT * W - pw))
     d.rounded_rectangle([x0, y0, x0 + pw, y0 + ph], radius=ph / 2, fill=st["bg"], outline=st["bord"],
                         width=max(3, int(7 * k * zoom)))
-    if h.get("format") == "temps":
+    if h.get("format") in ("temps", "heure"):
         _clock_icon(d, x0 + pad, y0 + (ph - icon) / 2, icon, st["fg"])
     else:
         _bed_icon(d, x0 + pad, y0 + (ph - icon) / 2, icon, st["fg"])

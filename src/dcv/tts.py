@@ -83,7 +83,26 @@ def espeak_tts(texte: str, out_mp3: Path) -> bool:
 
 
 def ensure_voice(sc: dict, plan: dict, idx: int) -> tuple[Path | None, str]:
-    """Renvoie (chemin du MP3, origine) pour le plan, en le créant si besoin."""
+    """Renvoie (chemin du MP3, origine) pour le plan, en le créant si besoin.
+    « vitesse_voix » (épisode ou plan, ex. 1.12) accélère la voix sans changer
+    sa hauteur (atempo) et resserre les silences de début/fin."""
+    path, origine = _ensure_voice(sc, plan, idx)
+    vit = float(plan.get("vitesse_voix", sc.get("vitesse_voix", 1.0)))
+    if path is None or abs(vit - 1.0) < 1e-3:
+        return path, origine
+    out = config.CACHE / sc["_nom"] / "voix_vite" / f"{plan['id']}.mp3"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    key = out.with_suffix(".txt")
+    sig = f"{vit}|{Path(path).stat().st_size}|{Path(path).stat().st_mtime_ns}"
+    if not (out.exists() and key.exists() and key.read_text() == sig):
+        trim = "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05"
+        af = f"{trim},areverse,{trim},areverse,atempo={vit:.3f}"
+        _run(["ffmpeg", "-y", "-v", "error", "-i", str(path), "-af", af, "-ar", "44100", "-b:a", "192k", str(out)])
+        key.write_text(sig)
+    return out, f"{origine} ×{vit:g}"
+
+
+def _ensure_voice(sc: dict, plan: dict, idx: int) -> tuple[Path | None, str]:
     v = plan.get("voix")
     if not v:
         return None, "aucune"
