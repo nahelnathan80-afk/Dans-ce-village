@@ -6,7 +6,7 @@
   "casting": ["nora", "maman_nora"],
   "voix_off": { "elevenlabs_voice_id": "mNu8EQcIlFZdOJs7yfhe" },   // « Julia », modèle eleven_v4 avec consignes de jeu
   "vitesse_voix": 1.12,                                       // [NOUVEAU] voix accélérée (sans changer la hauteur)
-  "pause_apres_voix": 0.55,
+  "pause_apres_voix": 0.75,
   "musique_theme": "nuit",
 
   // [NOUVEAU] la pastille du haut en horloge hh:mm (valeur = minutes depuis 0 h)
@@ -71,6 +71,22 @@
       "musique": "baisse"
     },
     {
+      "id": "plan04b", "decor": "maison_yanis", "mood": "nuit_chambre", "duree_min": 4.6,
+      // *INDICE* : la voisine Léa, à sa fenêtre, ne cligne plus des yeux
+      "personnages": [
+        { "qui": "passante", "position": "fenetre_voisin", "action": "attendre", "regarde": "camera", "expression": "souriant_fige", "etiquette": false }
+      ],
+      "invites": { "de": 1395, "a": 1400 },
+      "sons": [ { "type": "grincement", "debut": "25%" } ],
+      "cadrages": [
+        { "camera": "plan_large", "cible": "maison_voisin", "duree": 1 },
+        { "camera": "zoom_brusque", "cible": "passante", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "passante", "duree": 1.2 }
+      ],
+      "voix": { "texte": "Léa, ma voisine, l'a fait une fois. Depuis, elle ne cligne plus des *yeux*." },
+      "musique": "coupe"
+    },
+    {
       "id": "plan05", "decor": "chambre_ado", "mood": "soir_lampe",
       "personnages": [ { "qui": "nora", "position": [-0.6, 2.6], "action": "marcher", "vers": "lit", "expression": "joyeux" } ],
       "invites": { "de": 1395, "a": 1430 },
@@ -129,7 +145,7 @@
       "musique": "baisse"
     },
     {
-      "id": "plan09", "decor": "chambre_ado", "mood": "nuit_chambre", "duree_min": 2.8,
+      "id": "plan09", "decor": "chambre_ado", "mood": "nuit_chambre", "duree_min": 3.4,
       "personnages": [
         { "qui": "nora", "position": [-0.4, 3.2], "orientation": "miroir", "action": "attendre", "expression": "peur",
           "position_reflet": "devant_miroir", "action_reflet": "attendre", "expression_reflet": "souriant_fige", "etiquette": false }
@@ -162,7 +178,7 @@
       "musique": "baisse"
     },
     {
-      "id": "plan11", "decor": "chambre_ado", "mood": "nuit_chambre", "duree_min": 4.4,
+      "id": "plan11", "decor": "chambre_ado", "mood": "nuit_chambre", "duree_min": 4.8,
       // le reflet frappe trois fois sur la vitre
       "lumiere": { "allume": "0%" },
       "personnages": [
@@ -180,6 +196,18 @@
       "musique": "coupe"
     },
     {
+      "id": "plan11b", "decor": "chambre_ado", "mood": "nuit_chambre", "duree_min": 3.6,
+      "lumiere": { "allume": "0%" },
+      "personnages": [ { "qui": "nora", "position": "lit", "action": "assis", "objet": "lit", "expression": "pleure", "etiquette": false } ],
+      "invites": 1443,
+      "cadrages": [
+        { "camera": "plan_large", "cible": "piece", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "nora", "duree": 1 }
+      ],
+      "voix": { "texte": "J'ai crié. Personne ne s'est *réveillé*." },
+      "musique": "baisse"
+    },
+    {
       "id": "plan12", "decor": "chambre_ado", "mood": "petit_matin_doux",
       "transition": "flash",
       "personnages": [
@@ -193,6 +221,20 @@
       ],
       "voix": { "texte": "Le matin, plus rien. Un miroir *normal*." },
       "musique": "normal"
+    },
+    {
+      "id": "plan12b", "decor": "cuisine", "mood": "matin_interieur", "duree_min": 4.2,
+      // *INDICE* du retournement : le prénom écrit en miroir
+      "textes_decor": [ { "type": "affiche", "emplacement": "frigo", "texte": "ARON" } ],
+      "personnages": [ { "qui": "nora", "position": [-1.6, 3.6], "action": "regarder", "cible": "frigo", "expression": "neutre", "etiquette": false } ],
+      "invites": { "de": 450, "a": 452 },
+      "cadrages": [
+        { "camera": "plan_large", "cible": "piece", "duree": 1 },
+        { "camera": "zoom_brusque", "cible": "frigo", "duree": 1.2 },
+        { "camera": "gros_plan_visage", "cible": "nora", "duree": 1 }
+      ],
+      "voix": { "texte": "Au petit-déjeuner, j'ai écrit mon prénom… à l'*envers*." },
+      "musique": "baisse"
     },
     {
       "id": "plan13", "decor": "cuisine", "mood": "matin_interieur",
@@ -210,7 +252,7 @@
       "musique": "baisse"
     },
     {
-      "id": "plan14", "decor": "chambre_ado", "mood": "petit_matin_doux", "duree_min": 5.2,
+      "id": "plan14", "decor": "chambre_ado", "mood": "petit_matin_doux", "duree_min": 6.0,
       // RETOURNEMENT : Nora sourit, figée… dans le miroir, la vraie Nora pleure et frappe la vitre
       "transition": "flash",
       "personnages": [
