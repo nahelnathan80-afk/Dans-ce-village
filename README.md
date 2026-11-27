@@ -55,3 +55,22 @@ tools/tts.py, sfx.py     Voix + timestamps, bruitages + musique
 4. Ajouter la composition dans `src/Root.tsx`, puis rendre.
 
 Zones sûres TikTok respectées : rien d'important dans les 15 % du bas ni dans la colonne de droite.
+
+## Moteur v2 — « la voix pilote tout » (zéro temps mort)
+
+```bash
+./scripts/make_episode.sh ep05-papa-rapetisse apercu   # 540×960, ~15 min
+./scripts/make_episode.sh ep05-papa-rapetisse final    # 1080×1920, -14 LUFS, contrôle bloquant → rendu/
+```
+
+1. **Voix** (`tools/voice.py`) : dépose `episodes/<nom>/voix/narration.mp3` (toute l'histoire d'une traite,
+   ElevenLabs). Silences de début/fin coupés (-45 dB), whisper.cpp (timestamps DTW par mot) retrouve
+   chaque réplique, respirations de 0,2 s entre les phrases, UNE pause dramatique (`"pause": true`, 0,5 s),
+   atempo ≤ 1,10 si le débit < 2,8 mots/s, fin = dernier mot + 0,8 s. Sans narration.mp3 : voix temporaire Piper.
+2. **Image** (`src/engine/`) : un cadrage déclare ce qu'il montre (`shows`), les cadrages > 2,2 s sont recoupés
+   sur un mot, la caméra dérive toujours (Stage), sous-titres un mot à la fois (`WordSubs`), compteur à étapes
+   visibles (`StatPill` + `counterSfx`), carte-question pendant la dernière phrase (`QuestionCard`).
+3. **Son** : `MusicBed` (musique continue, ducking sous la voix, coupée seulement pendant la pause dramatique).
+4. **Contrôle** (`scripts/check_rythme.py`) : tableau « TEMPS MORTS », % de voix ≥ 85 %, cadrages ≤ 2,5 s,
+   plans figés, débit, fin ≤ 1 s. Le rendu final échoue si une règle n'est pas respectée.
+5. Vérif visuelle : `COMP=Ep05 node tools/shot_sheet.mjs 0.3` → 1-2 images par cadrage dans `out/ep05/sheet/`.
