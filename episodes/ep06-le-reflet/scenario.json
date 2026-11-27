@@ -6,7 +6,7 @@
   "casting": ["nora", "maman_nora"],
   "voix_off": { "elevenlabs_voice_id": "mNu8EQcIlFZdOJs7yfhe" },   // « Julia », modèle eleven_v4 avec consignes de jeu
   "vitesse_voix": 1.12,                                       // [NOUVEAU] voix accélérée (sans changer la hauteur)
-  "pause_apres_voix": 0.75,
+  "pause_apres_voix": 1.0,
   "musique_theme": "nuit",
 
   // [NOUVEAU] la pastille du haut en horloge hh:mm (valeur = minutes depuis 0 h)
@@ -14,7 +14,7 @@
 
   "plans": [
     {
-      "id": "plan01", "decor": "chambre_ado", "mood": "nuit_chambre", "duree_min": 3.0,
+      "id": "plan01", "decor": "chambre_ado", "mood": "nuit_chambre", "duree_min": 3.6,
       // la règle MONTRÉE : Nora dort… son reflet, lui, est debout et la regarde
       "personnages": [
         { "qui": "nora", "position": "lit", "action": "dormir", "pose": "allonge", "expression": "dort", "etiquette": false,
@@ -46,7 +46,7 @@
       "musique": "baisse"
     },
     {
-      "id": "plan03", "decor": "chambre_ado", "mood": "soir_lampe", "duree_min": 1.8,
+      "id": "plan03", "decor": "chambre_ado", "mood": "soir_lampe", "duree_min": 2.4,
       "transition": "rembobinage",
       "personnages": [ { "qui": "nora", "position": "lit", "action": "assis", "objet": "lit", "expression": "neutre", "etiquette": false } ],
       "invites": 1380,
@@ -223,7 +223,7 @@
       "musique": "normal"
     },
     {
-      "id": "plan12b", "decor": "cuisine", "mood": "matin_interieur", "duree_min": 4.2,
+      "id": "plan12b", "decor": "cuisine", "mood": "matin_interieur", "duree_min": 4.8,
       // *INDICE* du retournement : le prénom écrit en miroir
       "textes_decor": [ { "type": "affiche", "emplacement": "frigo", "texte": "ARON" } ],
       "personnages": [ { "qui": "nora", "position": [-1.6, 3.6], "action": "regarder", "cible": "frigo", "expression": "neutre", "etiquette": false } ],
@@ -237,7 +237,7 @@
       "musique": "baisse"
     },
     {
-      "id": "plan13", "decor": "cuisine", "mood": "matin_interieur",
+      "id": "plan13", "decor": "cuisine", "mood": "matin_interieur", "duree_min": 3.6,
       "personnages": [
         { "qui": "maman_nora", "position": "pres_table", "action": "regarder", "cible": "nora", "expression": "interrogatif" },
         { "qui": "nora", "position": [-1.6, 1.2], "action": "attendre", "regarde": "camera", "expression": "souriant_fige" }
@@ -270,7 +270,7 @@
       "musique": "coupe"
     },
     {
-      "id": "plan15", "type": "carte_question", "duree": 4.0,
+      "id": "plan15", "type": "carte_question", "duree": 5.0,
       "decor": "chambre_ado", "mood": "nuit_chambre", "fond": "plan14",
       "carte": { "question": "ET TOI, TU DORS AVEC UN MIROIR DANS TA CHAMBRE ?", "appel": "RÉPONDS EN COMMENTAIRE" },
       "voix": null, "musique": "normal", "fin": { "noir": 0.5 }
