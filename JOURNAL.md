@@ -174,3 +174,20 @@ README.md                  format du scénario + guide iPad
   - actions dormir, filmer, frapper, rouler, pousser, plus porter un canapé
   - vêtements à motifs, façade invisible pour la caméra
 - Rendu final : ≈ 3 h, avec une coupure à 2 h et un redémarrage du conteneur ; reprise depuis le cache sans perte.
+
+---
+
+## 9. Épisode 05 « Couvre-feu » (27/11/2026)
+
+- ✅ **Final poussé** (`873efe1`) : `output/ep05-couvre-feu/ep05-couvre-feu.mp4`, 1080×1920, 30 i/s,
+  98,0 s, 37,6 Mo, -14,1 LUFS. Toute la checklist est OK (cadrage le plus long : 1,97 s ; phrase la plus longue : 10 mots).
+- Concept : à 21 h, tout le monde doit être rentré. Nora cherche le ALLO DOUDOU de son frère.
+- Voix : « Julia - Warm French Narrator » (`mNu8EQcIlFZdOJs7yfhe`), 17 voix générées avec le connecteur ElevenLabs (≈ 1 000 crédits).
+- Le mot « doudou » a été remplacé par « ALLO DOUDOU » partout : voix des plans 4, 8 et 14, bulle du plan 4 et carte-question.
+- Nouveaux éléments réutilisables :
+  - décor `parc` ; rue avec `lampadaires: rouges|extinction`, `volets: tombent` et l'emplacement `horloge_ville`
+  - 4 ambiances de nuit : nuit_rouge, nuit_bleue_froide, soir_lampe, nuit_chambre
+  - expression `souriant_fige` ; action `courir` ; brouillard ; sons synthétisés (cloche, cœur, grincement, porte, volet, pas, extinction)
+  - pastille au format `temps` avec `retard`
+  - pause réglable par plan (`pause_apres_voix`) ; musique `theme_nuit`
+- Rendu final : ≈ 4 h de calcul (≈ 5,5 s par image), avec 2 coupures (limite de 2 h) et un redémarrage de session ; reprise depuis le cache sans perte.
