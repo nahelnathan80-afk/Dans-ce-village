@@ -14,7 +14,7 @@
 
   "plans": [
     {
-      "id": "plan01", "decor": "rue", "mood": "nuit_rouge", "duree_min": 3.4,   // [NOUVEAU] ambiance
+      "id": "plan01", "decor": "rue", "mood": "nuit_rouge", "duree_min": 3.4, "pause_apres_voix": 0.2,   // flash-forward au plus tôt   // [NOUVEAU] ambiance
       // 0-1 s : la règle MONTRÉE — horloge de la ville 20:59, lampadaires qui virent au rouge
       "textes_decor": [ { "type": "horloge", "emplacement": "horloge_ville", "texte": "20:59" } ],   // [NOUVEAU] horloge publique
       "rue": { "lampadaires": "rouges" },

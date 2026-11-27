@@ -96,7 +96,7 @@ def build_timeline(sc: dict, voix: dict) -> list:
         delai = float(plan.get("voix_delai", 0.0))     # silence voulu avant la voix
         voix_debut = config.VOIX_DEBUT + delai
         if dmp3:
-            d = voix_debut + dmp3 + pad
+            d = voix_debut + dmp3 + float(plan.get("pause_apres_voix", pad))   # réglable aussi par plan
         else:
             d = float(plan.get("duree", 3.0))
         d = max(d, float(plan.get("duree_min", 0)))
