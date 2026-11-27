@@ -1,0 +1,32 @@
+Épisode ep05-couvre-feu — mode final — 2026-11-27 15:28:08
+Durée : 98.0 s — fichier : output/ep05-couvre-feu/ep05-couvre-feu.mp4 (37.6 Mo) — son : -14.1 LUFS
+
+Plan     durée  cadrages  état      temps (dont rendu Blender)
+plan01    4.70s     3      cache     0 s (11 min 51 s)
+plan02    4.83s     3      cache     0 s (12 min 44 s)
+plan03    3.77s     2      cache     0 s (8 min 17 s)
+plan04    6.87s     4      cache     0 s (15 min 36 s)
+plan05    6.97s     4      cache     0 s (15 min 44 s)
+plan06    6.27s     4      cache     0 s (13 min 52 s)
+plan07    4.23s     3      cache     0 s (5 min 25 s)
+plan08    6.60s     4      cache     0 s (15 min 26 s)
+plan09    5.13s     3      cache     0 s (12 min 32 s)
+plan10    5.83s     3      cache     0 s (15 min 15 s)
+plan11    5.27s     4      cache     0 s (13 min 49 s)
+plan12    3.70s     2      cache     0 s (8 min 27 s)
+plan13    7.63s     4      cache     0 s (16 min 46 s)
+plan14    5.90s     3      cache     0 s (13 min 55 s)
+plan15    5.13s     4      reprise   2 min 02 s (1 min 09 s)
+plan16    5.63s     3      rendu     14 min 46 s (13 min 45 s)
+plan17    5.00s     3      rendu     12 min 28 s (11 min 31 s)
+plan18    4.00s     0      carte     16 s (0 s)
+
+Temps total : 32 min 38 s
+
+Checklist :
+  [OK] 1re phrase commence par « Dans cette ville, »
+  [OK] Aucune phrase de plus de 12 mots — max 10 mots : « Dans cette ville, à 21 h, il faut être rentré. »
+  [OK] Un cadrage change au moins toutes les 2 s — cadrage le plus long : 1.97 s
+  [OK] Jamais de silence total (niveau mini -48 dBFS)
+  [i] Timing des sous-titres : whisper.cpp
+  [i] Voix : mp3 fourni
