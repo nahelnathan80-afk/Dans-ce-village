@@ -8,7 +8,7 @@ import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {FONT} from '../lib/fonts';
 import {Timeline} from '../lib/timeline';
 
-type Unit = {text: string; key: boolean; start: number; end: number; show: number};
+type Unit = {text: string; key: boolean; start: number; end: number; show: number; who: string};
 const letters = (s: string) => s.replace(/[^\p{L}\p{N}]/gu, '').length;
 
 export const buildUnits = (tl: Timeline): Unit[] => {
@@ -27,7 +27,7 @@ export const buildUnits = (tl: Timeline): Unit[] => {
 				key = key || nx.text.includes('*');
 				i++;
 			}
-			units.push({text: text.replace(/\*/g, '').replace(/[«»]/g, '').trim(), key, start: w.start, end, show: end});
+			units.push({text: text.replace(/\*/g, '').replace(/[«»]/g, '').trim(), key, start: w.start, end, show: end, who: l.who});
 		}
 	}
 	for (let i = 0; i < units.length; i++) {
@@ -38,7 +38,11 @@ export const buildUnits = (tl: Timeline): Unit[] => {
 	return units;
 };
 
-export const WordSubs: React.FC<{tl: Timeline; y?: number; hidden?: (t: number) => boolean}> = ({tl, y = 1000, hidden}) => {
+/**
+ * strokes : couleur de contour par personnage (qui parle, sans lire). Narrateur : noir.
+ * Paroles chantées (who = "chanson") : ORANGE avec une petite note ♪.
+ */
+export const WordSubs: React.FC<{tl: Timeline; y?: number; hidden?: (t: number) => boolean; strokes?: Record<string, string>}> = ({tl, y = 1000, hidden, strokes = {}}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const t = frame / fps;
@@ -48,8 +52,11 @@ export const WordSubs: React.FC<{tl: Timeline; y?: number; hidden?: (t: number) 
 	if (!u) return null;
 	const wf = Math.round((t - u.start) * fps);
 	const pop = spring({frame: wf + 1, fps, config: {damping: 9, stiffness: 420, mass: 0.4}});
-	const chars = Math.max(1, u.text.length);
+	const sung = u.who === 'chanson';
+	const chars = Math.max(1, u.text.length + (sung ? 2 : 0));
 	const base = u.key ? 168 : 150;
+	const stroke = strokes[u.who] ?? '#000';
+	const color = sung ? '#ff9a1f' : u.key ? '#ffe14d' : '#ffffff';
 	const size = Math.min(base, 860 / (chars * 0.6));
 	return (
 		<div style={{position: 'absolute', top: y - size * 0.6, left: 60, width: 1080 - 60 - 150, display: 'flex', justifyContent: 'center'}}>
@@ -58,8 +65,8 @@ export const WordSubs: React.FC<{tl: Timeline; y?: number; hidden?: (t: number) 
 					fontFamily: FONT,
 					fontSize: size,
 					lineHeight: 1.1,
-					color: u.key ? '#ffe14d' : '#ffffff',
-					WebkitTextStroke: `${Math.round(size * 0.13)}px #000`,
+					color,
+					WebkitTextStroke: `${Math.round(size * 0.13)}px ${sung ? '#3a1a00' : stroke}`,
 					paintOrder: 'stroke fill',
 					textShadow: '0 10px 0 rgba(0,0,0,0.9)',
 					textTransform: 'uppercase',
@@ -68,7 +75,7 @@ export const WordSubs: React.FC<{tl: Timeline; y?: number; hidden?: (t: number) 
 					transform: `scale(${0.55 + 0.45 * pop}) rotate(${u.key ? -3 : 0}deg)`,
 				}}
 			>
-				{u.text}
+				{sung ? `♪ ${u.text}` : u.text}
 			</span>
 		</div>
 	);

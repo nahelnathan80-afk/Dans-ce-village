@@ -15,6 +15,9 @@ COMP="Ep${EP#ep}"
 OUT="out/$EP"
 mkdir -p "$OUT" rendu
 
+if python3 -c "import json,sys; sys.exit(0 if json.load(open('$SCEN')).get('musique') else 1)"; then
+  python3 tools/temp_music.py "$EP" >/dev/null   # musiques temporaires si les vraies manquent
+fi
 echo "▶ 1/5 voix ($EP)"
 if [ "${SKIP_VOICE:-0}" != "1" ]; then python3 tools/voice.py "$EP"; fi
 

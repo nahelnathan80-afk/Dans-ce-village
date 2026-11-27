@@ -35,6 +35,8 @@ PLAN_MAX = 2.5
 FIN_MAX = 1.0
 DEBUT_MAX = 0.15
 DEBIT_MIN = 2.8
+INSTRU_MAX = 0.5        # instrumental sans paroles pendant une chanson
+DIALOGUE_MAX = 0.25     # écart max entre deux répliques d'un dialogue
 
 
 def load_audio(path: str) -> np.ndarray:
@@ -145,20 +147,69 @@ def main():
             why += f" → {nxt['id']}"
         return why
 
-    sil = silences(a, PAUSE_MESURE)
+    NARR = ("vo", "narrateur")
+    songs = [l for l in lines if l.get("type") == "chanson" and "song_start" in l]
+
+    def in_song(t):
+        return any(l["song_start"] - 0.02 <= t <= l["song_end"] + 0.02 for l in songs)
+
+    def kind_at(t0, t1):
+        if any(l["song_start"] - 0.05 <= t0 and t1 <= l["song_end"] + 0.05 for l in songs):
+            return "chanson"
+        prev = next((l for l in reversed(lines) if l["words"] and l["end"] <= t0 + 0.15), None)
+        nxt = next((l for l in lines if l["words"] and l["start"] >= t1 - 0.15), None)
+        if nxt is not None and nxt.get("scratch"):
+            return "scratch"
+        who = {x.get("who", "vo") for x in (prev, nxt) if x is not None}
+        return "dialogue" if who - set(NARR) - {"chanson"} else "narration"
+
+    # silences mesurés sur la piste ; pendant une chanson, ce sont les PAROLES qui comptent (pas l'instrumental)
+    sil = []
+    for s, e in silences(a, PAUSE_MESURE):
+        cut = [(s, e)]
+        for l in songs:
+            nc = []
+            for x0, x1 in cut:
+                if x1 <= l["song_start"] or x0 >= l["song_end"]:
+                    nc.append((x0, x1))
+                    continue
+                if x0 < l["song_start"]:
+                    nc.append((x0, l["song_start"]))
+                if x1 > l["song_end"]:
+                    nc.append((l["song_end"], x1))
+            cut = nc
+        sil += [(x0, x1) for x0, x1 in cut if x1 - x0 >= PAUSE_MESURE]
+    song_gaps = []
+    for l in songs:
+        ts = [l["song_start"]] + [x for w in l["words"] for x in (w["start"], w["end"])] + [l["song_end"]]
+        for x0, x1 in zip(ts[0::2], ts[1::2]):
+            if x1 - x0 >= PAUSE_MESURE:
+                song_gaps.append((x0, x1))
+                sil.append((x0, x1))
+    sil.sort()
     morts, fails = [], []
+    for s, e in song_gaps:
+        if e - s > INSTRU_MAX:
+            morts.append((s, e - s, shot_at(s + (e - s) / 2), "instrumental sans paroles", False, "chanson"))
     for s, e in sil:
+        if (s, e) in song_gaps:
+            continue
         d = e - s
         if d <= SILENCE_MAX:
             continue
+        ty = kind_at(s, e)
         if words and s >= words[-1]["end"] - 0.1 and e >= dur - 0.02 and d <= FIN_MAX + 0.05:
-            morts.append((s, d, shot_at(s + d / 2), "fin de la vidéo après le dernier mot (≤ 1 s, autorisé)", True))
+            morts.append((s, d, shot_at(s + d / 2), "fin de la vidéo après le dernier mot (≤ 1 s, autorisé)", True, "fin"))
             continue
         is_drama = any(ds <= s + 0.05 and e - 0.05 <= de + 0.6 for ds, de in drama)
         if is_drama and d <= PAUSE_DRAMA_MAX + TOLERANCE_DRAMA:
-            morts.append((s, d, shot_at(s + d / 2), "pause dramatique déclarée (autorisée)", True))
+            morts.append((s, d, shot_at(s + d / 2), "pause dramatique déclarée (autorisée)", True, "pause"))
             continue
-        morts.append((s, d, shot_at(s + d / 2), cause(s, e), False))
+        if ty == "scratch" and d <= 0.45:
+            morts.append((s, d, shot_at(s + d / 2), "scratch de vinyle prévu (autorisé)", True, "scratch"))
+            continue
+        morts.append((s, d, shot_at(s + d / 2), cause(s, e), False, ty))
+    morts.sort()
 
     total_sil = sum(e - s for s, e in sil)
     couverture = 100 * (1 - total_sil / dur) if dur else 0
@@ -167,7 +218,9 @@ def main():
     # début de voix mesuré sur l'audio (le 1er silence commence à 0 ?)
     loud = np.where(np.abs(a[: SR * 3]) > 10 ** (SEUIL_DB / 20))[0]
     onset = loud[0] / SR if len(loud) else 3.0
-    debit = len(words) / max(0.1, last - first)
+    sw = [l for l in lines if l["words"] and l.get("type") != "chanson"]
+    chant = sum(l["song_end"] - l["song_start"] for l in songs)
+    debit = sum(len(l["words"]) for l in sw) / max(0.1, last - first - chant)
     fin = dur - last
 
     # cadrages
@@ -187,6 +240,27 @@ def main():
         if probs:
             plans_ko.append((s, probs))
 
+    # dialogues : pas plus de 0,25 s entre deux répliques
+    dia_ko = []
+    spk = [l for l in lines if l["words"]]
+    for p_, n_ in zip(spk, spk[1:]):
+        between = lines[lines.index(p_) + 1: lines.index(n_)]
+        if any(b.get("pause") for b in between):
+            continue
+        if p_.get("type") == "chanson" or n_.get("type") == "chanson":
+            continue
+        if {p_.get("who", "vo"), n_.get("who", "vo")} - set(NARR):
+            g = n_["start"] - p_["end"]
+            if g > DIALOGUE_MAX and not n_.get("scratch"):
+                dia_ko.append((p_["id"], n_["id"], g))
+    # moments musicaux : respectent "debut" et "fin" (±0,1 s)
+    song_ko = []
+    for l in songs:
+        if l.get("fin") is not None:
+            want = float(l["fin"]) - float(l.get("debut") or 0)
+            got = l["song_end"] - l["song_start"]
+            if abs(got - want) > 0.1:
+                song_ko.append((l["id"], want, got))
     longs = [m for m in morts if not m[4]]
     checks = [
         (f"Silences > {SILENCE_MAX:.2f} s (hors pause dramatique)".replace(".", ","), f"{len(longs)}", len(longs) == 0),
@@ -196,6 +270,8 @@ def main():
         (f"Débit (objectif ≥ {DEBIT_MIN} mots/s)".replace(".", ","), f"{debit:.2f} mots/s".replace(".", ","), None if debit >= DEBIT_MIN else "warn"),
         (f"Cadrages > {PLAN_MAX} s ou sans sujet / figés".replace(".", ","), f"{len(plans_ko)} / {len(shots)}", len(plans_ko) == 0 if shots else None),
         ("Dernier mot → fin de la vidéo (≤ 1 s)", fmt(fin).strip(), fin <= FIN_MAX),
+        ("Dialogues : écart entre répliques ≤ 0,25 s", (f"{len(dia_ko)} trop lent(s) : " + ", ".join(f"{a_}→{b_} {g:.2f} s" for a_, b_, g in dia_ko)).replace(".", ",") if dia_ko else "0 erreur", (not dia_ko) if spk else None),
+        ("Moments musicaux = debut/fin du scénario (±0,1 s)", (", ".join(f"{i}: {g:.2f} s au lieu de {w:.2f}" for i, w, g in song_ko)).replace(".", ",") if song_ko else f"{len(songs)} moment(s) OK", (not song_ko) if songs else None),
         ("Durée de la vidéo", fmt(dur).strip(), None),
     ]
 
@@ -205,12 +281,12 @@ def main():
     P("")
     P("## TEMPS MORTS")
     P("")
-    P("| Moment | Durée | Plan | Cause |")
-    P("|---|---|---|---|")
-    for s, d, shot, why, ok in morts:
-        P(f"| {fmt(s)} | {fmt(d)} | {shot} | {'✅ ' if ok else '❌ '}{why} |")
+    P("| Moment | Durée | Type | Plan | Cause |")
+    P("|---|---|---|---|---|")
+    for s, d, shot, why, ok, ty in morts:
+        P(f"| {fmt(s)} | {fmt(d)} | {ty} | {shot} | {'✅ ' if ok else '❌ '}{why} |")
     if not morts:
-        P("| — | — | — | aucun silence de plus de 0,35 s |")
+        P("| — | — | — | — | aucun silence de plus de 0,35 s |")
     P("")
     P("## Règles")
     P("")
@@ -237,7 +313,7 @@ def main():
         Path(args.report).write_text(text + "\n")
         Path(args.report).with_suffix(".json").write_text(json.dumps({
             "duree": dur, "couverture": couverture, "debit": debit, "fin": fin, "debut": onset,
-            "temps_morts": [{"t": s, "d": d, "plan": sh, "cause": w, "ok": ok} for s, d, sh, w, ok in morts],
+            "temps_morts": [{"t": s, "d": d, "type": ty, "plan": sh, "cause": w, "ok": ok} for s, d, sh, w, ok, ty in morts],
             "pauses": len(sil), "silence_total": total_sil, "cadrages": len(shots),
             "cadrages_ko": [{"id": s["id"], "problemes": p} for s, p in plans_ko], "ok": not failed,
         }, ensure_ascii=False, indent=1))
