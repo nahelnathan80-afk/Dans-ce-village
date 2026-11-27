@@ -5,7 +5,7 @@
 {
   "titre": "Couvre-feu",
   "casting": ["nora", "timeo", "maman_nora", "monsieur_remi"],
-  "voix_off": { "elevenlabs_voice_id": "ctilxqiD5xHFsAqEwjvS" },
+  "voix_off": { "elevenlabs_voice_id": "mNu8EQcIlFZdOJs7yfhe" },        // « Julia » : voix féminine (Nora)
   "pause_apres_voix": 0.9,
   "musique_theme": "nuit",                                   // [NOUVEAU] musique sombre (drone + battement)
 
