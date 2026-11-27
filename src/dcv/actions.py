@@ -100,13 +100,13 @@ class Actor:
         for k, a in enumerate(chain):
             act = a["action"]
             seg = {"action": act, "t0": t, "spec": a, "from": cur}
-            if act in ("marcher", "passer", "rouler"):
+            if act in ("marcher", "passer", "rouler", "courir"):
                 to = self.resolve(a.get("vers"))
                 if to is None:
                     yaw = self._orientation_static(a, cur)
                     to = (cur[0] + 4 * math.sin(yaw), cur[1] - 4 * math.cos(yaw))
                 dist = math.hypot(to[0] - cur[0], to[1] - cur[1])
-                spd = self.speed * (2.0 if act == "rouler" else 1.0) * (0.7 if a.get("objet") == "canape_dos" else 1.0)
+                spd = self.speed * (2.0 if act == "rouler" else 2.3 if act == "courir" else 1.0) * (0.7 if a.get("objet") == "canape_dos" else 1.0)
                 dur = max(0.4, dist / spd)
                 seg["speed"] = spd
                 if act == "passer" and k == 0 and "vers" in a:
@@ -176,7 +176,7 @@ class Actor:
         seg, lt = self._segment(t)
         if seg is None:
             return self.start
-        if seg["action"] in ("marcher", "passer", "rouler"):
+        if seg["action"] in ("marcher", "passer", "rouler", "courir"):
             dur = seg["t1"] - seg["t0"]
             u = min(1.0, lt / dur) if dur > 0 else 1.0
             a, b = seg["from"], seg["to"]
@@ -205,7 +205,7 @@ class Actor:
         yaw = self._orientation_static(a, (x, y), others, t)
         sit = 1.0 if (self.seat and act in ("assis", "frissonner", "attendre", "parler", "regarder")) else 0.0
 
-        moving = act in ("marcher", "passer", "rouler") and seg
+        moving = act in ("marcher", "passer", "rouler", "courir") and seg
         if moving and lt >= (seg["t1"] - seg["t0"]) and a.get("orientation") is None:
             fx, fy = seg["to"][0] - seg["from"][0], seg["to"][1] - seg["from"][1]
             if abs(fx) + abs(fy) > 1e-3:
@@ -218,6 +218,16 @@ class Actor:
             p["lean"] = 0.12
             p["dz"] = 0.12 + 0.01 * math.sin(ph * 9)            # monté sur la planche
             p["head_pitch"] = 0.05
+        elif act == "courir" and seg and lt < (seg["t1"] - seg["t0"]):
+            fx, fy = seg["to"][0] - seg["from"][0], seg["to"][1] - seg["from"][1]
+            yaw = math.atan2(fx, -fy)
+            w = 2 * math.pi * 2.6
+            s = math.sin(lt * w)
+            p["legs"] = [0.95 * s, -0.95 * s]
+            p["arms"][0] = [-1.0 * s + 0.3, 0.1, 0.0]
+            p["arms"][1] = [1.0 * s + 0.3, 0.1, 0.0]
+            p["dz"] = 0.07 * abs(math.cos(lt * w))
+            p["lean"] = 0.28
         elif act in ("marcher", "passer") and seg and lt < (seg["t1"] - seg["t0"]):
             fx, fy = seg["to"][0] - seg["from"][0], seg["to"][1] - seg["from"][1]
             yaw = math.atan2(fx, -fy)
@@ -336,8 +346,8 @@ class Actor:
         look = a.get("regarde")
         if look is None and act in ("regarder", "toucher", "serrer"):
             look = a.get("cible")
-        if act in ("passer", "dormir"):
-            look = None
+        if act in ("passer", "dormir") or (act == "courir" and look != "camera"):
+            look = None if act != "courir" else look
         if look:
             if look == "camera":
                 hy = wrap(0.0 - yaw)

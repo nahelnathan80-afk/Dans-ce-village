@@ -37,7 +37,35 @@ def build(ctx):
         P.text_panel(ctx, "reveil", t.get("type") or "horloge", t["texte"], (-2.2, HY - 0.09, 1.55), 0.7, emit=2.0)
         w.add_anchor("fenetre", -2.2, HY - 0.1, 1.55, 0.0, 0.6)
     P.window("fenetre2", 2.3, HY, 1.1, 1.3, 1.1, sky="#ffd59e" if lit else "#9fd3ff", emit=1.2 if lit else 0.6)
+    # lucarne de l'étage (chambre) : éteinte, ou allumée avec une silhouette derrière
+    ma = ctx.get("maison") or {}
+    etage = ma.get("fenetre_etage", "eteinte")
+    S.box("lucarne", (1.3, 0.8, 1.2), (1.2, HY - 0.1, 3.3), "#f6e7cb", origin="bottom", bevel=0.03)
+    S.box("lucarne_toit", (1.5, 1.0, 0.18), (1.2, HY - 0.1, 4.5), "#b83b4c", origin="bottom", bevel=0.03)
+    lit_up = etage.startswith("allumee")
+    S.box("lucarne_vitre", (0.9, 0.06, 0.8), (1.2, HY - 0.51, 3.45),
+          mat=S.material("#ffd59e" if lit_up else "#1b2a4a", 0.2, emit=3.0 if lit_up else 0.1), origin="bottom", bevel=0)
+    if etage == "allumee_silhouette":     # tête + épaules en ombre chinoise
+        S.box("silh_epaules", (0.6, 0.02, 0.22), (1.2, HY - 0.55, 3.45), "#0b0b12", origin="bottom", bevel=0.02)
+        S.box("silh_tete", (0.3, 0.02, 0.3), (1.2, HY - 0.55, 3.67), "#0b0b12", origin="bottom", bevel=0.03)
+    w.add_anchor("fenetre_etage", 1.2, HY - 0.56, 3.85, 0.0, 1.0)
     w.facade = [bpy.data.objects[k] for k in set(bpy.data.objects.keys()) - n0]
+    # maison du voisin (à gauche), avec une fenêtre OUVERTE où l'on peut placer quelqu'un
+    VX = -7.0
+    S.box("voisin_g", (1.6, 0.25, 3.0), (VX - 1.6, HY + 0.12, 0), "#d8e2dc", origin="bottom", bevel=0.02)
+    S.box("voisin_d", (1.6, 0.25, 3.0), (VX + 1.6, HY + 0.12, 0), "#d8e2dc", origin="bottom", bevel=0.02)
+    S.box("voisin_bas", (1.6, 0.25, 1.0), (VX, HY + 0.12, 0), "#d8e2dc", origin="bottom", bevel=0.02)
+    S.box("voisin_haut", (1.6, 0.25, 0.6), (VX, HY + 0.12, 2.4), "#d8e2dc", origin="bottom", bevel=0.02)
+    S.box("voisin_fond", (4.8, 0.2, 3.0), (VX, HY + 2.4, 0), "#9aa5b1", origin="bottom", bevel=0)
+    S.box("voisin_sol", (4.8, 2.4, 0.1), (VX, HY + 1.3, -0.05), "#6d6875", origin="bottom", bevel=0)
+    S.box("voisin_toit", (5.2, 2.8, 0.4), (VX, HY + 1.3, 3.0), "#6c757d", origin="bottom", bevel=0.03)
+    for sx in (-1, 1):
+        S.box("voisin_cote", (0.2, 2.4, 3.0), (VX + sx * 2.4, HY + 1.3, 0), "#d8e2dc", origin="bottom", bevel=0)
+    S.box("voisin_rideau", (0.25, 0.05, 1.4), (VX - 0.7, HY + 0.05, 1.0), "#7b2cbf", origin="bottom", bevel=0.01)
+    lamp = S.material("#ffcf8a", 0.4, emit=1.5)
+    S.box("voisin_lampe", (0.3, 0.3, 0.3), (VX + 1.5, HY + 2.1, 2.2), mat=lamp, origin="bottom", bevel=0.03)
+    w.add_anchor("fenetre_voisin", VX, HY + 0.75, 0.0, 0.0, 1.0)
+    w.add_anchor("maison_voisin", VX, HY, 1.8, 0.0, 2.5)
     w.facade_y = HY - 0.05
     S.box("boite_lettres", (0.35, 0.3, 1.1), (-1.5, 0.6, 0), "#2a9d8f", origin="bottom", bevel=0.03)
     w.add_anchor("porte", 0, HY - 0.1, 1.2, 0.0, 1.2)

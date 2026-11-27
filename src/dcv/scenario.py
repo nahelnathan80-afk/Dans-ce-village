@@ -15,11 +15,11 @@ PRESETS_CAMERA = [
     "orbite_lente", "par_dessus_epaule", "zoom_brusque",
 ]
 DECORS = ["rue", "cuisine", "salle_classe", "chambre_ado", "chambre_cartons", "college_autel",
-          "villa_exterieur", "villa_interieur", "maison_yanis", "chambre_amis"]
+          "villa_exterieur", "villa_interieur", "maison_yanis", "chambre_amis", "parc"]
 ACTIONS = ["marcher", "attendre", "parler", "s_asseoir", "assis", "se_lever", "regarder",
-           "dormir", "filmer", "frapper", "rouler", "pousser",
+           "dormir", "filmer", "frapper", "rouler", "pousser", "courir",
            "sursauter", "frissonner", "passer", "serrer", "toucher", "poser"]
-EXPRESSIONS = ["neutre", "joyeux", "triste", "peur", "choque", "pleure", "dort", "fatigue",
+EXPRESSIONS = ["neutre", "joyeux", "triste", "peur", "choque", "pleure", "dort", "fatigue", "souriant_fige",
                "interrogatif", "pensif", "vide"]
 MUSIQUE = ["normal", "baisse", "coupe"]
 

@@ -28,6 +28,8 @@ class World:
         # deviennent invisibles pour elle (plan « depuis l'intérieur de la maison »)
         self.facade_y = None
         self.facade = []
+        # animations du décor : fonctions f(t) appelées à chaque image
+        self.animations = []
 
     def anchor(self, name):
         a = self.anchors.get(name)

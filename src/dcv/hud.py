@@ -40,9 +40,12 @@ def valeur(h, u):
     return de + (a - de) * k
 
 
-def fmt(v):
+def fmt(v, format="nombre", signe=""):
     n = int(round(v))
-    return f"{n:,}".replace(",", " ")          # espace fine des milliers : 1 000
+    if format == "temps":                      # compte à rebours mm:ss
+        n = max(0, n)
+        return f"{signe}{n // 60}:{n % 60:02d}"
+    return signe + f"{n:,}".replace(",", " ")  # espace fine des milliers : 1 000
 
 
 def _bed_icon(d, x, y, s, col):
@@ -53,6 +56,14 @@ def _bed_icon(d, x, y, s, col):
     d.rounded_rectangle([x + s * 0.18, y + s * 0.22, x + s * 0.55, y + s * 0.45], radius=s * 0.08, fill=col)
 
 
+def _clock_icon(d, x, y, s, col):
+    """Petite horloge (compte à rebours)."""
+    cx, cy, r = x + s * 0.6, y + s * 0.55, s * 0.45
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=col, width=max(2, int(s * 0.12)))
+    d.line([cx, cy, cx, cy - r * 0.65], fill=col, width=max(2, int(s * 0.1)))
+    d.line([cx, cy, cx + r * 0.5, cy + r * 0.2], fill=col, width=max(2, int(s * 0.1)))
+
+
 def draw(img, h, t, duree, prev_value=None):
     """Dessine la pastille sur img (RGBA, taille de sortie) à l'instant t du plan."""
     if not h:
@@ -60,11 +71,25 @@ def draw(img, h, t, duree, prev_value=None):
     W, H = img.size
     k = W / 1080
     u = min(1.0, t / max(0.1, duree))
-    v = valeur(h, u)
+    t_expl = 0.0
+    if h.get("retard"):
+        # le compte à rebours atteint 0:00 aux 3/4 du plan, puis bascule en « RETARD : +0:xx »
+        U0 = 0.72
+        if u < U0:
+            h = dict(h, courbe="lineaire")
+            v = h["de"] + (h["a"] - h["de"]) * min(1.0, u / U0)
+        else:
+            t_expl = U0 * duree
+            v = h["retard"] * min(1.0, (u - U0) / (1 - U0) * 1.15)
+            h = dict(h, label="RETARD", signe="+", style="deborde", effet=h.get("effet"))
+    else:
+        v = valeur(h, u)
     st = STYLES.get(h.get("style", "normal"), STYLES["normal"])
-    explode = h.get("effet") == "explose"
+    explode = h.get("effet") == "explose" and t >= t_expl
+    if explode:
+        t = t - t_expl          # l'explosion part du moment de la bascule
     # « pop » à chaque changement de valeur
-    v_prev = valeur(h, max(0.0, (t - 0.12) / max(0.1, duree)))
+    v_prev = v if h.get("retard") else valeur(h, max(0.0, (t - 0.12) / max(0.1, duree)))
     pop = 1.0 + (0.12 if int(round(v)) != int(round(v_prev)) else 0.0)
     zoom = 1.0
     cx, cy = 0.44 * W, 0.135 * H
@@ -91,7 +116,7 @@ def draw(img, h, t, duree, prev_value=None):
     f_label = font(fs, True)
     f_num = font(int(fs * pop * num_scale), True)
     label = f"{h['label']} :"
-    num = fmt(v)
+    num = fmt(v, h.get("format", "nombre"), h.get("signe", ""))
     lw = d.textlength(label, font=f_label)
     nw = d.textlength(num, font=font(int(fs * pop), True))      # largeur « normale » : la pastille ne grandit pas
     icon = fs * 0.9
@@ -111,7 +136,10 @@ def draw(img, h, t, duree, prev_value=None):
     x0 = max(config.SAFE_LEFT * W, min(x0, config.SAFE_RIGHT * W - pw))
     d.rounded_rectangle([x0, y0, x0 + pw, y0 + ph], radius=ph / 2, fill=st["bg"], outline=st["bord"],
                         width=max(3, int(7 * k * zoom)))
-    _bed_icon(d, x0 + pad, y0 + (ph - icon) / 2, icon, st["fg"])
+    if h.get("format") == "temps":
+        _clock_icon(d, x0 + pad, y0 + (ph - icon) / 2, icon, st["fg"])
+    else:
+        _bed_icon(d, x0 + pad, y0 + (ph - icon) / 2, icon, st["fg"])
     tx = x0 + pad + icon * 1.3 + 18 * k * zoom
     d.text((tx, y0 + ph / 2), label, font=f_label, fill=st["fg"], anchor="lm")
     nx = tx + lw + 16 * k * zoom

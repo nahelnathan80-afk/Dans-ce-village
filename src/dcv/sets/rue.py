@@ -61,8 +61,47 @@ def build(ctx):
         P.tree(f"arbre{tx}", tx, 8.4, 1.0)
     for tx in (-5.5, 3.5, 9.5):
         P.tree(f"arbreA{tx}", tx, 1.2 - 3.5, 0.9)
-    for lx in (-9, -3.5, 2.0, 7.5):
-        P.street_lamp(f"lamp{lx}", lx, 7.7, lit=ctx.get("lampes", 0.0))
+    ru = ctx.get("rue") or {}
+    mode = ru.get("lampadaires")
+    lamps = []
+    for lx in (-9, -3.5, 2.0, 7.5, -6.2, 4.8):
+        if mode in ("rouges", "extinction"):
+            col = "#ff2a2a" if mode == "rouges" else "#ffe2a0"
+            m, lo = P.street_lamp(f"lamp{lx}", lx, 7.7 if abs(lx) not in (6.2, 4.8) else 2.9, lit=14.0, color=col,
+                                  unique=True, light=140.0)
+            lamps.append((lx, m, lo))
+        elif abs(lx) not in (6.2, 4.8):
+            P.street_lamp(f"lamp{lx}", lx, 7.7, lit=ctx.get("lampes", 0.0))
+    if mode == "extinction":
+        # les lampadaires s'éteignent un par un (de la droite vers la gauche)
+        D = float(ctx.get("duree", 5.0))
+        order = sorted(lamps, key=lambda e: -e[0])
+        def _extinction(t, order=order, D=D):
+            for k, (lx, m, lo) in enumerate(order):
+                off = t > D * (0.15 + 0.13 * k)
+                flick = (not off) and t > D * (0.15 + 0.13 * k) - 0.25 and int(t * 25) % 2 == 0
+                v = 0.0 if (off or flick) else 14.0
+                m.node_tree.nodes["Principled BSDF"].inputs["Emission Strength"].default_value = v
+                if lo is not None:
+                    lo.data.energy = 0.0 if (off or flick) else 140.0
+        w.animations.append(_extinction)
+    # volets qui tombent sur les vitrines/fenêtres du bas
+    if ru.get("volets") == "tombent":
+        import bpy
+        D = float(ctx.get("duree", 5.0))
+        vol = []
+        for k, vx in enumerate((-7.0, -3.2, 0.6, 4.4, 8.0)):
+            e = S.empty(f"volet_piv{k}", (vx, 9.93, 2.3))
+            S.box(f"volet{k}", (1.6, 0.06, 1.9), (0, 0, -1.9), "#5c677d", parent=e, origin="bottom", bevel=0.01)
+            for j in range(6):
+                S.box(f"volet_lame{k}_{j}", (1.62, 0.07, 0.03), (0, -0.005, -1.9 + j * 0.32), "#3d4657", parent=e,
+                      origin="bottom", bevel=0)
+            vol.append((e, 0.15 + 0.12 * k))
+        def _volets(t, vol=vol, D=D):
+            for e, start in vol:
+                u = min(1.0, max(0.0, (t - D * start) / 0.35))
+                e.scale = (1, 1, max(0.001, u))
+        w.animations.append(_volets)
     # banc (face caméra)
     S.box("banc_assise", (1.6, 0.5, 0.08), (-2.5, 2.85, 0.38), "#a0522d", origin="bottom", bevel=0.015)
     S.box("banc_dossier", (1.6, 0.08, 0.45), (-2.5, 3.1, 0.5), "#a0522d", origin="bottom", bevel=0.015)
@@ -85,6 +124,13 @@ def build(ctx):
             P.wall_text(ctx, slot, t.get("type") or "affiche", t["texte"], sx, 10.0, sz, sw)
             w.add_anchor(slot, sx, 9.95, sz, 0.0, 1.4)
             w.obstacles.append((sx - 1.3, sx + 1.3, 5.5, 10))   # indice visible : pas de figurant devant
+    # horloge publique (emplacement « horloge_ville »)
+    t = text_for(ctx, "horloge_ville")
+    if t:
+        S.box("horloge_mat", (0.14, 0.14, 3.2), (1.2, 6.9, 0), "#2d3e50", origin="bottom", bevel=0.01)
+        S.box("horloge_boite", (1.3, 0.3, 0.75), (1.2, 6.9, 3.2), "#1f2633", origin="bottom", bevel=0.03)
+        P.text_panel(ctx, "horloge_ville", "horloge", t["texte"], (1.2, 6.74, 3.575), 1.15, emit=3.0)
+        w.add_anchor("horloge_ville", 1.2, 6.74, 3.575, 0.0, 1.3)
     t = text_for(ctx, "panneau_rue", "PLACE DU MARCHÉ")
     S.box("panneau_mat", (0.08, 0.08, 2.6), (-6.4, 7.4, 0), "#2d3e50", origin="bottom", bevel=0)
     P.text_panel(ctx, "panneau_rue", "panneau", t["texte"], (-6.4, 7.35, 2.45), 1.2)

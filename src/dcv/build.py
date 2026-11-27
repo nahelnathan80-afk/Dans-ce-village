@@ -71,7 +71,7 @@ def plan_hashes(plan, spec, mode_name, n_frames):
         render_part["photo"] = _file_hash(config.PERSONNAGES / f"{autel.get('photo', 'leo')}.json")
     rh = hashlib.sha256(json.dumps(render_part, sort_keys=True, default=str).encode()).hexdigest()[:16]
     over = {"r": rh, "b": spec["bulles"], "e": spec["etiquettes"], "p": spec["pensees"],
-            "h": spec.get("hud"), "tr": spec.get("transition"), "fk": spec.get("fond_key"), "m": spec.get("meteo"), "c": spec.get("carte"),
+            "h": spec.get("hud"), "tr": spec.get("transition"), "fk": spec.get("fond_key"), "m": spec.get("meteo"), "c": spec.get("carte"), "ee": spec.get("effets_ecran"),
             "fx": _code_hash(["fx.py", "hud.py", "endcard.py"]),
             "code": _code_hash(OVERLAY_CODE), "mood": MO.get(plan["mood"])}
     oh = hashlib.sha256(json.dumps(over, sort_keys=True, default=str).encode()).hexdigest()[:16]
@@ -251,6 +251,8 @@ def main(argv=None):
 
     # 6. son
     mus = Path(sc["_dir"]) / "musique.mp3"
+    if not mus.exists() and sc.get("musique_theme"):
+        mus = config.ROOT / "musique" / f"theme_{sc['musique_theme']}.mp3"
     if not mus.exists():
         mus = config.MUSIQUE_DEFAUT
     wav = ep_cache / a.mode / "mix.wav"

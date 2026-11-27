@@ -129,7 +129,9 @@ def build_timeline(sc: dict, voix: dict) -> list:
             else:
                 de = a = float(v)
                 courbe = "fixe"
-            hud = {"label": hud_cfg.get("label", ""), "de": de, "a": a, "courbe": courbe,
+            retard = float(v.get("puis_retard", 0)) if isinstance(v, dict) else 0.0
+            hud = {"label": plan.get("hud_label", hud_cfg.get("label", "")), "de": de, "a": a, "courbe": courbe,
+                   "format": hud_cfg.get("format", "nombre"), "signe": plan.get("hud_signe", ""), "retard": retard,
                    "style": plan.get("invites_style", "normal"), "effet": plan.get("invites_effet"),
                    "zoom": [(c["t0"], c["t1"]) for c in cads if c["cible"] == "compteur_haut"]}
             hud_val = a
@@ -141,7 +143,8 @@ def build_timeline(sc: dict, voix: dict) -> list:
             "cadrages": cads, "bulles": bulles, "etiquettes": etiquettes, "pensees": pensees,
             "voix_debut": voix_debut, "hud": hud, "transition": plan.get("transition"),
             "meteo": plan.get("meteo"), "carte": plan.get("carte") if carte else None,
-            "fond": plan.get("fond"),
+            "fond": plan.get("fond"), "effets_ecran": plan.get("effets_ecran", []),
+            "sons": [dict(sn, t=parse_time(sn.get("debut"), d, 0.0)) for sn in plan.get("sons", [])],
         })
         t += d
     return specs

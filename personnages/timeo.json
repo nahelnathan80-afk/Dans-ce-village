@@ -1,0 +1,5 @@
+// Timéo, 6 ans, le petit frère (pyjama vert).
+{ "nom": "Timéo", "etiquette": "TIMÉO", "gabarit": "enfant", "taille": 1.05,
+  "couleurs": { "peau": "#e8b48f", "cheveux": "#3b2214", "haut": "#80b918", "motif_couleur": "#d9ed92",
+                "bas": "#80b918", "chaussures": "#ffffff", "yeux": "#3a2a1a" },
+  "motif_haut": "pois", "coiffure": "bouclee", "haut": "tshirt", "accessoires": [] }

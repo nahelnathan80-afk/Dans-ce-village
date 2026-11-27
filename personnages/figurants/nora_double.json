@@ -1,0 +1,5 @@
+// Le double de Nora (identique à Nora).
+{ "nom": "Nora", "etiquette": "", "gabarit": "enfant", "taille": 1.36,
+  "couleurs": { "peau": "#e8b48f", "cheveux": "#3b2214", "haut": "#e9b949", "bas": "#2b2d42",
+                "chaussures": "#f2f2f2", "yeux": "#3a2a1a" },
+  "coiffure": "queue", "haut": "sweat", "accessoires": [ { "type": "taches" } ] }

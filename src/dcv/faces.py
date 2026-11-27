@@ -58,7 +58,8 @@ def draw_face(expression: str, couleurs: dict, etat: dict | None = None, extras:
 
     # --- joues roses (sous les yeux) ---
     for x in ex:
-        d.ellipse([x - 95, ey + 120, x + 95, ey + 190], fill=joue)
+        if e != "souriant_fige":
+            d.ellipse([x - 95, ey + 120, x + 95, ey + 190], fill=joue)
 
     # --- yeux ---
     for side, x in enumerate(ex):
@@ -74,11 +75,13 @@ def draw_face(expression: str, couleurs: dict, etat: dict | None = None, extras:
             d.arc([x - rw, ey - 70, x + rw, ey + 90], 200, 340, fill=ink, width=26)
             continue
         d.ellipse([x - rw, ey - rh, x + rw, ey + rh], fill=(255, 255, 255, 255), outline=ink, width=14)
-        pr = 72 if e not in ("choque", "peur", "vide") else 40
+        pr = 72 if e not in ("choque", "peur", "vide", "souriant_fige") else 40
+        if e == "souriant_fige":
+            pr = 26                       # pupilles minuscules, regard fixe
         px, py = x + dx * 38, ey + 10 + dy * 30
         d.ellipse([px - pr, py - pr * 1.18, px + pr, py + pr * 1.18], fill=iris)
         d.ellipse([px - pr * 0.55, py - pr * 0.6, px + pr * 0.55, py + pr * 0.6], fill=(15, 10, 12, 255))
-        if e != "vide":   # reflets brillants
+        if e not in ("vide", "souriant_fige"):   # reflets brillants
             d.ellipse([px - pr * 0.75, py - pr * 0.95, px - pr * 0.05, py - pr * 0.25], fill=(255, 255, 255, 255))
             d.ellipse([px + pr * 0.25, py + pr * 0.25, px + pr * 0.6, py + pr * 0.6], fill=(255, 255, 255, 230))
         if e in ("pensif", "fatigue"):  # paupière mi-close
@@ -96,7 +99,7 @@ def draw_face(expression: str, couleurs: dict, etat: dict | None = None, extras:
             d.arc([x - 80, yy - 20, x + 80, yy + 50], 200, 340, fill=ink, width=22)
         elif e == "choque":
             d.arc([x - 80, by - 50, x + 80, by + 30], 200, 340, fill=ink, width=22)
-        elif e == "vide":
+        elif e in ("vide", "souriant_fige"):
             d.line([x - 70, by + 10, x + 70, by + 10], fill=ink, width=18)
         else:
             d.arc([x - 80, by - 25, x + 80, by + 45], 205, 335, fill=ink, width=20)
@@ -124,6 +127,15 @@ def draw_face(expression: str, couleurs: dict, etat: dict | None = None, extras:
         d.ellipse([mx + 10, my - 18, mx + 60, my + 22], fill=ink)
     elif e == "dort":
         d.ellipse([mx - 26, my - 20, mx + 26, my + 26], fill=(120, 30, 45, 255), outline=ink, width=10)
+    elif e == "souriant_fige":
+        # sourire TROP large (d'un bord à l'autre du visage), figé, deux rangées de dents
+        d.chord([mx - 400, my - 330, mx + 400, my + 170], 8, 172, fill=(40, 5, 12, 255), outline=ink, width=16)
+        d.rectangle([mx - 330, my - 92, mx + 330, my - 40], fill=(245, 245, 230, 255))
+        d.rectangle([mx - 260, my + 40, mx + 260, my + 85], fill=(245, 245, 230, 255))
+        for k in range(-7, 8):
+            d.line([mx + k * 46, my - 92, mx + k * 46, my - 40], fill=(40, 5, 12, 255), width=7)
+        for k in range(-5, 6):
+            d.line([mx + k * 46, my + 40, mx + k * 46, my + 85], fill=(40, 5, 12, 255), width=7)
     elif e == "fatigue":     # sourit encore… mais épuisé
         d.arc([mx - 90, my - 50, mx + 90, my + 40], 25, 155, fill=ink, width=16)
     elif e == "vide":
@@ -142,6 +154,9 @@ def draw_face(expression: str, couleurs: dict, etat: dict | None = None, extras:
     elif e in ("peur", "choque"):
         _drop(d, 900, 260 + (t * 40) % 60, 34, (120, 190, 255, 220))   # goutte de sueur
 
+    if e == "souriant_fige":  # cernes sombres, pas de joues roses
+        for x in ex:
+            d.ellipse([x - 150, ey - 175, x + 150, ey + 175], outline=(70, 40, 60, 160), width=26)
     if e == "fatigue":       # cernes
         for x in ex:
             d.arc([x - rw * 0.8, ey + 60, x + rw * 0.8, ey + 150], 20, 160, fill=(150, 110, 160, 200), width=12)

@@ -1,0 +1,5 @@
+// Monsieur Rémi, le voisin resté dehors mardi… depuis, il sourit.
+{ "nom": "Monsieur Rémi", "etiquette": "M. RÉMI", "gabarit": "adulte", "taille": 1.82,
+  "couleurs": { "peau": "#d9c3b0", "cheveux": "#4a4a4a", "haut": "#6c757d", "bas": "#343a40",
+                "chaussures": "#212529", "yeux": "#1b1b1b", "joues": "#c9a9a6" },
+  "coiffure": "courte", "haut": "chemise", "accessoires": [ { "type": "cravate" } ] }

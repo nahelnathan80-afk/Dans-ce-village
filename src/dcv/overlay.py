@@ -169,6 +169,8 @@ def compose(img, f, meta, spec, W, H):
     fr = meta["frames"][f - 1] if f - 1 < len(meta["frames"]) else {}
     if spec.get("meteo") == "pluie":
         img = fx.pluie(img, t, seed=spec.get("index", 0))
+    if "brouillard" in spec.get("effets_ecran", []):
+        img = fx.brouillard(img, t)
     layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(layer)
     drew = False

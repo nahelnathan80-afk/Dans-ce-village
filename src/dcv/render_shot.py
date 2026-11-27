@@ -94,6 +94,13 @@ def _carried_object(rig, objet, name):
         S.box(f"{name}_guidon", (0.45, 0.04, 0.04), (0, -0.28, 1.02), "#222222", parent=e, origin="bottom", bevel=0.01)
         for yy in (-0.28, 0.36):
             S.cylinder(f"{name}_roue", 0.06, 0.05, (0, yy, 0.0), "#222222", parent=e, verts=12).rotation_euler = (0, 1.5708, 0)
+    elif objet == "doudou":
+        # petit ours cubique tenu dans la main droite
+        e = S.empty(f"{name}_doudou", (0, -0.12, -rig.arm - 0.05), rig.arms[1])
+        S.box(f"{name}_dd_corps", (0.16, 0.12, 0.18), (0, 0, -0.1), "#c68b59", parent=e, origin="bottom", bevel=0.04)
+        S.box(f"{name}_dd_tete", (0.14, 0.12, 0.12), (0, 0, 0.08), "#c68b59", parent=e, origin="bottom", bevel=0.04)
+        for sx in (-0.06, 0.06):
+            S.box(f"{name}_dd_oreille", (0.05, 0.04, 0.05), (sx, 0, 0.19), "#8d5a3b", parent=e, origin="bottom", bevel=0.015)
     elif objet == "canape_dos":
         e = S.empty(f"{name}_canape", (0, rig.td / 2 + 0.25, rig.torso + 0.25), rig.hips)
         e.rotation_euler = (-0.35, 0, 0)
@@ -174,7 +181,8 @@ class Shot:
                "accessoires": self.plan.get("accessoires"), "lampes": self.mood.get("lamps", 0.0),
                "ciel_fenetre": self.mood.get("window"), "fenetre_emit": 1.4,
                "villa": self.plan.get("villa"), "nuit": self.mood.get("lamps", 0) > 2,
-               "guirlandes": self.mood.get("guirlandes", False)}
+               "guirlandes": self.mood.get("guirlandes", False), "duree": self.duree,
+               "rue": self.plan.get("rue"), "maison": self.plan.get("maison")}
         autel = self.plan.get("autel")
         if autel:
             ctx["photo_mat"] = self._photo_material(autel)
@@ -303,13 +311,16 @@ class Shot:
         spec = dict(src.spec)
         spec["qui"] = f"reflet_{name}"
         spec["etiquette"] = False
+        own_face = bool(src.spec.get("expression_reflet"))
+        if own_face:                # le reflet a SA propre expression (ex. il sourit… pas l'original)
+            spec["expression"] = src.spec["expression_reflet"]
         actor = self._add_actor(spec, name=f"reflet:{name}")
-        actor.face_seq = None       # le reflet réutilise la séquence de l'original
         self.reflet = (name, f"reflet:{name}")
-        # matériau du visage : même séquence que l'original
-        rig = self.rigs[f"reflet:{name}"]
-        orig_face = self.rigs[name].face.data.materials[0]
-        rig.face.data.materials[0] = orig_face
+        if not own_face:
+            actor.face_seq = None       # le reflet réutilise la séquence de l'original
+            rig = self.rigs[f"reflet:{name}"]
+            orig_face = self.rigs[name].face.data.materials[0]
+            rig.face.data.materials[0] = orig_face
 
     # --------------------------------------------------------------- timeline
     def _face_state(self, actor, f, pose):
@@ -319,6 +330,8 @@ class Shot:
         # clignement : toutes les ~3 s, 3 images
         period = 3.1 + (shash(actor.name) % 7) * 0.2
         blink = (t + (shash(actor.name) % 13) * 0.21) % period < 0.1
+        if spec.get("expression") == "souriant_fige":
+            blink = False                     # ne cligne jamais
         bouche = 0.0
         talk = pose.get("bouche", 0)
         bulles = [b for b in self.spec["bulles"] if b["qui"] == spec["qui"]]
@@ -518,6 +531,8 @@ class Shot:
                 j = random.Random(f * 31 + len(n)).random()
                 rig.counter.location.x = (j - 0.5) * 0.03 if (f // 4) % 5 == 0 else 0.0
         loc, tgt, lens, shift = self.cam_track[f - 1]
+        for anim in self.world.animations:
+            anim(self.t_of(f))
         if self.world.facade_y is not None:
             vis = loc[1] < self.world.facade_y
             for ob in self.world.facade:

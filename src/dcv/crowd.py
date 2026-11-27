@@ -94,7 +94,7 @@ def generate(foule, world, mains, duree, seed=0):
                 if ok:
                     break
             placed.append((x, y))
-            if action == "passer" or (action == "mixte" and rng.random() < 0.5):
+            if action in ("passer", "courir") or (action == "mixte" and rng.random() < 0.5):
                 # traversée gauche ↔ droite, en évitant de partir pile sur un principal
                 sens = rng.choice([-1, 1])
                 spd = rng.uniform(0.8, 1.3)
@@ -105,7 +105,11 @@ def generate(foule, world, mains, duree, seed=0):
                     if all(abs(y - my) > 0.65 for _, (mx, my) in mains):
                         break
                     y = y + 0.8 if y + 0.8 < rect[3] else y - 1.6
-                spec.update(action="passer", position=[x0, y], vers=[x0 + sens * L, y + rng.uniform(-0.2, 0.2)])
+                if action == "courir":
+                    L = spd * 2.3 * duree
+                    x0 = x - sens * L / 2
+                spec.update(action="courir" if action == "courir" else "passer", position=[x0, y],
+                            vers=[x0 + sens * L, y + rng.uniform(-0.2, 0.2)])
             else:
                 spec.update(action="attendre", position=[x, y], orientation=rng.uniform(-55, 55))
                 if rng.random() < 0.3:

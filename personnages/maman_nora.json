@@ -1,0 +1,5 @@
+// La maman de Nora.
+{ "nom": "Maman", "etiquette": "MAMAN", "gabarit": "adulte", "taille": 1.7,
+  "couleurs": { "peau": "#e8b48f", "cheveux": "#3b2214", "haut": "#4361ee", "bas": "#3d405b",
+                "chaussures": "#5c4033", "yeux": "#3a2a1a" },
+  "coiffure": "longue", "haut": "gilet", "accessoires": [] }

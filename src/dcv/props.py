@@ -72,11 +72,25 @@ def tree(name, x, y, s=1.0, leaf="#5cb85c"):
     S.box(f"{name}_f2", (0.9 * s, 0.9 * s, 0.6 * s), (x, y, 2.35 * s), leaf, origin="bottom", bevel=0.08)
 
 
-def street_lamp(name, x, y, lit=0.0):
+def street_lamp(name, x, y, lit=0.0, color="#fff1b8", unique=False, light=0.0):
+    """Lampadaire. unique=True : matériau propre (pour l'éteindre/le rallumer).
+    light > 0 : ajoute une vraie lumière ponctuelle colorée sous la lampe.
+    Renvoie (matériau, lumière ou None)."""
     S.box(f"{name}_mat", (0.1, 0.1, 3.4), (x, y, 0), "#2d3e50", origin="bottom", bevel=0.01)
     S.box(f"{name}_bras", (0.5, 0.1, 0.08), (x + 0.2, y, 3.3), "#2d3e50", origin="bottom", bevel=0.01)
-    S.box(f"{name}_lampe", (0.3, 0.22, 0.14), (x + 0.4, y, 3.18), "#fff4c2",
-          mat=S.material("#fff1b8", 0.4, emit=lit), origin="bottom", bevel=0.01)
+    m = S.material(color, 0.4, emit=lit, unique=unique)
+    S.box(f"{name}_lampe", (0.3, 0.22, 0.14), (x + 0.4, y, 3.18), "#fff4c2", mat=m, origin="bottom", bevel=0.01)
+    lo = None
+    if light > 0:
+        import bpy
+        ld = bpy.data.lights.new(f"{name}_lum", "POINT")
+        ld.energy = light
+        ld.color = S.hex_rgb(color)
+        ld.use_shadow = False
+        lo = bpy.data.objects.new(f"{name}_lum", ld)
+        bpy.context.scene.collection.objects.link(lo)
+        lo.location = (x + 0.4, y, 2.9)
+    return m, lo
 
 
 def window(name, x, y, z, w, h, sky="#9fd3ff", facing="-Y", emit=1.0):

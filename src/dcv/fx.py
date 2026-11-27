@@ -79,3 +79,28 @@ def zzz(d, k, x, y, t, seed=0):
         a = int(255 * min(1, (1 - ph) * 1.6))
         d.text((px, py), "Z" if i == 2 else "z", font=font(s, True), fill=(255, 255, 255, a),
                stroke_width=max(2, int(5 * k)), stroke_fill=(40, 40, 90, a), anchor="mm")
+
+
+_fog_cache = {}
+
+
+def brouillard(img, t):
+    """Brouillard qui dérive lentement, plus dense en bas et au loin (milieu d'image)."""
+    W, H = img.size
+    key = (W, H)
+    if key not in _fog_cache:
+        rng = np.random.default_rng(5)
+        small = rng.random((H // 40 + 2, W // 40 + 2)).astype(np.float32)
+        big = np.asarray(Image.fromarray((small * 255).astype(np.uint8)).resize((W * 2, H), Image.BICUBIC),
+                         dtype=np.float32) / 255.0
+        yy = np.linspace(0, 1, H, dtype=np.float32)[:, None]
+        band = np.clip(1.0 - np.abs(yy - 0.62) / 0.38, 0, 1) ** 1.3        # dense vers le sol, au centre
+        _fog_cache[key] = (big, band)
+    big, band = _fog_cache[key]
+    off = int((t * 40) % W)
+    noise = big[:, off:off + W]
+    alpha = (0.16 + 0.34 * noise) * band
+    a = np.asarray(img.convert("RGB"), dtype=np.float32) / 255.0
+    fog = np.array([0.78, 0.82, 0.92], dtype=np.float32)
+    out = a * (1 - alpha[..., None]) + fog * alpha[..., None]
+    return Image.fromarray((np.clip(out, 0, 1) * 255).astype(np.uint8))

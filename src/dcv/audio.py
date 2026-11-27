@@ -66,6 +66,18 @@ def mix(specs, total, musique_path, out_wav, plans):
             i0 = int((s["debut"] + s.get("voix_debut", config.VOIX_DEBUT)) * SR)
             v = v[:max(0, N - i0)]
             voice[i0:i0 + len(v)] += v
+    # bruitages synthétisés ("sons" du scénario) — non soumis au ducking
+    from . import sfx
+    fxbus = np.zeros(N, np.float32)
+    for s in specs:
+        for sn in s.get("sons", []):
+            st = s["debut"] + sn["t"]
+            smp = sfx.render(sn, s["debut"] + s["duree"] - st)
+            if smp is None:
+                continue
+            i0 = int(st * SR)
+            smp = smp[:max(0, N - i0)]
+            fxbus[i0:i0 + len(smp)] += smp * 0.55
     # musique en boucle
     m = decode(musique_path)
     if len(m) == 0:
@@ -95,7 +107,7 @@ def mix(specs, total, musique_path, out_wav, plans):
     # entrée et sortie de la vidéo
     fade_in = np.clip(t / 0.4, 0, 1)
     fade_out = np.clip((total - t) / 1.5, 0, 1)
-    out = voice * 0.95 + music * level * duck * fade_in * fade_out
+    out = voice * 0.95 + music * level * duck * fade_in * fade_out + fxbus
     write_wav(out_wav, out[:int(total * SR)])
     # contrôle « jamais de silence total » : niveau de la MUSIQUE seule, hors plans
     # « coupe » (silence voulu) et hors noir final
