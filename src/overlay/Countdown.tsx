@@ -13,12 +13,12 @@ export const fmtClock = (sec: number) => {
  * Pastille « MINUIT DANS 15:00:00 » (même style que le compteur de l'ép. 02).
  * Passe au rouge et pulse sous `redBelow` secondes. `valueAt(t)` renvoie des secondes ou null (masqué).
  */
-export const CountdownPill: React.FC<{label: string; valueAt: (t: number) => number | null; redBelow?: number; top?: number}> = ({label, valueAt, redBelow = 300, top = 175}) => {
+export const CountdownPill: React.FC<{label: string; valueAt: (t: number) => number | null; redBelow?: number; top?: number; red?: (t: number) => boolean}> = ({label, valueAt, redBelow = 300, top = 175, red: redAt}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const v = valueAt(frame / fps);
 	if (v === null) return null;
-	const red = v < redBelow;
+	const red = redAt ? redAt(frame / fps) : v < redBelow;
 	// petit rebond quand la valeur saute (changement de scène)
 	let jump = -999;
 	for (let f = frame; f > frame - 20 && f > 0; f--) {

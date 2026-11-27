@@ -430,7 +430,7 @@ const Clouds: React.FC = () => {
 	);
 };
 
-const CHALETS: {p: V3; r: number; w: number; d: number; h: number; wall: string; roof: string; sh: string}[] = (() => {
+export const CHALETS: {p: V3; r: number; w: number; d: number; h: number; wall: string; roof: string; sh: string}[] = (() => {
 	const out = [];
 	const R = rng(42);
 	const walls = ['#c8864a', '#b5713b', '#d69a5b', '#a8653a', '#e8b07a'];
@@ -499,11 +499,15 @@ export type VillageProps = {
 	replaceBakery?: React.ReactNode;
 	/** numéros sur les portes des chalets */
 	numbered?: boolean;
+	/** remplace la fontaine (ex. un arbre au centre de la place) */
+	replaceFountain?: React.ReactNode;
+	/** décor ajouté à un chalet (coordonnées locales du chalet) : drapeau, etc. */
+	decorateChalet?: (i: number, c: {p: V3; w: number; d: number; h: number}) => React.ReactNode;
 	children?: React.ReactNode;
 };
 
 /** Le décor complet du village (réutilisable dans tous les épisodes). */
-export const Village: React.FC<VillageProps> = ({night = false, bellSwing = 0, hideBakery = false, replaceMairie, replaceBakery, numbered = false, children}) => {
+export const Village: React.FC<VillageProps> = ({night = false, bellSwing = 0, hideBakery = false, replaceMairie, replaceBakery, numbered = false, replaceFountain, decorateChalet, children}) => {
 	const grass = useMemo(() => grassTexture(60), []);
 	const cobble = useMemo(() => cobbleTexture(7), []);
 	return (
@@ -516,7 +520,7 @@ export const Village: React.FC<VillageProps> = ({night = false, bellSwing = 0, h
 				<circleGeometry args={[12.5, 48]} />
 				<meshStandardMaterial map={cobble} color={night ? '#8890b8' : '#ffffff'} roughness={0.95} />
 			</mesh>
-			<Fountain />
+			{replaceFountain ?? <Fountain />}
 			<Square />
 			{replaceBakery ?? (!hideBakery && <Bakery night={night} />)}
 			{replaceMairie ?? (
@@ -527,7 +531,9 @@ export const Village: React.FC<VillageProps> = ({night = false, bellSwing = 0, h
 			)}
 			<Church bellSwing={bellSwing} night={night} />
 			{CHALETS.map((c, i) => (
-				<Chalet key={i} position={c.p} rotY={c.r} w={c.w} d={c.d} h={c.h} wall={c.wall} roof={c.roof} shutter={c.sh} night={night} number={numbered ? HOUSE_NUMBERS[i % HOUSE_NUMBERS.length] : undefined} />
+				<Chalet key={i} position={c.p} rotY={c.r} w={c.w} d={c.d} h={c.h} wall={c.wall} roof={c.roof} shutter={c.sh} night={night} number={numbered ? HOUSE_NUMBERS[i % HOUSE_NUMBERS.length] : undefined}>
+					{decorateChalet?.(i, {p: c.p, w: c.w, d: c.d, h: c.h})}
+				</Chalet>
 			))}
 			{TREES.map(([p, s], i) => (
 				<Sapin key={i} p={p} s={s} />

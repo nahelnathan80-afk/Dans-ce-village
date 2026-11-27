@@ -43,7 +43,7 @@ const AMB: Record<Ambiance, {top: string; bottom: string; fog: string; hemi: [st
 	interior: {top: '#f3c98b', bottom: '#f3c98b', fog: '#f3c98b', hemi: ['#ffe9c7', '#8a5a3a', 1.1], sun: ['#ffd6a0', 1.6], amb: 0.45},
 	morning: {top: '#4aa8ff', bottom: '#fff1cf', fog: '#ffeccc', hemi: ['#fff4dc', '#9fca86', 1.15], sun: ['#fff0c8', 2.5], amb: 0.38},
 	golden: {top: '#6f8dff', bottom: '#ffcf7a', fog: '#ffd9a0', hemi: ['#ffe4b8', '#a08a5a', 1.05], sun: ['#ffb85c', 2.4], amb: 0.35},
-	nightblue: {top: '#050a24', bottom: '#1b2f6b', fog: '#14234f', hemi: ['#6f86ff', '#0a1030', 0.55], sun: ['#8fa6ff', 0.6], amb: 0.2},
+	nightblue: {top: '#060c2c', bottom: '#223a80', fog: '#182a5c', hemi: ['#8198ff', '#1a2250', 0.9], sun: ['#a6b8ff', 1.0], amb: 0.32},
 	valley: {top: '#59b7ff', bottom: '#ffe9b8', fog: '#fff0d0', hemi: ['#fff6e0', '#9fdc7a', 1.25], sun: ['#fff0c0', 2.8], amb: 0.45},
 	interiorNight: {top: '#2b2440', bottom: '#2b2440', fog: '#2b2440', hemi: ['#b8a6ff', '#3a2a40', 0.55], sun: ['#9fb0ff', 0.5], amb: 0.3},
 };

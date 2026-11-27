@@ -27,10 +27,12 @@ ROOT = Path(__file__).resolve().parent.parent
 SR = tts.SR
 
 
-def load(path: Path) -> np.ndarray:
+def load(path: Path, tempo: float = 1.0) -> np.ndarray:
+    """Charge un fichier audio (mono 48 kHz). `tempo` > 1 accélère sans changer la hauteur (atempo)."""
     with tempfile.TemporaryDirectory() as td:
         o = Path(td) / "o.wav"
-        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(path), "-ac", "1", "-ar", str(SR), str(o)], check=True)
+        af = ["-af", f"atempo={tempo}"] if abs(tempo - 1) > 1e-3 else []
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(path), *af, "-ac", "1", "-ar", str(SR), str(o)], check=True)
         a, _ = sf.read(o, dtype="float32")
     return a
 
@@ -64,7 +66,7 @@ def main():
     timeline = {}
     t = tts.LEAD_IN
     for part in plan["parts"]:
-        a = load(ROOT / part["file"])
+        a = load(ROOT / part["file"], plan.get("tempo", 1.0))
         # on retire le silence de début/fin du fichier
         thr = 0.02 * np.max(np.abs(a))
         idx = np.where(np.abs(a) > thr)[0]

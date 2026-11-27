@@ -1,0 +1,1207 @@
+{
+ "duration": 89.81,
+ "lines": [
+  {
+   "id": "plan01",
+   "who": "vo",
+   "pause": 1.0,
+   "plan": {
+    "ambiance": "nuit",
+    "visuel": "Léo de dos devant le mur, la nuit. Compteur orange « MUR FERMÉ DANS 00:00:57 »."
+   },
+   "text": "Cette *guerre*, c'est à cause de *moi*. Mais ça, personne ne le savait encore.",
+   "start": 0.13,
+   "end": 3.23,
+   "words": [
+    {
+     "text": "Cette",
+     "start": 0.13,
+     "end": 0.27
+    },
+    {
+     "text": "*guerre*,",
+     "start": 0.27,
+     "end": 0.73
+    },
+    {
+     "text": "c'est",
+     "start": 0.73,
+     "end": 0.93
+    },
+    {
+     "text": "à",
+     "start": 0.93,
+     "end": 0.99
+    },
+    {
+     "text": "cause",
+     "start": 0.99,
+     "end": 1.11
+    },
+    {
+     "text": "de",
+     "start": 1.11,
+     "end": 1.23
+    },
+    {
+     "text": "*moi*.",
+     "start": 1.23,
+     "end": 1.79
+    },
+    {
+     "text": "Mais",
+     "start": 1.79,
+     "end": 1.97
+    },
+    {
+     "text": "ça,",
+     "start": 1.97,
+     "end": 2.37
+    },
+    {
+     "text": "personne",
+     "start": 2.37,
+     "end": 2.61
+    },
+    {
+     "text": "ne",
+     "start": 2.61,
+     "end": 2.81
+    },
+    {
+     "text": "le",
+     "start": 2.81,
+     "end": 2.87
+    },
+    {
+     "text": "savait",
+     "start": 2.87,
+     "end": 3.07
+    },
+    {
+     "text": "encore.",
+     "start": 3.07,
+     "end": 3.23
+    }
+   ]
+  },
+  {
+   "id": "plan02",
+   "who": "vo",
+   "pause": 1.8,
+   "plan": {
+    "ambiance": "jour",
+    "visuel": "Plan large de jour : 8 chalets avec leur drapeau au balcon, grande table commune, tout le monde mange ensemble."
+   },
+   "text": "Dans notre village, chaque maison, c'était un *pays*. On mangeait tous ensemble le *dimanche*.",
+   "start": 4.33,
+   "end": 7.71,
+   "words": [
+    {
+     "text": "Dans",
+     "start": 4.33,
+     "end": 4.39
+    },
+    {
+     "text": "notre",
+     "start": 4.37,
+     "end": 4.55
+    },
+    {
+     "text": "village,",
+     "start": 4.55,
+     "end": 5.05
+    },
+    {
+     "text": "chaque",
+     "start": 5.05,
+     "end": 5.23
+    },
+    {
+     "text": "maison,",
+     "start": 5.23,
+     "end": 5.71
+    },
+    {
+     "text": "c'était",
+     "start": 5.71,
+     "end": 5.85
+    },
+    {
+     "text": "un",
+     "start": 5.85,
+     "end": 6.01
+    },
+    {
+     "text": "*pays*.",
+     "start": 6.01,
+     "end": 6.53
+    },
+    {
+     "text": "On",
+     "start": 6.53,
+     "end": 6.61
+    },
+    {
+     "text": "mangeait",
+     "start": 6.61,
+     "end": 6.83
+    },
+    {
+     "text": "tous",
+     "start": 6.83,
+     "end": 6.93
+    },
+    {
+     "text": "ensemble",
+     "start": 6.93,
+     "end": 7.21
+    },
+    {
+     "text": "le",
+     "start": 7.21,
+     "end": 7.39
+    },
+    {
+     "text": "*dimanche*.",
+     "start": 7.39,
+     "end": 7.71
+    }
+   ]
+  },
+  {
+   "id": "plan03",
+   "who": "vo",
+   "pause": 1.6,
+   "plan": {
+    "ambiance": "matin",
+    "visuel": "Arbre au centre de la place, branche vide, zoom. Doigts pointés."
+   },
+   "text": "Un matin, la seule *pomme* de l'arbre du milieu avait *disparu*. Chaque pays a *accusé* l'autre.",
+   "start": 9.61,
+   "end": 13.33,
+   "words": [
+    {
+     "text": "Un",
+     "start": 9.61,
+     "end": 9.71
+    },
+    {
+     "text": "matin,",
+     "start": 9.71,
+     "end": 10.25
+    },
+    {
+     "text": "la",
+     "start": 10.25,
+     "end": 10.33
+    },
+    {
+     "text": "seule",
+     "start": 10.33,
+     "end": 10.51
+    },
+    {
+     "text": "*pomme*",
+     "start": 10.51,
+     "end": 10.75
+    },
+    {
+     "text": "de",
+     "start": 10.75,
+     "end": 10.83
+    },
+    {
+     "text": "l'arbre",
+     "start": 10.83,
+     "end": 11.05
+    },
+    {
+     "text": "du",
+     "start": 11.05,
+     "end": 11.13
+    },
+    {
+     "text": "milieu",
+     "start": 11.13,
+     "end": 11.33
+    },
+    {
+     "text": "avait",
+     "start": 11.33,
+     "end": 11.49
+    },
+    {
+     "text": "*disparu*.",
+     "start": 11.49,
+     "end": 12.17
+    },
+    {
+     "text": "Chaque",
+     "start": 12.17,
+     "end": 12.51
+    },
+    {
+     "text": "pays",
+     "start": 12.51,
+     "end": 12.71
+    },
+    {
+     "text": "a",
+     "start": 12.71,
+     "end": 12.87
+    },
+    {
+     "text": "*accusé*",
+     "start": 12.87,
+     "end": 13.17
+    },
+    {
+     "text": "l'autre.",
+     "start": 13.17,
+     "end": 13.33
+    }
+   ]
+  },
+  {
+   "id": "plan04",
+   "who": "vo",
+   "pause": 4.4,
+   "plan": {
+    "ambiance": "après-midi",
+    "visuel": "Montage rapide : drapeaux agités, visages fâchés, le mur monte au milieu de la place, le maire pointe du doigt."
+   },
+   "text": "Les *drapeaux*. Les *cris*. Un *mur* au milieu de la place. Et le maire a juré : on trouvera le *voleur*.",
+   "start": 15.03,
+   "end": 19.53,
+   "words": [
+    {
+     "text": "Les",
+     "start": 15.03,
+     "end": 15.09
+    },
+    {
+     "text": "*drapeaux*.",
+     "start": 15.09,
+     "end": 15.73
+    },
+    {
+     "text": "Les",
+     "start": 15.73,
+     "end": 15.79
+    },
+    {
+     "text": "*cris*.",
+     "start": 15.79,
+     "end": 16.33
+    },
+    {
+     "text": "Un",
+     "start": 16.33,
+     "end": 16.49
+    },
+    {
+     "text": "*mur*",
+     "start": 16.49,
+     "end": 16.73
+    },
+    {
+     "text": "au",
+     "start": 16.73,
+     "end": 16.85
+    },
+    {
+     "text": "milieu",
+     "start": 16.85,
+     "end": 17.03
+    },
+    {
+     "text": "de",
+     "start": 17.03,
+     "end": 17.15
+    },
+    {
+     "text": "la",
+     "start": 17.15,
+     "end": 17.23
+    },
+    {
+     "text": "place.",
+     "start": 17.23,
+     "end": 17.81
+    },
+    {
+     "text": "Et",
+     "start": 17.81,
+     "end": 17.87
+    },
+    {
+     "text": "le",
+     "start": 17.83,
+     "end": 17.91
+    },
+    {
+     "text": "maire",
+     "start": 17.91,
+     "end": 18.09
+    },
+    {
+     "text": "a",
+     "start": 18.09,
+     "end": 18.15
+    },
+    {
+     "text": "juré :",
+     "start": 18.13,
+     "end": 18.71
+    },
+    {
+     "text": "on",
+     "start": 18.71,
+     "end": 18.81
+    },
+    {
+     "text": "trouvera",
+     "start": 18.81,
+     "end": 19.17
+    },
+    {
+     "text": "le",
+     "start": 19.17,
+     "end": 19.25
+    },
+    {
+     "text": "*voleur*.",
+     "start": 19.25,
+     "end": 19.53
+    }
+   ]
+  },
+  {
+   "id": "plan05",
+   "who": "vo",
+   "pause": 2.2,
+   "plan": {
+    "ambiance": "après-midi doré",
+    "visuel": "Yuki de l'autre côté du mur (par la porte), elle rit ; Léo la regarde de loin."
+   },
+   "text": "De l'autre côté, il y avait *Yuki*. Celle qui riait trop fort. Celle à qui je n'avais jamais osé *parler*.",
+   "start": 23.91,
+   "end": 28.17,
+   "words": [
+    {
+     "text": "De",
+     "start": 23.91,
+     "end": 24.03
+    },
+    {
+     "text": "l'autre",
+     "start": 24.03,
+     "end": 24.19
+    },
+    {
+     "text": "côté,",
+     "start": 24.19,
+     "end": 24.75
+    },
+    {
+     "text": "il",
+     "start": 24.75,
+     "end": 24.83
+    },
+    {
+     "text": "y",
+     "start": 24.83,
+     "end": 24.93
+    },
+    {
+     "text": "avait",
+     "start": 24.93,
+     "end": 25.01
+    },
+    {
+     "text": "*Yuki*.",
+     "start": 25.01,
+     "end": 25.77
+    },
+    {
+     "text": "Celle",
+     "start": 25.77,
+     "end": 25.87
+    },
+    {
+     "text": "qui",
+     "start": 25.87,
+     "end": 26.03
+    },
+    {
+     "text": "riait",
+     "start": 26.03,
+     "end": 26.19
+    },
+    {
+     "text": "trop",
+     "start": 26.19,
+     "end": 26.33
+    },
+    {
+     "text": "fort.",
+     "start": 26.33,
+     "end": 26.91
+    },
+    {
+     "text": "Celle",
+     "start": 26.91,
+     "end": 27.03
+    },
+    {
+     "text": "à",
+     "start": 27.03,
+     "end": 27.13
+    },
+    {
+     "text": "qui",
+     "start": 27.13,
+     "end": 27.21
+    },
+    {
+     "text": "je",
+     "start": 27.21,
+     "end": 27.31
+    },
+    {
+     "text": "n'avais",
+     "start": 27.31,
+     "end": 27.45
+    },
+    {
+     "text": "jamais",
+     "start": 27.45,
+     "end": 27.69
+    },
+    {
+     "text": "osé",
+     "start": 27.69,
+     "end": 27.95
+    },
+    {
+     "text": "*parler*.",
+     "start": 27.95,
+     "end": 28.17
+    }
+   ]
+  },
+  {
+   "id": "plan06",
+   "who": "vo",
+   "pause": 4.4,
+   "plan": {
+    "ambiance": "nuit",
+    "visuel": "Avions en papier qui passent au-dessus du mur ; gros plans sur les messages écrits."
+   },
+   "text": "Chaque soir, des avions en papier par-dessus le mur. Le sien disait : « Tu me *manques*. » Le mien : « Moi *aussi*. »",
+   "start": 30.47,
+   "end": 35.35,
+   "words": [
+    {
+     "text": "Chaque",
+     "start": 30.47,
+     "end": 30.67
+    },
+    {
+     "text": "soir,",
+     "start": 30.67,
+     "end": 31.09
+    },
+    {
+     "text": "des",
+     "start": 31.09,
+     "end": 31.19
+    },
+    {
+     "text": "avions",
+     "start": 31.19,
+     "end": 31.41
+    },
+    {
+     "text": "en",
+     "start": 31.41,
+     "end": 31.49
+    },
+    {
+     "text": "papier",
+     "start": 31.49,
+     "end": 31.69
+    },
+    {
+     "text": "par-dessus",
+     "start": 31.69,
+     "end": 32.01
+    },
+    {
+     "text": "le",
+     "start": 32.01,
+     "end": 32.11
+    },
+    {
+     "text": "mur.",
+     "start": 32.11,
+     "end": 32.67
+    },
+    {
+     "text": "Le",
+     "start": 32.67,
+     "end": 32.75
+    },
+    {
+     "text": "sien",
+     "start": 32.75,
+     "end": 32.91
+    },
+    {
+     "text": "disait :",
+     "start": 32.91,
+     "end": 33.55
+    },
+    {
+     "text": "« Tu",
+     "start": 33.55,
+     "end": 33.61
+    },
+    {
+     "text": "me",
+     "start": 33.61,
+     "end": 33.75
+    },
+    {
+     "text": "*manques*. »",
+     "start": 33.75,
+     "end": 34.37
+    },
+    {
+     "text": "Le",
+     "start": 34.37,
+     "end": 34.49
+    },
+    {
+     "text": "mien :",
+     "start": 34.49,
+     "end": 34.99
+    },
+    {
+     "text": "« Moi",
+     "start": 34.99,
+     "end": 35.13
+    },
+    {
+     "text": "*aussi*. »",
+     "start": 35.13,
+     "end": 35.35
+    }
+   ]
+  },
+  {
+   "id": "plan07",
+   "who": "vo",
+   "pause": 4.0,
+   "plan": {
+    "ambiance": "nuit",
+    "visuel": "Le maire avec une lampe frappe aux portes, une maison après l'autre, il se rapproche de celle de Léo. Insert TRÈS bref (0,5 s) : Léo glisse un objet rouge sous son lit (indice non expliqué)."
+   },
+   "text": "Chaque jour, le maire fouillait une maison de plus. Chaque jour, il se rapprochait de la *mienne*.",
+   "start": 39.85,
+   "end": 43.37,
+   "words": [
+    {
+     "text": "Chaque",
+     "start": 39.85,
+     "end": 40.064
+    },
+    {
+     "text": "jour,",
+     "start": 40.064,
+     "end": 40.257
+    },
+    {
+     "text": "le",
+     "start": 40.257,
+     "end": 40.594
+    },
+    {
+     "text": "maire",
+     "start": 40.594,
+     "end": 40.756
+    },
+    {
+     "text": "fouillait",
+     "start": 40.756,
+     "end": 41.025
+    },
+    {
+     "text": "une",
+     "start": 41.025,
+     "end": 41.103
+    },
+    {
+     "text": "maison",
+     "start": 41.103,
+     "end": 41.306
+    },
+    {
+     "text": "de",
+     "start": 41.306,
+     "end": 41.401
+    },
+    {
+     "text": "plus.",
+     "start": 41.401,
+     "end": 41.947
+    },
+    {
+     "text": "Chaque",
+     "start": 41.947,
+     "end": 42.192
+    },
+    {
+     "text": "jour,",
+     "start": 42.192,
+     "end": 42.556
+    },
+    {
+     "text": "il",
+     "start": 42.556,
+     "end": 42.646
+    },
+    {
+     "text": "se",
+     "start": 42.646,
+     "end": 42.747
+    },
+    {
+     "text": "rapprochait",
+     "start": 42.747,
+     "end": 43.078
+    },
+    {
+     "text": "de",
+     "start": 43.078,
+     "end": 43.138
+    },
+    {
+     "text": "la",
+     "start": 43.138,
+     "end": 43.214
+    },
+    {
+     "text": "*mienne*.",
+     "start": 43.214,
+     "end": 43.37
+    }
+   ]
+  },
+  {
+   "id": "plan08",
+   "who": "vo",
+   "pause": 2.4,
+   "plan": {
+    "ambiance": "intérieur",
+    "visuel": "La mère de Léo, puis mamie Odette dans son fauteuil au milieu de ses horloges, regard long."
+   },
+   "text": "Ce soir, à *minuit*, la porte du mur se ferme pour toujours. Ma mère m'a dit : *reste*. Mamie Odette m'a regardé longtemps… et m'a dit : *cours*.",
+   "start": 47.47,
+   "end": 53.93,
+   "words": [
+    {
+     "text": "Ce",
+     "start": 47.47,
+     "end": 47.582
+    },
+    {
+     "text": "soir,",
+     "start": 47.582,
+     "end": 47.805
+    },
+    {
+     "text": "à",
+     "start": 47.805,
+     "end": 48.081
+    },
+    {
+     "text": "*minuit*,",
+     "start": 48.081,
+     "end": 48.297
+    },
+    {
+     "text": "la",
+     "start": 48.297,
+     "end": 48.698
+    },
+    {
+     "text": "porte",
+     "start": 48.698,
+     "end": 48.851
+    },
+    {
+     "text": "du",
+     "start": 48.851,
+     "end": 48.933
+    },
+    {
+     "text": "mur",
+     "start": 48.933,
+     "end": 49.129
+    },
+    {
+     "text": "se",
+     "start": 49.129,
+     "end": 49.219
+    },
+    {
+     "text": "ferme",
+     "start": 49.219,
+     "end": 49.484
+    },
+    {
+     "text": "pour",
+     "start": 49.484,
+     "end": 49.635
+    },
+    {
+     "text": "toujours.",
+     "start": 49.635,
+     "end": 49.871
+    },
+    {
+     "text": "Ma",
+     "start": 49.871,
+     "end": 49.931
+    },
+    {
+     "text": "mère",
+     "start": 49.931,
+     "end": 50.606
+    },
+    {
+     "text": "m'a",
+     "start": 50.606,
+     "end": 50.666
+    },
+    {
+     "text": "dit :",
+     "start": 50.662,
+     "end": 50.834
+    },
+    {
+     "text": "*reste*.",
+     "start": 50.834,
+     "end": 51.424
+    },
+    {
+     "text": "Mamie",
+     "start": 51.424,
+     "end": 52.035
+    },
+    {
+     "text": "Odette",
+     "start": 52.035,
+     "end": 52.345
+    },
+    {
+     "text": "m'a",
+     "start": 52.345,
+     "end": 52.425
+    },
+    {
+     "text": "regardé",
+     "start": 52.425,
+     "end": 52.738
+    },
+    {
+     "text": "longtemps…",
+     "start": 52.738,
+     "end": 52.987
+    },
+    {
+     "text": "et",
+     "start": 52.987,
+     "end": 53.047
+    },
+    {
+     "text": "m'a",
+     "start": 53.024,
+     "end": 53.084
+    },
+    {
+     "text": "dit :",
+     "start": 53.061,
+     "end": 53.698
+    },
+    {
+     "text": "*cours*.",
+     "start": 53.698,
+     "end": 53.93
+    }
+   ]
+  },
+  {
+   "id": "plan09",
+   "who": "vo",
+   "pause": 5.0,
+   "plan": {
+    "ambiance": "nuit",
+    "visuel": "Compteur rouge qui pulse. Léo court, la porte du mur se referme lentement ; montage alterné avec Yuki qui court de l'autre côté. Battements de cœur."
+   },
+   "text": "J'ai *couru*. *Dix* secondes. *Cinq*. Elle courait aussi.",
+   "start": 56.31,
+   "end": 59.05,
+   "words": [
+    {
+     "text": "J'ai",
+     "start": 56.31,
+     "end": 56.49
+    },
+    {
+     "text": "*couru*.",
+     "start": 56.49,
+     "end": 57.09
+    },
+    {
+     "text": "*Dix*",
+     "start": 57.09,
+     "end": 57.29
+    },
+    {
+     "text": "secondes.",
+     "start": 57.29,
+     "end": 57.87
+    },
+    {
+     "text": "*Cinq*.",
+     "start": 57.87,
+     "end": 58.51
+    },
+    {
+     "text": "Elle",
+     "start": 58.51,
+     "end": 58.61
+    },
+    {
+     "text": "courait",
+     "start": 58.61,
+     "end": 58.87
+    },
+    {
+     "text": "aussi.",
+     "start": 58.87,
+     "end": 59.05
+    }
+   ]
+  },
+  {
+   "id": "plan10",
+   "who": "vo",
+   "pause": 3.4,
+   "plan": {
+    "ambiance": "nuit",
+    "visuel": "Ils s'arrêtent au milieu de la porte, ralenti ; elle lui prend la main."
+   },
+   "text": "On s'est arrêtés pile au *milieu*. Elle a pris ma *main*. Elle a senti quelque chose dedans.",
+   "start": 64.15,
+   "end": 67.53,
+   "words": [
+    {
+     "text": "On",
+     "start": 64.15,
+     "end": 64.268
+    },
+    {
+     "text": "s'est",
+     "start": 64.268,
+     "end": 64.389
+    },
+    {
+     "text": "arrêtés",
+     "start": 64.389,
+     "end": 64.791
+    },
+    {
+     "text": "pile",
+     "start": 64.791,
+     "end": 65.067
+    },
+    {
+     "text": "au",
+     "start": 65.067,
+     "end": 65.149
+    },
+    {
+     "text": "*milieu*.",
+     "start": 65.149,
+     "end": 65.646
+    },
+    {
+     "text": "Elle",
+     "start": 65.646,
+     "end": 65.776
+    },
+    {
+     "text": "a",
+     "start": 65.776,
+     "end": 65.836
+    },
+    {
+     "text": "pris",
+     "start": 65.83,
+     "end": 65.975
+    },
+    {
+     "text": "ma",
+     "start": 65.975,
+     "end": 66.066
+    },
+    {
+     "text": "*main*.",
+     "start": 66.066,
+     "end": 66.556
+    },
+    {
+     "text": "Elle",
+     "start": 66.556,
+     "end": 66.631
+    },
+    {
+     "text": "a",
+     "start": 66.631,
+     "end": 66.691
+    },
+    {
+     "text": "senti",
+     "start": 66.688,
+     "end": 66.933
+    },
+    {
+     "text": "quelque",
+     "start": 66.933,
+     "end": 67.019
+    },
+    {
+     "text": "chose",
+     "start": 67.019,
+     "end": 67.294
+    },
+    {
+     "text": "dedans.",
+     "start": 67.294,
+     "end": 67.53
+    }
+   ]
+  },
+  {
+   "id": "plan11",
+   "who": "vo",
+   "pause": 3.0,
+   "plan": {
+    "ambiance": "nuit",
+    "visuel": "Gros plan : Léo ouvre la main, c'est la POMME ROUGE. La musique se coupe net."
+   },
+   "text": "Je l'avais cueillie ce matin-là. Pour *elle*. Je n'avais jamais osé la lui donner.",
+   "start": 71.03,
+   "end": 74.01,
+   "words": [
+    {
+     "text": "Je",
+     "start": 71.03,
+     "end": 71.13
+    },
+    {
+     "text": "l'avais",
+     "start": 71.13,
+     "end": 71.27
+    },
+    {
+     "text": "cueillie",
+     "start": 71.27,
+     "end": 71.61
+    },
+    {
+     "text": "ce",
+     "start": 71.61,
+     "end": 71.67
+    },
+    {
+     "text": "matin-là.",
+     "start": 71.65,
+     "end": 72.27
+    },
+    {
+     "text": "Pour",
+     "start": 72.27,
+     "end": 72.43
+    },
+    {
+     "text": "*elle*.",
+     "start": 72.43,
+     "end": 72.91
+    },
+    {
+     "text": "Je",
+     "start": 72.91,
+     "end": 72.97
+    },
+    {
+     "text": "n'avais",
+     "start": 72.97,
+     "end": 73.13
+    },
+    {
+     "text": "jamais",
+     "start": 73.13,
+     "end": 73.35
+    },
+    {
+     "text": "osé",
+     "start": 73.35,
+     "end": 73.65
+    },
+    {
+     "text": "la",
+     "start": 73.65,
+     "end": 73.71
+    },
+    {
+     "text": "lui",
+     "start": 73.71,
+     "end": 73.81
+    },
+    {
+     "text": "donner.",
+     "start": 73.81,
+     "end": 74.01
+    }
+   ]
+  },
+  {
+   "id": "plan12",
+   "who": "vo",
+   "pause": 3.0,
+   "plan": {
+    "ambiance": "nuit",
+    "visuel": "Visage choqué de Yuki, puis plan derrière eux : la lampe du maire s'allume, il a tout vu. Le compteur passe à 00:00:00, écran noir."
+   },
+   "text": "Une guerre entière… pour une fille à qui je n'osais pas *parler*.",
+   "start": 77.11,
+   "end": 79.37,
+   "words": [
+    {
+     "text": "Une",
+     "start": 77.11,
+     "end": 77.23
+    },
+    {
+     "text": "guerre",
+     "start": 77.23,
+     "end": 77.45
+    },
+    {
+     "text": "entière…",
+     "start": 77.45,
+     "end": 77.91
+    },
+    {
+     "text": "pour",
+     "start": 77.91,
+     "end": 78.27
+    },
+    {
+     "text": "une",
+     "start": 78.27,
+     "end": 78.39
+    },
+    {
+     "text": "fille",
+     "start": 78.39,
+     "end": 78.55
+    },
+    {
+     "text": "à",
+     "start": 78.55,
+     "end": 78.65
+    },
+    {
+     "text": "qui",
+     "start": 78.65,
+     "end": 78.75
+    },
+    {
+     "text": "je",
+     "start": 78.75,
+     "end": 78.83
+    },
+    {
+     "text": "n'osais",
+     "start": 78.83,
+     "end": 79.01
+    },
+    {
+     "text": "pas",
+     "start": 79.01,
+     "end": 79.11
+    },
+    {
+     "text": "*parler*.",
+     "start": 79.11,
+     "end": 79.37
+    }
+   ]
+  },
+  {
+   "id": "plan13",
+   "who": "vo",
+   "pause": 5.0,
+   "plan": {
+    "ambiance": "nuit",
+    "visuel": "Carte finale (même design que l'ép. 03) : « TOI, TU LUI PARDONNES ? » (PARDONNES en rouge) + « DIS-LE EN COMMENTAIRE » + flèche jaune."
+   },
+   "text": "Toi, tu lui *pardonnes* ? Dis-le en commentaire.",
+   "start": 82.47,
+   "end": 84.21,
+   "words": [
+    {
+     "text": "Toi,",
+     "start": 82.47,
+     "end": 82.85
+    },
+    {
+     "text": "tu",
+     "start": 82.85,
+     "end": 82.91
+    },
+    {
+     "text": "lui",
+     "start": 82.91,
+     "end": 82.99
+    },
+    {
+     "text": "*pardonnes* ?",
+     "start": 82.99,
+     "end": 83.55
+    },
+    {
+     "text": "Dis-le",
+     "start": 83.55,
+     "end": 83.79
+    },
+    {
+     "text": "en",
+     "start": 83.79,
+     "end": 83.87
+    },
+    {
+     "text": "commentaire.",
+     "start": 83.87,
+     "end": 84.21
+    }
+   ]
+  }
+ ]
+}
