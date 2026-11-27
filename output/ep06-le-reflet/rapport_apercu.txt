@@ -1,0 +1,32 @@
+Épisode ep06-le-reflet — mode apercu — 2026-11-27 17:06:16
+Durée : 76.2 s — fichier : output/ep06-le-reflet/ep06-le-reflet.mp4 (5.2 Mo) — son : -14.1 LUFS
+
+Plan     durée  cadrages  état      temps (dont rendu Blender)
+plan01    3.63s     2      rendu     1 min 45 s (1 min 41 s)
+plan02    3.63s     2      rendu     1 min 14 s (1 min 09 s)
+plan03    2.50s     2      rendu     53 s (50 s)
+plan04    4.10s     3      rendu     1 min 27 s (1 min 22 s)
+plan04b   5.27s     3      rendu     1 min 37 s (1 min 32 s)
+plan05    4.53s     3      rendu     1 min 29 s (1 min 24 s)
+plan06    3.50s     3      rendu     1 min 14 s (1 min 09 s)
+plan07    4.73s     4      rendu     1 min 33 s (1 min 28 s)
+plan08    3.57s     2      rendu     1 min 11 s (1 min 07 s)
+plan09    3.40s     2      cache     0 s (1 min 06 s)
+plan10    3.83s     3      rendu     1 min 19 s (1 min 15 s)
+plan11    4.80s     3      cache     0 s (1 min 33 s)
+plan11b   4.27s     3      rendu     1 min 30 s (1 min 24 s)
+plan12    4.53s     3      rendu     1 min 31 s (1 min 26 s)
+plan12b   4.80s     3      rendu     1 min 38 s (1 min 32 s)
+plan13    3.60s     3      rendu     1 min 18 s (1 min 13 s)
+plan14    6.00s     4      cache     0 s (2 min 05 s)
+plan15    5.00s     0      carte     5 s (0 s)
+
+Temps total : 20 min 39 s
+
+Checklist :
+  [OK] 1re phrase commence par « Dans cette ville, »
+  [OK] Aucune phrase de plus de 12 mots — max 8 mots : « Dans cette ville, ton reflet s'endort après toi. »
+  [OK] Un cadrage change au moins toutes les 2 s — cadrage le plus long : 1.98 s
+  [OK] Jamais de silence total (niveau mini -49 dBFS)
+  [i] Timing des sous-titres : whisper.cpp
+  [i] Voix : mp3 fourni ×1.12
