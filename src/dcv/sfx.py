@@ -1,7 +1,7 @@
 """Bruitages synthétisés (numpy) — libres de droits, réutilisables.
 Dans le scénario : "sons": [{"type": "cloche", "debut": "0%", "volume": 1.0}, …]
 Types : cloche, coeur (battements jusqu'à la fin du plan), grincement, porte_claque,
-volet, pas_rapides, extinction (coupure électrique), coups_vitre, interrupteur.
+volet, pas_rapides, extinction (coupure électrique), coups_vitre, interrupteur, neon, craie, raclement.
 """
 import numpy as np
 
@@ -119,7 +119,40 @@ def interrupteur(dur=0.25):
     return ((rng.normal(0, 1, n) * np.exp(-t * 300) + np.sin(2 * np.pi * 2200 * t) * np.exp(-t * 200)) * 0.6).astype(np.float32)
 
 
-SONS = {"coups_vitre": coups_vitre, "interrupteur": interrupteur, "cloche": cloche, "grincement": grincement, "porte_claque": porte_claque, "volet": volet,
+def neon(dur=2.5):
+    """Bourdonnement de néon qui grésille."""
+    n = int(dur * SR)
+    t = np.arange(n) / SR
+    rng = np.random.default_rng(6)
+    hum = np.sin(2 * np.pi * 100 * t) * 0.35 + np.sin(2 * np.pi * 200 * t) * 0.15
+    cut = (rng.random(int(dur * 12) + 1) < 0.3).repeat(SR // 12)[:n]
+    crack = rng.normal(0, 1, n) * 0.25 * np.repeat(rng.random(int(dur * 40) + 1) < 0.15, SR // 40)[:n]
+    return ((hum * (1 - cut) + crack) * 0.5).astype(np.float32)
+
+
+def craie(dur=1.8):
+    """Craie qui grince sur le tableau."""
+    n = int(dur * SR)
+    t = np.arange(n) / SR
+    rng = np.random.default_rng(7)
+    strokes = (np.sin(2 * np.pi * 3.2 * t) > -0.2).astype(float)
+    s = rng.normal(0, 1, n) * 0.25 + np.sign(np.sin(2 * np.pi * (900 + 300 * np.sin(2 * np.pi * 5 * t)) * t)) * 0.08
+    return (s * strokes * np.minimum(1, (dur - t) / 0.2) * 0.6).astype(np.float32)
+
+
+def raclement(dur=1.0):
+    """Chaise qui racle le sol."""
+    n = int(dur * SR)
+    t = np.arange(n) / SR
+    f = 140 + 60 * np.sin(2 * np.pi * 9 * t)
+    ph = 2 * np.pi * np.cumsum(f) / SR
+    rng = np.random.default_rng(8)
+    s = np.sign(np.sin(ph)) * 0.3 + rng.normal(0, 1, n) * 0.15
+    env = np.minimum(1, t / 0.08) * np.minimum(1, (dur - t) / 0.2)
+    return (s * env * 0.6).astype(np.float32)
+
+
+SONS = {"neon": neon, "craie": craie, "raclement": raclement, "coups_vitre": coups_vitre, "interrupteur": interrupteur, "cloche": cloche, "grincement": grincement, "porte_claque": porte_claque, "volet": volet,
         "pas_rapides": pas_rapides, "extinction": extinction}
 
 

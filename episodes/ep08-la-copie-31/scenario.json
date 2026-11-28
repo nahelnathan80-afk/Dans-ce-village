@@ -1,0 +1,223 @@
+// Épisode 08 — « La Copie 31 » — frisson tout public.
+// Peur par l'ambiance (nuit, néons, craie, chaise qui bouge) — SANS enfant,
+// sans pleurs, sans visage inquiétant, sans violence : un seul adulte, le prof.
+// Même moteur et même style. [NOUVEAU] = élément réutilisable ajouté.
+{
+  "titre": "La Copie 31",
+  "casting": ["prof"],
+  "voix_off": { "moteur": "piper", "modele": "fr_FR-upmc-medium", "locuteur": 1, "length_scale": 1.0 },
+  "vitesse_voix": 1.04,
+  "pause_apres_voix": 1.2,
+  "musique_theme": "nuit",
+
+  "compteur_haut": { "label": "COPIES", "format": "nombre" },
+
+  "plans": [
+    {
+      "id": "plan01", "decor": "salle_classe", "mood": "nuit_chambre", "duree_min": 4.4,
+      // accroche MONTRÉE : la craie écrit toute seule
+      "textes_decor": [ { "type": "tableau", "emplacement": "tableau", "texte": "IL EN MANQUE UN.", "ecrit": { "debut": "5%", "fin": "75%" } } ],   // [NOUVEAU]
+      "invites": 31,
+      "sons": [ { "type": "craie", "debut": "5%" } ],                      // [NOUVEAU]
+      "cadrages": [
+        { "camera": "zoom_brusque", "cible": "tableau", "duree": 1 },
+        { "camera": "plan_large", "cible": "piece", "duree": 1 }
+      ],
+      "voix": { "texte": "Dans cette ville, ne corrige jamais de copies après *minuit*." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan02", "decor": "salle_classe", "mood": "nuit_chambre", "duree_min": 3.0,
+      "transition": "flash",
+      "lumiere": { "clignote": "0%" },                                     // [NOUVEAU] néon qui clignote
+      "personnages": [ { "qui": "prof", "position": [1.8, 3.5], "orientation": 180, "action": "sursauter", "expression": "choque", "etiquette": false } ],
+      "invites": 31, "invites_style": "flash",
+      "sons": [ { "type": "neon", "debut": "0%" } ],
+      "cadrages": [
+        { "camera": "gros_plan_visage", "cible": "prof", "duree": 1 },
+        { "camera": "zoom_brusque", "cible": "prof", "duree": 1 }
+      ],
+      "voix": { "texte": "Le prof l'a fait. Une seule *fois*." },
+      "musique": "coupe"
+    },
+    {
+      "id": "plan03", "decor": "salle_classe", "mood": "soir_lampe",
+      "transition": "rembobinage",
+      "personnages": [ { "qui": "prof", "position": "bureau_prof", "action": "attendre", "regarde": "camera", "expression": "neutre" } ],
+      "invites": 30,
+      "cadrages": [
+        { "camera": "plan_large", "cible": "piece", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "prof", "duree": 1 }
+      ],
+      "voix": { "texte": "Ce soir-là, il avait trente copies à *corriger*." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan04", "decor": "salle_classe", "mood": "soir_lampe",
+      "personnages": [ { "qui": "prof", "position": "bureau_prof", "action": "attendre", "regarde": "camera", "expression": "joyeux", "etiquette": false } ],
+      "invites": 30,
+      "cadrages": [
+        { "camera": "gros_plan_visage", "cible": "prof", "duree": 1 },
+        { "camera": "plan_large", "cible": "piece", "duree": 1 }
+      ],
+      "voix": { "texte": "Trente élèves. Trente copies. *Facile*." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan05", "decor": "salle_classe", "mood": "nuit_chambre", "duree_min": 3.6,
+      "personnages": [ { "qui": "prof", "position": "bureau_prof", "action": "attendre", "regarde": "camera", "expression": "interrogatif", "etiquette": false } ],
+      "invites": { "de": 30, "a": 31, "courbe": "saut" }, "invites_style": "flash",
+      "sons": [ { "type": "cloche", "debut": "50%" } ],
+      "cadrages": [
+        { "camera": "zoom_brusque", "cible": "compteur_haut", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "prof", "duree": 1 }
+      ],
+      "voix": { "texte": "Mais à minuit… il y en avait trente et *une*." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan06", "decor": "salle_classe", "mood": "nuit_chambre",
+      "personnages": [ { "qui": "prof", "position": [1.8, 3.5], "orientation": 200, "action": "regarder", "cible": "classe", "expression": "peur", "etiquette": false } ],
+      "invites": 31,
+      "sons": [ { "type": "grincement", "debut": "15%" } ],
+      "cadrages": [
+        { "camera": "plan_large", "cible": "piece", "duree": 1 },
+        { "camera": "plan_large", "cible": "piece", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "prof", "duree": 1 }
+      ],
+      "voix": { "texte": "Personne n'était entré. La porte était fermée à *clé*." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan06b", "decor": "salle_classe", "mood": "nuit_chambre",
+      "personnages": [ { "qui": "prof", "position": "bureau_prof", "action": "attendre", "regarde": "camera", "expression": "interrogatif", "etiquette": false } ],
+      "invites": { "de": 30, "a": 31, "courbe": "saut" },
+      "cadrages": [
+        { "camera": "gros_plan_visage", "cible": "prof", "duree": 1 },
+        { "camera": "zoom_brusque", "cible": "compteur_haut", "duree": 1 }
+      ],
+      "voix": { "texte": "Il a compté. Recompté. Toujours trente et *une*." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan07", "decor": "salle_classe", "mood": "nuit_chambre", "duree_min": 4.2,
+      "textes_decor": [ { "type": "tableau", "emplacement": "tableau", "texte": "COPIE 31", "ecrit": { "debut": "10%", "fin": "60%" } } ],
+      "invites": 31,
+      "sons": [ { "type": "craie", "debut": "10%" } ],
+      "cadrages": [
+        { "camera": "plan_large", "cible": "piece", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "tableau", "duree": 1.4 }
+      ],
+      "voix": { "texte": "Sur le tableau, quelqu'un avait écrit : copie trente et *une*." },
+      "musique": "coupe"
+    },
+    {
+      "id": "plan08", "decor": "salle_classe", "mood": "nuit_chambre",
+      "textes_decor": [ { "type": "tableau", "emplacement": "tableau", "texte": "COPIE 31" } ],
+      "personnages": [ { "qui": "prof", "position": "bureau_prof", "action": "attendre", "regarde": "camera", "expression": "peur", "etiquette": false } ],
+      "invites": 31,
+      "sons": [ { "type": "coeur", "debut": "0%" } ],
+      "voix_delai": 0.4,
+      "cadrages": [
+        { "camera": "zoom_lent_avant", "cible": "prof", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "prof", "duree": 1 }
+      ],
+      "voix": { "texte": "Il l'a ouverte. Le nom était… le *sien*." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan09", "decor": "salle_classe", "mood": "nuit_chambre",
+      "lumiere": { "clignote": "10%" },
+      "textes_decor": [ { "type": "tableau", "emplacement": "tableau", "texte": "COPIE 31" } ],
+      "personnages": [ { "qui": "prof", "position": "bureau_prof", "action": "frissonner", "regarde": "camera", "expression": "choque", "etiquette": false } ],
+      "invites": 31,
+      "sons": [ { "type": "neon", "debut": "10%" } ],
+      "cadrages": [
+        { "camera": "plan_large", "cible": "piece", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "prof", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "tableau", "duree": 1 }
+      ],
+      "voix": { "texte": "Son écriture. Sa classe. Datée de *1994*." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan09b", "decor": "salle_classe", "mood": "nuit_chambre", "duree_min": 4.0,
+      "textes_decor": [ { "type": "tableau", "emplacement": "tableau", "texte": "0 / 20\nABSENT", "ecrit": { "debut": "10%", "fin": "55%" } } ],
+      "invites": 31,
+      "sons": [ { "type": "craie", "debut": "10%" } ],
+      "cadrages": [
+        { "camera": "zoom_brusque", "cible": "tableau", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "tableau", "duree": 1.3 }
+      ],
+      "voix": { "texte": "Et sa note, en rouge : zéro. Motif : *absent*." },
+      "musique": "coupe"
+    },
+    {
+      "id": "plan10", "decor": "salle_classe", "mood": "nuit_chambre",
+      "classe": { "chaise_recule": "200%" },                               // ancre « chaise_premier_rang » (immobile ici)
+      "textes_decor": [ { "type": "tableau", "emplacement": "tableau", "texte": "COPIE 31" } ],
+      "invites": 31,
+      "cadrages": [
+        { "camera": "plongee", "cible": "chaise_premier_rang", "duree": 1 },
+        { "camera": "plan_large", "cible": "piece", "duree": 1 }
+      ],
+      "voix": { "texte": "L'année où il était élève. Ici. À ce *pupitre*." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan11", "decor": "salle_classe", "mood": "nuit_chambre", "duree_min": 4.6,
+      "textes_decor": [ { "type": "tableau", "emplacement": "tableau", "texte": "À CE SOIR,\nMONSIEUR.", "ecrit": { "debut": "8%", "fin": "65%" } } ],
+      "invites": 31,
+      "sons": [ { "type": "craie", "debut": "8%" } ],
+      "cadrages": [
+        { "camera": "zoom_brusque", "cible": "tableau", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "tableau", "duree": 1.4 }
+      ],
+      "voix": { "texte": "En bas, une phrase : à ce soir, *monsieur*." },
+      "musique": "coupe"
+    },
+    {
+      "id": "plan12", "decor": "salle_classe", "mood": "nuit_chambre", "duree_min": 5.0,
+      "classe": { "chaise_recule": "45%" },                                // [NOUVEAU] chaise qui recule seule
+      "textes_decor": [ { "type": "tableau", "emplacement": "tableau", "texte": "À CE SOIR,\nMONSIEUR." } ],
+      "invites": 31,
+      "sons": [ { "type": "raclement", "debut": "45%" }, { "type": "coeur", "debut": "50%" } ],   // [NOUVEAU] raclement
+      "cadrages": [
+        { "camera": "plan_large", "cible": "piece", "duree": 1 },
+        { "camera": "plongee", "cible": "chaise_premier_rang", "duree": 1.3 }
+      ],
+      "voix": { "texte": "Et la chaise du premier rang… s'est tirée toute *seule*." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan12b", "decor": "rue", "mood": "nuit_bleue_froide", "duree_min": 3.4,
+      "personnages": [ { "qui": "prof", "position": [4, 1.6], "action": "courir", "vers": [-3.5, 2.0], "expression": "peur", "etiquette": false } ],
+      "invites": 31,
+      "sons": [ { "type": "pas_rapides", "debut": "0%" } ],
+      "cadrages": [
+        { "camera": "travelling_suivi", "cible": "prof", "duree": 1 },
+        { "camera": "plan_large", "cible": "rue", "duree": 1 }
+      ],
+      "voix": { "texte": "Il est parti en courant. Sans éteindre la *lumière*." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan13", "decor": "parc", "mood": "apres_midi_soleil", "duree_min": 3.6,
+      "transition": "flash",
+      "personnages": [ { "qui": "prof", "position": "banc", "action": "assis", "objet": "banc", "regarde": "camera", "expression": "joyeux", "etiquette": false } ],
+      "invites": 30,
+      "cadrages": [
+        { "camera": "plan_large", "cible": "parc", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "prof", "duree": 1 }
+      ],
+      "voix": { "texte": "Depuis, il corrige ses copies en plein *jour*." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan14", "type": "carte_question", "duree": 5.0,
+      "decor": "salle_classe", "mood": "nuit_chambre", "fond": "plan12",
+      "carte": { "question": "ET TOI, TU L'AURAIS OUVERTE, LA COPIE 31 ?", "appel": "RÉPONDS EN COMMENTAIRE" },
+      "voix": null, "musique": "normal", "fin": { "noir": 0.5 }
+    }
+  ]
+}

@@ -182,7 +182,8 @@ class Shot:
                "ciel_fenetre": self.mood.get("window"), "fenetre_emit": 1.4,
                "villa": self.plan.get("villa"), "nuit": self.mood.get("lamps", 0) > 2,
                "guirlandes": self.mood.get("guirlandes", False), "duree": self.duree,
-               "rue": self.plan.get("rue"), "maison": self.plan.get("maison")}
+               "rue": self.plan.get("rue"), "maison": self.plan.get("maison"),
+               "n_frames": self.N, "fps": self.fps, "classe": self.plan.get("classe")}
         autel = self.plan.get("autel")
         if autel:
             ctx["photo_mat"] = self._photo_material(autel)
@@ -201,6 +202,21 @@ class Shot:
 
         # [ep06] lumière qui s'allume d'un coup : « lumiere »: {"allume": "40%"}
         lum = self.plan.get("lumiere")
+        if lum and lum.get("clignote") is not None:
+            # [ep08] néon qui clignote : coupures brèves et irrégulières
+            from .scenario import parse_time
+            t0 = parse_time(lum["clignote"], self.duree, 0.0)
+            t1 = parse_time(lum.get("clignote_fin", "100%"), self.duree, self.duree)
+            e0 = sc.view_settings.exposure
+
+            def _clignote(t, sc=sc, e0=e0, t0=t0, t1=t1):
+                off = False
+                if t0 <= t <= t1:
+                    k = int(t * 12)
+                    r = random.Random(k * 7919).random()
+                    off = r < 0.32
+                sc.view_settings.exposure = e0 - (1.6 if off else 0.0)
+            self.world.animations.append(_clignote)
         if lum and lum.get("allume") is not None:
             import bpy as _b
             from .scenario import parse_time
