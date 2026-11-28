@@ -237,3 +237,21 @@ README.md                  format du scénario + guide iPad
   - `rue.numeros: true`, qui ajoute la plaque « N° 12 » et l'ancre `lampadaire_12`
   - expression imposée à la foule : `foule.expression`
   - `setup.sh` installe les voix Piper tom, upmc et siwis
+
+---
+
+## 12. Épisode 08 « La Copie 31 » (28/11/2026)
+
+- ✅ **Final poussé** (`058b25c`) : `output/ep08-la-copie-31/ep08-la-copie-31.mp4`, 1080×1920, 76,2 s, 21,7 Mo, -14,2 LUFS.
+  Toute la checklist est OK.
+- Frisson « tout public » :
+  - un seul personnage, un adulte (le prof) ;
+  - pas d'enfant, pas de pleurs, pas de visage inquiétant, pas de violence ;
+  - la fin rassure.
+- Voix Piper `fr_FR-upmc-medium`, locuteur 1, length_scale 1.0, vitesse 1.04.
+- Nouveaux éléments réutilisables :
+  - tableau qui s'écrit tout seul : `textes_decor` du tableau avec `"ecrit": {"debut", "fin"}`
+  - `lumiere: {"clignote": "x%", "clignote_fin": "y%"}`
+  - `classe: {"chaise_recule": "x%"}`, avec l'ancre `chaise_premier_rang`
+  - sons `neon`, `craie` et `raclement`
+- Leçon : dans `salle_classe`, éviter `contre_plongee` sur le prof derrière son bureau, car l'image sort noire.
