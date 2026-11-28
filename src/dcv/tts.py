@@ -56,15 +56,19 @@ def eleven_tts(texte: str, out_mp3: Path, prev: str = "", nxt: str = "", voice_i
         return False
 
 
-def piper_tts(texte: str, out_mp3: Path) -> bool:
-    model = config.MODELS / "fr_FR-tom-medium.onnx"
+def piper_tts(texte: str, out_mp3: Path, modele="fr_FR-tom-medium", locuteur=None, vitesse=1.05) -> bool:
+    """Piper (gratuit, local). modele/locuteur/vitesse réglables dans "voix_off"."""
+    model = config.MODELS / f"{modele}.onnx"
     exe = shutil.which("piper") or str(Path(__import__("sys").executable).parent / "piper")
     if not model.exists() or not Path(exe).exists():
         return False
     wav = out_mp3.with_suffix(".wav")
     try:
-        _run([exe, "-m", str(model), "-f", str(wav), "--length-scale", "1.05", "--sentence-silence", "0.25"],
-             input=texte.encode())
+        cmd = [exe, "-m", str(model), "-f", str(wav), "--length-scale", f"{vitesse}", "--sentence-silence", "0.25",
+               "--noise-scale", "0.75"]
+        if locuteur is not None:
+            cmd += ["-s", str(locuteur)]
+        _run(cmd, input=texte.encode())
         _run(["ffmpeg", "-y", "-v", "error", "-i", str(wav), "-ar", "44100", "-b:a", "160k", str(out_mp3)])
         wav.unlink(missing_ok=True)
         return True
@@ -111,6 +115,13 @@ def _ensure_voice(sc: dict, plan: dict, idx: int) -> tuple[Path | None, str]:
     if real.exists():
         return real, "mp3 fourni"
     texte = plain_text(v["texte"])
+    vo = sc.get("voix_off") or {}
+    if vo.get("moteur") == "piper":
+        # [ep07] voix Piper choisie : écrite directement dans voix/ (versionnée)
+        real.parent.mkdir(parents=True, exist_ok=True)
+        if piper_tts(texte, real, vo.get("modele", "fr_FR-tom-medium"), vo.get("locuteur"),
+                     float(vo.get("length_scale", 1.0))):
+            return real, f"Piper {vo.get('modele', '')}"
     # contexte (phrases voisines) pour une intonation continue chez ElevenLabs
     plans = sc["plans"]
     prev = next((plain_text(p["voix"]["texte"]) for p in reversed(plans[:idx]) if p.get("voix")), "")

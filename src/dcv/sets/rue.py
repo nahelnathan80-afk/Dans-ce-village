@@ -72,6 +72,37 @@ def build(ctx):
             lamps.append((lx, m, lo))
         elif abs(lx) not in (6.2, 4.8):
             P.street_lamp(f"lamp{lx}", lx, 7.7, lit=ctx.get("lampes", 0.0))
+    # [ep07] chaussettes sur les lampadaires : "chaussettes" (toutes) ou
+    # "chaussettes_une_par_une" (elles apparaissent l'une après l'autre)
+    if mode in ("chaussettes", "chaussettes_une_par_une"):
+        import bpy
+        D = float(ctx.get("duree", 5.0))
+        cols = ["#ff5d8f", "#4cc9f0", "#ffd166", "#06d6a0", "#b388ff", "#ff9f1c"]
+        poles = [(-9, 7.7), (-3.5, 7.7), (2.0, 7.7), (7.5, 7.7), (-6.2, 2.9), (3.6, 2.9)]
+        for lx, ly in poles[4:]:
+            P.street_lamp(f"lampC{lx}", lx, ly, lit=ctx.get("lampes", 0.0))
+        socks = []
+        for k, (lx, ly) in enumerate(poles):
+            e = S.empty(f"chaussette_piv{k}", (lx, ly, 0.0))
+            c = cols[k % len(cols)]
+            S.box(f"chaussette{k}", (0.34, 0.34, 1.3), (0, 0, 0), c, parent=e, origin="bottom", bevel=0.04)
+            S.box(f"chaussette_pied{k}", (0.72, 0.36, 0.3), (0.22, 0, 0), c, parent=e, origin="bottom", bevel=0.05)
+            for j, z in enumerate((0.6, 0.98)):
+                S.box(f"chaussette_raye{k}_{j}", (0.35, 0.35, 0.13), (0, 0, z), "#ffffff", parent=e, origin="bottom", bevel=0.01)
+            S.box(f"chaussette_talon{k}", (0.16, 0.37, 0.22), (-0.11, 0, 0.0), "#ffffff", parent=e, origin="bottom", bevel=0.02)
+            socks.append(e)
+        w.add_anchor("lampadaire_avant_droit", 3.6, 2.9, 0.9, 0.0, 1.3)
+        w.add_anchor("lampadaire_avant_gauche", -6.2, 2.9, 0.9, 0.0, 1.3)
+        if mode == "chaussettes_une_par_une":
+            order = sorted(socks, key=lambda e: -e.location.x)   # de droite à gauche
+            def _socks(t, order=order, D=D):
+                for k, e in enumerate(order):
+                    u = min(1.0, max(0.0, (t - D * (0.12 + 0.13 * k)) / 0.3))
+                    e.scale = (max(0.001, u),) * 3
+            w.animations.append(_socks)
+    if ru.get("numeros"):            # plaque « N° 12 » sur le lampadaire central
+        P.text_panel(ctx, "plaque_12", "panneau", "N° 12", (2.0, 7.63, 1.35), 0.42)
+        w.add_anchor("lampadaire_12", 2.0, 7.6, 0.9, 0.0, 1.1)
     if mode == "extinction":
         # les lampadaires s'éteignent un par un (de la droite vers la gauche)
         D = float(ctx.get("duree", 5.0))

@@ -63,7 +63,7 @@ def generate(foule, world, mains, duree, seed=0):
                           "mixte": ["adulte", "adulte", "ado", "enfant", "age"]}.get(typ, ["adulte", "ado", "enfant"]))
         d = random_def(rng, gab, typ)
         spec = {"qui": f"figurant{i:02d}", "_def": d, "_foule": True, "etiquette": False,
-                "expression": rng.choice(EXPRS)}
+                "expression": foule.get("expression") or rng.choice(EXPRS)}
         if foule.get("compteurs", "aleatoire") != "aucun":
             spec["compteur"] = rng.choice(DUREES)
         if foule.get("zzz"):

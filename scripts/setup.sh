@@ -52,12 +52,14 @@ say "Modules Python (bpy, pillow, numpy, piper-tts, pywhispercpp)"
 
 # --- 3. Voix Piper française (voix temporaire) ------------------------------
 HF=https://huggingface.co
-PIPER_VOICE="fr_FR-tom-medium"
-if [ ! -f "$MODELS/$PIPER_VOICE.onnx" ]; then
-  say "Voix Piper $PIPER_VOICE"
-  curl -fsSL -o "$MODELS/$PIPER_VOICE.onnx"      "$HF/rhasspy/piper-voices/resolve/main/fr/fr_FR/tom/medium/$PIPER_VOICE.onnx"
-  curl -fsSL -o "$MODELS/$PIPER_VOICE.onnx.json" "$HF/rhasspy/piper-voices/resolve/main/fr/fr_FR/tom/medium/$PIPER_VOICE.onnx.json"
-fi
+for PV in tom/medium/fr_FR-tom-medium upmc/medium/fr_FR-upmc-medium siwis/medium/fr_FR-siwis-medium; do
+  PIPER_VOICE=$(basename "$PV")
+  if [ ! -f "$MODELS/$PIPER_VOICE.onnx" ]; then
+    say "Voix Piper $PIPER_VOICE"
+    curl -fsSL -o "$MODELS/$PIPER_VOICE.onnx"      "$HF/rhasspy/piper-voices/resolve/main/fr/fr_FR/$PV.onnx"
+    curl -fsSL -o "$MODELS/$PIPER_VOICE.onnx.json" "$HF/rhasspy/piper-voices/resolve/main/fr/fr_FR/$PV.onnx.json"
+  fi
+done
 
 # --- 4. Modèle whisper.cpp (timing des mots) ---------------------------------
 if [ ! -f "$MODELS/ggml-base.bin" ]; then

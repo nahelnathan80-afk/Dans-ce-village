@@ -1,0 +1,240 @@
+// Épisode 07 — « Les Chaussettes » — mystère drôle, tout public.
+// Pensé pour rester éligible au fil « Pour toi » : pas de peur, pas de pleurs,
+// pas d'enfant en détresse, personnages adultes, fin joyeuse.
+// Même moteur et même style que les épisodes précédents. [NOUVEAU] = élément réutilisable ajouté.
+{
+  "titre": "Les Chaussettes",
+  "casting": ["gerard", "monsieur_paul", "prof", "mamie_turbo"],
+  // [NOUVEAU] voix Piper (gratuite, locale) choisie dans le scénario
+  "voix_off": { "moteur": "piper", "modele": "fr_FR-upmc-medium", "locuteur": 1, "length_scale": 0.95 },
+  "vitesse_voix": 1.08,
+  "pause_apres_voix": 1.05,
+  "musique_theme": "par_defaut",
+
+  "compteur_haut": { "label": "CHAUSSETTES", "format": "nombre" },
+
+  "plans": [
+    {
+      "id": "plan01", "decor": "rue", "mood": "soleil_matin", "duree_min": 3.4,
+      // accroche MONTRÉE : les lampadaires portent des chaussettes
+      "rue": { "lampadaires": "chaussettes" },                     // [NOUVEAU]
+      "foule": { "nombre": 8, "zone": "trottoirs", "type": "adultes", "action": "passer", "compteurs": "aucun" },
+      "invites": 1247,
+      "cadrages": [
+        { "camera": "zoom_brusque", "cible": "lampadaire_avant_droit", "duree": 1 },
+        { "camera": "plan_large", "cible": "rue", "duree": 1 }
+      ],
+      "voix": { "texte": "Dans cette ville, les lampadaires portent des *chaussettes*." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan02", "decor": "chambre_ado", "mood": "matin_interieur",
+      "transition": "rembobinage",
+      "personnages": [ { "qui": "gerard", "position": [-0.4, 2.6], "action": "regarder", "cible": "lit", "expression": "choque" } ],
+      "invites": 1,
+      "cadrages": [
+        { "camera": "plan_large", "cible": "piece", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "gerard", "duree": 1 }
+      ],
+      "voix": { "texte": "Tout a commencé lundi. Ma chaussette gauche avait *disparu*." },
+      "bulles": [ { "qui": "gerard", "texte": "Où est ma gauche ?!", "debut": "50%", "fin": "100%" } ],
+      "musique": "normal"
+    },
+    {
+      "id": "plan03", "decor": "rue", "mood": "soleil_matin",
+      "foule": { "nombre": 10, "zone": "trottoirs", "type": "adultes", "action": "attendre", "compteurs": "aucun", "expression": "interrogatif" },
+      "invites": { "de": 1, "a": 300, "courbe": "emballe" },
+      "cadrages": [
+        { "camera": "plan_large", "cible": "rue", "duree": 1 },
+        { "camera": "travelling_suivi", "cible": "foule", "duree": 1 },
+        { "camera": "zoom_brusque", "cible": "compteur_haut", "duree": 1 }
+      ],
+      "voix": { "texte": "Puis celle du boulanger. Puis celles de toute la *rue*." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan04", "decor": "rue", "mood": "soleil_matin",
+      "textes_decor": [ { "type": "affiche", "emplacement": "mur_fond_droite", "texte": "AVIS DE\nRECHERCHE :\nCHAUSSETTES" } ],
+      "personnages": [ { "qui": "gerard", "position": [3.2, 6.4], "orientation": 180, "action": "regarder", "cible": "mur_fond_droite", "expression": "pensif", "etiquette": false } ],
+      "invites": { "de": 300, "a": 520 },
+      "cadrages": [
+        { "camera": "gros_plan_objet", "cible": "mur_fond_droite", "duree": 1 },
+        { "camera": "plan_large", "cible": "rue", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "gerard", "duree": 1 }
+      ],
+      "voix": { "texte": "La mairie a posé des affiches. Personne n'avait rien *vu*." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan05", "decor": "rue", "mood": "apres_midi_soleil",
+      "personnages": [ { "qui": "monsieur_paul", "position": [1.5, 2.2], "action": "attendre", "regarde": "camera", "expression": "pensif" } ],
+      "invites": { "de": 520, "a": 610 },
+      "cadrages": [
+        { "camera": "zoom_brusque", "cible": "monsieur_paul", "duree": 1 },
+        { "camera": "contre_plongee", "cible": "monsieur_paul", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "monsieur_paul", "duree": 1 }
+      ],
+      "voix": { "texte": "Premier suspect : Monsieur Paul. Il marche toujours *pieds nus*." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan06", "decor": "rue", "mood": "apres_midi_soleil",
+      "personnages": [ { "qui": "monsieur_paul", "position": [-2.5, 3], "action": "assis", "objet": "banc", "expression": "dort", "etiquette": false } ],
+      "invites": { "de": 610, "a": 640 },
+      "cadrages": [
+        { "camera": "plan_large", "cible": "banc", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "monsieur_paul", "duree": 1 }
+      ],
+      "voix": { "texte": "Mais il avait un alibi : il *dormait*." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan07", "decor": "salle_classe", "mood": "matin_froid",
+      "personnages": [ { "qui": "prof", "position": "bureau_prof", "action": "attendre", "regarde": "camera", "expression": "joyeux" } ],
+      "invites": { "de": 640, "a": 700 },
+      "cadrages": [
+        { "camera": "plan_large", "cible": "piece", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "prof", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "prof", "duree": 1 }
+      ],
+      "voix": { "texte": "Deuxième suspect : la prof. Elle tricote pendant les *dictées*." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan08", "decor": "salle_classe", "mood": "matin_froid",
+      "personnages": [ { "qui": "prof", "position": "bureau_prof", "action": "parler", "regarde": "camera", "expression": "joyeux", "etiquette": false } ],
+      "invites": { "de": 700, "a": 760 },
+      "cadrages": [
+        { "camera": "gros_plan_visage", "cible": "prof", "duree": 1 },
+        { "camera": "plan_large", "cible": "piece", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "prof", "duree": 1 }
+      ],
+      "voix": { "texte": "Mais ses pulls étaient trop moches. Même pour des *chaussettes*." },
+      "bulles": [ { "qui": "prof", "texte": "Il est joli, non ?", "debut": "20%", "fin": "100%" } ],
+      "musique": "normal"
+    },
+    {
+      "id": "plan08b", "decor": "parc", "mood": "apres_midi_soleil",
+      "foule": { "nombre": 8, "zone": "trottoirs", "type": "mixte", "action": "passer", "compteurs": "aucun", "expression": "joyeux" },
+      "invites": { "de": 760, "a": 790 },
+      "cadrages": [
+        { "camera": "plan_large", "cible": "parc", "duree": 1 },
+        { "camera": "gros_plan_objet", "cible": "balancoire", "duree": 1 },
+        { "camera": "plongee", "cible": "parc", "duree": 1 }
+      ],
+      "voix": { "texte": "Troisième suspect : les enfants du parc. Non. Eux, ils perdent leurs *gants*." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan09", "decor": "rue", "mood": "nuit_festive",
+      "personnages": [ { "qui": "gerard", "position": [-4.7, 3.4], "action": "filmer", "regarde": "camera", "expression": "pensif", "etiquette": false } ],
+      "invites": { "de": 790, "a": 800 },
+      "cadrages": [
+        { "camera": "plan_large", "cible": "rue", "duree": 1 },
+        { "camera": "zoom_lent_avant", "cible": "gerard", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "gerard", "duree": 1 }
+      ],
+      "voix": { "texte": "Alors, une nuit, je me suis caché avec mon *téléphone*." },
+      "musique": "baisse"
+    },
+    {
+      "id": "plan10", "decor": "rue", "mood": "nuit_festive", "duree_min": 3.6,
+      "personnages": [ { "qui": "mamie_turbo", "position": [6, 2.2], "action": "rouler", "vers": [-3, 2.2], "objet": "trottinette", "expression": "joyeux" } ],
+      "invites": 800,
+      "cadrages": [
+        { "camera": "travelling_suivi", "cible": "mamie_turbo", "duree": 1 },
+        { "camera": "plan_large", "cible": "rue", "duree": 1 }
+      ],
+      "voix": { "texte": "Et là… Mamie Turbo est passée. En *trottinette*." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan11", "decor": "rue", "mood": "nuit_festive", "duree_min": 4.6,
+      "rue": { "lampadaires": "chaussettes_une_par_une" },           // [NOUVEAU] elles apparaissent une à une
+      "personnages": [ { "qui": "mamie_turbo", "position": [4.6, 3.5], "action": "marcher", "vers": [-5.6, 3.5], "expression": "joyeux", "etiquette": false } ],
+      "invites": { "de": 800, "a": 806, "courbe": "saut" },
+      "cadrages": [
+        { "camera": "gros_plan_objet", "cible": "lampadaire_avant_droit", "duree": 1 },
+        { "camera": "travelling_suivi", "cible": "mamie_turbo", "duree": 1 },
+        { "camera": "gros_plan_objet", "cible": "lampadaire_avant_gauche", "duree": 1 }
+      ],
+      "voix": { "texte": "Elle enfilait une chaussette sur chaque *lampadaire*." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan12", "decor": "rue", "mood": "nuit_festive",
+      "rue": { "lampadaires": "chaussettes" },
+      "personnages": [
+        { "qui": "gerard", "position": [-1.4, 2.0], "orientation": 60, "action": "sursauter", "regarde": "mamie_turbo", "expression": "choque", "etiquette": false },
+        { "qui": "mamie_turbo", "position": [0.8, 2.6], "orientation": -110, "action": "attendre", "regarde": "gerard", "expression": "joyeux", "etiquette": false }
+      ],
+      "invites": 806,
+      "cadrages": [
+        { "camera": "gros_plan_visage", "cible": "gerard", "duree": 1 },
+        { "camera": "par_dessus_epaule", "cible": "mamie_turbo>gerard", "duree": 1 }
+      ],
+      "voix": { "texte": "Je lui ai demandé *pourquoi*." },
+      "bulles": [ { "qui": "gerard", "texte": "MAMIE ?!", "debut": "0%", "fin": "100%" } ],
+      "musique": "baisse"
+    },
+    {
+      "id": "plan13", "decor": "rue", "mood": "nuit_festive", "duree_min": 3.8,
+      "rue": { "lampadaires": "chaussettes" },
+      "personnages": [ { "qui": "mamie_turbo", "position": [0.8, 2.6], "action": "parler", "regarde": "camera", "expression": "joyeux", "etiquette": false } ],
+      "invites": 806,
+      "cadrages": [
+        { "camera": "zoom_brusque", "cible": "mamie_turbo", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "mamie_turbo", "duree": 1 }
+      ],
+      "voix": { "texte": "Elle m'a répondu… qu'ils avaient froid aux *pieds*." },
+      "bulles": [ { "qui": "mamie_turbo", "texte": "Ils ont froid aux pieds, voyons !", "debut": "15%", "fin": "100%" } ],
+      "musique": "normal"
+    },
+    {
+      "id": "plan13b", "decor": "rue", "mood": "nuit_festive",
+      "rue": { "lampadaires": "chaussettes" },
+      "personnages": [ { "qui": "gerard", "position": [-1.4, 2.0], "orientation": 20, "action": "attendre", "regarde": "camera", "expression": "joyeux", "etiquette": false } ],
+      "invites": 806,
+      "cadrages": [
+        { "camera": "gros_plan_visage", "cible": "gerard", "duree": 1 },
+        { "camera": "plan_large", "cible": "rue", "duree": 1 }
+      ],
+      "voix": { "texte": "Franchement… j'ai trouvé ça plutôt *gentil*." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan14", "decor": "rue", "mood": "apres_midi_soleil", "duree_min": 4.2,
+      "rue": { "lampadaires": "chaussettes" },
+      "foule": { "nombre": 12, "zone": "trottoirs", "type": "adultes", "action": "passer", "compteurs": "aucun", "expression": "joyeux" },
+      "personnages": [ { "qui": "mamie_turbo", "position": [0.5, 2.6], "action": "attendre", "regarde": "camera", "expression": "joyeux", "etiquette": false } ],
+      "invites": { "de": 806, "a": 2400, "courbe": "emballe" }, "invites_style": "flash",
+      "cadrages": [
+        { "camera": "plan_large", "cible": "rue", "duree": 1 },
+        { "camera": "travelling_suivi", "cible": "foule", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "mamie_turbo", "duree": 1 }
+      ],
+      "voix": { "texte": "Depuis, toute la ville lui donne ses chaussettes *orphelines*." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan15", "decor": "rue", "mood": "apres_midi_soleil", "duree_min": 5.0,
+      // GAG FINAL : la chaussette de Gérard est sur le lampadaire n° 12
+      "rue": { "lampadaires": "chaussettes", "numeros": true },       // [NOUVEAU] plaque « N° 12 »
+      "personnages": [ { "qui": "gerard", "position": [1.2, 6.3], "orientation": 200, "action": "attendre", "regarde": "camera", "expression": "triste", "etiquette": false } ],
+      "invites": 2400,
+      "cadrages": [
+        { "camera": "zoom_brusque", "cible": "lampadaire_12", "duree": 1 },
+        { "camera": "gros_plan_visage", "cible": "gerard", "duree": 1 },
+        { "camera": "plan_large", "cible": "rue", "duree": 1 }
+      ],
+      "voix": { "texte": "Moi, j'attends toujours la mienne. Elle est sur le lampadaire *douze*." },
+      "musique": "normal"
+    },
+    {
+      "id": "plan16", "type": "carte_question", "duree": 5.0,
+      "decor": "rue", "mood": "apres_midi_soleil", "fond": "plan15",
+      "carte": { "question": "ET TOI, ELLES PARTENT OÙ, TES CHAUSSETTES ?", "appel": "RÉPONDS EN COMMENTAIRE" },
+      "voix": null, "musique": "normal", "fin": { "noir": 0.5 }
+    }
+  ]
+}
