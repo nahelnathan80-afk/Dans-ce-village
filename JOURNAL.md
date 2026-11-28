@@ -214,3 +214,26 @@ README.md                  format du scénario + guide iPad
   - format de pastille `heure` (hh:mm)
 - Leçon : dans `chambre_ado`, la caméra ne peut pas filmer de face un personnage collé au miroir, car elle passe derrière le mur.
   Il faut placer le personnage en [-0.4, 3.2] et utiliser `position_reflet: "devant_miroir"`.
+
+---
+
+## 11. Épisode 07 « Les Chaussettes » (28/11/2026)
+
+- ✅ **Final poussé** (`dd528c2`) : `output/ep07-les-chaussettes/ep07-les-chaussettes.mp4`, 1080×1920, 75,8 s, 34 Mo, -14,2 LUFS.
+  Toute la checklist est OK (cadrage le plus long : 1,93 s ; phrase la plus longue : 10 mots).
+- **Contexte** : TikTok a jugé l'ép. 06 « Le Reflet » inéligible au fil Pour toi.
+  Cause probable : la peur et une enfant en détresse (pleurs, sourire figé, seule la nuit).
+- **Choix pour l'ép. 07** : mystère drôle, tout public, avec des adultes.
+  Pas de peur, pas de pleurs, pas de visage inquiétant ; la fin est joyeuse.
+- **Conseils de publication donnés à l'utilisateur** :
+  - activer « Contenu généré par l'IA » ;
+  - éviter les hashtags #horreur et #creepy.
+- Voix : Piper gratuite `fr_FR-upmc-medium`, locuteur 1 (« Pierre »), length_scale 0.95, vitesse_voix 1.08.
+  Les crédits ElevenLabs sont épuisés jusqu'au ~27/12.
+- Nouveaux éléments réutilisables :
+  - `voix_off: {"moteur": "piper", "modele", "locuteur", "length_scale"}` ; les MP3 sont écrits dans `voix/`
+  - `rue.lampadaires: "chaussettes" | "chaussettes_une_par_une"`
+  - ancres `lampadaire_avant_droit` et `lampadaire_avant_gauche`
+  - `rue.numeros: true`, qui ajoute la plaque « N° 12 » et l'ancre `lampadaire_12`
+  - expression imposée à la foule : `foule.expression`
+  - `setup.sh` installe les voix Piper tom, upmc et siwis
