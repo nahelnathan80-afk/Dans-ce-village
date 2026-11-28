@@ -1,0 +1,31 @@
+Épisode ep08-la-copie-31 — mode final — 2026-11-28 18:30:16
+Durée : 76.2 s — fichier : output/ep08-la-copie-31/ep08-la-copie-31.mp4 (21.7 Mo) — son : -14.2 LUFS
+
+Plan     durée  cadrages  état      temps (dont rendu Blender)
+plan01    4.40s     3      cache     0 s (6 min 20 s)
+plan02    3.83s     2      cache     0 s (6 min 53 s)
+plan03    4.23s     3      cache     0 s (6 min 45 s)
+plan04    4.00s     2      cache     0 s (6 min 36 s)
+plan05    3.60s     2      cache     0 s (6 min 12 s)
+plan06    4.50s     3      cache     0 s (7 min 03 s)
+plan06b   4.47s     3      cache     0 s (7 min 29 s)
+plan07    4.80s     3      cache     0 s (6 min 14 s)
+plan08    4.13s     3      cache     0 s (7 min 00 s)
+plan09    5.33s     3      cache     0 s (8 min 47 s)
+plan09b   4.83s     3      cache     0 s (6 min 39 s)
+plan10    4.70s     3      cache     0 s (6 min 11 s)
+plan11    4.60s     3      cache     0 s (6 min 12 s)
+plan12    5.00s     3      cache     0 s (6 min 24 s)
+plan12b   4.27s     3      reprise   7 min 08 s (6 min 34 s)
+plan13    4.03s     3      rendu     6 min 18 s (5 min 49 s)
+plan14    5.00s     0      carte     11 s (0 s)
+
+Temps total : 15 min 03 s
+
+Checklist :
+  [OK] 1re phrase commence par « Dans cette ville, »
+  [OK] Aucune phrase de plus de 12 mots — max 10 mots : « Dans cette ville, ne corrige jamais de copies après minuit. »
+  [OK] Un cadrage change au moins toutes les 2 s — cadrage le plus long : 2.00 s
+  [OK] Jamais de silence total (niveau mini -51 dBFS)
+  [i] Timing des sous-titres : whisper.cpp
+  [i] Voix : mp3 fourni ×1.04
