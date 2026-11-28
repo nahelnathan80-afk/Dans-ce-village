@@ -1,0 +1,32 @@
+Épisode ep07-les-chaussettes — mode final — 2026-11-28 13:50:48
+Durée : 75.8 s — fichier : output/ep07-les-chaussettes/ep07-les-chaussettes.mp4 (34.3 Mo) — son : -14.2 LUFS
+
+Plan     durée  cadrages  état      temps (dont rendu Blender)
+plan01    3.73s     2      cache     0 s (6 min 29 s)
+plan02    4.27s     3      cache     0 s (7 min 08 s)
+plan03    3.77s     3      cache     0 s (6 min 19 s)
+plan04    4.00s     3      cache     0 s (6 min 47 s)
+plan05    4.37s     3      cache     0 s (8 min 01 s)
+plan06    2.97s     2      cache     0 s (5 min 32 s)
+plan07    4.90s     3      cache     0 s (8 min 19 s)
+plan08    4.33s     3      cache     0 s (7 min 24 s)
+plan08b   6.10s     4      cache     0 s (9 min 17 s)
+plan09    4.53s     3      cache     0 s (7 min 38 s)
+plan10    3.87s     2      cache     0 s (6 min 36 s)
+plan11    4.60s     3      cache     0 s (8 min 16 s)
+plan12    2.97s     2      cache     0 s (5 min 02 s)
+plan13    3.80s     2      reprise   5 min 30 s (4 min 59 s)
+plan13b   2.93s     2      rendu     5 min 30 s (5 min 03 s)
+plan14    4.20s     3      rendu     8 min 00 s (7 min 26 s)
+plan15    5.00s     3      rendu     8 min 33 s (7 min 57 s)
+plan16    5.00s     0      carte     10 s (0 s)
+
+Temps total : 29 min 15 s
+
+Checklist :
+  [OK] 1re phrase commence par « Dans cette ville, »
+  [OK] Aucune phrase de plus de 12 mots — max 10 mots : « Alors, une nuit, je me suis caché avec mon téléphone. »
+  [OK] Un cadrage change au moins toutes les 2 s — cadrage le plus long : 1.93 s
+  [OK] Jamais de silence total (niveau mini -53 dBFS)
+  [i] Timing des sous-titres : whisper.cpp
+  [i] Voix : mp3 fourni ×1.08
